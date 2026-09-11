@@ -59,6 +59,33 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .back-link{display:inline-block; margin-bottom:24px; font-size:13px; font-weight:700; color:var(--slate-900); text-decoration:none; border:1.5px solid var(--pipo-black); border-radius:20px; padding:6px 14px;}
 .back-link:hover{background:var(--grey-100);}
 
+/* Diagrama estilo "fluxo" (caixas + colunas + setas) */
+.status-vigente{display:inline-block; background:var(--pipo-black); color:var(--pipo-white); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.status-proposta{display:inline-block; background:var(--pending-bg); border:1px solid var(--pending-border); color:var(--pending-text); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.dtop{background:var(--pipo-black); color:var(--pipo-white); border-radius:10px; padding:16px 22px; margin:0 0 8px;}
+.dtop h4{margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; text-align:center;}
+.dtop ol, .dtop ul{margin:0; padding-left:18px; font-size:13px; line-height:1.7;}
+.darrow{width:2px; height:20px; background:var(--grey-600); margin:0 auto; position:relative;}
+.darrow::after{content:''; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid var(--grey-600);}
+.dpill{display:table; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:20px; padding:3px 16px; font-weight:700; font-size:11.5px; color:var(--slate-900); margin:4px auto;}
+.dcols{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; align-items:start; margin:8px 0 20px;}
+.dcol{display:flex; flex-direction:column; gap:0; background:var(--grey-100); border-radius:12px; padding:14px;}
+.colhead{background:var(--pipo-blue); color:var(--pipo-white); border-radius:8px; padding:9px 12px; font-weight:700; font-size:13px; text-align:center; margin-bottom:10px;}
+.dbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:center; margin-bottom:0;}
+.dbox strong{display:block; font-weight:700; margin-bottom:2px;}
+.doutcome{width:100%; border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:left; border:1.5px solid transparent; margin-bottom:0;}
+.doutcome .dotitle{display:block; font-weight:700; font-size:12.5px; margin-bottom:2px;}
+.do-blue{background:var(--slate-100); border-color:var(--slate-600); color:var(--slate-900);}
+.do-peach{background:var(--pipo-peach); border-color:var(--pipo-sand); color:var(--sand-900);}
+.do-green{background:var(--pipo-success); border-color:#7fd9ac; color:var(--success-900);}
+.do-coral{background:var(--coral-100); border-color:var(--pipo-alert); color:var(--alert-900);}
+.do-gray{background:var(--grey-100); border-color:var(--grey-200); color:var(--grey-900);}
+.dnote{border:1.5px dashed var(--grey-200); border-radius:10px; padding:14px 16px; font-size:13px; line-height:1.6; margin-bottom:14px;}
+.dnote h4{margin:0 0 6px; font-size:13px; font-weight:700;}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:20px; font-size:11.5px; color:var(--grey-600);}
+.legend span{display:inline-flex; align-items:center; gap:6px;}
+.legend .sw{width:11px; height:11px; border-radius:3px; display:inline-block; flex:none;}
+
 </style>
 </head>
 <body>
@@ -69,40 +96,56 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <p class="subtitle">Fluxo de decisão completo — siga as setas; os quadrados ao lado de cada etapa trazem o detalhe (população, exame, frequência) puxado direto do protocolo.</p>
 <div class="meta"><div>Protocolo de origem<strong>Check-up · Adultos e Menores de 18</strong></div><div>Responsável (RT)<strong>Leticia Defilippo</strong></div><div>Elaboração<strong>André Casemiro, Leticia Rodrigues</strong></div><div>Status<strong>Rascunho — para validação</strong></div></div>
 <a class="back-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-checkup-automacao-proposta.html" style="margin-bottom:32px">Ver proposta de automação em avaliação &rarr;</a>
-<h2 class="section">Fluxo — teletriagem (sem exclusão por idade)</h2><div class="flow"><div class="step"><span class="num">1</span><span class="lbl">Coletar perfil do membro (idade, sexo, comorbidades, histórico, medicações) — sem exclusão por idade, inclui menores de 18 e maiores de 60</span></div><div class="arrow"></div><div class="step"><span class="num">2</span><span class="lbl">Identificar se há alterações em exames laboratoriais prévios</span></div><div class="arrow"></div><div class="decision"><div class="txt">Durante a teletriagem, foi detectado sintoma agudo? (lista objetiva ao lado &rarr;)</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row"><div class="branch"><div class="outcome o-atencao"><span class="otitle">Teleconsulta de enfermagem (15 min)</span>Febre · dor intensa/súbita torácica ou abdominal · sintomas gripais com sinal de alarme · cefaleia súbita e intensa, diferente do padrão habitual · quadro sugestivo de infecção · outros — início nos últimos 10 dias, sem diagnóstico prévio já esclarecido.</div></div><div class="branch"><div class="outcome o-encam">Segue para checar incongruência de expectativa (queixa não aguda vai pra Teleconsulta de enfermagem 30 min; sem sintoma/queixa, com ou sem comorbidade, segue pro check-up automático)</div></div></div>
-    <div class="arrow"></div><div class="decision"><div class="txt">Há incongruência entre expectativa do membro e o protocolo?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="88.75" y="26" width="222.5" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim (não aceita orientação)</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row"><div class="branch"><div class="outcome o-atencao"><span class="otitle">Apoio médico via ticket</span>Enfermeira explica; se o membro não aceitar, solicita apoio médico — não precisa de teleconsulta médica.</div></div><div class="branch"><div class="outcome o-encam">Segue para checar último check-up</div></div></div>
-    <div class="arrow"></div><div class="decision"><div class="txt">Último check-up há menos de 1 ano?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row"><div class="branch"><div class="outcome o-ok"><span class="otitle">Repetir só o alterado</span>Repetir apenas os resultados marcados como alterados. Se os exames anteriores são normais, não há necessidade de repetir.</div></div><div class="branch"><div class="outcome o-encam">Segue para coleta de perfil</div></div></div>
-    <div class="arrow"></div><div class="step"><span class="num">3</span><span class="lbl">Detalhar perfil do membro</span><div style="font-size:13px;color:#837c79;margin-top:6px">Idade · sexo biológico · comorbidades (lista ao lado) · tabagismo · bariátrica · vida sexual ativa</div></div><div class="arrow"></div><div class="step"><span class="num">4</span><span class="lbl">Solicitar Check-up Padrão (Check-up Pipo)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Ver cartão de referência ao lado — inclui confirmação de aceite de sorologias. Menores de 18 usam o check-up padrão pediátrico.</div></div><div class="arrow"></div><div class="step"><span class="num">5</span><span class="lbl">Aplicar rastreamentos por perfil (idade/sexo/histórico)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Ver tabela de referência — condições por população, exame e frequência próprios</div></div><div class="arrow"></div><div class="step"><span class="num">6</span><span class="lbl">Verificar exames por comorbidade (personalizado)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Veganos, bariátrica (bypass), atividade física, pessoas trans, testosterona (situações atípicas), perimenopausa (texto pendente). Dúvida da enfermagem sobre rastreio raro? Tirar com a equipe médica via Slack, sem precisar de teleconsulta médica.</div></div><div class="arrow"></div><div class="step"><span class="num">7</span><span class="lbl">Solicitar exames e rastreamentos</span><div style="font-size:13px;color:#837c79;margin-top:6px">Conforme perfil, faixa etária e comorbidades definidos acima</div></div><div class="arrow"></div><div class="outcome o-ok"><span class="otitle">8 · Registrar no prontuário (obrigatório) — FIM</span>PA aferida · exames preventivos · carteira vacinal · expectativas do membro · aceite/negativa de sorologias</div></div>
+<span class="status-vigente">PROTOCOLO VIGENTE — operação manual</span>
+<h2 class="section">Fluxo — teletriagem (sem exclusão por idade)</h2>
+<div class="dtop"><h4>Todos os membros, sem exclusão por idade (inclui &lt;18 e &gt;60)</h4></div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Exame feito há menos de 1 ano?</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-gray"><span class="dotitle">Não repete</span>Encerra — sem nova solicitação</div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Houve alteração em exame anterior?</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span>Reavalia só o item alterado</div>
+<div class="darrow"></div>
+<div class="doutcome do-green"><span class="dotitle">Check-up automático (via Memed)</span>Emissão automática da guia após a decisão médica sobre o item alterado</div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Há sintoma agudo?</strong><span style="font-size:11px;color:var(--grey-600);">Febre, dor torácica/abdominal intensa, sintomas gripais com sinal de alarme, cefaleia súbita e intensa, quadro sugestivo de infecção</span></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>15 min</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span></div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Há queixa não aguda?</strong><span style="font-size:11px;color:var(--grey-600);">Ex.: cansaço, menstruação irregular, dor leve e sem sinal de alarme, etc.</span></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span></div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="doutcome do-green"><span class="dotitle">Check-up automático (via Memed)</span>Comorbidade não bloqueia — só dado de perfil</div>
+
+<div class="ref-grid" style="margin-top:20px;">
+  <div class="dnote"><h4>Regra transversal</h4>Divergência de expectativa nunca gera teleconsulta — resolve-se por escrito, pelo profissional com o ticket no momento.</div>
+  <div class="dnote"><h4>Idade</h4>Menores de 18 e maiores de 60 seguem o mesmo funil acima, sem desvio automático.</div>
+</div>
+<div class="legend">
+  <span><i class="sw" style="background:var(--grey-100);border:1.5px solid var(--slate-600);"></i>Decisão (teletriagem)</span>
+  <span><i class="sw" style="background:var(--pipo-peach);"></i>Teleconsulta de enfermagem</span>
+  <span><i class="sw" style="background:var(--slate-100);"></i>Interconsulta médica</span>
+  <span><i class="sw" style="background:var(--pipo-success);"></i>Check-up automático (via Memed)</span>
+  <span><i class="sw" style="background:var(--grey-100);"></i>Fim sem ação</span>
+</div>
+
+<h2 class="section">Fluxo — passos seguintes (após a teletriagem)</h2>
+<div class="flow"><div class="step"><span class="num">1</span><span class="lbl">Detalhar perfil do membro</span><div style="font-size:13px;color:#837c79;margin-top:6px">Idade · sexo biológico · comorbidades (lista ao lado) · tabagismo · bariátrica · vida sexual ativa</div></div><div class="arrow"></div><div class="step"><span class="num">2</span><span class="lbl">Solicitar Check-up Padrão (Check-up Pipo)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Ver cartão de referência ao lado — inclui confirmação de aceite de sorologias. Menores de 18 usam o check-up padrão pediátrico.</div></div><div class="arrow"></div><div class="step"><span class="num">3</span><span class="lbl">Aplicar rastreamentos por perfil (idade/sexo/histórico)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Ver tabela de referência — condições por população, exame e frequência próprios</div></div><div class="arrow"></div><div class="step"><span class="num">4</span><span class="lbl">Verificar exames por comorbidade (personalizado)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Veganos, bariátrica (bypass), atividade física, pessoas trans, testosterona (situações atípicas), perimenopausa (texto pendente). Dúvida da enfermagem sobre rastreio raro? Tirar com a equipe médica via Slack, sem precisar de teleconsulta médica.</div></div><div class="arrow"></div><div class="step"><span class="num">5</span><span class="lbl">Solicitar exames e rastreamentos</span><div style="font-size:13px;color:#837c79;margin-top:6px">Conforme perfil, faixa etária e comorbidades definidos acima</div></div><div class="arrow"></div><div class="outcome o-ok"><span class="otitle">6 · Registrar no prontuário (obrigatório) — FIM</span>PA aferida · exames preventivos · carteira vacinal · expectativas do membro · aceite/negativa de sorologias</div></div>
 <h2 class="section">Referência — check-up padrão e sorologias</h2>
 <div class="ref-grid"><div class="ref-box"><h3>Check-up padrão (Check-up Pipo)</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">
 Hemograma completo · Colesterol total e frações (total, HDL, LDL, triglicerídeos) ·
