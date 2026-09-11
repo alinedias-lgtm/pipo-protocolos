@@ -59,6 +59,33 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .back-link{display:inline-block; margin-bottom:24px; font-size:13px; font-weight:700; color:var(--slate-900); text-decoration:none; border:1.5px solid var(--pipo-black); border-radius:20px; padding:6px 14px;}
 .back-link:hover{background:var(--grey-100);}
 
+/* Diagrama estilo "fluxo" (caixas + colunas + setas) */
+.status-vigente{display:inline-block; background:var(--pipo-black); color:var(--pipo-white); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.status-proposta{display:inline-block; background:var(--pending-bg); border:1px solid var(--pending-border); color:var(--pending-text); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.dtop{background:var(--pipo-black); color:var(--pipo-white); border-radius:10px; padding:16px 22px; margin:0 0 8px;}
+.dtop h4{margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; text-align:center;}
+.dtop ol, .dtop ul{margin:0; padding-left:18px; font-size:13px; line-height:1.7;}
+.darrow{width:2px; height:20px; background:var(--grey-600); margin:0 auto; position:relative;}
+.darrow::after{content:''; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid var(--grey-600);}
+.dpill{display:table; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:20px; padding:3px 16px; font-weight:700; font-size:11.5px; color:var(--slate-900); margin:4px auto;}
+.dcols{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; align-items:start; margin:8px 0 20px;}
+.dcol{display:flex; flex-direction:column; gap:0; background:var(--grey-100); border-radius:12px; padding:14px;}
+.colhead{background:var(--pipo-blue); color:var(--pipo-white); border-radius:8px; padding:9px 12px; font-weight:700; font-size:13px; text-align:center; margin-bottom:10px;}
+.dbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:center; margin-bottom:0;}
+.dbox strong{display:block; font-weight:700; margin-bottom:2px;}
+.doutcome{width:100%; border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:left; border:1.5px solid transparent; margin-bottom:0;}
+.doutcome .dotitle{display:block; font-weight:700; font-size:12.5px; margin-bottom:2px;}
+.do-blue{background:var(--slate-100); border-color:var(--slate-600); color:var(--slate-900);}
+.do-peach{background:var(--pipo-peach); border-color:var(--pipo-sand); color:var(--sand-900);}
+.do-green{background:var(--pipo-success); border-color:#7fd9ac; color:var(--success-900);}
+.do-coral{background:var(--coral-100); border-color:var(--pipo-alert); color:var(--alert-900);}
+.do-gray{background:var(--grey-100); border-color:var(--grey-200); color:var(--grey-900);}
+.dnote{border:1.5px dashed var(--grey-200); border-radius:10px; padding:14px 16px; font-size:13px; line-height:1.6; margin-bottom:14px;}
+.dnote h4{margin:0 0 6px; font-size:13px; font-weight:700;}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:20px; font-size:11.5px; color:var(--grey-600);}
+.legend span{display:inline-flex; align-items:center; gap:6px;}
+.legend .sw{width:11px; height:11px; border-radius:3px; display:inline-block; flex:none;}
+
 </style>
 </head>
 <body>
@@ -66,78 +93,89 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <a class="back-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/protocolo-encaminhamento-terapias.html">&larr; Voltar ao protocolo</a>
 <div class="brand-row"><svg class="sym" viewBox="0 0 24 24"><rect x="2" y="4" width="4" height="16" fill="black"/><rect x="10" y="4" width="4" height="16" fill="black"/><rect x="18" y="4" width="4" height="16" fill="black"/></svg><span>Pipo Saúde · Mapa mental</span></div>
 <h1>Encaminhamento de terapias</h1>
-<p class="subtitle">Fluxo de decisão por especialidade — versão final (11/09/2026). Perguntas comuns antes de tudo: primeira vez ou renovação; encaminhamento de profissional (anexar); laudos/exames prévios (anexar); motivo (texto livre).</p>
+<span class="status-vigente">PROTOCOLO VIGENTE — roteamento por especialidade</span>
+<p class="subtitle">Fluxo de decisão por especialidade — versão final (11/09/2026).</p>
 <div class="meta"><div>Protocolo de origem<strong>Encaminhamento de Terapias</strong></div><div>Responsável (RT)<strong>Leticia Defilippo</strong></div><div>Elaboração<strong>André Casemiro, Leticia Rodrigues</strong></div><div>Status<strong>Rascunho — para validação</strong></div></div>
 
-<h2 class="section">Nutrição</h2>
-<div class="flow"><div class="outcome o-ok"><span class="otitle">Sempre Interconsulta médica direta</span>Independente de ser primeira vez ou renovação.</div></div>
+<div class="dtop"><h4>Perguntas comuns a todas as especialidades</h4><ol>
+  <li>É a primeira solicitação dessa especialidade ou uma renovação de acompanhamento já existente?</li>
+  <li>Algum profissional de saúde solicitou essa avaliação/encaminhamento? Se sim: qual profissional e anexar o documento/print da solicitação, se houver.</li>
+  <li>Anexar laudos, exames ou encaminhamentos prévios relacionados (upload opcional, múltiplos arquivos).</li>
+  <li>Descrição do motivo (texto livre, campo obrigatório).</li>
+</ol></div>
+<div class="darrow"></div>
 
-<h2 class="section">Psicologia</h2>
-<div class="flow"><div class="decision"><div class="txt">Aplicar GAD-2/PHQ-2 (sempre) — pontuação ≥ 3 em qualquer um dos dois?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row"><div class="branch"><div class="outcome o-atencao"><span class="otitle">Teleconsulta de Enfermagem (30 min)</span></div></div><div class="branch"><div class="outcome o-ok"><span class="otitle">Interconsulta médica direta</span>&lt;3 em ambos</div></div></div>
+<div class="dcols">
+  <div class="dcol">
+    <div class="colhead">NUTRIÇÃO</div>
+    <div class="doutcome do-blue"><span class="dotitle">Sempre Interconsulta médica direta</span>Independente de ser primeira vez ou renovação</div>
+  </div>
+  <div class="dcol">
+    <div class="colhead">PSICOLOGIA</div>
+    <div class="dbox"><strong>Aplicar GAD-2 / PHQ-2</strong>Sempre — independente de primeira vez ou renovação</div>
+    <div class="darrow"></div>
+    <div class="dbox">Pontuação ≥ 3 em qualquer um dos dois?</div>
+    <div class="dpill">SIM</div>
+    <div class="darrow"></div>
+    <div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min</div>
+    <div class="dpill" style="margin-top:10px;">NÃO — &lt;3 em ambos</div>
+    <div class="darrow"></div>
+    <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span></div>
+  </div>
+  <div class="dcol">
+    <div class="colhead">FISIOTERAPIA/RPG E OUTROS</div>
+    <div class="dbox" style="border:none; background:transparent; font-size:11.5px; color:var(--grey-600);">TO, Fonoaudiologia, Acupuntura</div>
+    <div class="dbox">Tem laudo ou indicação de profissional anexado?</div>
+    <div class="dpill">SIM</div>
+    <div class="darrow"></div>
+    <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Vale na primeira solicitação ou em renovação, desde que haja documento</div>
+    <div class="dpill" style="margin-top:10px;">NÃO</div>
+    <div class="darrow"></div>
+    <div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min. Igual na primeira solicitação ou em renovação sem documento</div>
+  </div>
+  <div class="dcol">
+    <div class="colhead">NEUROPSICOLOGIA</div>
+    <div class="dbox" style="border:none; background:transparent; font-size:11.5px; color:var(--grey-600);">Sem acesso direto pelo membro</div>
+    <div class="dbox">Encaminhamento de neuropsicologia vencido? (&gt; 3 meses)</div>
+    <div class="dpill">SIM</div>
+    <div class="darrow"></div>
+    <div class="doutcome do-gray"><span class="dotitle">Volta pro prescritor original</span>Psiquiatra ou neurologista. Não revalidamos.</div>
+    <div class="dpill" style="margin-top:10px;">NÃO</div>
+    <div class="darrow"></div>
+    <div class="dbox">Tem laudo do psicólogo atualizado? (≤ 2 meses)</div>
+    <div class="dpill">SIM</div>
+    <div class="darrow"></div>
+    <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Médico avalia o laudo e decide</div>
+    <div class="dpill" style="margin-top:10px;">NÃO</div>
+    <div class="darrow"></div>
+    <div class="doutcome do-gray"><span class="dotitle">Encaminhamento para Psicologia</span>Segue o funil de Psicologia acima — só volta a pedir neuropsicologia depois de ter o laudo</div>
+  </div>
 </div>
 
-<h2 class="section">Fisioterapia / RPG e Outros (TO, Fono, Acupuntura)</h2>
-<div class="flow"><div class="decision"><div class="txt">Tem laudo ou indicação de profissional anexado?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row"><div class="branch"><div class="outcome o-ok"><span class="otitle">Interconsulta médica direta</span>Vale na primeira solicitação ou renovação, desde que haja documento</div></div><div class="branch"><div class="outcome o-atencao"><span class="otitle">Teleconsulta de Enfermagem (30 min)</span>Igual na primeira solicitação ou renovação sem documento</div></div></div>
-</div>
-
-<h2 class="section">Neuropsicologia (sem acesso direto pelo membro)</h2>
-<div class="flow"><div class="decision"><div class="txt">Encaminhamento de neuropsicologia vencido? (&gt; 3 meses)</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row"><div class="branch"><div class="outcome o-nao"><span class="otitle">Volta pro prescritor original</span>Psiquiatra ou neurologista. Não revalidamos.</div></div><div class="branch"><div class="outcome o-encam">Segue para checar laudo do psicólogo</div></div></div>
-    <div class="arrow"></div><div class="decision"><div class="txt">Tem laudo do psicólogo atualizado? (≤ 2 meses)</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row"><div class="branch"><div class="outcome o-ok"><span class="otitle">Interconsulta médica direta</span>Médico avalia o laudo e decide.</div></div><div class="branch"><div class="outcome o-atencao"><span class="otitle">Encaminhamento para Psicologia</span>Segue o funil de Psicologia acima — só volta a pedir neuropsicologia depois de ter o laudo.</div></div></div>
-</div>
-
-<h2 class="section">Referência — regras gerais</h2>
 <div class="ref-grid">
-<div class="ref-box"><h3>Unificação de tickets</h3><div style="font-size:13.5px;line-height:1.7">Unificar solicitações do mesmo CPF quando há mais de uma especialidade solicitada. Não se aplica a dependentes — tickets sempre separados por titular/dependente.</div></div>
-<div class="ref-box"><h3>Geração da guia (sempre pelo time médico)</h3><div style="font-size:13.5px;line-height:1.7">Nunca emitida pela enfermagem, em nenhuma via. Campos obrigatórios: especialidade, tipo de atendimento, motivo (questionário + relatório de enfermagem quando houver + CIAP/CID). Prazo: até 2 dias úteis.</div></div>
-<div class="ref-box alert"><h3>Regra transversal</h3><div style="font-size:13.5px;line-height:1.7">Divergência de expectativa nunca gera teleconsulta — resolve-se por escrito, pelo profissional com o ticket no momento.</div></div>
+  <div class="dnote"><h4>Unificação de tickets</h4>Unificar solicitações do mesmo CPF quando há mais de uma especialidade solicitada. Não se aplica a dependentes — tickets sempre separados por titular/dependente.</div>
+  <div class="dnote"><h4>Geração da guia (sempre pelo time médico)</h4>Nunca emitida pela enfermagem, em nenhuma via.<br>Campos obrigatórios: especialidade, tipo de atendimento, motivo (questionário + relatório de enfermagem, quando houver + código CIAP/CID).<br>Prazo: até 2 dias úteis (48h úteis) a partir da abertura da demanda.</div>
 </div>
-<h2 class="section">Referência — quem faz o quê</h2>
+
 <div class="ref-grid">
-<div class="ref-box"><h3>Enfermagem</h3><div style="font-size:13.5px;line-height:1.7">Conduz a Teleconsulta de 30 min quando o funil apontar pra ela; registra relatório + código CIAP no Nilo; gera a interconsulta pro time médico.</div></div>
-<div class="ref-box"><h3>Médica</h3><div style="font-size:13.5px;line-height:1.7">Monitora a fila no Zendesk (sem notificação individual); acessa o prontuário Nilo; emite a guia com motivo/CID em até 2 dias úteis; decide revalidação de Neuropsicologia após checagem automática de datas.</div></div>
-<div class="ref-box"><h3>Sistema Pipo Cuida</h3><div style="font-size:13.5px;line-height:1.7">Coleta respostas, aplica GAD-2/PHQ-2, identifica presença de documento prévio, roteia conforme os critérios acima, cria demanda no Nilo/Zendesk, valida datas de validade em Neuropsicologia.</div></div>
+  <div class="dnote"><h4>Enfermagem</h4>Conduz a Teleconsulta de 30 min quando o funil apontar pra ela; registra relatório + código CIAP no Nilo; gera a interconsulta pro time médico.</div>
+  <div class="dnote"><h4>Médica</h4>Monitora fila no Zendesk (sem notificação individual); acessa o prontuário Nilo; emite a guia com motivo/CID em até 2 dias úteis; decide revalidação de Neuropsicologia após checagem automática de datas.</div>
+  <div class="dnote"><h4>Sistema Pipo Cuida</h4>Coleta respostas, aplica GAD-2/PHQ-2, identifica presença de documento prévio, roteia conforme os critérios acima, cria demanda no Nilo/Zendesk, valida datas de validade em Neuropsicologia.</div>
 </div>
-<div class="footer">Mapa mental gerado a partir do protocolo escrito — versão final de 11/09/2026 (reunião de Alinhamento). Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
+
+<div class="ref-grid">
+  <div class="ref-box alert"><h3>Regra transversal</h3><ul><li>Divergência de expectativa nunca gera teleconsulta — resolve-se por escrito, pelo profissional com o ticket no momento.</li></ul></div>
+</div>
+
+<div class="legend">
+  <span><i class="sw" style="background:var(--slate-100);border:1.5px solid var(--slate-600);"></i>Decisão do funil</span>
+  <span><i class="sw" style="background:var(--pipo-peach);"></i>Teleconsulta de enfermagem</span>
+  <span><i class="sw" style="background:var(--slate-100);"></i>Interconsulta médica</span>
+  <span><i class="sw" style="background:var(--grey-100);"></i>Sai do fluxo de acesso direto</span>
+</div>
+
+<div class="footer">Mapa mental gerado a partir do protocolo escrito — versão final de 11/09/2026 (reunião de Alinhamento). Estilo visual espelha o modelo de fluxograma aprovado pela Dra Leticia Defilippo. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
+
 </div>
 </body>
 </html>
