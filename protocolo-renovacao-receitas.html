@@ -72,7 +72,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Fluxo digital</strong></div>
   <div>Status<strong>Rascunho — aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>09/09/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>11/09/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 
@@ -109,6 +109,19 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="druglist"><span>Acitretina</span><span>Adapaleno</span><span>Bexaroteno</span><span>Isotretinoína</span><span>Tretinoína</span></div>
 </details>
 
+<h2>Passo 0 — Identificação e verificação automática da receita</h2>
+<p>Ação do paciente: anexar foto da receita, ou selecionar medicamento do histórico já registrado na Pipo.</p>
+<div class="cards">
+  <div class="card blue"><h4>Sistema identifica com confiança</h4><ul>
+    <li>Extrai automaticamente: nome do medicamento, categoria (antibiótico / psiquiátrico / outro), data da receita, dose e posologia</li>
+    <li>Segue para a checagem de categoria, abaixo</li>
+  </ul></div>
+  <div class="card coral"><h4>Sem receita anexada, ou sistema não identifica com confiança</h4><ul>
+    <li>Foto ilegível, nome não reconhecido, ou data não identificada → encaminha para conferência/atendimento humano</li>
+    <li>Não segue com nenhuma pergunta automática</li>
+  </ul></div>
+</div>
+
 <h2>Categorias que nunca renovamos</h2>
 <p>Recusa direta, sem interconsulta nem teleconsulta.</p>
 <div class="cards">
@@ -130,16 +143,31 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="card coral"><h4>Antibióticos</h4><ul>
   <li>Nunca é recusa automática — o esquema precisa ser reavaliado, não só repetido; uso prolongado sem reavaliação contribui para resistência bacteriana</li>
   <li>Sempre Teleconsulta médica (15 min), para avaliar a real necessidade da renovação</li>
+  <li>Fim do roteiro — nenhuma pergunta adicional</li>
 </ul></div>
 
-<h2>Perguntas obrigatórias antes de qualquer renovação</h2>
-<p>Precisam ser respondidas e registradas em prontuário antes de qualquer decisão — conduzidas pela enfermagem na triagem inicial:</p>
-<ol>
-  <li>Há sintoma ou descompensação atual relacionada ao tratamento?</li>
-  <li>Quando foi a última consulta com o profissional que prescreveu o medicamento?</li>
-  <li>Qual a data da próxima consulta com esse profissional (ou com quem acompanha atualmente)?</li>
-  <li>Se não houver consulta futura agendada: o paciente ainda tem acompanhamento com algum profissional da rede para esse tratamento?</li>
-</ol>
+<h2>Categoria psiquiátrica — triagem de segurança</h2>
+<p>Se a categoria identificada no Passo 0 for psiquiátrico, antes de qualquer outra pergunta:</p>
+<div class="role"><p style="margin:0;"><strong>P1 — "Nos últimos dias, você teve pensamentos de se machucar ou de que não vale a pena viver?"</strong> (Sim / Não / Prefiro não responder)</p></div>
+<div class="cards">
+  <div class="card coral"><h4>Sim, ou Prefiro não responder</h4><ul><li>Encerra o roteiro imediatamente — aciona o protocolo de crise/saúde mental, notifica equipe humana com urgência. Não é tratado como renovação de receita.</li></ul></div>
+  <div class="card blue"><h4>Não</h4><ul><li>Segue para a verificação de prazo, abaixo</li></ul></div>
+</div>
+<p><em>Categoria "outro" (não antibiótico, não psiquiátrico): pula P1, segue direto para a verificação de prazo.</em></p>
+
+<h2>Verificação de prazo</h2>
+<p>Automática, sem perguntar ao paciente: data da receita ≤ 4 meses?</p>
+<div class="cards">
+  <div class="card blue"><h4>Sim (dentro do prazo)</h4><ul>
+    <li><strong>P2 —</strong> Você já tem uma próxima consulta agendada com esse profissional, ou com quem acompanha esse tratamento atualmente? (Sim/Não) — se Sim, pula P3.</li>
+    <li><strong>P3 —</strong> Você ainda tem acompanhamento ativo com algum profissional (da rede ou fora dela) para esse tratamento, mesmo sem consulta marcada? (Sim/Não)</li>
+    <li>Em qualquer resposta de P2/P3 → segue para Interconsulta médica. Se P2 e P3 forem "Não", sinaliza "sem retorno agendado e sem acompanhamento" e sugere rede credenciada — mas o caso segue para Interconsulta médica do mesmo jeito, não é recusa automática.</li>
+  </ul></div>
+  <div class="card coral"><h4>Não (vencida, &gt; 4 meses)</h4><ul>
+    <li>Enfermeiro da teletriagem conversa com o paciente</li>
+    <li>Segue para Interconsulta médica para reavaliação — não é negativa automática, o médico pode renovar ou negar</li>
+  </ul></div>
+</div>
 
 <h2>Exceção: renovação sem receita médica em mãos</h2>
 <p>Via interconsulta (sem tele ao vivo), com foto da cartela/embalagem, desde que:</p>
@@ -153,19 +181,24 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
   <li>Relato verbal de mudança de dose não substitui receita — nesse caso, o membro precisa de nova prescrição</li>
 </ul></div>
 
+<h2>Limite de renovações sequenciais</h2>
+<p>A partir da <strong>4ª renovação consecutiva</strong> do mesmo medicamento pela Pipo — ou seja, após 3 renovações seguidas sem uma consulta com especialista intercalada — a Pipo não renova mais. O paciente precisa retomar acompanhamento com o profissional que trata a condição.</p>
+<ul>
+  <li>Vale para: Interconsulta médica (dentro ou fora do prazo) e a exceção de renovação sem receita em mãos</li>
+  <li>Não vale para: Teleconsulta médica de antibiótico, ou de risco agudo de saúde mental — não são "renovações repetidas" no mesmo sentido, são atendimentos pontuais</li>
+  <li>O contador zera quando o paciente traz receita de consulta com especialista</li>
+</ul>
+<p><em>"Notamos que este medicamento já foi renovado [3] vezes seguidas por aqui, sem uma consulta com o profissional que acompanha esse tratamento. Para sua segurança, não vamos renovar dessa vez — é importante retomar esse acompanhamento antes de continuar. Posso te ajudar a encontrar um especialista na rede credenciada?"</em></p>
+
 <h2>Funil de decisão</h2>
 <p>Sequencial — só avalia o próximo critério se o anterior não decidiu o caso:</p>
 <ol>
   <li><strong>Categoria nunca renovada?</strong> → recusa direta, sem tele.</li>
   <li><strong>Antibiótico?</strong> → Teleconsulta médica (15 min).</li>
-  <li><strong>Sintoma ou descompensação atual?</strong> → Teleconsulta médica (30 min).</li>
-  <li><strong>Sem sintoma, e última receita ≤ 4 meses, mesma dose/posologia?</strong> → Interconsulta médica direta.</li>
-  <li><strong>Sem sintoma, mas fora do prazo/dose/prescritor acima:</strong>
-    <ul>
-      <li>Sem retorno agendado e sem acompanhamento na rede → direcionar para rede credenciada e renovar em caráter de exceção por 1 mês, avisando o paciente. Sem tele.</li>
-      <li>Com retorno agendado ou acompanhamento ativo, mas fora dos demais critérios (ex.: receita muito vencida, mudança de dose relatada) → Interconsulta médica para reavaliação, podendo escalar para Teleconsulta médica a critério do médico.</li>
-    </ul>
-  </li>
+  <li><strong>Risco agudo de saúde mental</strong> (categoria psiquiátrica + P1 positivo)? → sai deste protocolo, segue o protocolo próprio de saúde mental/crise. Não é tratado como renovação de receita.</li>
+  <li><strong>Última receita ≤ 4 meses, mesma dose/posologia?</strong> → Interconsulta médica.</li>
+  <li><strong>Fora do prazo/dose:</strong> receita vencida (&gt;4 meses) ou dose divergente → Enfermeiro da teletriagem conversa → Interconsulta médica para reavaliação — não é negativa automática, o médico pode renovar ou negar.</li>
+  <li><strong>A partir da 4ª renovação consecutiva sem consulta com especialista intercalada</strong> → a Pipo não renova mais (ver Limite de renovações sequenciais).</li>
 </ol>
 
 <h2>Válvula de segurança: receita amarela e azul</h2>
@@ -178,6 +211,9 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <h2>Renovação de pedido de exames</h2>
 <p>Virou um protocolo próprio, separado deste — ver <a href="https://leticiarodrigues-create.github.io/pipo-protocolos/protocolo-renovacao-exames.html">Renovação de Pedido de Exames</a>.</p>
 
+<h2>Regra transversal</h2>
+<div class="role"><p style="margin:0;">Divergência de expectativa nunca gera teleconsulta. Resolve-se por escrito, pelo profissional que está com o ticket no momento (enfermagem ou médica, conforme o caso) — evitando gerar expectativa adicional no membro.</p></div>
+
 <h2>Comunicação com o membro</h2>
 <p>Desde o primeiro contato, informar de forma clara que toda renovação está condicionada ao cumprimento dos critérios deste manual e que, se os requisitos não forem atendidos, a receita não será emitida.</p>
 
@@ -185,40 +221,43 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="role">
   <h4>Enfermagem</h4>
   <ul>
-    <li>Conduz a triagem inicial e registra em prontuário as 4 perguntas obrigatórias, antes de qualquer decisão</li>
-    <li>Aplica o funil de decisão até identificar o desfecho (recusa direta, interconsulta, ou encaminhamento para teleconsulta médica)</li>
-    <li>Sinaliza ao paciente, desde o início, quando a receita for amarela ou azul, e orienta Posto de Saúde ou consulta presencial</li>
-    <li>Informa sempre que não há garantia de renovação</li>
+    <li>Conduz a triagem inicial (perguntas obrigatórias, incluindo a triagem de risco agudo de saúde mental quando a categoria for psiquiátrica), registra em prontuário</li>
+    <li>Aplica o funil até identificar o desfecho</li>
+    <li>Nunca conduz teleconsulta sozinha</li>
   </ul>
 </div>
 <div class="role">
   <h4>Médico</h4>
   <ul>
-    <li>Conduz a Interconsulta e a Teleconsulta médica</li>
-    <li>Decide exceções: renovação sem receita em mãos, renovação por 1 mês em caráter de exceção, encaminhamento para o Pronto-Socorro</li>
+    <li>Conduz toda Interconsulta e toda Teleconsulta médica (15 ou 30 min)</li>
+    <li>Decide exceções e escalonamentos: renovação sem receita em mãos, reavaliação de receita vencida, limite de renovações sequenciais, encaminhamento para o Pronto-Socorro</li>
   </ul>
 </div>
 
 <h2>Fluxo automatizado <span style="font-weight:400; font-size:13px; color:#837c79;">(referência técnica)</span></h2>
-<div class="card blue" style="font-family:'SF Mono',Consolas,monospace; white-space:pre-wrap; font-size:12.5px; line-height:1.85;">entrada do pedido
-→ regra 1/2 (categoria nunca renovada)? → recusa automática [FIM]
-→ regra 3 (antibiótico)? → Teleconsulta médica 15 min [FIM automação, decisão humana]
-→ regra 4 (sintoma/descompensação)? → Teleconsulta médica [FIM automação, decisão humana]
-→ regra 5 (dentro do prazo/dose/prescritor)? → renovação automática [FIM]
-→ regra 6 (sem retorno/acompanhamento)? → direcionamento + exceção 1 mês automática [FIM]
-→ nenhuma regra bateu → teletriagem para entender</div>
+<div class="card blue" style="font-family:'SF Mono',Consolas,monospace; white-space:pre-wrap; font-size:12.5px; line-height:1.85;">entrada do pedido (foto da receita, ou seleção do histórico)
+→ Passo 0: sistema identifica medicamento/categoria/data/dose? Não com confiança → conferência humana [FIM automação]
+→ regra 1 (categoria nunca renovada)? → recusa automática [FIM]
+→ regra 2 (antibiótico)? → Teleconsulta médica 15 min [FIM automação, decisão humana]
+→ regra 3 (categoria psiquiátrica): P1 risco agudo de saúde mental? → sai do protocolo, aciona crise/saúde mental [FIM automação, urgência humana]
+→ regra 4 (receita ≤ 4 meses)? → P2/P3 registradas em prontuário → Interconsulta médica [FIM automação, decisão humana]
+→ regra 5 (vencida > 4 meses)? → enfermeiro conversa → Interconsulta médica para reavaliação [FIM automação, decisão humana]
+→ regra 6 (4ª renovação consecutiva sem especialista intercalado)? → não renova, mensagem-padrão [FIM]</div>
 
 <h2>Referência rápida</h2>
 <ul>
+  <li>Passo 0 automático: sem receita legível/identificável → atendimento humano direto.</li>
   <li>Só renovamos receita branca (simples e especial). Amarela, azul, branca C2 e LME → recusa direta.</li>
   <li>Manipulado e GLP-1 → recusa direta (GLP-1 só renova se prescrito por médico da Pipo).</li>
-  <li>Antibiótico → nunca recusa automática, sempre teleconsulta médica (15 min).</li>
-  <li>Sintoma ou descompensação atual → teleconsulta médica (30 min) direto, sem passar antes por enfermagem.</li>
-  <li>Sem sintoma e dentro do prazo (4 meses, mesma dose) → interconsulta médica direta, sem tele.</li>
+  <li>Antibiótico → nunca recusa automática, sempre teleconsulta médica (15 min), fim do roteiro.</li>
+  <li>Psiquiátrico com risco agudo (P1 positivo) → sai do protocolo, aciona crise/saúde mental.</li>
+  <li>Dentro do prazo (4 meses) → sempre Interconsulta médica (com ou sem acompanhamento — isso só muda se sinaliza "sem retorno").</li>
+  <li>Vencida → enfermeiro conversa, depois Interconsulta médica para reavaliação (não é negativa automática).</li>
+  <li>4ª renovação consecutiva sem especialista intercalado → não renova mais.</li>
 </ul>
 
 <div class="footer">
-<p><strong>Fonte de conteúdo clínico:</strong> Manual de Atendimento — Renovação de Receitas (versão atualizada), reformatado em 26/08/2026 para o padrão de protocolos da Pipo, com revisão geral em 27/08/2026 e funil de decisão reestruturado em reunião de Alinhamento de 09/09/2026 (renovação de exames virou protocolo próprio nessa mesma revisão).</p>
+<p><strong>Fonte de conteúdo clínico:</strong> Manual de Atendimento — Renovação de Receitas, reformatado em 26/08/2026, com revisão geral em 27/08/2026, funil reestruturado em 09/09/2026 (renovação de exames virou protocolo próprio), e versão final em 11/09/2026 — Passo 0 de identificação automática da receita, triagem de segurança para categoria psiquiátrica, e limite de renovações sequenciais.</p>
 <p><strong>Elaboração 2026:</strong> André Casemiro, Leticia Defilippo, Aline Henrique Dias, Leticia Rodrigues</p>
 <p><strong>Revisão 2026:</strong> Aline Henrique Dias, Karine Coltro, Leticia Defilippo</p>
 <p><strong>Aprovação final:</strong> Leticia Defilippo</p>
