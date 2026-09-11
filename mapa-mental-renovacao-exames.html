@@ -57,6 +57,33 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--grey-200); font-size:12px; font-style:italic; color:var(--grey-600);}
 .back-link{display:inline-block; margin-bottom:24px; font-size:13px; font-weight:700; color:var(--slate-900); text-decoration:none; border:1.5px solid var(--pipo-black); border-radius:20px; padding:6px 14px;}
 .back-link:hover{background:var(--grey-100);}
+
+/* Diagrama estilo "fluxo" (caixas + colunas + setas) */
+.status-vigente{display:inline-block; background:var(--pipo-black); color:var(--pipo-white); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.status-proposta{display:inline-block; background:var(--pending-bg); border:1px solid var(--pending-border); color:var(--pending-text); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.dtop{background:var(--pipo-black); color:var(--pipo-white); border-radius:10px; padding:16px 22px; margin:0 0 8px;}
+.dtop h4{margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; text-align:center;}
+.dtop ol, .dtop ul{margin:0; padding-left:18px; font-size:13px; line-height:1.7;}
+.darrow{width:2px; height:20px; background:var(--grey-600); margin:0 auto; position:relative;}
+.darrow::after{content:''; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid var(--grey-600);}
+.dpill{display:table; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:20px; padding:3px 16px; font-weight:700; font-size:11.5px; color:var(--slate-900); margin:4px auto;}
+.dcols{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; align-items:start; margin:8px 0 20px;}
+.dcol{display:flex; flex-direction:column; gap:0; background:var(--grey-100); border-radius:12px; padding:14px;}
+.colhead{background:var(--pipo-blue); color:var(--pipo-white); border-radius:8px; padding:9px 12px; font-weight:700; font-size:13px; text-align:center; margin-bottom:10px;}
+.dbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:center; margin-bottom:0;}
+.dbox strong{display:block; font-weight:700; margin-bottom:2px;}
+.doutcome{width:100%; border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:left; border:1.5px solid transparent; margin-bottom:0;}
+.doutcome .dotitle{display:block; font-weight:700; font-size:12.5px; margin-bottom:2px;}
+.do-blue{background:var(--slate-100); border-color:var(--slate-600); color:var(--slate-900);}
+.do-peach{background:var(--pipo-peach); border-color:var(--pipo-sand); color:var(--sand-900);}
+.do-green{background:var(--pipo-success); border-color:#7fd9ac; color:var(--success-900);}
+.do-coral{background:var(--coral-100); border-color:var(--pipo-alert); color:var(--alert-900);}
+.do-gray{background:var(--grey-100); border-color:var(--grey-200); color:var(--grey-900);}
+.dnote{border:1.5px dashed var(--grey-200); border-radius:10px; padding:14px 16px; font-size:13px; line-height:1.6; margin-bottom:14px;}
+.dnote h4{margin:0 0 6px; font-size:13px; font-weight:700;}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:20px; font-size:11.5px; color:var(--grey-600);}
+.legend span{display:inline-flex; align-items:center; gap:6px;}
+.legend .sw{width:11px; height:11px; border-radius:3px; display:inline-block; flex:none;}
 </style>
 </head>
 <body>
@@ -67,64 +94,62 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
   <span>Pipo Saúde · Mapa mental</span>
 </div>
 <h1>Renovação de pedido de exames</h1>
-<p class="subtitle">Fluxo de decisão sequencial — cada losango só é avaliado se o anterior não decidiu o caso. Origem do pedido (médico ou não médico) não muda o caminho.</p>
+<p class="subtitle">Protocolo próprio — critérios de encaminhamento. Origem do pedido (médico ou não médico) não muda o caminho.</p>
 <div class="meta">
   <div>Protocolo de origem<strong>Renovação de Pedido de Exames</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
   <div>Elaboração<strong>André Casemiro, Leticia Rodrigues</strong></div>
   <div>Status<strong>Rascunho — para validação</strong></div>
 </div>
-<a class="back-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-renovacao-receitas.html" style="margin-bottom:20px">Ver mapa mental de Renovação de Receitas (protocolo separado) &rarr;</a>
-<h2 class="section">Funil de decisão</h2>
-<div class="flow">
-<div class="step"><span class="num">1</span><span class="lbl">Entrada do pedido de renovação de exame</span></div>
-<div class="arrow"></div>
-<div class="decision"><div class="txt">1. Há sintoma novo relacionado ao exame solicitado?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-atencao"><span class="otitle">Teleconsulta de enfermagem (30 min)</span>Reavaliar se a necessidade do exame ainda existe antes de qualquer nova solicitação.</div></div>
-      <div class="branch"><div class="outcome o-encam">Segue para a próxima regra</div></div>
-    </div>
-    <div class="arrow"></div>
-<div class="decision"><div class="txt">2. É checkup/rotina, pedido anteriormente pela Pipo, dentro do prazo?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-ok"><span class="otitle">Interconsulta médica direta</span>Sem tele.</div></div>
-      <div class="branch"><div class="outcome o-encam">É exame específico — segue para a última regra</div></div>
-    </div>
-    <div class="arrow"></div>
-<div class="decision"><div class="txt">3. É específico e está vencido (mais de 3 meses desde o pedido anterior)?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-atencao"><span class="otitle">Teleconsulta de enfermagem (30 min)</span>Exame vencido, sem sintoma novo — precisa reavaliar antes de renovar.</div></div>
-      <div class="branch"><div class="outcome o-ok"><span class="otitle">Interconsulta médica direta</span>Específico, ainda dentro do prazo, sem sintoma novo. Sem tele.</div></div>
-    </div>
-    <div class="arrow"></div>
+<span class="status-vigente">PROTOCOLO VIGENTE — funil sequencial de decisão</span>
+<a class="back-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-renovacao-receitas.html" style="margin-bottom:20px; margin-left:10px;">Ver mapa mental de Renovação de Receitas (protocolo separado) &rarr;</a>
+
+<div class="ref-grid">
+  <div class="dnote"><h4>Checkup / rotina</h4>Ex.: hemograma, perfil lipídico, glicemia, TSH.</div>
+  <div class="dnote"><h4>Específico</h4>Sintoma-dirigido — ex.: exames de imagem pra queixa pontual, culturas.</div>
 </div>
+
+<h2 class="section">Funil de decisão</h2>
+<div class="dtop"><h4>Triagem inicial</h4>Enfermagem registra em prontuário: sintoma novo? data do último pedido? quem solicitou (profissional e se é acompanhamento ativo)?</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>1 · Há sintoma novo relacionado ao exame solicitado?</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min — reavalia se a necessidade ainda existe antes de qualquer nova solicitação</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span>Médico emite após a teleconsulta</div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>2 · É checkup/rotina, pedido anteriormente pela Pipo, dentro do prazo?</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span></div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>3 · É exame específico e está vencido? (&gt; 3 meses desde o pedido anterior)</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span>Médico emite após a teleconsulta</div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Exame específico, ainda dentro do prazo, sem sintoma novo</div>
+
+<div class="ref-grid" style="margin-top:20px;">
+  <div class="dnote"><h4>Origem do pedido não muda o roteamento</h4>Médico ou não-médico (nutricionista, dentista etc.) — nos dois casos, o médico da Pipo sempre avalia antes da emissão, seja pela via direta (Interconsulta) ou após a Teleconsulta de enfermagem. A origem fica registrada em prontuário como contexto, mas não entra no funil como critério de roteamento.</div>
+  <div class="dnote"><h4>Checagem final, sempre</h4>O pedido nunca é transcrito na íntegra sem a checagem médica — independente da via (Interconsulta direta ou depois da Teleconsulta de enfermagem), é o médico quem avalia e emite em todos os casos.</div>
+</div>
+<div class="ref-grid">
+  <div class="dnote"><h4>Enfermagem</h4>Registra as perguntas obrigatórias em prontuário; conduz a Teleconsulta de 30 min quando o funil apontar pra ela (sintoma novo ou exame específico vencido).</div>
+  <div class="dnote"><h4>Médico</h4>Avalia e emite em todos os casos — via Interconsulta direta (rotina dentro do prazo ou específico ainda válido) ou após a Teleconsulta de enfermagem.</div>
+</div>
+<div class="legend">
+  <span><i class="sw" style="background:var(--grey-100);border:1.5px solid var(--slate-600);"></i>Decisão do funil</span>
+  <span><i class="sw" style="background:var(--pipo-peach);"></i>Teleconsulta de enfermagem</span>
+  <span><i class="sw" style="background:var(--slate-100);"></i>Interconsulta médica</span>
+</div>
+
 <h2 class="section">Referência rápida</h2>
 <div class="ref-grid">
   <div class="ref-box alert"><h3>Sempre vai pra tele de enfermagem</h3><ul>
