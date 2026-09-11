@@ -68,115 +68,114 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Fluxo digital</strong></div>
   <div>Status<strong>Rascunho — aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>27/08/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>11/09/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 <a class="mindmap-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-encaminhamento-terapias.html">&#128279; Abrir mapa mental deste protocolo</a>
 
 <h2>Objetivo</h2>
-<p>Definir o fluxo de encaminhamento de terapias na plataforma Pipo Cuida, direcionando o membro para teleconsulta de enfermagem ou interconsulta médica de acordo com a presença de queixa, e padronizando quem emite a guia, em quanto tempo e com quais informações obrigatórias.</p>
+<p>Definir o fluxo de encaminhamento de terapias na plataforma Pipo Cuida, com critérios objetivos por especialidade, questionário estruturado (incluindo anexos de laudos/exames/encaminhamentos prévios), unificação de tickets quando há mais de uma especialidade solicitada, e regras claras de quem emite a guia, em quanto tempo e com quais informações obrigatórias.</p>
 
-<h2>Especialidades disponíveis</h2>
-<table>
-<tr><th>Especialidade</th><th>Observação</th></tr>
-<tr><td>Psicologia</td><td>Fluxo com duas vias: com queixa (teleconsulta de enfermagem) ou sem queixa (interconsulta médica direta).</td></tr>
-<tr><td>Nutrição</td><td>Fluxo com duas vias: com queixa (teleconsulta de enfermagem) ou sem queixa (interconsulta médica direta).</td></tr>
-<tr><td>Fisioterapia / RPG</td><td>Sempre encaminhado para teleconsulta de enfermagem, independentemente de queixa. RPG não é coberto pelo plano — entra no encaminhamento de Fisioterapia.</td></tr>
-<tr><td>Outros</td><td>Terapia Ocupacional (TO), Fonoaudiologia e Acupuntura seguem o mesmo fluxo da Fisioterapia — sempre teleconsulta de enfermagem.</td></tr>
-<tr><td>Neuropsicologia</td><td>Fluxo específico — ver seção "Neuropsicologia" mais abaixo neste mesmo protocolo. Não faz parte do fluxo padrão de Psicologia/Nutrição/Fisioterapia/Outros.</td></tr>
-</table>
-
-<h2>Critérios de triagem</h2>
-<div class="cards">
-  <div class="card coral"><h4>Psicologia e Nutrição — com queixa</h4><ul>
-    <li>Teleconsulta de Enfermagem (30 min)</li>
-    <li>Membro relata sintoma ou desconforto que motiva a busca</li>
-    <li>Objetivo: acolher, entender melhor o momento do membro e qualificar a demanda antes de gerar a interconsulta</li>
-  </ul></div>
-  <div class="card blue"><h4>Psicologia e Nutrição — sem queixa (ou muito leve)</h4><ul>
-    <li>Interconsulta Médica direta — vai direto para a fila das médicas, sem passar pela enfermagem</li>
-    <li>Ex.: membro só quer acompanhamento de manutenção, sem sintoma</li>
-  </ul></div>
-</div>
-<div class="cards">
-  <div class="card coral"><h4>Fisioterapia/RPG e Outros (TO, Fonoaudiologia, Acupuntura)</h4><ul>
-    <li>Sempre Teleconsulta de Enfermagem (30 min), com ou sem queixa relatada</li>
-    <li>Motivo: leque de motivos muito aberto (idade do paciente, tipo de queixa, contexto)</li>
-    <li>Marcar "sem queixa" nessas especialidades não pula a enfermagem — evita que o membro contorne a triagem dizendo não ter queixa para chegar direto na interconsulta</li>
-  </ul></div>
-</div>
-
-<h2>Etapas do processo</h2>
+<h2>Perguntas comuns a todas as especialidades</h2>
 <ol>
-  <li><strong>Acesso à plataforma Pipo Cuida</strong> — Membro acessa com seu CPF. Sistema valida autenticação e elegibilidade.</li>
-  <li><strong>Solicitação e questionário</strong> — Membro seleciona a especialidade e preenche o questionário padrão já existente na plataforma (inclui: se é novo encaminhamento ou renovação, se está com sintoma, motivo sugerido, descrição do motivo e intensidade).</li>
-  <li><strong>Análise da resposta</strong> — Sistema identifica a presença de queixa importante e direciona conforme os critérios acima. Não há tempo fixo de "análise automática" — a triagem acontece no momento do preenchimento.</li>
+  <li>É a primeira solicitação dessa especialidade ou uma renovação de acompanhamento já existente?</li>
+  <li>Algum profissional de saúde solicitou essa avaliação/encaminhamento? Se sim: qual profissional (especialidade) e anexar o documento/print da solicitação, se houver.</li>
+  <li>Anexar laudos, exames ou encaminhamentos prévios relacionados (upload opcional, múltiplos arquivos).</li>
+  <li>Descrição do motivo (texto livre, campo obrigatório).</li>
 </ol>
 
-<h3>4A. Via com queixa (Psicologia/Nutrição) e via padrão de Fisioterapia/RPG e Outros</h3>
+<h2>Funil por especialidade</h2>
+
+<h3>Nutrição</h3>
+<div class="card blue"><ul>
+  <li>Sempre Interconsulta médica direta, independente de ser primeira vez ou renovação</li>
+  <li><strong>Perguntas específicas:</strong> motivo principal (manutenção / emagrecimento / ganho de peso / condição clínica associada / gestação / outro); histórico de acompanhamento nutricional prévio</li>
+</ul></div>
+
+<h3>Psicologia</h3>
+<div class="cards">
+  <div class="card coral"><h4>Pontuação ≥ 3 em qualquer um dos dois (GAD-2/PHQ-2)</h4><ul><li>Teleconsulta de enfermagem (30 min)</li></ul></div>
+  <div class="card blue"><h4>Pontuação &lt; 3 em ambos</h4><ul><li>Interconsulta médica direta</li></ul></div>
+</div>
+<p>Aplicar GAD-2/PHQ-2 sempre, independente de ser primeira vez ou renovação. <strong>Perguntas específicas:</strong> acompanhamento psiquiátrico atual (sim/não); histórico de psicoterapia prévia e há quanto tempo.</p>
+
+<h3>Fisioterapia / RPG e Outros (TO, Fonoaudiologia, Acupuntura)</h3>
+<div class="cards">
+  <div class="card coral"><h4>Primeira solicitação, ou renovação sem documento prévio</h4><ul><li>Sempre Teleconsulta de enfermagem (30 min)</li></ul></div>
+  <div class="card blue"><h4>Renovação com laudo/indicação de profissional anexado</h4><ul><li>Interconsulta médica direta</li></ul></div>
+</div>
+<p><strong>Perguntas específicas:</strong></p>
 <ul>
-  <li>Membro agenda teleconsulta com profissional de enfermagem — 30 minutos</li>
-  <li>Profissional de enfermagem atende, acolhe, entende melhor o momento do membro</li>
-  <li>Registra o relatório no prontuário Nilo e coloca o código CIAP do atendimento</li>
-  <li>Gera a interconsulta para o time médico</li>
-  <li>Conduta seguinte: a médica acessa o prontuário Nilo, lê o relatório e o código CIAP da enfermagem, e finaliza o encaminhamento (emite a guia)</li>
+  <li><strong>Fisioterapia/RPG:</strong> região do corpo afetada; presença e intensidade de dor (0–10); início do quadro (agudo ≤6 semanas / crônico &gt;6 semanas); diagnóstico médico associado; para RPG, se o motivo é postural/preventivo ou ligado a queixa dolorosa (lembrete: RPG não é coberto pelo plano — entra como Fisioterapia)</li>
+  <li><strong>Acupuntura:</strong> motivo principal (dor crônica, enxaqueca/cefaleia, ansiedade, outro); diagnóstico médico associado; histórico prévio de acupuntura</li>
+  <li><strong>TO:</strong> motivo principal (reabilitação funcional, desenvolvimento infantil, pós-cirúrgico, outro); idade do paciente; diagnóstico associado</li>
+  <li><strong>Fonoaudiologia:</strong> motivo principal (fala/linguagem, deglutição, audição, voz); idade do paciente; diagnóstico associado</li>
 </ul>
 
-<h3>4B. Via sem queixa (só Psicologia/Nutrição)</h3>
-<ul>
-  <li>Sistema cria a demanda diretamente no prontuário Nilo (ação automática), sem passar pela enfermagem</li>
-  <li><strong>Importante para treinamento:</strong> a médica não recebe nenhuma notificação ou mensagem avisando do novo ticket — a distribuição é automática pelo Zendesk entre as médicas da fila, e cada uma precisa checar sua fila de tickets regularmente (junto com checkups e demais demandas)</li>
-  <li>Médica acessa o prontuário Nilo, avalia o questionário preenchido e desenvolve o encaminhamento</li>
-  <li>Ticket é encerrado automaticamente pelo Zendesk assim que o encaminhamento é emitido</li>
-</ul>
+<h2>Unificação de tickets</h2>
+<p>Unificar solicitações de um mesmo CPF quando há mais de uma especialidade solicitada. Não se aplica a dependentes — tickets sempre separados por titular/dependente.</p>
 
-<h3>5. Geração da guia (sempre pelo time médico)</h3>
-<p>A guia nunca é emitida pela enfermagem — sempre pela médica, em ambas as vias. Deve conter, obrigatoriamente:</p>
+<h2>Neuropsicologia</h2>
+<p>Sem acesso direto pelo membro — o pedido só é emitido pela Pipo quando existe indicação médica formalizada.</p>
+<div class="cards">
+  <div class="card blue"><h4>Com laudo do psicólogo atualizado (≤ 2 meses)</h4><ul><li>Interconsulta médica direta — o médico avalia o laudo e decide</li></ul></div>
+  <div class="card coral"><h4>Sem laudo do psicólogo</h4><ul><li>Encaminhamento para Psicologia — segue o funil de Psicologia acima. Só volta a pedir neuropsicologia depois de ter o laudo</li></ul></div>
+  <div class="card coral"><h4>Encaminhamento de neuropsicologia vencido (&gt; 3 meses)</h4><ul><li>Volta para o prescritor original (psiquiatra ou neurologista) — a Pipo não revalida</li></ul></div>
+</div>
+
+<h2>Geração da guia (sempre pelo time médico)</h2>
+<p>Nunca emitida pela enfermagem, em nenhuma via. Campos obrigatórios:</p>
 <ul>
   <li>Especialidade selecionada</li>
   <li>Tipo de atendimento (teleconsulta de enfermagem ou interconsulta direta)</li>
-  <li>Motivo do encaminhamento (campo obrigatório em todo encaminhamento) — baseado na resposta do questionário, no relatório de enfermagem (quando houver) e no código CIAP/CID</li>
+  <li>Motivo do encaminhamento — baseado no questionário, no relatório de enfermagem (quando houver), e no código CIAP/CID</li>
 </ul>
-<p><strong>Prazo de emissão:</strong> até 2 dias úteis (48 horas úteis) a partir da abertura da demanda — mesmo prazo usado no protocolo de Check-up, para manter consistência entre protocolos.</p>
+<p><strong>Prazo de emissão:</strong> até 2 dias úteis (48 horas úteis) a partir da abertura da demanda.</p>
 
-<h2>Neuropsicologia</h2>
-<p>Neuropsicologia tem fluxo próprio, distinto do padrão de Psicologia/Nutrição/Fisioterapia/Outros. A regra central é que o pedido de neuropsicologia só é emitido pela Pipo quando existe indicação médica formalizada — não é uma especialidade de acesso direto pelo membro.</p>
-<div class="card blue"><h4>Membro sem encaminhamento prévio</h4><ul>
-  <li>Enfermeiro acolhe e conversa com o membro</li>
-  <li>Faz interconsulta médica para <strong>iniciar acompanhamento com psicólogo</strong> (não é ainda um pedido de neuropsicologia)</li>
-  <li>Após o acompanhamento com o psicólogo, o membro passa pelo <strong>psiquiatra</strong></li>
-  <li>É o <strong>psiquiatra</strong> quem faz o pedido de neuropsicologia — nunca a Pipo diretamente sem essa passagem prévia</li>
-</ul></div>
-<div class="card coral"><h4>Membro com encaminhamento fora da validade (mais de 3 meses)</h4><ul>
-  <li>Volta para o médico prescritor original — psiquiatra ou neurologista</li>
-  <li>A Pipo não revalida encaminhamento vencido, porque o quadro pode ter mudado no período</li>
-</ul></div>
-<div class="card coral"><h4>Membro com encaminhamento dentro da validade (até 3 meses) + laudo da psicóloga</h4><ul>
-  <li>Pode ter o encaminhamento revalidado pela Pipo, desde que apresente <strong>relatório atualizado da psicóloga</strong> que acompanha o caso, emitido há no máximo 2 meses</li>
-  <li>Sem esse laudo atualizado, não revalidamos</li>
-</ul></div>
-<p><strong>Por que exigir o laudo da psicóloga:</strong> evita a "chuva de encaminhamento por achismo" — situações em que o membro chega pedindo neuropsicologia com base em autodiagnóstico (leituras, IA, redes sociais) sem qualquer avaliação profissional prévia. O laudo garante que há uma indicação clínica real, ainda que a hipótese diagnóstica final dependa do próprio exame neuropsicológico.</p>
+<h2>Regra transversal</h2>
+<div class="role"><p style="margin:0;">Divergência de expectativa nunca gera teleconsulta. Resolve-se por escrito, pelo profissional que está com o ticket no momento (enfermagem ou médica, conforme o caso) — evitando gerar expectativa adicional no membro.</p></div>
 
-<h2>Responsabilidades</h2>
-<table>
-<tr><th>Ator</th><th>Responsabilidade</th></tr>
-<tr><td>Membro</td><td>Acessar Pipo Cuida, selecionar especialidade, preencher questionário com honestidade.</td></tr>
-<tr><td>Sistema Pipo Cuida</td><td>Coletar respostas, identificar presença de queixa, rotear conforme especialidade, criar demanda no prontuário Nilo/Zendesk.</td></tr>
-<tr><td>Profissional de Enfermagem</td><td>Acolher, entender o momento do membro, registrar relatório + código CIAP no Nilo, gerar interconsulta para o time médico.</td></tr>
-<tr><td>Médica</td><td>Monitorar a fila de tickets no Zendesk (não recebe notificação individual), acessar o prontuário Nilo, emitir a guia com motivo/CID em até 2 dias úteis.</td></tr>
-<tr><td>Operações</td><td>Monitorar SLA de emissão, garantir encerramento automático do ticket após emissão, dar suporte a falhas de sistema.</td></tr>
-</table>
+<h2>Atuação por papel</h2>
+<div class="role">
+  <h4>Enfermagem</h4>
+  <ul>
+    <li>Conduz a Teleconsulta de 30 min quando o funil apontar pra ela</li>
+    <li>Registra relatório + código CIAP no Nilo</li>
+    <li>Gera a interconsulta para o time médico</li>
+  </ul>
+</div>
+<div class="role">
+  <h4>Médica</h4>
+  <ul>
+    <li>Monitora a fila no Zendesk (sem notificação individual)</li>
+    <li>Acessa o prontuário Nilo</li>
+    <li>Emite a guia com motivo/CID em até 2 dias úteis</li>
+    <li>Decide revalidação de Neuropsicologia após checagem automática de datas</li>
+  </ul>
+</div>
+<div class="role">
+  <h4>Sistema Pipo Cuida</h4>
+  <ul>
+    <li>Coleta respostas, aplica GAD-2/PHQ-2, identifica presença de documento prévio</li>
+    <li>Roteia conforme os critérios acima</li>
+    <li>Cria demanda no Nilo/Zendesk</li>
+    <li>Valida datas de validade em Neuropsicologia</li>
+  </ul>
+</div>
 
 <h2>Referência rápida</h2>
 <ul>
-  <li>Psicologia/Nutrição com queixa OU Fisioterapia/RPG e Outros (sempre) → Teleconsulta Enfermagem 30 min.</li>
-  <li>Psicologia/Nutrição sem queixa → Interconsulta Médica direta, sem enfermagem.</li>
-  <li>Guia sempre emitida pela médica, sempre com motivo/CID, em até 2 dias úteis.</li>
-  <li>Ticket encerra sozinho após emissão.</li>
-  <li>Neuropsicologia: só com indicação médica formalizada — psiquiatra emite o pedido, nunca direto pelo membro. Revalidação exige laudo atualizado da psicóloga (máx. 2 meses).</li>
+  <li>Nutrição → sempre Interconsulta médica direta.</li>
+  <li>Psicologia → GAD-2/PHQ-2 ≥3 em qualquer um: Teleconsulta de enfermagem 30 min. &lt;3 em ambos: Interconsulta médica direta.</li>
+  <li>Fisioterapia/RPG/TO/Fono/Acupuntura → sem documento prévio: Teleconsulta de enfermagem 30 min. Com laudo/indicação anexado: Interconsulta médica direta.</li>
+  <li>Mais de uma especialidade no mesmo CPF → um ticket só (exceto dependentes).</li>
+  <li>Neuropsicologia → nunca acesso direto; laudo ≤2 meses revalida por interconsulta; sem laudo volta pra Psicologia; vencido (&gt;3 meses) volta pro prescritor original.</li>
+  <li>Guia sempre emitida pela médica, nunca pela enfermagem, em até 2 dias úteis.</li>
+  <li>Divergência de expectativa nunca gera teleconsulta — resolve-se por escrito.</li>
 </ul>
 
-<div class="footer"><p><strong>Fonte de conteúdo clínico:</strong> Reunião de Protocolos, 20/08/2026 (participantes: Aline Henrique Dias, André Casemiro, Leticia Defilippo, Leticia Rodrigues), com refinamentos de fluxo consolidados em 25/08/2026 e inclusão do fluxo de Neuropsicologia em 27/08/2026.</p><p><strong>Elaboração:</strong> André Casemiro, Leticia Defilippo, Aline Henrique Dias, Leticia Rodrigues</p><p><strong>Revisão:</strong> Aline Henrique Dias, Karine Coltro, Leticia Defilippo</p><p><strong>Aprovação final:</strong> Leticia Defilippo</p></div>
+<div class="footer"><p><strong>Fonte de conteúdo clínico:</strong> Reunião de Protocolos, 20/08/2026, com refinamentos consolidados em 25/08/2026, inclusão do fluxo de Neuropsicologia em 27/08/2026, e versão final (GAD-2/PHQ-2, unificação de tickets, roteamento por documento em Fisioterapia/RPG e Outros) em reunião de Alinhamento de 11/09/2026.</p><p><strong>Elaboração:</strong> André Casemiro, Leticia Defilippo, Aline Henrique Dias, Leticia Rodrigues</p><p><strong>Revisão:</strong> Aline Henrique Dias, Karine Coltro, Leticia Defilippo</p><p><strong>Aprovação final:</strong> Leticia Defilippo</p></div>
+
 </div>
 </body>
 </html>
