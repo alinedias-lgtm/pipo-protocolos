@@ -66,24 +66,43 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <a class="back-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-checkup.html">&larr; Voltar ao mapa mental atual do check-up</a>
 <div class="brand-row"><svg class="sym" viewBox="0 0 24 24"><rect x="2" y="4" width="4" height="16" fill="black"/><rect x="10" y="4" width="4" height="16" fill="black"/><rect x="18" y="4" width="4" height="16" fill="black"/></svg><span>Pipo Saúde · Mapa mental</span></div>
 <h1>Check-up · proposta de automação (em avaliação)</h1>
-<p class="subtitle">Versão 2 da proposta — revisada por Leticia Defilippo em reunião de Alinhamento (09/09/2026), incorporando os pontos trazidos pela Karine e pela liderança. Ainda não é o fluxo em uso — ver o fluxo atual no mapa mental oficial do protocolo de check-up.</p>
-<div class="meta"><div>Status<strong>Proposta — não aprovada</strong></div><div>Discutido por<strong>André Casemiro, Leticia Defilippo, Leticia Rodrigues</strong></div><div>Data da revisão<strong>09/09/2026</strong></div><div>Decisão final<strong>Pendente — aguardando avaliação da liderança</strong></div></div>
-<div class="role"><h4>O que mudou da v1 pra v2</h4><p style="margin:0;">Saiu a exclusão automática de menores de 18 e maiores de 60 anos para teleconsulta médica — esses grupos agora entram no mesmo funil de estratificação de risco dos demais adultos. O critério binário "tem comorbidade ou queixa?" virou uma estratificação de risco mais ampla, alimentada pelo questionário de check-up.</p></div>
-<h2 class="section">Fluxo proposto — automação do check-up</h2><div class="flow"><div class="step"><span class="num">1</span><span class="lbl">Entrada — membro preenche o formulário/questionário de check-up</span><div style="font-size:13px;color:#837c79;margin-top:6px">Dados de saúde, queixas, faixa etária — sem exclusão por idade</div></div><div class="arrow"></div><div class="step"><span class="num">2</span><span class="lbl">Estratificação de risco (automática)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Sistema analisa as respostas, classifica o paciente por risco e sugere o modelo a ser enviado</div></div><div class="arrow"></div><div class="decision"><div class="txt">Nível de risco?</div></div>
+<p class="subtitle">Versão 3 da proposta — revisada por Leticia Defilippo em reunião de Alinhamento (11/09/2026). Ainda não é o fluxo em uso — ver o fluxo atual no mapa mental oficial do protocolo de check-up.</p>
+<div class="meta"><div>Status<strong>Proposta — não aprovada</strong></div><div>Discutido por<strong>André Casemiro, Leticia Defilippo, Leticia Rodrigues</strong></div><div>Data da revisão<strong>11/09/2026</strong></div><div>Decisão final<strong>Pendente — aguardando avaliação da liderança</strong></div></div>
+<div class="role"><h4>O que muda em relação ao protocolo vigente</h4><p style="margin:0;">O critério clínico de risco é idêntico ao do fluxo manual (mesmo formulário, mesmas perguntas). O que muda é só quem executa a etapa final: (1) o caminho de baixo risco deixa de depender de humano para gerar e assinar a guia — isso passa a ser automático; (2) dentro do caminho de risco identificado, o sistema já sabe o motivo e encaminha direto para o desfecho certo, sem uma etapa de triagem humana extra no meio.</p></div>
+
+<h2 class="section">1. Entrada e estratificação</h2>
+<div class="flow"><div class="step"><span class="num">1</span><span class="lbl">Membro preenche formulário digital</span><div style="font-size:13px;color:#837c79;margin-top:6px">Perfil (idade, sexo, comorbidades, histórico, medicações); exame feito há menos de 1 ano; alteração em exame anterior; sintoma agudo; queixa não aguda</div></div><div class="arrow"></div><div class="step"><span class="num">2</span><span class="lbl">Estratificação de risco (automática)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Sistema aplica as mesmas regras já validadas no protocolo vigente — nenhum critério clínico novo, só leitura automática do que hoje é feito manualmente</div></div><div class="arrow"></div><div class="decision"><div class="txt">Nível de risco?</div></div>
     <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
       <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
       <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
       <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
       <rect x="141.25" y="26" width="117.5" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Baixo risco (saudável)</text>
+      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Baixo risco</text>
       <rect x="325.0" y="26" width="190.0" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Risco elevado / queixa relevante</text>
+      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Risco identificado</text>
     </svg>
     <div class="branch-row">
-      <div class="branch"><div class="outcome o-ok"><span class="otitle">Fluxo automático</span>Sistema define o pacote de exames padronizado (regra clínica pré-definida). Guia é gerada e assinada automaticamente com certificado ICP-Brasil. Guia + sugestão de rede credenciada são liberadas ao membro na plataforma.</div></div>
-      <div class="branch"><div class="outcome o-atencao"><span class="otitle">Foge do fluxo automático</span>Caso é encaminhado para avaliação humana (teletriagem). Médico define exames manualmente, com base em julgamento clínico. Guia é emitida e assinada da forma tradicional (não automatizada).</div></div>
+      <div class="branch"><div class="outcome o-ok"><span class="otitle">Baixo risco</span>Sem alteração recente, sem sintoma agudo, sem queixa — comorbidade da lista padrão não bloqueia.</div></div>
+      <div class="branch"><div class="outcome o-atencao"><span class="otitle">Risco identificado</span>Alteração em exame recente, sintoma agudo, ou queixa não aguda. O sistema já sabe qual desses motivos disparou e roteia direto — sem triagem humana intermediária.</div></div>
     </div>
-    <div class="arrow"></div><div class="outcome o-ok"><span class="otitle">Saída · FIM</span>Membro recebe a guia (automática ou manual) e segue para realização dos exames / agendamento na rede sugerida.</div></div>
+</div>
+
+<h2 class="section">2A. Caminho — Baixo risco (100% automático)</h2>
+<div class="flow"><div class="step"><span class="num">1</span><span class="lbl">Sistema define o pacote de exames</span><div style="font-size:13px;color:#837c79;margin-top:6px">Regra clínica pré-definida + acréscimos automáticos por perfil (vegano, pessoa trans, pós-bariátrica, faixa etária/sexo elegível para rastreio, hipertensão, diabetes)</div></div><div class="arrow"></div><div class="step"><span class="num">2</span><span class="lbl">Guia gerada e assinada automaticamente</span><div style="font-size:13px;color:#837c79;margin-top:6px">Via Memed, com certificado ICP-Brasil</div></div><div class="arrow"></div><div class="outcome o-ok"><span class="otitle">Guia + rede credenciada liberadas na plataforma — FIM</span></div></div>
+
+<h2 class="section">2B. Caminho — Risco identificado (3 vias, sem triagem intermediária)</h2>
+<div class="ref-grid">
+  <div class="ref-box alert"><h3>Alteração em exame recente</h3><div style="font-size:13.5px;line-height:1.7">Interconsulta médica direta — sem teleconsulta. Guia emitida da forma tradicional, não automatizada.</div></div>
+  <div class="ref-box alert"><h3>Sintoma agudo</h3><div style="font-size:13.5px;line-height:1.7">Sistema sugere ao membro passar por Teleconsulta de enfermagem (15 min) → Interconsulta médica → guia tradicional. Se o membro <strong>recusar</strong> a teleconsulta, o caso <strong>retorna como baixo risco</strong> e segue o fluxo automático (pacote padronizado + guia via Memed).</div></div>
+  <div class="ref-box alert"><h3>Queixa não aguda</h3><div style="font-size:13.5px;line-height:1.7">Teleconsulta de enfermagem (30 min, mesmo fluxo de atendimento de hoje) → Interconsulta médica → guia tradicional, não automatizada.</div></div>
+</div>
+<div class="flow"><div class="arrow"></div><div class="outcome o-ok"><span class="otitle">Saída — Membro recebe a guia (automática ou manual) e segue para exames/agendamento — FIM</span></div></div>
+
+<h2 class="section">Ponto de atenção — não é só execução, é critério clínico</h2>
+<div class="ref-grid">
+<div class="ref-box alert"><h3>Recusa de teleconsulta em sintoma agudo</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Diferente das demais etapas desta proposta, isso é uma mudança de critério clínico, não só de execução — hoje sintoma agudo sempre passa por avaliação humana antes de qualquer desfecho. Vale confirmar se o pacote automático de baixo risco é considerado seguro mesmo diante de um sintoma agudo não avaliado por ninguém.</div></div>
+</div>
+
 <h2 class="section">Contexto da proposta</h2>
 <div class="ref-grid">
 <div class="ref-box"><h3>Por que essa mudança está sendo avaliada</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Meta de leadership (Gil): sair de ~7% para 80% dos membros elegíveis fazendo check-up, sem aumentar o tamanho do time de saúde. Fonte: reunião de Protocolos, 26/08/2026.</div></div>
@@ -91,10 +110,10 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 </div>
 <h2 class="section">Pendências abertas — não resolvidas, não inventadas aqui</h2>
 <div class="ref-grid">
-<div class="ref-box alert"><h3>Critério de estratificação de risco</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837"><span class='pending' style='margin-left:0'>pendente</span> A reunião de 09/09/2026 ainda não definiu o algoritmo/regra exata que classifica "baixo risco" — quais comorbidades, faixas e combinações contam, e como um histórico de exame alterado no passado entra nessa conta. A liderança questionou se isso está "simples demais" da forma como foi apresentado — precisa de refinamento antes de virar critério de produção.</div></div>
-<div class="ref-box alert"><h3>O que acontece depois da avaliação humana</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837"><span class='pending' style='margin-left:0'>pendente</span> Não ficou definido se toda queixa/comorbidade sempre gera demanda pro time médico, ou se uma parte pode ser resolvida sem médico entrar — ponto levantado pela liderança em 09/09/2026.</div></div>
+<div class="ref-box alert"><h3>Segurança do pacote automático quando o membro recusa tele em sintoma agudo</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837"><span class='pending' style='margin-left:0'>pendente</span> Ver "Ponto de atenção" acima — precisa confirmação clínica antes de aprovar essa via específica.</div></div>
 </div>
 <div class="footer">Mapa mental gerado a partir do protocolo escrito. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
+
 </div>
 </body>
 </html>

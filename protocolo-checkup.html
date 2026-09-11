@@ -68,7 +68,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Rastreamento</strong></div>
   <div>Status<strong>Rascunho — aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>09/09/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>11/09/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 <a class="mindmap-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-checkup.html">&#128279; Abrir mapa mental deste protocolo</a>
@@ -105,32 +105,52 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <p>Culturalmente associamos "check-up" a uma lista extensa de exames, mas um exame não deve ser solicitado só por ser comum ou acessível — precisa oferecer mais benefício que prejuízo. Ao mesmo tempo, a conduta deve ser individualizada: na primeira solicitação, o check-up pode ser mais flexível para criar vínculo, mas é essencial educar o paciente sobre a irrelevância clínica de solicitações sem significado.</p>
 
 <h2>Teletriagem — critérios de encaminhamento (revisado)</h2>
-<p>Etapa inicial, aplicada a todos os membros, <strong>sem exclusão por idade</strong> (inclui menores de 18 e maiores de 60 anos — ver nota abaixo).</p>
+<p>Etapa inicial, aplicada a todos os membros, <strong>sem exclusão por idade</strong> (inclui menores de 18 e maiores de 60 anos) — vale tanto para o fluxo manual quanto para o fluxo de automação.</p>
 <ul>
   <li>Coleta-se o perfil do membro (idade, sexo, comorbidades, histórico, uso de medicações)</li>
+  <li>Identifica-se se há alterações em exames laboratoriais prévios</li>
   <li>Identifica-se se há sintoma agudo (lista objetiva abaixo)</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Sem sintoma agudo e sem queixa</h4><ul><li>Segue direto para o check-up padrão</li></ul></div>
+  <div class="card blue"><h4>Sem sintoma agudo, sem queixa, com/sem comorbidades</h4><ul><li>Segue para o check-up automático</li></ul></div>
   <div class="card coral"><h4>Com queixa não aguda</h4><ul><li>Teleconsulta de enfermagem (30 minutos)</li></ul></div>
-  <div class="card coral"><h4>Com sintoma agudo</h4><ul><li>Teleconsulta de enfermagem (30 minutos)</li></ul></div>
+  <div class="card coral"><h4>Com sintoma agudo</h4><ul><li>Teleconsulta de enfermagem (15 minutos)</li></ul></div>
 </div>
-<div class="role"><h4>Proposta futura</h4><p style="margin:0;">Queixas não precisarão passar direto por teleconsulta de enfermagem, a não ser que o membro queira (oferecido como opção após preenchimento do checkup) — ver <a href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-checkup-automacao-proposta.html">proposta de automação em avaliação</a>.</p></div>
+<div class="role"><h4>Proposta futura</h4><p style="margin:0;">Queixas agudas não precisarão passar direto por teleconsulta de enfermagem, a não ser que o membro queira (oferecido como opção após o preenchimento do check-up) — ver <a href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-checkup-automacao-proposta.html">proposta de automação em avaliação</a>.</p></div>
 
 <h3>Sintoma agudo — lista objetiva</h3>
 <p>Considera-se sintoma agudo, para fins de encaminhamento, a presença de pelo menos um item abaixo, com início recente (últimos 10 dias) e sem diagnóstico prévio já esclarecido:</p>
 <ul>
   <li>Febre</li>
-  <li>Dor</li>
-  <li>Sintomas gripais</li>
-  <li>Cefaleia</li>
+  <li>Dor intensa, de início súbito, em região torácica ou abdominal</li>
+  <li>Sintomas gripais com sinais de alarme (febre alta persistente, falta de ar, piora progressiva)</li>
+  <li>Cefaleia súbita e intensa, diferente do padrão habitual do membro</li>
   <li>Quadro sugestivo de infecção que possa demandar antibiótico</li>
-  <li>Dor abdominal</li>
+  <li>Dor abdominal intensa</li>
+  <li>Outros</li>
 </ul>
 <p>Demais quadros — mesmo que recentes ou desconfortáveis para o membro — não entram nesta lista e seguem para Interconsulta.</p>
 
+<h3>Lista de comorbidades</h3>
+<p>Para fins de perfil (não bloqueia o check-up automático por si só):</p>
+<ul>
+  <li>Hipertensão Arterial</li>
+  <li>Diabetes Mellitus</li>
+  <li>Doença cardiovascular</li>
+  <li>Doença renal crônica</li>
+  <li>Doença hepática crônica</li>
+  <li>Uso de anticoagulante</li>
+  <li>Hipotireoidismo</li>
+  <li>Hipertireoidismo</li>
+  <li>Obesidade</li>
+  <li>Câncer</li>
+</ul>
+
 <h2>Remoção da restrição etária</h2>
-<p>Onde o protocolo previa encaminhamento automático de menores de 18 e maiores de 60 anos para teleconsulta médica, essa exceção sai. Esses grupos passam a seguir o mesmo funil de comorbidade/queixa dos demais adultos: teletriagem → check-up automático (sem queixa) ou Interconsulta (com queixa/comorbidade que justifique avaliação). Menores de 18 continuam usando o check-up padrão pediátrico já descrito — o que muda é só o encaminhamento, que deixa de ter desvio automático por faixa etária.</p>
+<p>Menores de 18 e maiores de 60 anos deixam de ter desvio automático para teleconsulta — em ambos os fluxos, manual e automação. Passam pelo mesmo funil de comorbidade/queixa dos demais adultos. Menores de 18 continuam usando o check-up padrão pediátrico já descrito.</p>
+
+<h2>Regra transversal <span style="font-weight:400; font-size:13px; color:#837c79;">(aplica a todos os protocolos: check-up, receita, exames, terapias)</span></h2>
+<div class="role"><p style="margin:0;">Divergência de expectativa nunca gera teleconsulta. Resolve-se por escrito, pelo profissional que está com o ticket no momento (enfermagem ou médica, conforme o caso) — evitando gerar expectativa adicional no membro.</p></div>
 
 <h2>Exemplos</h2>
 <div class="cards">
