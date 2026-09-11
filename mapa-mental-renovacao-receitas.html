@@ -57,6 +57,33 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--grey-200); font-size:12px; font-style:italic; color:var(--grey-600);}
 .back-link{display:inline-block; margin-bottom:24px; font-size:13px; font-weight:700; color:var(--slate-900); text-decoration:none; border:1.5px solid var(--pipo-black); border-radius:20px; padding:6px 14px;}
 .back-link:hover{background:var(--grey-100);}
+
+/* Diagrama estilo "fluxo" (caixas + colunas + setas) */
+.status-vigente{display:inline-block; background:var(--pipo-black); color:var(--pipo-white); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.status-proposta{display:inline-block; background:var(--pending-bg); border:1px solid var(--pending-border); color:var(--pending-text); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.dtop{background:var(--pipo-black); color:var(--pipo-white); border-radius:10px; padding:16px 22px; margin:0 0 8px;}
+.dtop h4{margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; text-align:center;}
+.dtop ol, .dtop ul{margin:0; padding-left:18px; font-size:13px; line-height:1.7;}
+.darrow{width:2px; height:20px; background:var(--grey-600); margin:0 auto; position:relative;}
+.darrow::after{content:''; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid var(--grey-600);}
+.dpill{display:table; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:20px; padding:3px 16px; font-weight:700; font-size:11.5px; color:var(--slate-900); margin:4px auto;}
+.dcols{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; align-items:start; margin:8px 0 20px;}
+.dcol{display:flex; flex-direction:column; gap:0; background:var(--grey-100); border-radius:12px; padding:14px;}
+.colhead{background:var(--pipo-blue); color:var(--pipo-white); border-radius:8px; padding:9px 12px; font-weight:700; font-size:13px; text-align:center; margin-bottom:10px;}
+.dbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:center; margin-bottom:0;}
+.dbox strong{display:block; font-weight:700; margin-bottom:2px;}
+.doutcome{width:100%; border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:left; border:1.5px solid transparent; margin-bottom:0;}
+.doutcome .dotitle{display:block; font-weight:700; font-size:12.5px; margin-bottom:2px;}
+.do-blue{background:var(--slate-100); border-color:var(--slate-600); color:var(--slate-900);}
+.do-peach{background:var(--pipo-peach); border-color:var(--pipo-sand); color:var(--sand-900);}
+.do-green{background:var(--pipo-success); border-color:#7fd9ac; color:var(--success-900);}
+.do-coral{background:var(--coral-100); border-color:var(--pipo-alert); color:var(--alert-900);}
+.do-gray{background:var(--grey-100); border-color:var(--grey-200); color:var(--grey-900);}
+.dnote{border:1.5px dashed var(--grey-200); border-radius:10px; padding:14px 16px; font-size:13px; line-height:1.6; margin-bottom:14px;}
+.dnote h4{margin:0 0 6px; font-size:13px; font-weight:700;}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:20px; font-size:11.5px; color:var(--grey-600);}
+.legend span{display:inline-flex; align-items:center; gap:6px;}
+.legend .sw{width:11px; height:11px; border-radius:3px; display:inline-block; flex:none;}
 </style>
 </head>
 <body>
@@ -67,121 +94,85 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
   <span>Pipo Saúde · Mapa mental</span>
 </div>
 <h1>Renovação de receitas</h1>
-<p class="subtitle">Fluxo de decisão sequencial — cada losango só é avaliado se o anterior não decidiu o caso. Em caso de dúvida, volte ao protocolo completo.</p>
+<p class="subtitle">Critérios de encaminhamento + roteiro de automação — versão final. Inclui Passo 0 automático (identificação da receita).</p>
 <div class="meta">
   <div>Protocolo de origem<strong>Renovação de Receitas</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
   <div>Elaboração<strong>André Casemiro, Leticia Rodrigues</strong></div>
   <div>Status<strong>Rascunho — para validação</strong></div>
 </div>
-<a class="back-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-renovacao-exames.html" style="margin-bottom:20px">Ver mapa mental de Renovação de Pedido de Exames (protocolo separado) &rarr;</a>
+<span class="status-vigente">INCLUI PASSO 0 AUTOMÁTICO (IDENTIFICAÇÃO DA RECEITA)</span>
+<a class="back-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-renovacao-exames.html" style="margin-bottom:20px; margin-left:10px;">Ver mapa mental de Renovação de Pedido de Exames (protocolo separado) &rarr;</a>
+
 <h2 class="section">Funil de decisão</h2>
-<div class="flow">
-<div class="step"><span class="num">1</span><span class="lbl">Passo 0 — Paciente anexa foto da receita, ou seleciona do histórico</span></div>
-<div class="arrow"></div>
-<div class="decision"><div class="txt">Sistema identifica medicamento, categoria e data com confiança?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-encam">Segue para checar a categoria</div></div>
-      <div class="branch"><div class="outcome o-nao"><span class="otitle">Conferência humana</span>Foto ilegível, nome não reconhecido, ou data não identificada. Sem receita anexada também cai aqui direto.</div></div>
-    </div>
-    <div class="arrow"></div>
-<div class="decision"><div class="txt">1. Categoria nunca renovada? (amarela, azul, branca C2, LME, manipulado, ou GLP-1 não prescrito pela Pipo)</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-nao"><span class="otitle">Recusa direta — sem tele</span>Orientar Posto de Saúde, consulta presencial, ou PS quando aplicável. Manipulado: retornar ao médico prescritor.</div></div>
-      <div class="branch"><div class="outcome o-encam">Segue para a próxima regra</div></div>
-    </div>
-    <div class="arrow"></div>
-<div class="decision"><div class="txt">2. É antibiótico?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-atencao"><span class="otitle">Teleconsulta médica (15 min)</span>Nunca é recusa automática. Fim do roteiro — nenhuma pergunta adicional.</div></div>
-      <div class="branch"><div class="outcome o-encam">Segue para a próxima regra</div></div>
-    </div>
-    <div class="arrow"></div>
-<div class="decision"><div class="txt">3. Categoria psiquiátrica? Se sim: P1 — "teve pensamentos de se machucar ou de que não vale a pena viver?"</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="106.25" y="26" width="187.5" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim / prefiro não responder</text>
-      <rect x="330.0" y="26" width="180.0" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não, ou não é psiquiátrico</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-nao"><span class="otitle">Sai do protocolo</span>Aciona o protocolo de crise/saúde mental — notifica equipe humana com urgência. Não é tratado como renovação de receita.</div></div>
-      <div class="branch"><div class="outcome o-encam">Segue para verificação de prazo</div></div>
-    </div>
-    <div class="arrow"></div>
-<div class="decision"><div class="txt">4. Data da receita ≤ 4 meses?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-ok"><span class="otitle">Interconsulta médica</span>P2 (consulta agendada?) e P3 (acompanhamento ativo?) registradas em prontuário — não mudam o desfecho. Se ambas "Não", sinaliza e sugere rede credenciada, mas segue igual pra Interconsulta.</div></div>
-      <div class="branch"><div class="outcome o-atencao"><span class="otitle">Enfermeiro conversa → Interconsulta médica</span>Vencida (&gt;4 meses). Não é negativa automática — o médico pode renovar ou negar.</div></div>
-    </div>
-    <div class="arrow"></div>
-<div class="decision"><div class="txt">5. Já é a 4ª renovação consecutiva sem especialista intercalado?</div></div>
-    <svg class="connector" viewBox="0 0 620 110" preserveAspectRatio="xMidYMin meet">
-      <defs><marker id="ah" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L9 5L1 9Z" fill="#54709c"/></marker></defs>
-      <path d="M310 4 C 310 40, 200 40, 140 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <path d="M310 4 C 310 40, 420 40, 480 92" fill="none" stroke="#7f9bc4" stroke-width="2.5" stroke-linecap="round" marker-end="url(#ah)"/>
-      <rect x="171.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="200" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Sim</text>
-      <rect x="391.0" y="26" width="58" height="26" rx="13" fill="#eef2fa" stroke="#c3cfe6" stroke-width="1"/>
-      <text x="420" y="43" font-family="Manrope" font-weight="700" font-size="14" letter-spacing="0.02em" fill="#202d42" text-anchor="middle">Não</text>
-    </svg>
-    <div class="branch-row">
-      <div class="branch"><div class="outcome o-nao"><span class="otitle">Não renova mais</span>Mensagem-padrão explicando o motivo + sugestão de rede credenciada. Só reseta se trouxer receita de consulta com especialista. Não vale para antibiótico nem risco agudo de saúde mental.</div></div>
-      <div class="branch"><div class="outcome o-ok">Segue a renovação normalmente</div></div>
-    </div>
-    <div class="arrow"></div>
-</div>
+<div class="dtop"><h4>Entrada</h4>Paciente anexa foto da receita, ou seleciona medicamento do histórico já registrado na Pipo</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Tem receita anexada?</strong></div>
+<div class="dpill">NÃO</div>
+<div class="darrow"></div>
+<div class="doutcome do-gray"><span class="dotitle">Atendimento humano</span>Para entender o caso</div>
+<div class="dpill" style="margin-top:14px;">SIM</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Sistema identifica medicamento, categoria e data com confiança?</strong><span style="font-size:11px;color:var(--grey-600);">Extrai automaticamente: nome, categoria (antibiótico/psiquiátrico/outro), data da receita, dose e posologia</span></div>
+<div class="dpill">NÃO</div>
+<div class="darrow"></div>
+<div class="doutcome do-gray"><span class="dotitle">Encaminha para conferência humana</span>Foto ilegível, nome não reconhecido, ou data não identificada</div>
+<div class="dpill" style="margin-top:14px;">SIM</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Categoria nunca renovada?</strong><span style="font-size:11px;color:var(--grey-600);">Amarela, azul, branca C2, LME, manipulado, ou GLP-1 sem ser prescrito pela Pipo</span></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-gray"><span class="dotitle">Recusa direta</span>Amarela/azul/C2/LME: orientar Posto de Saúde, consulta presencial, ou PS quando aplicável. Manipulado: orientar retorno ao médico que prescreveu a fórmula. GLP-1 sem ser prescrito pela Pipo: recusa; se foi a Pipo, segue o funil normal.</div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Antibiótico?</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-peach"><span class="dotitle">Teleconsulta médica</span>15 min. Fim do roteiro — nenhuma pergunta adicional</div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Categoria = psiquiátrico?</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-coral"><span class="dotitle">P1 · Nos últimos dias, você teve pensamentos de se machucar ou de que não vale a pena viver?</span>SIM / PREFIRO NÃO RESPONDER</div>
+<div class="darrow"></div>
+<div class="doutcome do-gray"><span class="dotitle">Sai do protocolo</span>Aciona protocolo de crise/saúde mental — notifica equipe humana com urgência</div>
+<div class="dpill" style="margin-top:14px;">NÃO (a essa pergunta), ou categoria = outro</div>
+<div class="darrow"></div>
+<div class="dbox" style="margin-top:6px;">Segue para verificação de prazo ↓</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Data da receita ≤ 4 meses?</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">P2. Já tem próxima consulta agendada? (Sim/Não)<br>P3. Tem acompanhamento ativo com algum profissional? (Sim/Não)</span>Respostas registradas em prontuário — não mudam o desfecho abaixo</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span>Se P2 e P3 = Não: sinalizar "sem retorno e sem acompanhamento" e sugerir rede credenciada</div>
+<div class="dpill" style="margin-top:14px;">NÃO — vencida</div>
+<div class="darrow"></div>
+<div class="doutcome do-gray"><span class="dotitle">Enfermeiro da teletriagem conversa</span></div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica para reavaliação</span>Não é negativa automática — o médico pode renovar ou negar</div>
+
 <h2 class="section">Exceção — renovação sem receita em mãos</h2>
 <div class="ref-grid">
-  <div class="ref-box success"><h3>Via Interconsulta, sem tele</h3><ul>
-    <li>Foto da cartela/embalagem</li>
-    <li>Última receita que a Pipo teve acesso ≤ 4 meses</li>
-    <li>Exclusivamente branca especial — não vale para amarela, azul, antibiótico, manipulado ou GLP-1</li>
-    <li>Dose e posologia exatamente iguais à última receita registrada</li>
-  </ul></div>
-  <div class="ref-box alert"><h3>Pedido divergente da cartela/registro</h3><ul>
-    <li>Renovar só o que está registrado. Relato verbal de mudança de dose não substitui receita.</li>
-  </ul></div>
+  <div class="dnote"><h4>Via Interconsulta (sem teleconsulta)</h4>Com foto da cartela/embalagem, desde que:<br>• Última receita à qual a Pipo teve acesso ≤ 4 meses<br>• Medicamento exclusivamente branca especial (não vale para amarela, azul, antibiótico, manipulado ou GLP-1)<br>• Dose e posologia exatamente iguais à última receita registrada</div>
+  <div class="dnote"><h4>Pedido divergente da cartela/registro</h4>Renovar apenas o que está registrado. Relato verbal de mudança de dose não substitui receita.</div>
 </div>
+
+<h2 class="section">Limite de renovações sequenciais</h2>
+<div class="ref-grid">
+  <div class="dnote" style="border-color:var(--pipo-alert);"><h4>A partir da 4ª renovação consecutiva</h4>Do mesmo medicamento pela Pipo — ou seja, após 3 renovações seguidas sem consulta com especialista intercalada — a Pipo não renova mais.<br>Vale para Interconsulta médica (dentro ou fora do prazo) e para a exceção sem receita em mãos.<br>Não vale para Teleconsulta de antibiótico ou de risco agudo de saúde mental.<br>Contador zera quando o paciente traz receita de consulta com especialista.</div>
+</div>
+<div class="dnote"><em>"Notamos que este medicamento já foi renovado [3] vezes seguidas por aqui, sem uma consulta com o profissional que acompanha esse tratamento. Para sua segurança, não vamos renovar dessa vez — é importante retomar esse acompanhamento antes de continuar. Posso te ajudar a encontrar um especialista na rede credenciada?"</em></div>
+
+<div class="legend">
+  <span><i class="sw" style="background:var(--grey-100);border:1.5px solid var(--slate-600);"></i>Decisão (automática ou funil)</span>
+  <span><i class="sw" style="background:var(--pipo-peach);"></i>Teleconsulta médica / conversa humana</span>
+  <span><i class="sw" style="background:var(--slate-100);"></i>Interconsulta médica</span>
+  <span><i class="sw" style="background:var(--coral-100);"></i>Recusa direta / conferência humana</span>
+  <span><i class="sw" style="background:var(--grey-100);"></i>Sai do protocolo</span>
+</div>
+
 <h2 class="section">Referência rápida</h2>
 <div class="ref-grid">
   <div class="ref-box alert"><h3>Recusa direta, sem tele</h3><ul>
