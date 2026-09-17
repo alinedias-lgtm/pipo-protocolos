@@ -94,8 +94,8 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <div class="brand-row"><svg class="sym" viewBox="0 0 24 24"><rect x="2" y="4" width="4" height="16" fill="black"/><rect x="10" y="4" width="4" height="16" fill="black"/><rect x="18" y="4" width="4" height="16" fill="black"/></svg><span>Pipo Saúde · Mapa mental</span></div>
 <h1>Check-up · proposta de automação (em avaliação)</h1>
 <span class="status-proposta">PROPOSTA DE AUTOMAÇÃO — em avaliação, ainda não implementada</span>
-<p class="subtitle">Versão 3 da proposta — revisada por Leticia Defilippo em reunião de Alinhamento (11/09/2026). Ainda não é o fluxo em uso — ver o fluxo atual no mapa mental oficial do protocolo de check-up.</p>
-<div class="meta"><div>Status<strong>Proposta — não aprovada</strong></div><div>Discutido por<strong>André Casemiro, Leticia Defilippo, Leticia Rodrigues</strong></div><div>Data da revisão<strong>11/09/2026</strong></div><div>Decisão final<strong>Pendente — aguardando avaliação da liderança</strong></div></div>
+<p class="subtitle">Versão 4 da proposta — revisada com Aline Henrique Dias em reunião de Protocolos (16/09/2026). Ainda não é o fluxo em uso — ver o fluxo atual no mapa mental oficial do protocolo de check-up.</p>
+<div class="meta"><div>Status<strong>Proposta — não aprovada</strong></div><div>Discutido por<strong>Aline Henrique Dias, Leticia Defilippo, Leticia Rodrigues</strong></div><div>Data da revisão<strong>16/09/2026</strong></div><div>Decisão final<strong>Pendente — aguardando avaliação da Karine</strong></div></div>
 
 <div class="dtop"><h4>Entrada</h4>Membro preenche formulário digital — mesmas perguntas da teletriagem de hoje</div>
 <div class="darrow"></div>
@@ -141,9 +141,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
   </div>
   <div class="dcol">
     <div class="colhead" style="background:var(--pipo-sand);color:var(--sand-900);">QUEIXA NÃO AGUDA</div>
-    <div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min — mesmo fluxo de atendimento de enfermagem de hoje</div>
-    <div class="darrow"></div>
-    <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span></div>
+    <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Mesmo fluxo vigente de hoje — sem passar por enfermagem</div>
     <div class="darrow"></div>
     <div class="doutcome do-gray"><span class="dotitle">Guia emitida da forma tradicional</span>Não automatizada</div>
   </div>
@@ -164,12 +162,12 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 
 <h2 class="section">Contexto da proposta</h2>
 <div class="ref-grid">
-<div class="ref-box"><h3>Por que essa mudança está sendo avaliada</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Meta de leadership (Gil): sair de ~7% para 80% dos membros elegíveis fazendo check-up, sem aumentar o tamanho do time de saúde. Fonte: reunião de Protocolos, 26/08/2026.</div></div>
-<div class="ref-box"><h3>Volume atual de referência</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Semana 1 de agosto/2026: 93 check-ups por ticket + 28 por teleconsulta. Semana 2: 131 + 27. Números citados na reunião como referência de escala, não como meta.</div></div>
+<div class="ref-box"><h3>Por que essa mudança está sendo avaliada</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Meta de leadership: sair de ~7% para 80% dos membros elegíveis fazendo check-up, sem aumentar o tamanho do time de saúde. Fonte: reunião de Protocolos, 26/08/2026.</div></div>
+<div class="ref-box"><h3>Volume atual de referência (Metabase, jul–ago/2026)</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">4 semanas de check-up por interconsulta × teleconsulta: 118×21, 115×24, 111×26, 152×38. Consistentemente acima de 100 interconsultas contra ~20–40 teleconsultas por semana — referência de escala, não meta.</div></div>
 </div>
 <h2 class="section">Pendências abertas — não resolvidas, não inventadas aqui</h2>
 <div class="ref-grid">
-<div class="ref-box alert"><h3>Segurança do pacote automático quando o membro recusa tele em sintoma agudo</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837"><span class='pending' style='margin-left:0'>pendente</span> Ver "Ponto de atenção" acima — precisa confirmação clínica antes de aprovar essa via específica.</div></div>
+<div class="ref-box alert"><h3>Definição objetiva de duração do sintoma (dependência de tech)</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837"><span class='pending' style='margin-left:0'>pendente</span> Ideia discutida: perguntar há quantos dias o sintoma está presente (ex.: corte em 14 dias) para classificar automaticamente agudo × não agudo, e usar a mesma pergunta para oferecer ao membro a opção de passar ou não por teleconsulta — generalizando essa escolha para queixa em geral (aguda e não aguda), não só sintoma agudo. Depende de mudança na plataforma Pipo Cuida; sem isso, o fluxo atual (queixa não aguda direto para interconsulta) se mantém.</div></div>
 </div>
 <div class="footer">Mapa mental gerado a partir do protocolo escrito. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
 
