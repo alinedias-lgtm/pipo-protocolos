@@ -68,7 +68,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Rastreamento</strong></div>
   <div>Status<strong>Rascunho — aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>16/09/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>17/09/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 <a class="mindmap-link" href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-checkup.html">&#128279; Abrir mapa mental deste protocolo</a>
@@ -109,27 +109,18 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <ul>
   <li>Coleta-se o perfil do membro (idade, sexo, comorbidades, histórico, uso de medicações)</li>
   <li>Identifica-se se há alterações em exames laboratoriais prévios</li>
-  <li>Identifica-se se há sintoma agudo (lista objetiva abaixo)</li>
+  <li>Identifica-se se há sintomas — <strong>por questões práticas, não fazemos mais distinção entre sintomas agudos e não agudos</strong>; passa a ser apenas "sintomas". A lista de sintomas é a mesma já usada no questionário de check-up (62 sintomas em CIAP-2) — não é reenumerada aqui.</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Sem sintoma agudo, sem queixa, com/sem comorbidades</h4><ul><li>Segue para o check-up automático</li></ul></div>
-  <div class="card blue"><h4>Com queixa não aguda (fora da lista de sintoma agudo)</h4><ul><li>Interconsulta médica direta — sem passar por enfermagem</li></ul></div>
-  <div class="card coral"><h4>Com sintoma agudo</h4><ul><li>Teleconsulta de enfermagem (15 minutos)</li></ul></div>
+  <div class="card blue"><h4>Sem sintoma nenhum</h4><ul><li>Segue para o check-up automático</li></ul></div>
+  <div class="card coral"><h4>Com qualquer sintoma</h4><ul><li>Consulta antes da emissão passa a ser <strong>opcional</strong> para o membro — ver os dois roteiros abaixo</li></ul></div>
 </div>
-<div class="role"><h4>Proposta futura</h4><p style="margin:0;">Queixas agudas não precisarão passar direto por teleconsulta de enfermagem, a não ser que o membro queira (oferecido como opção após o preenchimento do check-up) — ver <a href="https://leticiarodrigues-create.github.io/pipo-protocolos/mapa-mental-checkup-automacao-proposta.html">proposta de automação em avaliação</a>.</p></div>
+<p>Se o membro escolher passar por consulta, será sempre <strong>Teleconsulta de enfermagem (30 minutos)</strong>, independente do tempo de duração do sintoma → depois Interconsulta médica. Se preferir não conversar agora, segue direto para a emissão do check-up padrão da Pipo e volta a falar com o médico assim que tiver os resultados.</p>
 
-<h3>Sintoma agudo — lista objetiva</h3>
-<p>Considera-se sintoma agudo, para fins de encaminhamento, a presença de pelo menos um item abaixo, com início recente (últimos 10 dias) e sem diagnóstico prévio já esclarecido:</p>
-<ul>
-  <li>Febre</li>
-  <li>Dor intensa, de início súbito, em região torácica ou abdominal</li>
-  <li>Sintomas gripais com sinais de alarme (febre alta persistente, falta de ar, piora progressiva)</li>
-  <li>Cefaleia súbita e intensa, diferente do padrão habitual do membro</li>
-  <li>Quadro sugestivo de infecção que possa demandar antibiótico</li>
-  <li>Dor abdominal intensa</li>
-  <li>Outros</li>
-</ul>
-<p>Demais quadros — mesmo que recentes ou desconfortáveis para o membro — não entram nesta lista e seguem para Interconsulta.</p>
+<div class="cards">
+  <div class="card blue"><h4>1. Roteiro do enfermeiro (teletriagem por chamada/chat)</h4><p style="margin:0;font-size:13.5px;">"Entendi, [nome]. Já que você está sentindo isso, você prefere: (a) marcar uma teleconsulta agora para conversarmos sobre esses sintomas, ou (b) seguir direto para a emissão do seu check-up padrão da Pipo, fazer os exames, e aí conversar com o médico assim que os resultados saírem?"</p></div>
+  <div class="card blue"><h4>2. Texto de tela (fluxo self-service pela área do membro)</h4><p style="margin:0 0 6px;font-size:13.5px;"><em>Antes de seguir, uma pergunta rápida.</em> Você mencionou que está sentindo algum sintoma. Como prefere seguir?</p><p style="margin:0;font-size:13.5px;">○ Quero conversar sobre isso agora — agendar uma consulta com nosso time antes de continuar<br>○ Posso seguir direto para o check-up — vou fazer os exames padrão da Pipo e volto para falar com o médico sobre os sintomas quando tiver os resultados</p></div>
+</div>
 
 <h3>Lista de comorbidades</h3>
 <p>Para fins de perfil (não bloqueia o check-up automático por si só):</p>
@@ -156,7 +147,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="cards">
   <div class="card blue"><h4>Menstruação irregular + cansaço</h4><p><em>"Gostaria de fazer um check-up porque minha menstruação está muito irregular e tenho me sentido muito cansada."</em></p><p><strong>Conduta:</strong> há sintomatologia que demanda investigação, mas não é demanda aguda — segue para interconsulta direta.</p></div>
   <div class="card blue"><h4>Exame fora do protocolo, sem sintoma</h4><p><em>"Um tio do amigo do meu vizinho descobriu intolerância à lactose... queria fazer para saber se tenho também."</em></p><p><strong>Conduta:</strong> exame fora do protocolo e sem sintomatologia. A enfermeira orienta sobre a condição e a não necessidade do exame; se gerar conflito, solicita apoio médico.</p></div>
-  <div class="card blue"><h4>Rastreio de doença rara / dúvida da enfermeira</h4><p><em>"Minha irmã descobriu colangite biliar primária este ano... queria fazer exames de fígado para saber se tenho também."</em></p><p><strong>Conduta:</strong> demanda de rastreio de doença rara gera dúvida na enfermeira. Durante a teleconsulta, tira dúvida com a equipe médica via Slack ou agenda teleconsulta médica se não for possível no momento.</p></div>
+  <div class="card blue"><h4>Rastreio de doença rara / dúvida da enfermeira</h4><p><em>"Minha irmã descobriu colangite biliar primária este ano... queria fazer exames de fígado para saber se tenho também."</em></p><p><strong>Conduta:</strong> demanda de rastreio de doença rara gera dúvida na enfermeira. Independente da dúvida, vai sempre para interconsulta médica.</p></div>
   <div class="card blue"><h4>Mulher trans em terapia hormonal</h4><p><em>"Sou mulher trans, faço terapia hormonal há 6 anos e queria marcar meu check-up."</em></p><p><strong>Conduta:</strong> aplica o check-up padrão + exames adicionais para pessoas trans (estradiol, testosterona total, prolactina, coagulograma; potássio se em uso de espironolactona). Já pode indicar mamografia (já passou de 5 anos de hormonioterapia e tem mais de 40). Manter PSA conforme protocolo para homens cis. Registrar no prontuário o tempo de hormonioterapia.</p></div>
   <div class="card blue"><h4>Suspeita de testosterona baixa</h4><p><em>"Andei lendo umas coisas e acho que minha testosterona está baixa. Queria pedir para dosar."</em></p><p><strong>Conduta:</strong> aplica o roteiro de perguntas de triagem (sexuais, físicos, psicológicos, histórico — ver seção Testosterona). Sem nenhum sintoma além dos psicológicos: usar a mensagem-padrão, não solicitar o exame e orientar retorno se surgirem sintomas. Com pelo menos 1 sintoma não-psicológico ou dúvida da enfermagem: escalar para médico e solicitar FSH, LH, testosterona total e E2.</p></div>
 </div>
@@ -192,7 +183,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <p>Alguns exames podem ser incluídos quando houver comorbidade e/ou histórico pessoal/familiar que justifique o pedido, para descartar hipóteses ou detectar precocemente doenças com rastreio indicado.</p>
 
 <h3>Check-up para veganos</h3>
-<div class="card blue"><p><strong>Recomendação:</strong> Sociedade Brasileira de Alimentação e Nutrição (SBAN) — adaptação Pipo</p><p><strong>População:</strong> Pessoas com dieta vegana declarada, em qualquer faixa etária adulta (≥ 18 anos).</p><p><strong>Intervenção:</strong> 40316270 — Ferritina; 40321231 — Índice de saturação de transferrina. Estes exames são adicionados ao check-up padrão (que já inclui hemograma, vitamina B12, TSH e demais itens do Check-up Pipo).</p><p><strong>Frequência:</strong> Anual, junto com o check-up padrão.</p></div>
+<div class="card blue"><p><strong>Recomendação:</strong> Sociedade Brasileira de Alimentação e Nutrição (SBAN) — adaptação Pipo</p><p><strong>População:</strong> Pessoas com dieta vegana declarada, em qualquer faixa etária.</p><p><strong>Intervenção:</strong> 40316270 — Ferritina; 40321231 — Índice de saturação de transferrina. Estes exames são adicionados ao check-up padrão (que já inclui hemograma, vitamina B12, TSH e demais itens do Check-up Pipo).</p><p><strong>Frequência:</strong> Anual, junto com o check-up padrão.</p></div>
 
 <h3>Check-up por sexo e/ou faixa etária — visão geral</h3>
 <table>
@@ -225,28 +216,10 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <p><em>Classificações "Normal" e "Pré-hipertensão" atualizadas conforme Diretriz 2025 ("PA ótima" incorporada à normal; pré-hipertensão passou a 120–139×80–89, aferida em consultório). A diretriz também substitui "urgência hipertensiva" por "elevação importante da PA sem lesão de órgão-alvo".</em></p>
 </details>
 
-<details><summary>Dislipidemias</summary>
-<p><strong>Recomendação:</strong> Ministério da Saúde (adaptada) · <strong>População:</strong> &gt; 18 anos</p>
-<p><strong>Intervenção:</strong> 40302750 — Perfil lipídico/lipidograma (lípidios totais, colesterol, triglicerídeos)</p>
-<p><strong>Frequência:</strong> Anual (sem alteração ou próximo ao limite); 3 meses (com alteração)</p>
-</details>
-
 <details><summary>Diabetes — Pré-diabetes e tipo II</summary>
 <p><strong>Recomendação:</strong> USPSTF (adaptada) — considerar fatores de risco: história familiar, diabetes gestacional prévia, SOP, fatores dietéticos e de estilo de vida · <strong>População:</strong> &gt; 18 anos</p>
 <p><strong>Intervenção:</strong> 40302075 — HbA1c; 40302040 — Glicose; 40302032 — Glicemia após sobrecarga com dextrosol ou glicose (TTOG) — pedir apenas se dúvida diagnóstica (alto risco, divergência entre glicemia de jejum e HbA1c); na Pipo usamos o protocolo de 1 hora; 40101010 — ECG, com diagnóstico; 40311171 — RAC, urina isolada, com diagnóstico; 41301250 — Mapeamento de retina, anual, com diagnóstico</p>
 <p><strong>Frequência:</strong> Anual (sem alteração ou próximo ao limite); 3 meses (com alteração)</p>
-</details>
-
-<details><summary>Obesidade</summary>
-<p><strong>Recomendação:</strong> USPSTF (adaptada) · <strong>População:</strong> ≥ 18 anos · <strong>Intervenção:</strong> IMC = peso ÷ altura² · <strong>Frequência:</strong> Anual</p>
-<table><tr><th>Classificação</th><th>IMC</th></tr>
-<tr><td>Abaixo do peso</td><td>&lt; 18,5</td></tr><tr><td>Peso normal</td><td>18,5–24,9</td></tr><tr><td>Sobrepeso</td><td>25–29,9</td></tr>
-<tr><td>Obesidade grau I</td><td>30–34,9</td></tr><tr><td>Obesidade grau II</td><td>35–39,9</td></tr><tr><td>Obesidade grau III</td><td>≥ 40</td></tr></table>
-<p><em>Fonte: Organização Mundial da Saúde.</em></p>
-</details>
-
-<details><summary>Saúde mental</summary>
-<p><strong>Recomendação:</strong> USPSTF (adaptada) · <strong>População:</strong> ≥ 18 anos · <strong>Intervenção:</strong> Questionário de triagem — ver Protocolo de atendimento: Saúde Mental · <strong>Frequência:</strong> Anual</p>
 </details>
 
 <details><summary>Câncer colorretal</summary>
@@ -327,19 +300,15 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
   <li><strong>Histórico:</strong> uso de anabolizantes, diabetes/obesidade, quimio/radioterapia pélvica, trauma testicular, câncer de próstata/mama</li>
 </ul>
 <div class="cards">
-  <div class="card coral"><h4>Com pelo menos 1 sintoma (desde que não seja psicológico apenas) → Solicitar exames</h4><ul>
-    <li>FSH</li>
-    <li>LH</li>
-    <li>Testosterona total</li>
-    <li>E2 (estradiol)</li>
-    <li>SHBG — entra porque a testosterona total pode vir baixa apenas por redução do SHBG (comum na obesidade), sem que a testosterona livre esteja de fato baixa</li>
-  </ul><p style="margin:8px 0 0;"><em>DHT (di-hidrotestosterona): avaliar acréscimo caso a caso, quando houver relato de uso de anabolizantes. Não faz parte da investigação padrão de hipogonadismo.</em></p></div>
+  <div class="card coral"><h4>Com pelo menos 1 sintoma (desde que não seja psicológico apenas) → Solicitar exame</h4><ul>
+    <li>Testosterona total — primeiro rastreio</li>
+  </ul><p style="margin:8px 0 0;">Os demais exames (FSH, LH, E2/estradiol, SHBG) só entram se a testosterona total vier <strong>abaixo da referência</strong>. DHT (di-hidrotestosterona) foi retirado do painel — não faz parte da investigação de baixa testosterona.</p></div>
   <div class="card blue"><h4>Sem nenhum sintoma → Não solicitar exame</h4><p>Usar a mensagem-padrão abaixo. Só escalar para médico se o paciente insistir ou a enfermagem tiver dúvida.</p></div>
 </div>
 <p><em>"Entendo o seu interesse em checar a testosterona, é uma dúvida bem comum. Conversei com você sobre os sintomas que costumam indicar queda de testosterona e, pelo que você me contou, não identifiquei nenhum desses sinais no momento. As sociedades médicas brasileiras de Endocrinologia (SBEM), Urologia (SBU) e Medicina Sexual (ABEMSS) recomendam que a dosagem de testosterona seja feita quando há sintomas associados, e não como exame de rotina em quem não sente nada — isso porque o nível de testosterona varia naturalmente, e testar sem essa indicação pode gerar resultados difíceis de interpretar e preocupações desnecessárias, sem trazer benefício real. Isso não significa que sua queixa não seja válida: se em algum momento você notar qualquer um dos sintomas que conversamos, é só voltar a falar com a gente."</em></p>
 
-<h3>Investigação de perimenopausa <span class="pending">pendente</span></h3>
-<p>Texto explicativo sobre investigação de perimenopausa ainda não foi elaborado — aguardando material da Leticia Defilippo para servir de guia à equipe durante as consultas. Seção mantida aqui como lembrete de que falta preencher.</p>
+<h3>Investigação de perimenopausa</h3>
+<p><em>"Entendo sua vontade de fazer exames para confirmar a perimenopausa, mas explico por que isso não costuma ser indicado: nessa fase os hormônios oscilam muito, então um exame de sangue captura só 'uma foto' de um dia específico, não reflete o 'filme' das variações ao longo do mês. Por isso, sociedades como FEBRASGO e SBEM recomendam diagnóstico clínico: baseado na sua idade, no padrão do ciclo e nos sintomas relatados, não em números de hormônio no papel. A conduta (tratar ou não, e como) depende da intensidade do quadro e de contraindicações, não do valor exato do exame. Podemos conversar sobre seus sintomas para decidir o melhor caminho juntas."</em></p>
 
 <h2>Check-up · Menores de 18 anos</h2>
 <p>Para menores de 18 anos, o escopo da Pipo cobre o check-up padrão infantil/adolescente assintomático e a orientação sobre calendário vacinal. Triagens neonatais (pezinho, olhinho, orelhinha, coraçãozinho), consultas de puericultura, rastreio de acuidade visual e rastreio de obesidade infantil não são realizados pela Pipo — quando o membro trouxer essas demandas, orientar acompanhamento com pediatria da rede.</p>
