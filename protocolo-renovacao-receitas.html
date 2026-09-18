@@ -72,7 +72,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Fluxo digital</strong></div>
   <div>Status<strong>Rascunho — aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>11/09/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>18/09/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 
@@ -176,6 +176,12 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
   <li>O medicamento seja exclusivamente receita branca especial — não vale para amarela, azul, antibiótico, manipulado ou GLP-1</li>
   <li>A dose e posologia informadas sejam exatamente as mesmas da última receita registrada — qualquer alteração exige receita nova (sai da exceção, volta pro funil)</li>
 </ul>
+<div class="card coral"><h4>Membro sem receita registrada na Pipo <span class="pending">pendente</span></h4><ul>
+  <li><strong>Situação:</strong> o membro nunca passou pela Pipo, não tem receita em mãos e apresenta apenas foto da cartela ou da embalagem. Não é coberto pela exceção acima — o primeiro critério exige uma receita à qual a Pipo já teve acesso.</li>
+  <li><strong>Encaminhamento em definição.</strong> Duas condutas estão na mesa: (a) enfermeiro da teletriagem conversa com o membro para entender o caso e decidir se cabe teleconsulta; (b) segue direto para teleconsulta médica, sem passar por enfermagem.</li>
+  <li><strong>Prática atual:</strong> hoje quem recebe o ticket encaminha para consulta médica ou de enfermagem; a enfermagem avalia e roteia, e o caminho varia conforme a médica que recebe o caso — ora interconsulta, ora teleconsulta. Padronizar qual das duas vira regra é decisão de Leticia Defilippo.</li>
+  <li>Situação levantada por Aline Henrique Dias na reunião de Protocolos de 17/09/2026.</li>
+</ul></div>
 <div class="card coral"><h4>Pedido divergente da cartela ou do registro</h4><ul>
   <li>Se o que o membro solicita for diferente do que consta na cartela apresentada ou do que está registrado no prontuário da Pipo, renovar apenas o que está registrado</li>
   <li>Relato verbal de mudança de dose não substitui receita — nesse caso, o membro precisa de nova prescrição</li>
@@ -197,7 +203,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
   <li><strong>Antibiótico?</strong> → Teleconsulta médica (15 min).</li>
   <li><strong>Risco agudo de saúde mental</strong> (categoria psiquiátrica + P1 positivo)? → sai deste protocolo, segue o protocolo próprio de saúde mental/crise. Não é tratado como renovação de receita.</li>
   <li><strong>Última receita ≤ 4 meses, mesma dose/posologia?</strong> → Interconsulta médica.</li>
-  <li><strong>Fora do prazo/dose:</strong> receita vencida (&gt;4 meses) ou dose divergente → Enfermeiro da teletriagem conversa → Interconsulta médica para reavaliação — não é negativa automática, o médico pode renovar ou negar.</li>
+  <li><strong>Fora do prazo/dose:</strong> receita vencida (&gt;4 meses) ou dose divergente → Enfermeiro da teletriagem conversa → Interconsulta médica para reavaliação — não é negativa automática, o médico pode renovar ou negar.<br><strong>Sem receita registrada na Pipo</strong> <span class="pending">pendente</span> — membro sem histórico, só com foto da cartela ou embalagem: encaminhamento em definição, ver <em>Exceção: renovação sem receita médica em mãos</em>.</li>
   <li><strong>A partir da 4ª renovação consecutiva sem consulta com especialista intercalada</strong> → a Pipo não renova mais (ver Limite de renovações sequenciais).</li>
 </ol>
 
@@ -242,6 +248,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 → regra 3 (categoria psiquiátrica): P1 risco agudo de saúde mental? → sai do protocolo, aciona crise/saúde mental [FIM automação, urgência humana]
 → regra 4 (receita ≤ 4 meses)? → P2/P3 registradas em prontuário → Interconsulta médica [FIM automação, decisão humana]
 → regra 5 (vencida > 4 meses)? → enfermeiro conversa → Interconsulta médica para reavaliação [FIM automação, decisão humana]
+→ regra 5b (sem receita registrada na Pipo, só cartela/embalagem)? → encaminhamento PENDENTE de definição [FIM automação, decisão humana]
 → regra 6 (4ª renovação consecutiva sem especialista intercalado)? → não renova, mensagem-padrão [FIM]</div>
 
 <h2>Referência rápida</h2>
@@ -257,7 +264,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 </ul>
 
 <div class="footer">
-<p><strong>Fonte de conteúdo clínico:</strong> Manual de Atendimento — Renovação de Receitas, reformatado em 26/08/2026, com revisão geral em 27/08/2026, funil reestruturado em 09/09/2026 (renovação de exames virou protocolo próprio), e versão final em 11/09/2026 — Passo 0 de identificação automática da receita, triagem de segurança para categoria psiquiátrica, e limite de renovações sequenciais.</p>
+<p><strong>Fonte de conteúdo clínico:</strong> Manual de Atendimento — Renovação de Receitas, reformatado em 26/08/2026, com revisão geral em 27/08/2026, funil reestruturado em 09/09/2026 (renovação de exames virou protocolo próprio), e versão final em 11/09/2026 — Passo 0 de identificação automática da receita, triagem de segurança para categoria psiquiátrica, e limite de renovações sequenciais. Em 18/09/2026 foi acrescentada a situação do membro sem receita registrada na Pipo, levantada por Aline Henrique Dias na reunião de Protocolos de 17/09/2026 — o encaminhamento segue pendente de definição por Leticia Defilippo.</p>
 <p><strong>Elaboração 2026:</strong> André Casemiro, Leticia Defilippo, Aline Henrique Dias, Leticia Rodrigues</p>
 <p><strong>Revisão 2026:</strong> Aline Henrique Dias, Karine Coltro, Leticia Defilippo</p>
 <p><strong>Aprovação final:</strong> Leticia Defilippo</p>
