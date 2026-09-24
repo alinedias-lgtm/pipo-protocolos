@@ -159,9 +159,10 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <p>Automática, sem perguntar ao paciente: data da receita ≤ 4 meses?</p>
 <div class="cards">
   <div class="card blue"><h4>Sim (dentro do prazo)</h4><ul>
+    <li>Segue para Interconsulta médica — dentro do prazo, o caso sempre vai por aqui, qualquer que seja a resposta às perguntas abaixo.</li>
     <li><strong>P2 —</strong> Você já tem uma próxima consulta agendada com esse profissional, ou com quem acompanha esse tratamento atualmente? (Sim/Não) — se Sim, pula P3.</li>
     <li><strong>P3 —</strong> Você ainda tem acompanhamento ativo com algum profissional (da rede ou fora dela) para esse tratamento, mesmo sem consulta marcada? (Sim/Não)</li>
-    <li>Em qualquer resposta de P2/P3 → segue para Interconsulta médica. Se P2 e P3 forem "Não", sinaliza "sem retorno agendado e sem acompanhamento" e sugere rede credenciada — mas o caso segue para Interconsulta médica do mesmo jeito, não é recusa automática.</li>
+    <li>P2 e P3 são só contexto para o médico na Interconsulta, registrado em prontuário — não mudam o destino do caso. Se P2 e P3 forem "Não", sinaliza "sem retorno agendado e sem acompanhamento" e sugere rede credenciada.</li>
   </ul></div>
   <div class="card coral"><h4>Não (vencida, &gt; 4 meses)</h4><ul>
     <li>Enfermeiro da teletriagem conversa com o paciente</li>
