@@ -57,6 +57,37 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .footer{margin-top:48px; padding-top:16px; border-top:1px solid var(--grey-200); font-size:12px; font-style:italic; color:var(--grey-600);}
 .back-link{display:inline-block; margin-bottom:24px; font-size:13px; font-weight:700; color:var(--slate-900); text-decoration:none; border:1.5px solid var(--pipo-black); border-radius:20px; padding:6px 14px;}
 .back-link:hover{background:var(--grey-100);}
+
+/* Diagrama estilo "fluxo" (caixas + colunas + setas) */
+.status-vigente{display:inline-block; background:var(--pipo-black); color:var(--pipo-white); font-weight:700; font-size:12px; padding:5px 14px; border-radius:20px; margin:4px 0 20px;}
+.dtop{background:var(--pipo-black); color:var(--pipo-white); border-radius:10px; padding:16px 22px; margin:0 0 8px;}
+.dtop h4{margin:0 0 8px; font-size:12px; text-transform:uppercase; letter-spacing:.04em; text-align:center;}
+.dtop ol, .dtop ul{margin:0; padding-left:18px; font-size:13px; line-height:1.7;}
+.darrow{width:2px; height:20px; background:var(--grey-600); margin:0 auto; position:relative;}
+.darrow::after{content:''; position:absolute; bottom:-6px; left:50%; transform:translateX(-50%); width:0; height:0; border-left:5px solid transparent; border-right:5px solid transparent; border-top:6px solid var(--grey-600);}
+.dpill{display:table; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:20px; padding:3px 16px; font-weight:700; font-size:11.5px; color:var(--slate-900); margin:4px auto;}
+.dcols{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:16px; align-items:start; margin:8px 0 20px;}
+.dcol{display:flex; flex-direction:column; gap:0; background:var(--grey-100); border-radius:12px; padding:14px;}
+.colhead{background:var(--pipo-blue); color:var(--pipo-white); border-radius:8px; padding:9px 12px; font-weight:700; font-size:13px; text-align:center; margin-bottom:10px;}
+.dbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:center; margin-bottom:0;}
+.dbox strong{display:block; font-weight:700; margin-bottom:2px;}
+.doutcome{width:100%; border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.5; text-align:left; border:1.5px solid transparent; margin-bottom:0;}
+.doutcome .dotitle{display:block; font-weight:700; font-size:12.5px; margin-bottom:2px;}
+.do-blue{background:var(--slate-100); border-color:var(--slate-600); color:var(--slate-900);}
+.do-peach{background:var(--pipo-peach); border-color:var(--pipo-sand); color:var(--sand-900);}
+.do-green{background:var(--pipo-success); border-color:#7fd9ac; color:var(--success-900);}
+.do-coral{background:var(--coral-100); border-color:var(--pipo-alert); color:var(--alert-900);}
+.do-gray{background:var(--grey-100); border-color:var(--grey-200); color:var(--grey-900);}
+.dnote{border:1.5px dashed var(--grey-200); border-radius:10px; padding:14px 16px; font-size:13px; line-height:1.6; margin-bottom:14px;}
+.dnote h4{margin:0 0 6px; font-size:13px; font-weight:700;}
+.legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:20px; font-size:11.5px; color:var(--grey-600);}
+.legend span{display:inline-flex; align-items:center; gap:6px;}
+.legend .sw{width:11px; height:11px; border-radius:3px; display:inline-block; flex:none;}
+.dbadge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:9px;margin-left:6px;vertical-align:middle;}
+.dbadge-decide{background:var(--pipo-success);color:var(--success-900);}
+.dbadge-apoio{background:var(--pending-bg);color:var(--pending-text);}
+.dbadge-enf{background:var(--slate-100);color:var(--slate-600);}
+.dbadge-alert{background:var(--coral-100);color:var(--alert-900);}
 </style>
 </head>
 <body>
@@ -82,126 +113,170 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
   <div class="ref-box alert"><h3>Enfermagem</h3><ul><li>O roteiro exige julgamento clínico desde o início — enfermagem pergunta e decide</li></ul></div>
 </div>
 
-<h2 class="section">Sintomas — referência rápida</h2>
-<div class="ref-grid">
+<h2 class="section">Sintomas — fluxo por sintoma</h2>
 
-  <div class="ref-box"><h3>Asma / Bronquite <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h3><ul>
-    <li><strong>Eletivo:</strong> diagnóstico conhecido, sem falta de ar, sem crise → CE 30min</li>
-    <li><strong>Espontânea:</strong> em crise mas sem falta de ar, respondeu à bombinha → CM 15min</li>
-    <li><strong>PS:</strong> falta de ar · não fala frases completas · sem melhora com bombinha · histórico de UTI/intubação + crise · febre na crise</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Constipação <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h3><ul>
-    <li><strong>Eletivo:</strong> sem critério de encaixe, sem alarme → CE 30min</li>
-    <li><strong>Espontânea:</strong> 3+ dias sem evacuar e/ou dor até 7, eliminando gases → CE 15min</li>
-    <li><strong>Espontânea:</strong> oncológico em tratamento ativo, ou em uso de opioide, com constipação (mesmo sem alarme) → CM 15min</li>
-    <li><strong>PS:</strong> dor 8–10 sem evacuar · vômito persistente · sem gases/fezes + distensão · cirurgia abdominal recente + dor</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Corrimento Vaginal <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h3><ul>
-    <li><strong>Espontânea:</strong> não gestante, &lt;30 dias, sem sangue/marrom/febre → CE 15min</li>
-    <li><strong>Rede credenciada:</strong> ≥30 dias, sem red flags</li>
-    <li><strong>PS:</strong> gestante · febre/dor na barriga/sangue ou marrom · puerpério ou pós-procedimento com anormalidade</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Diarreia <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h3><ul>
-    <li><strong>Espontânea:</strong> até 7 dias sem PS/comorbidade → CE 15min · 8–30 dias → CM 30min</li>
-    <li><strong>Rede credenciada:</strong> Gastro, acima de 30 dias</li>
-    <li><strong>PS:</strong> febre &gt;38 · dor 8–10 · sinais de desidratação · &lt;1 ano sempre · &gt;65 anos com 5+ evacuações + vômito</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Cefaleia <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h3><ul>
-    <li><strong>Eletivo:</strong> recorrente, padrão igual ao habitual, ≤8 → CE 30min</li>
-    <li><strong>Rede credenciada:</strong> Neurologista, intermitente/&gt;30 dias, sem alarme</li>
-    <li><strong>PS:</strong> 8–10 · tontura/alteração visual · "pior da vida"/início súbito · déficit neurológico · rigidez de nuca + febre · trauma · pré-eclâmpsia · anticoagulante · dor nova (primeira vez) em pessoa &gt;50 anos</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Dor de Dente <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h3><ul>
-    <li><strong>CE 30min:</strong> dor 0–6, sem febre/inchaço/trismo/trauma/sangramento → analgesia + odonto eletivo</li>
-    <li><strong>PS Odontológico:</strong> ≥7 · febre · inchaço rosto/gengiva/pescoço · trismo/disfagia/dificuldade de respirar · sangramento que não cede · trauma</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Dor de Ouvido <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h3><ul>
-    <li><strong>CE 30min:</strong> dor 0–7, sem febre/secreção/mastoidite/trauma → analgesia + otorrino eletivo se piora</li>
-    <li><strong>PS Otorrino:</strong> febre · 8–10 · secreção/sangue · sinais de mastoidite · corpo estranho/trauma</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Sintomas Ortopédicos <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h3><ul>
-    <li><strong>Eletivo:</strong> crônica &lt;30 dias, ≤7, sem trauma → CE 30min</li>
-    <li><strong>Espontânea:</strong> ≤7 dias, sem trauma, ≤7 → CE 15min</li>
-    <li><strong>Rede credenciada:</strong> Ortopedista, &gt;30 dias, sem trauma, ≤7</li>
-    <li><strong>PS:</strong> ≥8 · impede locomoção · pós-trauma · com febre · fraqueza progressiva nas pernas · perda de controle urinário/evacuação (suspeita de Síndrome da Cauda Equina)</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Febre <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pending-bg);color:var(--pending-text);">Com apoio</span></h3><ul>
-    <li><strong>Espontânea:</strong> &lt;39°C, único sintoma, &lt;72h, sem imunossupressão → CE 15min</li>
-    <li><strong>PS:</strong> não cessa &gt;72h · ≥39°C sem melhora · oncológico/imunossuprimido com qualquer febre · &lt;1 ano</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Sintomas Urinários <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h3><ul>
-    <li><strong>Espontânea:</strong> ardência/dor, sem dor lombar/sangue, gestante sem febre → CM 15min</li>
-    <li><strong>Espontânea:</strong> dor lombar crônica/antiga (não é de início súbito), sem febre → CM 15min</li>
-    <li><strong>PS:</strong> febre + dor lombar · dor em flanco/lombar de início agudo e forte intensidade · sangue na urina · gestante com febre</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Lesões de Pele <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h3><ul>
-    <li>Imagem da lesão obrigatória antes de qualquer direcionamento; discutir caso com equipe médica</li>
-    <li><strong>PS:</strong> febre &gt;72h · dor ≥8 · sangramento que não cede com compressão · mucosa/bolhas + suspeita de reação medicamentosa</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Reação Adversa a Medicamentos <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h3><ul>
-    <li><strong>Espontânea:</strong> prescrita pela Pipo, sintomas leves, sem alarme → CM 15min</li>
-    <li><strong>CEATOX:</strong> ingestão acidental/dose acima, sem intencionalidade — 0800 722 6001 (SP: 0800 014 8110)</li>
-    <li><strong>Intencional:</strong> PS imediato + POP de Ideação Suicida em paralelo</li>
-    <li><strong>PS:</strong> febre · inchaço face/língua/garganta · falta de ar · tontura/desmaio · sangue/urina escura/queda de volume · confusão · convulsão</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Reação Alérgica <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h3><ul>
-    <li><strong>Espontânea (nova via):</strong> coceira/pele isolada, sem inchaço/falta de ar/tontura/histórico de anafilaxia → CM 15min</li>
-    <li><strong>PS:</strong> inchaço lábios/língua/garganta · falta de ar/chiado · tontura/desmaio · anafilaxia prévia com sintomas agora</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Sangramento Vaginal <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pending-bg);color:var(--pending-text);">Com apoio</span></h3><ul>
-    <li><strong>Eletiva:</strong> sangrando agora, não gestante, sem tontura/pós-menopausa/anticoagulante/procedimento/dor → CM 30min</li>
-    <li><strong>Rede credenciada:</strong> Gineco rotina — aumento relatado sem sangrar agora, ou pós-menopausa</li>
-    <li><strong>PS:</strong> gestante/suspeita → PS obstétrico · tontura/desmaio → PS gineco · anticoagulante + sangramento · pós-procedimento + sangramento</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Ansiosos e Depressivos <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h3><ul>
-    <li><strong>Eletivo:</strong> sintomas depressivos, sem agudo → CE 30min</li>
-    <li><strong>Espontânea:</strong> em crise, sem ideação ativa/plano → CE 30min. Se precisar de medicação → Teleconsulta médica 30min</li>
-  </ul></div>
-
-  <div class="ref-box alert"><h3>Ideação Suicida <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--coral-100);color:var(--alert-900);">Protocolo à parte</span></h3><ul>
-    <li>Não segue este guia — usar o POP de Ideação e Comportamento Suicida próprio</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Sintomas Gripais <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h3><ul>
-    <li><strong>Espontânea:</strong> sem/com febre &lt;72h, sem falta de ar, sem comorbidade, não gestante → CE 15min</li>
-    <li><strong>Espontânea (risco):</strong> gestante ou comorbidade cardio/respiratória, sintomas leves → CM 15min</li>
-    <li><strong>PS:</strong> febre &gt;72h sem cessar · falta de ar · gestante com febre/falta de ar · sintomas importantes + comorbidade de base</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Suspeita de Dengue <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h3><ul>
-    <li><strong>Espontânea:</strong> sem alarme, sem grupo de risco → CE 15min</li>
-    <li><strong>Espontânea (risco):</strong> gestante, &gt;65, comorbidade, dengue prévia, sem alarme → CM 15min</li>
-    <li><strong>PS:</strong> febre &gt;72h · tontura/fraqueza · desidratação · dor abdominal intensa · vômitos persistentes · sangramento/manchas roxas · falta de ar · confusão · urina reduzida</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Sintomas Oculares <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pending-bg);color:var(--pending-text);">Com apoio</span></h3><ul>
-    <li>Produto químico no olho → lavagem imediata 15–20min + PS oftalmológico em paralelo, sem esperar a triagem</li>
-    <li><strong>Espontânea:</strong> olho vermelho bilateral, sem dificuldade para enxergar → CE 15min</li>
-    <li><strong>Rede credenciada:</strong> Oftalmo rotina — dificuldade não aguda, sem outros sintomas</li>
-    <li><strong>PS:</strong> exposição química · trauma com dor/alteração visual · dificuldade aguda · dor ≥8 · flashes/moscas volantes/sombra · halos + náusea · sintomas agudos em lente de contato · pós-cirurgia + sintoma novo</li>
-  </ul></div>
-
-  <div class="ref-box"><h3>Vômitos <span style="display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:9px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h3><ul>
-    <li><strong>Espontânea:</strong> sem febre/dor intensa, tolerando líquidos, sem sangue/trauma/diabetes descompensado, não gestante → CE 15min</li>
-    <li><strong>PS:</strong> febre · dor ≥8 · não tolera líquidos · &lt;1 ano ou &gt;65 anos · sangue/bilioso · trauma craniano/cefaleia+rigidez · diabetes descompensado · gestante persistente/com dor</li>
-  </ul></div>
-
+<div class="dtop"><h4>Asma / Bronquite <span class="dbadge dbadge-decide">Guia decide</span></h4>Falta de ar agora? Bombinha, quantas vezes, melhorou? Fala frases completas? Febre? Histórico de internação/UTI?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CE 30min</span>Diagnóstico de asma, sem falta de ar, sem crise atual</div></div>
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Em crise, sem falta de ar, respondeu bem à bombinha, sem febre, sem histórico de internação/UTI</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Falta de ar · não fala frases completas · sem melhora com bombinha · histórico de internação/UTI/intubação + crise atual · febre associada à crise</div></div>
 </div>
-<div class="footer">Mapa mental gerado a partir do protocolo escrito de Guia de Direcionamento (Pipo Saúde, atualizado em 09/09/2026 — reunião de Alinhamento). CE = Teleconsulta de Enfermagem · CM = Consulta/Teleconsulta Médica. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
+
+<div class="dtop"><h4>Constipação <span class="dbadge dbadge-enf">Enfermagem</span></h4>Última evacuação? Dor 0–10? Vômito? Em tratamento p/ câncer? Elimina gases? Barriga estufada? Usa opioide? Cirurgia abdominal prévia?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CE 30min</span>Sem critério de encaixe, sem sinal de alarme</div></div>
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Sem evacuar há 3+ dias e/ou dor até 7, eliminando gases, sem distensão/sangue/vômito</div></div>
+  <div class="dcol"><div class="colhead">RISCO</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Oncológico em tratamento ativo, ou em uso de opioide, com constipação — mesmo sem alarme</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Dor 8–10 sem evacuar · vômito persistente · sem gases/fezes + distensão (suspeita obstrutiva) · cirurgia abdominal recente + dor</div></div>
+</div>
+
+<div class="dtop"><h4>Corrimento Vaginal <span class="dbadge dbadge-decide">Guia decide</span></h4>Gestante? Febre e/ou dor no pé da barriga? Sangue ou coloração marrom? Há quanto tempo? Parto/aborto/curetagem/DIU recente? Cor, odor, coceira?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Não gestante, &lt;30 dias, sem sangue/marrom/febre, sem contexto puerperal, sem suspeita de violência sexual</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Ginecologista</span>≥30 dias, sem os red flags ao lado</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">PS / PS obstétrico</span>Gestante (PS obstétrico) · febre/dor no pé da barriga/sangue ou marrom · puerpério ou pós-procedimento com anormalidade</div></div>
+</div>
+
+<div class="dtop"><h4>Diarreia <span class="dbadge dbadge-decide">Guia decide</span></h4>Febre? Dor 0–10? Sangue/muco nas fezes? Tontura/fraqueza? Boca seca/urina reduzida? Evacuações em 24h? Vômitos? Antibiótico recente? Gestante/diabético/imunossuprimido? Viagem ou comida em comum com outros doentes?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min · CM 30min</span>Até 7 dias, sem PS/comorbidade → CE 15min. 8 a 30 dias, sem PS → CM 30min</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Gastroenterologista</span>Acima de 30 dias</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Febre &gt;38°C · dor 8–10 · sinais de desidratação (tontura/fraqueza, boca seca, urina reduzida) · menores de 1 ano sempre · maiores de 65 com 5+ evacuações + vômito</div></div>
+</div>
+
+<div class="dtop"><h4>Cefaleia <span class="dbadge dbadge-enf">Enfermagem</span></h4>Dor 0–10? Febre? Tontura/alteração visual? Pior dor da vida? Fraqueza/dormência/fala/confusão/convulsão? Pancada na cabeça? Gestante/puerpério com sinais de pré-eclâmpsia? Igual às de sempre ou diferente? &gt;50 anos e é a primeira vez?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CE 30min</span>Recorrente já conhecida, padrão igual ao habitual, intensidade ≤ 8</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Neurologista</span>Dor intermitente e/ou &gt;30 dias, sem critério de encaixe ou PS</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Intensidade 8–10 · tontura/alteração visual · início súbito ("pior da vida") · déficit neurológico · rigidez de nuca + febre · trauma craniano · pré-eclâmpsia · anticoagulante · <strong>dor nova (1ª vez) em &gt;50 anos</strong></div></div>
+</div>
+
+<div class="dtop"><h4>Dor de Dente <span class="dbadge dbadge-decide">Guia decide</span></h4>Intensidade 0–10? Febre? Inchaço no rosto/gengiva/pescoço? Dificuldade pra abrir a boca, engolir ou respirar? Trauma ou procedimento recente?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
+  <div class="dcol"><div class="colhead">CE 30min</div><div class="doutcome do-blue"><span class="dotitle">Orientação + interconsulta</span>Dor 0–6, sem febre/inchaço/trismo/trauma/sangramento incontrolável → analgesia + agendamento odontológico eletivo</div></div>
+  <div class="dcol"><div class="colhead">PS ODONTOLÓGICO</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Intensidade ≥ 7 · febre · inchaço de rosto/gengiva/pescoço · dificuldade de abrir a boca, engolir ou respirar · sangramento pós-procedimento que não cede · trauma</div></div>
+</div>
+
+<div class="dtop"><h4>Dor de Ouvido <span class="dbadge dbadge-decide">Guia decide</span></h4>Dor 0–7? Febre? Secreção? Sinais de mastoidite? Corpo estranho ou trauma?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
+  <div class="dcol"><div class="colhead">CE 30min</div><div class="doutcome do-blue"><span class="dotitle">Analgesia + otorrino</span>Dor 0–7, sem febre/secreção/mastoidite/trauma → agendamento eletivo se piora</div></div>
+  <div class="dcol"><div class="colhead">PS OTORRINO</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Febre · intensidade 8–10 · secreção/sangue · sinais de mastoidite · corpo estranho/trauma</div></div>
+</div>
+
+<div class="dtop"><h4>Sintomas Ortopédicos <span class="dbadge dbadge-decide">Guia decide</span></h4>Febre? Dor 0–10? Local exato? Impede locomoção? Após trauma/queda? Problema de saúde prévio? Fraqueza progressiva nas pernas? Perda de controle urinário/evacuação?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CE 30min</span>Crônica &lt;30 dias, ≤7, sem trauma, sem alarme</div></div>
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>≤7 dias, sem trauma, sem demais sintomas, ≤7</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Ortopedista</span>&gt;30 dias, sem trauma, sem demais sintomas, ≤7</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Intensidade ≥8 · impede locomoção · pós-trauma · com febre · fraqueza progressiva nas pernas · <strong>perda de controle urinário/evacuação (suspeita de Síndrome da Cauda Equina)</strong></div></div>
+</div>
+
+<div class="dtop"><h4>Febre <span class="dbadge dbadge-apoio">Com apoio</span></h4>Dia/horário da primeira febre? Valores medidos? Outro sintoma associado (se sim, vai pro protocolo do sintoma específico)? Usou medicação, melhorou? Tratamento oncológico ativo ou imunossupressão?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>&lt;39°C, único sintoma, &lt;72h, sem imunossupressão/quimioterapia ativa</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Não cessa com medicação há mais de 72h · ≥39°C sem melhora com antitérmico · tratamento oncológico ativo/imunossuprimido, qualquer febre · crianças &lt;1 ano</div></div>
+</div>
+
+<div class="dtop"><h4>Sintomas Urinários <span class="dbadge dbadge-decide">Guia decide</span></h4>Febre? Dor na lombar — início súbito e forte, ou crônica/antiga? Sangue na urina? Gestante?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Ardência/dor sem dor lombar, sem sangue, gestante sem febre — ou dor lombar crônica/antiga, sem início súbito, sem febre</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Febre com dor lombar · <strong>dor em flanco/lombar de início agudo e forte intensidade</strong> · sangue na urina · gestante com febre</div></div>
+</div>
+
+<div class="dtop"><h4>Lesões de Pele <span class="dbadge dbadge-enf">Enfermagem</span></h4>Febre? Dor, intensidade 0–10? Sangra, para com compressão? Medicamento novo recente, lesão/bolha em boca/olhos/genitais? Diabetes, imunossupressão ou anticoagulante? — imagem da lesão é obrigatória antes de qualquer direcionamento</div>
+<div class="darrow"></div>
+<div class="dnote"><h4>Direcionamento</h4>Discutir o caso com a equipe médica antes de decidir (sintomático ou encaminhamento para a rede) — a avaliação por imagem tem limitação técnica, já explicar isso ao membro.</div>
+<div class="dcols" style="grid-template-columns:1fr;">
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Febre há mais de 72h · dor intensidade ≥8 · lesão sangrante que não cede com compressão · envolvimento de mucosa/bolhas + suspeita de reação medicamentosa</div></div>
+</div>
+
+<div class="dtop"><h4>Reação Adversa a Medicamentos <span class="dbadge dbadge-enf">Enfermagem</span></h4>Nome do medicamento e pra que é usado? O que está sentindo? Há quanto tempo usa? Aumento de dose recente? Foi prescrito na Pipo? Inchaço em rosto/lábios/língua/garganta? Tontura, desmaio ou falta de ar?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Prescrita pela Pipo, sintomas leves, sem sinal de alarme</div></div>
+  <div class="dcol"><div class="colhead">CEATOX</div><div class="doutcome do-gray"><span class="dotitle">0800 722 6001</span>Ingestão acidental/dose acima do prescrito, sem intencionalidade (SP: 0800 014 8110)</div></div>
+  <div class="dcol"><div class="colhead">INTENCIONAL</div><div class="doutcome do-coral"><span class="dotitle">PS imediato</span>+ POP de Ideação e Comportamento Suicida em paralelo</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Febre · inchaço de face/língua/garganta · falta de ar · tontura/desmaio · sangue, urina escura ou queda de volume urinário · confusão · convulsão</div></div>
+</div>
+
+<div class="dtop"><h4>Reação Alérgica <span class="dbadge dbadge-enf">Enfermagem</span></h4>Coceira/pele isolada? Inchaço? Falta de ar? Tontura? Histórico de anafilaxia?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA (nova via)</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Coceira/pele isolada, sem inchaço/falta de ar/tontura/histórico de anafilaxia</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Inchaço de lábios/língua/garganta · falta de ar/chiado · tontura/desmaio · anafilaxia prévia com sintomas agora</div></div>
+</div>
+
+<div class="dtop"><h4>Sangramento Vaginal <span class="dbadge dbadge-apoio">Com apoio</span></h4>Sangrando agora? Gestante? Tontura? Pós-menopausa? Anticoagulante? Procedimento recente? Dor?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ELETIVA</div><div class="doutcome do-blue"><span class="dotitle">CM 30min</span>Sangrando agora, não gestante, sem tontura/pós-menopausa/anticoagulante/procedimento/dor</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Ginecologista, rotina</span>Aumento relatado sem sangrar agora, ou pós-menopausa</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">PS / PS obstétrico / PS gineco</span>Gestante/suspeita → PS obstétrico · tontura/desmaio → PS gineco · anticoagulante + sangramento · pós-procedimento + sangramento</div></div>
+</div>
+
+<div class="dtop"><h4>Ansiosos e Depressivos <span class="dbadge dbadge-enf">Enfermagem</span></h4>Sintomas depressivos, agudo ou não? Em crise? Ideação ou plano ativo? Precisa de medicação?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CE 30min</span>Sintomas depressivos, sem quadro agudo</div></div>
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 30min · Tele médica 30min</span>Em crise, sem ideação ativa/plano → CE 30min. Se precisar de medicação → Teleconsulta médica 30min</div></div>
+</div>
+
+<div class="dtop"><h4>Ideação Suicida <span class="dbadge dbadge-alert">Protocolo à parte</span></h4></div>
+<div class="darrow"></div>
+<div class="dnote" style="border-color:var(--pipo-alert);"><h4>Não segue este guia</h4>Usar o POP de Ideação e Comportamento Suicida próprio.</div>
+
+<div class="dtop"><h4>Sintomas Gripais <span class="dbadge dbadge-enf">Enfermagem</span></h4>Febre, há quanto tempo? Falta de ar? Comorbidade cardio/respiratória? Gestante?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Sem/com febre &lt;72h, sem falta de ar, sem comorbidade, não gestante</div></div>
+  <div class="dcol"><div class="colhead">RISCO</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Gestante ou comorbidade cardio/respiratória, sintomas leves</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Febre &gt;72h sem cessar · falta de ar · gestante com febre/falta de ar · sintomas importantes + comorbidade de base</div></div>
+</div>
+
+<div class="dtop"><h4>Suspeita de Dengue <span class="dbadge dbadge-enf">Enfermagem</span></h4>Sinal de alarme? Grupo de risco (gestante, &gt;65, comorbidade, dengue prévia)?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Sem alarme, sem grupo de risco</div></div>
+  <div class="dcol"><div class="colhead">RISCO</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Gestante, &gt;65 anos, comorbidade, dengue prévia — sem sinal de alarme</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Febre &gt;72h · tontura/fraqueza · desidratação · dor abdominal intensa · vômitos persistentes · sangramento/manchas roxas · falta de ar · confusão · urina reduzida</div></div>
+</div>
+
+<div class="dtop"><h4>Sintomas Oculares <span class="dbadge dbadge-apoio">Com apoio</span></h4>Produto químico no olho? Olho vermelho bilateral? Dificuldade para enxergar? Trauma? Dor? Flashes/moscas volantes? Lente de contato? Pós-cirurgia?</div>
+<div class="darrow"></div>
+<div class="dnote" style="border-color:var(--pipo-alert);"><h4>Produto químico no olho</h4>Lavagem imediata 15–20min + PS oftalmológico em paralelo, sem esperar a triagem.</div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Olho vermelho bilateral, sem dificuldade para enxergar</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Oftalmologista, rotina</span>Dificuldade não aguda, sem outros sintomas</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">PS oftalmológico</span>Exposição química · trauma com dor/alteração visual · dificuldade aguda · dor ≥8 · flashes/moscas volantes/sombra · halos + náusea · sintomas agudos em lente de contato · pós-cirurgia + sintoma novo</div></div>
+</div>
+
+<div class="dtop"><h4>Vômitos <span class="dbadge dbadge-decide">Guia decide</span></h4>Febre? Dor intensa? Tolera líquidos? Sangue ou vômito bilioso? Trauma? Diabetes descompensado? Gestante?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Sem febre/dor intensa, tolerando líquidos, sem sangue/trauma/diabetes descompensado, não gestante</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Febre · dor ≥8 · não tolera líquidos · &lt;1 ano ou &gt;65 anos · sangue/bilioso · trauma craniano/cefaleia+rigidez de nuca · diabetes descompensado · gestante com vômito persistente ou dor</div></div>
+</div>
+
+<div class="legend" style="margin-top:24px;">
+  <span><i class="sw" style="background:var(--pipo-success);"></i>Guia decide</span>
+  <span><i class="sw" style="background:var(--pending-bg);border:1px solid var(--pending-border);"></i>Com apoio (guia identifica, enfermagem decide)</span>
+  <span><i class="sw" style="background:var(--slate-100);"></i>Enfermagem (julgamento clínico desde o início)</span>
+  <span><i class="sw" style="background:var(--pipo-peach);"></i>Espontânea/risco</span>
+  <span><i class="sw" style="background:var(--slate-100);border:1.5px solid var(--slate-600);"></i>Eletivo / Rede credenciada</span>
+  <span><i class="sw" style="background:var(--coral-100);"></i>Pronto Socorro</span>
+</div>
+
+<div class="footer">Mapa mental gerado a partir do protocolo escrito de Guia de Direcionamento (Pipo Saúde, atualizado em 25/09/2026). CE = Teleconsulta de Enfermagem · CM = Consulta/Teleconsulta Médica. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
 
 </div>
 </body>
