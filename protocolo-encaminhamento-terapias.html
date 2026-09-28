@@ -68,7 +68,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Fluxo digital</strong></div>
   <div>Status<strong>Rascunho — aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>11/09/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>28/09/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 <a class="mindmap-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/mapa-mental-encaminhamento-terapias.html">&#128279; Abrir mapa mental deste protocolo</a>
@@ -82,6 +82,16 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
   <li>Algum profissional de saúde solicitou essa avaliação/encaminhamento? Se sim: qual profissional (especialidade) e anexar o documento/print da solicitação, se houver.</li>
   <li>Anexar laudos, exames ou encaminhamentos prévios relacionados (upload opcional, múltiplos arquivos).</li>
   <li>Descrição do motivo (texto livre, campo obrigatório).</li>
+</ol>
+
+<h2>Fluxo ponta a ponta — exemplo (Nutrição)</h2>
+<p>Passo a passo completo, pra orientar quem for programar o bot — o mesmo desenho (perguntas → ticket → fila → guia → fechamento automático) se aplica às demais especialidades, ajustando as perguntas específicas e o desfecho conforme o funil de cada uma abaixo.</p>
+<ol>
+  <li>Membro entra na Pipo Cuida → escolhe Encaminhamento de Terapias → escolhe Nutrição</li>
+  <li>Bot pergunta: (1) primeira vez ou renovação; (2) algum profissional já solicitou, com upload opcional; (3) motivo principal; (4) histórico prévio; (5) descrição livre</li>
+  <li>Sistema já cria o ticket como Interconsulta médica direta, cai na fila da médica no Zendesk</li>
+  <li>Médica acessa o Nilo, emite a guia em até 2 dias úteis</li>
+  <li>Ticket fecha sozinho</li>
 </ol>
 
 <h2>Funil por especialidade</h2>
@@ -98,18 +108,28 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
   <div class="card blue"><h4>Pontuação &lt; 3 em ambos</h4><ul><li>Interconsulta médica direta</li></ul></div>
 </div>
 <p>Aplicar GAD-2/PHQ-2 sempre, independente de ser primeira vez ou renovação. <strong>Perguntas específicas:</strong> acompanhamento psiquiátrico atual (sim/não); histórico de psicoterapia prévia e há quanto tempo.</p>
+<div class="role"><p style="margin:0;"><strong>Pergunta de segurança fixa, independente da pontuação do GAD-2/PHQ-2:</strong> "Nos últimos 15 dias, você teve pensamentos de que seria melhor estar morto(a) ou de se machucar de alguma forma?" (Sim/Não). Se Sim: sinaliza Pronto Socorro/linha de crise automaticamente, mesmo que o GAD-2/PHQ-2 tenha dado abaixo de 3.</p></div>
 
-<h3>Fisioterapia / RPG e Outros (TO, Fonoaudiologia, Acupuntura)</h3>
-<div class="cards">
-  <div class="card coral"><h4>Primeira solicitação, ou renovação sem documento prévio</h4><ul><li>Sempre Teleconsulta de enfermagem (30 min)</li></ul></div>
-  <div class="card blue"><h4>Renovação com laudo/indicação de profissional anexado</h4><ul><li>Interconsulta médica direta</li></ul></div>
-</div>
-<p><strong>Perguntas específicas:</strong></p>
+<h3>Fisioterapia / RPG e Outros (TO, Fonoaudiologia, Acupuntura) <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pending-bg);border:1px solid var(--pending-border);color:var(--pending-text);">Rascunho — critério novo, aguardando confirmação de Leticia Defilippo</span></h3>
+<p><em>Critério proposto por Karine Coltro em 27/09/2026, substituindo o corte por "documento anexado" por um critério único de 4 perguntas, iguais pras quatro especialidades. O que fica em aberto: o corte exato de "nota muito alta" não foi definido — confirmar com a Dra Leticia antes de aprovar.</em></p>
+<p><strong>4 perguntas (mesma lógica pras quatro especialidades, só muda o que a nota 0–10 mede):</strong></p>
 <ul>
-  <li><strong>Fisioterapia/RPG:</strong> região do corpo afetada; presença e intensidade de dor (0–10); início do quadro (agudo ≤6 semanas / crônico &gt;6 semanas); diagnóstico médico associado; para RPG, se o motivo é postural/preventivo ou ligado a queixa dolorosa (lembrete: RPG não é coberto pelo plano — entra como Fisioterapia)</li>
-  <li><strong>Acupuntura:</strong> motivo principal (dor crônica, enxaqueca/cefaleia, ansiedade, outro); diagnóstico médico associado; histórico prévio de acupuntura</li>
-  <li><strong>TO:</strong> motivo principal (reabilitação funcional, desenvolvimento infantil, pós-cirúrgico, outro); idade do paciente; diagnóstico associado</li>
-  <li><strong>Fonoaudiologia:</strong> motivo principal (fala/linguagem, deglutição, audição, voz); idade do paciente; diagnóstico associado</li>
+  <li>A queixa é nova, ou é continuidade/manutenção de algo que o membro já faz?</li>
+  <li>Ele já sabe informar um diagnóstico associado, mesmo sem anexar nada?</li>
+  <li>De 0 a 10, o quanto isso afeta o dia a dia dele? (dor, pra Fisioterapia/RPG e Acupuntura; funcionalidade/autonomia, pra TO; fala, audição ou voz, pra Fonoaudiologia)</li>
+  <li>Isso começou há mais ou menos de 6 semanas?</li>
+</ul>
+<div class="cards">
+  <div class="card blue"><h4>Interconsulta médica direta</h4><ul><li>Continuidade, ou mais de 6 semanas — <strong>e</strong> já sabe o diagnóstico — <strong>e</strong> a nota não é muito alta</li></ul></div>
+  <div class="card coral"><h4>Teleconsulta de enfermagem (30 min)</h4><ul><li>Queixa nova e recente (≤6 semanas), sem diagnóstico — <strong>ou</strong> nota muito alta (corte numérico ainda não definido)</li></ul></div>
+</div>
+<p><em>Racional da Karine: diferente de renovar medicamento, o risco clínico de errar nessas 4 especialidades é baixo — o pior cenário é a médica pedir mais informação depois, não é erro de dose ou interação.</em></p>
+<p><strong>Perguntas específicas de cada área (mantidas):</strong></p>
+<ul>
+  <li><strong>Fisioterapia/RPG:</strong> região do corpo afetada (lembrete: RPG não é coberto pelo plano — entra como Fisioterapia)</li>
+  <li><strong>Acupuntura:</strong> motivo principal (dor crônica, enxaqueca/cefaleia, ansiedade, outro); histórico prévio de acupuntura</li>
+  <li><strong>TO:</strong> motivo principal (reabilitação funcional, desenvolvimento infantil, pós-cirúrgico, outro); idade do paciente</li>
+  <li><strong>Fonoaudiologia:</strong> motivo principal (fala/linguagem, deglutição, audição, voz); idade do paciente</li>
 </ul>
 
 <h2>Unificação de tickets</h2>
@@ -166,8 +186,8 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <h2>Referência rápida</h2>
 <ul>
   <li>Nutrição → sempre Interconsulta médica direta.</li>
-  <li>Psicologia → GAD-2/PHQ-2 ≥3 em qualquer um: Teleconsulta de enfermagem 30 min. &lt;3 em ambos: Interconsulta médica direta.</li>
-  <li>Fisioterapia/RPG/TO/Fono/Acupuntura → sem documento prévio: Teleconsulta de enfermagem 30 min. Com laudo/indicação anexado: Interconsulta médica direta.</li>
+  <li>Psicologia → GAD-2/PHQ-2 ≥3 em qualquer um: Teleconsulta de enfermagem 30 min. &lt;3 em ambos: Interconsulta médica direta. Pergunta de segurança (ideação) sempre, independente da pontuação — Sim vai direto pra PS/linha de crise.</li>
+  <li>Fisioterapia/RPG/TO/Fono/Acupuntura <span class="pending">pendente</span> → critério novo proposto (continuidade/&gt;6 semanas + sabe diagnóstico + nota não muito alta → Interconsulta direta; senão → Teleconsulta de enfermagem), aguardando confirmação de Leticia Defilippo.</li>
   <li>Mais de uma especialidade no mesmo CPF → um ticket só (exceto dependentes).</li>
   <li>Neuropsicologia → nunca acesso direto; laudo ≤2 meses revalida por interconsulta; sem laudo volta pra Psicologia; vencido (&gt;3 meses) volta pro prescritor original.</li>
   <li>Guia sempre emitida pela médica, nunca pela enfermagem, em até 2 dias úteis.</li>
