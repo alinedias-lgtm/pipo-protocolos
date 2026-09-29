@@ -96,35 +96,29 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <span class="status-proposta">PROPOSTA DE AUTOMAÇÃO — em avaliação, ainda não implementada</span>
 <p class="subtitle">Baseada no feedback de Karine Coltro (24/09/2026). <strong>Atualização 29/09/2026:</strong> a ideia central desta proposta — unificar "sintoma novo" e "específico vencido" numa pergunta só, e tirar a enfermagem do caminho quando o sintoma segue presente — já foi adotada no protocolo vigente em reunião de 29/09/2026. O que ainda não existe é a parte automática (bot fazendo a pergunta sozinho, sem humano): no vigente, quem faz isso hoje é a teletriagem manual. Ver o fluxo atual no mapa mental oficial de Renovação de Pedido de Exames.</p>
 
-<div class="dtop"><h4>Entrada</h4>Membro solicita exame — checkup/rotina ou específico</div>
+<div class="dtop"><h4>Entrada</h4>Membro solicita exame — checkup/rotina ou específico (sintoma-dirigido)</div>
 <div class="darrow"></div>
-<div class="dbox"><strong>3 perguntas obrigatórias — já um roteiro pronto pra bot</strong>Há sintoma novo relacionado? Qual a data do último pedido desse exame? Quem solicitou o pedido anterior? Perguntas fechadas (sim/não, data, nome) — o bot pergunta tudo antes de qualquer humano entrar.</div>
+<div class="dbox"><strong>Perguntas obrigatórias — já um roteiro pronto pra bot</strong>Qual o motivo que levou a pedir esse exame? Você ainda apresenta esse sintoma? Qual a data do último pedido? Quem solicitou o pedido anterior? Perguntas fechadas (sim/não, data, nome, texto curto) — o bot pergunta tudo antes de qualquer humano entrar.</div>
 <div class="darrow"></div>
 
-<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
-  <div class="dcol">
-    <div class="colhead">SINTOMA NOVO</div>
-    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Relacionado ao exame solicitado</div>
-    <div class="darrow"></div>
-    <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Prioridade alta, sintoma anotado — sem passar por enfermagem primeiro</div>
-  </div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
   <div class="dcol">
     <div class="colhead">CHECKUP/ROTINA</div>
-    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Sem sintoma novo, dentro do prazo</div>
+    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Pedido anteriormente pela Pipo, dentro do prazo</div>
     <div class="darrow"></div>
     <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Já automatizável, sem mudança</div>
   </div>
   <div class="dcol">
-    <div class="colhead">ESPECÍFICO VENCIDO</div>
-    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Sem sintoma novo, mais de 3 meses</div>
+    <div class="colhead">ESPECÍFICO (sintoma-dirigido)</div>
+    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Bot pergunta objetivamente: "Você ainda apresenta o sintoma que motivou a solicitação desse exame?"</div>
     <div class="darrow"></div>
-    <div class="doutcome do-peach"><span class="dotitle">Bot pergunta objetivamente</span>"O motivo que levou a pedir esse exame ainda está presente?"</div>
+    <div class="doutcome do-blue"><span class="dotitle">Sim → Interconsulta médica direta</span>Prioridade alta, sintoma anotado — sem passar por enfermagem, resposta objetiva, bot decide sozinho</div>
     <div class="darrow"></div>
-    <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Se a resposta for objetiva, o bot já decide sozinho</div>
+    <div class="doutcome do-peach"><span class="dotitle">Não → transbordo</span>Bot encaminha pro enfermeiro da teletriagem avaliar</div>
   </div>
 </div>
 
-<div class="dnote" style="margin-top:14px;"><h4>Por que tirar a enfermagem do caminho automático — já adotado no vigente</h4>Antes de 29/09/2026, sintoma presente mandava pra Teleconsulta de enfermagem (30 min) e, mesmo assim, o médico revisava e emitia depois via Interconsulta — trabalho duplicado. Isso já foi corrigido no protocolo vigente: sintoma presente vai direto pra Interconsulta médica, prioridade alta. O que falta aqui é só automatizar quem faz a pergunta — hoje é a teletriagem manual, a proposta é o bot fazer sozinho e só escalar pra um humano em caso de resposta ambígua, divergente do prontuário, ou o membro insistir em falar com alguém.</div>
+<div class="dnote" style="margin-top:14px;"><h4>Por que tirar a enfermagem do caminho automático — já adotado no vigente</h4>Antes de 29/09/2026, "sintoma novo" e "específico vencido" eram duas perguntas separadas e sintoma presente mandava pra Teleconsulta de enfermagem (30 min) mesmo com o médico revisando depois via Interconsulta — trabalho duplicado. Isso já foi corrigido no protocolo vigente: virou uma pergunta só, e sintoma presente vai direto pra Interconsulta médica, prioridade alta. O que falta aqui é só automatizar quem faz a pergunta — hoje é a teletriagem manual, a proposta é o bot fazer sozinho e só escalar pra um humano quando a resposta vier ambígua, divergente do prontuário, ou o membro insistir em falar com alguém.</div>
 
 <div class="darrow" style="margin-top:4px;"></div>
 <div class="dtop"><h4>Saída</h4>Checagem final sempre humana — o pedido nunca é transcrito na íntegra sem o médico avaliar e emitir, independente da via (direta ou depois do transbordo)</div>
