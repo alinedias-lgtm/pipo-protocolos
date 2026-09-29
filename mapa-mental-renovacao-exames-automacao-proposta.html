@@ -94,7 +94,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <div class="brand-row"><svg class="sym" viewBox="0 0 24 24"><rect x="2" y="4" width="4" height="16" fill="black"/><rect x="10" y="4" width="4" height="16" fill="black"/><rect x="18" y="4" width="4" height="16" fill="black"/></svg><span>Pipo Saúde · Mapa mental</span></div>
 <h1>Renovação de Pedido de Exames · proposta de automação (em avaliação)</h1>
 <span class="status-proposta">PROPOSTA DE AUTOMAÇÃO — em avaliação, ainda não implementada</span>
-<p class="subtitle">Baseada no feedback de Karine Coltro (24/09/2026) sobre o protocolo vigente. Ainda não é o fluxo em uso — ver o fluxo atual no mapa mental oficial de Renovação de Pedido de Exames.</p>
+<p class="subtitle">Baseada no feedback de Karine Coltro (24/09/2026). <strong>Atualização 29/09/2026:</strong> a ideia central desta proposta — unificar "sintoma novo" e "específico vencido" numa pergunta só, e tirar a enfermagem do caminho quando o sintoma segue presente — já foi adotada no protocolo vigente em reunião de 29/09/2026. O que ainda não existe é a parte automática (bot fazendo a pergunta sozinho, sem humano): no vigente, quem faz isso hoje é a teletriagem manual. Ver o fluxo atual no mapa mental oficial de Renovação de Pedido de Exames.</p>
 
 <div class="dtop"><h4>Entrada</h4>Membro solicita exame — checkup/rotina ou específico</div>
 <div class="darrow"></div>
@@ -124,7 +124,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
   </div>
 </div>
 
-<div class="dnote" style="margin-top:14px;"><h4>Por que tirar a enfermagem do meio</h4>Hoje, sintoma novo manda pra Teleconsulta de enfermagem (30 min) e, mesmo assim, o médico revisa e emite depois via Interconsulta — o médico entra no final de qualquer jeito, então a etapa de enfermagem é trabalho duplicado. A enfermagem só entraria quando, nas perguntas automáticas, aparecer algo que realmente precise de conversa ao vivo — resposta ambígua, divergente do prontuário, ou o membro insistir em falar com alguém.</div>
+<div class="dnote" style="margin-top:14px;"><h4>Por que tirar a enfermagem do caminho automático — já adotado no vigente</h4>Antes de 29/09/2026, sintoma presente mandava pra Teleconsulta de enfermagem (30 min) e, mesmo assim, o médico revisava e emitia depois via Interconsulta — trabalho duplicado. Isso já foi corrigido no protocolo vigente: sintoma presente vai direto pra Interconsulta médica, prioridade alta. O que falta aqui é só automatizar quem faz a pergunta — hoje é a teletriagem manual, a proposta é o bot fazer sozinho e só escalar pra um humano em caso de resposta ambígua, divergente do prontuário, ou o membro insistir em falar com alguém.</div>
 
 <div class="darrow" style="margin-top:4px;"></div>
 <div class="dtop"><h4>Saída</h4>Checagem final sempre humana — o pedido nunca é transcrito na íntegra sem o médico avaliar e emitir, independente da via (direta ou depois do transbordo)</div>
