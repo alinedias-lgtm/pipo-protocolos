@@ -111,55 +111,46 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 </div>
 
 <h2 class="section">Funil de decisão</h2>
-<div class="dtop"><h4>Triagem inicial</h4>Enfermagem registra em prontuário: sintoma novo? data do último pedido? quem solicitou (profissional e se é acompanhamento ativo)?</div>
+<div class="dtop"><h4>Alinhamento de expectativa</h4>Mensagem automática antes de qualquer pergunta: nem todo pedido é transcrito na íntegra, a decisão final é sempre da equipe médica (ex.: não transcrevemos exames pedidos por nutricionista). Deseja seguir? Sim/Não.</div>
 <div class="darrow"></div>
-<div class="dbox"><strong>1 · Há sintoma novo relacionado ao exame solicitado?</strong></div>
-<div class="dpill">SIM</div>
+<div class="dbox"><strong>Triagem inicial</strong>Enfermagem registra em prontuário: qual foi o motivo do pedido? data do último pedido? quem solicitou (profissional e se é acompanhamento ativo)?</div>
 <div class="darrow"></div>
-<div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min — reavalia se a necessidade ainda existe antes de qualquer nova solicitação</div>
-<div class="darrow"></div>
-<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span>Médico emite após a teleconsulta</div>
-<div class="dpill" style="margin-top:14px;">NÃO</div>
-<div class="darrow"></div>
-<div class="dbox"><strong>2 · É checkup/rotina, pedido anteriormente pela Pipo, dentro do prazo?</strong></div>
+<div class="dbox"><strong>1 · É checkup/rotina, pedido anteriormente pela Pipo, dentro do prazo?</strong></div>
 <div class="dpill">SIM</div>
 <div class="darrow"></div>
 <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span></div>
 <div class="dpill" style="margin-top:14px;">NÃO</div>
 <div class="darrow"></div>
-<div class="dbox"><strong>3 · É exame específico e está vencido? (&gt; 3 meses desde o pedido anterior)</strong></div>
+<div class="dbox"><strong>2 · É específico (sintoma-dirigido) — você ainda apresenta o sintoma que motivou a solicitação desse exame?</strong></div>
 <div class="dpill">SIM</div>
 <div class="darrow"></div>
-<div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min</div>
-<div class="darrow"></div>
-<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span>Médico emite após a teleconsulta</div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Prioridade alta, sintoma anotado</div>
 <div class="dpill" style="margin-top:14px;">NÃO</div>
 <div class="darrow"></div>
-<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Exame específico, ainda dentro do prazo, sem sintoma novo</div>
+<div class="doutcome do-peach"><span class="dotitle">Enfermeiro da teletriagem avalia</span>Resolve com apoio informal da equipe médica, ou encaminha para Teleconsulta de enfermagem (30 min)</div>
 
 <div class="ref-grid" style="margin-top:20px;">
-  <div class="dnote"><h4>Origem do pedido não muda o roteamento</h4>Médico ou não-médico (nutricionista, dentista etc.) — nos dois casos, o médico da Pipo sempre avalia antes da emissão, seja pela via direta (Interconsulta) ou após a Teleconsulta de enfermagem. A origem fica registrada em prontuário como contexto, mas não entra no funil como critério de roteamento.</div>
-  <div class="dnote"><h4>Checagem final, sempre</h4>O pedido nunca é transcrito na íntegra sem a checagem médica — independente da via (Interconsulta direta ou depois da Teleconsulta de enfermagem), é o médico quem avalia e emite em todos os casos.</div>
+  <div class="dnote"><h4>Origem do pedido não muda o roteamento</h4>Médico ou não-médico (nutricionista, dentista etc.) — nos dois casos, o médico da Pipo sempre avalia antes da emissão, seja pela via direta (Interconsulta) ou após a avaliação da enfermagem. A origem fica registrada em prontuário como contexto, mas não entra no funil como critério de roteamento.</div>
+  <div class="dnote"><h4>Checagem final, sempre</h4>O pedido nunca é transcrito na íntegra sem a checagem médica — independente da via (Interconsulta direta ou depois da avaliação da enfermagem), é o médico quem avalia e emite em todos os casos.</div>
 </div>
 <div class="ref-grid">
-  <div class="dnote"><h4>Enfermagem</h4>Registra as perguntas obrigatórias em prontuário; conduz a Teleconsulta de 30 min quando o funil apontar pra ela (sintoma novo ou exame específico vencido).</div>
-  <div class="dnote"><h4>Médico</h4>Avalia e emite em todos os casos — via Interconsulta direta (rotina dentro do prazo ou específico ainda válido) ou após a Teleconsulta de enfermagem.</div>
+  <div class="dnote"><h4>Enfermagem</h4>Registra as perguntas obrigatórias em prontuário; conduz a mensagem de alinhamento de expectativa; quando o sintoma não está mais presente (específico), avalia o caso — decide entre consultar a equipe médica informalmente ou conduzir a Teleconsulta de enfermagem (30 min).</div>
+  <div class="dnote"><h4>Médico</h4>Avalia e emite em todos os casos — via Interconsulta direta (rotina dentro do prazo, ou específico com o sintoma ainda presente) ou após a avaliação da enfermagem.</div>
 </div>
 <div class="legend">
   <span><i class="sw" style="background:var(--grey-100);border:1.5px solid var(--slate-600);"></i>Decisão do funil</span>
-  <span><i class="sw" style="background:var(--pipo-peach);"></i>Teleconsulta de enfermagem</span>
+  <span><i class="sw" style="background:var(--pipo-peach);"></i>Enfermagem avalia / Teleconsulta</span>
   <span><i class="sw" style="background:var(--slate-100);"></i>Interconsulta médica</span>
 </div>
 
 <h2 class="section">Referência rápida</h2>
 <div class="ref-grid">
-  <div class="ref-box alert"><h3>Sempre vai pra tele de enfermagem</h3><ul>
-    <li>Sintoma novo relacionado ao exame — não importa se é checkup/rotina ou específico</li>
-    <li>Exame específico vencido (mais de 3 meses) — mesmo sem sintoma novo</li>
+  <div class="ref-box alert"><h3>Enfermeiro da teletriagem avalia</h3><ul>
+    <li>Exame específico, sintoma que motivou o pedido não está mais presente</li>
   </ul></div>
   <div class="ref-box success"><h3>Vai direto pra interconsulta, sem tele</h3><ul>
-    <li>Checkup/rotina dentro do prazo, pedido pela Pipo, sem sintoma novo</li>
-    <li>Específico ainda dentro do prazo, sem sintoma novo</li>
+    <li>Checkup/rotina dentro do prazo, pedido pela Pipo</li>
+    <li>Específico, sintoma que motivou o pedido ainda presente (prioridade alta)</li>
   </ul></div>
   <div class="ref-box"><h3>Origem do pedido não muda o caminho</h3><ul>
     <li>Médico ou não médico — fica só registrado em prontuário como contexto</li>

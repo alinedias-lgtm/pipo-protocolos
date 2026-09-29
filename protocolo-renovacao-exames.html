@@ -72,7 +72,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Fluxo digital</strong></div>
   <div>Status<strong>Rascunho — aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>11/09/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>29/09/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 
@@ -91,10 +91,14 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
   <li><strong>Específico</strong> (sintoma-dirigido) — ex.: exames de imagem para queixa pontual, culturas</li>
 </ul>
 
+<h2>Alinhamento de expectativa (antes de qualquer pergunta) <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:6px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Definido em reunião de Alinhamento, 29/09/2026</span></h2>
+<p>Mensagem automática, no molde da macro já usada pelos guias de saúde — reduz retorno de ticket por pedido incompleto. Exemplo, pra pedidos de lista extensa de nutricionista: <em>"Nem todo pedido é transcrito na íntegra — a decisão final é sempre da equipe médica. Não realizamos transcrição de exames solicitados por nutricionista. Deseja seguir com o atendimento?"</em> Sim/Não — se Sim, segue pro roteiro abaixo; se Não, encerra.</p>
+
 <h2>Perguntas obrigatórias antes de qualquer decisão</h2>
 <p>Registrar em prontuário:</p>
 <ol>
-  <li>Há sintoma novo relacionado ao exame solicitado?</li>
+  <li>Qual foi o motivo que levou você a pedir esse exame? (campo aberto)</li>
+  <li>Você está apresentando esse sintoma neste momento? (Sim/Não) — só se aplica a exame específico (sintoma-dirigido)</li>
   <li>Qual a data do último pedido desse mesmo exame?</li>
   <li>Quem solicitou o pedido anterior (profissional e se é acompanhamento ativo)?</li>
 </ol>
@@ -102,22 +106,16 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <h2>Funil de decisão</h2>
 <p>Sequencial — só avalia o próximo critério se o anterior não decidiu o caso:</p>
 <ol>
-  <li><strong>Sintoma novo relacionado ao exame?</strong>
-    <ul>
-      <li>Sim → Teleconsulta de enfermagem (30 min), para reavaliar se a necessidade ainda existe antes de qualquer nova solicitação. Após a teleconsulta, o médico emite via interconsulta.</li>
-      <li>Não → segue.</li>
-    </ul>
-  </li>
   <li><strong>É checkup/rotina, pedido anteriormente pela Pipo, dentro do prazo?</strong>
     <ul>
       <li>Sim → Interconsulta médica direta.</li>
       <li>Não → segue.</li>
     </ul>
   </li>
-  <li><strong>É específico e está vencido (mais de 3 meses desde o pedido anterior)?</strong>
+  <li><strong>É específico (sintoma-dirigido) — você ainda apresenta o sintoma que motivou a solicitação desse exame?</strong>
     <ul>
-      <li>Sim → Teleconsulta de enfermagem (30 min).</li>
-      <li>Não (específico, ainda dentro do prazo, sem sintoma novo) → Interconsulta médica direta.</li>
+      <li>Sim → Interconsulta médica direta, com prioridade alta e o sintoma anotado.</li>
+      <li>Não → encaminha para o enfermeiro da teletriagem avaliar. Ele decide se resolve consultando a equipe médica informalmente, ou se encaminha para Teleconsulta de enfermagem (30 min).</li>
     </ul>
   </li>
 </ol>
@@ -133,24 +131,25 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
   <h4>Enfermagem</h4>
   <ul>
     <li>Registra as perguntas obrigatórias em prontuário</li>
-    <li>Conduz a Teleconsulta de 30 min quando o funil apontar para ela (sintoma novo ou exame específico vencido)</li>
+    <li>Conduz a mensagem de alinhamento de expectativa</li>
+    <li>Quando o membro não apresenta mais o sintoma (exame específico), avalia o caso — decide entre consultar a equipe médica informalmente ou conduzir a Teleconsulta de enfermagem (30 min)</li>
   </ul>
 </div>
 <div class="role">
   <h4>Médico</h4>
   <ul>
-    <li>Avalia e emite em todos os casos — seja pela Interconsulta direta (rotina dentro do prazo ou específico ainda válido) ou após a Teleconsulta de enfermagem</li>
+    <li>Avalia e emite em todos os casos — seja pela Interconsulta direta (rotina dentro do prazo, ou específico com o sintoma ainda presente) ou após a avaliação da enfermagem</li>
     <li>O pedido nunca é transcrito na íntegra sem essa checagem médica, independente da via</li>
   </ul>
 </div>
 
 <h2>Referência rápida</h2>
 <ul>
-  <li>Sintoma novo → sempre Teleconsulta de enfermagem (30 min), não importa o tipo de exame.</li>
-  <li>Checkup/rotina sem sintoma novo, dentro do prazo → Interconsulta médica direta, sem tele.</li>
-  <li>Específico sem sintoma novo, vencido (&gt;3 meses) → Teleconsulta de enfermagem (30 min).</li>
-  <li>Específico sem sintoma novo, dentro do prazo → Interconsulta médica direta, sem tele.</li>
+  <li>Checkup/rotina dentro do prazo → Interconsulta médica direta, sem tele.</li>
+  <li>Específico, sintoma que motivou o pedido ainda presente → Interconsulta médica direta, prioridade alta, sintoma anotado.</li>
+  <li>Específico, sintoma não está mais presente → enfermeiro da teletriagem avalia (pode resolver com a equipe médica informalmente, ou encaminhar para Teleconsulta de enfermagem 30 min).</li>
   <li>Médico ou não-médico não muda o caminho — só o registro em prontuário.</li>
+  <li>Mensagem de alinhamento de expectativa roda antes de qualquer pergunta — reduz retorno de ticket por pedido incompleto.</li>
 </ul>
 <div class="footer">
 <p><strong>Fonte de conteúdo clínico:</strong> Desmembrado de Renovação de Receitas em reunião de Alinhamento de 09/09/2026 — antes era uma seção daquele protocolo; virou documento próprio nesta revisão.</p>
