@@ -124,11 +124,11 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <div class="dcols" style="grid-template-columns:1fr 1fr; margin-top:4px;">
   <div class="dcol">
     <div class="colhead">FISIO/RPG/TO/FONO/ACUPUNTURA</div>
-    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Bot pergunta: novo encaminhamento ou renovação?</div>
+    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Bot pergunta: qual terapia, é renovação, e (se novo) motivo/CID + laudo anexado?</div>
     <div class="darrow"></div>
-    <div class="doutcome do-green"><span class="dotitle">Renovação com documento anexado</span>Interconsulta médica direta — bot decide sozinho</div>
+    <div class="doutcome do-green"><span class="dotitle">Com anexo (renovação ou novo com laudo/exame)</span>Interconsulta médica direta — bot decide sozinho, critério 100% objetivo, só checa presença de documento</div>
     <div class="darrow"></div>
-    <div class="doutcome do-peach"><span class="dotitle">Demais casos: bot aplica as 4 perguntas</span>Continuidade/&gt;6 semanas + sabe diagnóstico + nota não muito alta → Interconsulta. Senão → Teleconsulta de enfermagem</div>
+    <div class="doutcome do-green"><span class="dotitle">Sem anexo</span>Teleconsulta de enfermagem — bot decide sozinho também</div>
   </div>
   <div class="dcol">
     <div class="colhead">NEUROPSICOLOGIA</div>
@@ -138,7 +138,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
   </div>
 </div>
 
-<div class="dnote" style="margin-top:14px; border-color:var(--pending-border); background:var(--pending-bg);"><h4>Duas travas antes de automatizar 100%</h4>O corte numérico de "nota muito alta" (Fisio/RPG/TO/Fono/Acupuntura) e o critério pra faixa de 2 a 3 meses de encaminhamento vencido (Neuropsicologia) ainda não foram definidos pela Dra Leticia. Enquanto isso, esses dois pontos específicos não entram na automação — seguem para avaliação humana.</div>
+<div class="dnote" style="margin-top:14px; border-color:var(--pending-border); background:var(--pending-bg);"><h4>Uma trava antes de automatizar 100%</h4>O critério pra faixa de 2 a 3 meses de encaminhamento vencido (Neuropsicologia) ainda não foi definido pela Dra Leticia — esse ponto específico não entra na automação, segue para avaliação humana. Fisio/RPG/TO/Fono/Acupuntura já ficou 100% automatizável: Leticia Defilippo removeu a "nota" subjetiva do critério, agora é só presença de documento.</div>
 
 <div class="darrow" style="margin-top:4px;"></div>
 <div class="dbox"><strong>Unificação de tickets</strong>Mesmo CPF, mais de uma especialidade solicitada → um ticket só. Não se aplica a dependentes. Já é uma regra objetiva, automatizável.</div>
