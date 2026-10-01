@@ -142,7 +142,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 </ul>
 
 <h2>Remoção da restrição etária</h2>
-<p>Menores de 18 e maiores de 60 anos deixam de ter desvio automático para teleconsulta — em ambos os fluxos, manual e automação. Passam pelo mesmo funil de comorbidade/queixa dos demais adultos. Menores de 18 continuam usando o check-up padrão pediátrico já descrito.</p>
+<p>Menores de 18 e maiores de 60 anos deixam de ter desvio automático para teleconsulta — em ambos os fluxos, manual e automação. Passam pelo mesmo funil de comorbidade/queixa dos demais adultos. Menores de 18 continuam usando o check-up padrão pediátrico já descrito. Vale para todos os membros acima de 2 anos de idade — abaixo disso, ver "Idade mínima pra check-up infantil" acima.</p>
 
 <h2>Regra transversal <span style="font-weight:400; font-size:13px; color:#837c79;">(aplica a todos os protocolos: check-up, receita, exames, terapias)</span></h2>
 <div class="role"><p style="margin:0;">Divergência de expectativa nunca gera teleconsulta. Resolve-se por escrito, pelo profissional que está com o ticket no momento (enfermagem ou médica, conforme o caso) — evitando gerar expectativa adicional no membro.</p></div>
@@ -183,8 +183,29 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 </ul>
 <p>Salvo alterações específicas, não há indicação de repetir o check-up com menos de 1 ano do anterior. Na teletriagem/teleconsulta de enfermagem, é importante checar quando foram feitos os últimos exames.</p>
 
+<h3>Solicitação com menos de 1 ano do check-up anterior <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Versão final — Leticia Defilippo, 01/10/2026</span></h3>
+<p>Primeiro verifica se houve alteração no exame anterior:</p>
+<div class="cards">
+  <div class="card blue"><h4>Houve alteração</h4><ul><li>Interconsulta médica — reavalia só o item alterado — e check-up automático (via Memed) após a decisão médica</li></ul></div>
+  <div class="card coral"><h4>Sem alteração</h4><ul><li>Envia a mensagem automática abaixo antes de qualquer nova solicitação</li></ul></div>
+</div>
+<p><em>"Olá, [Nome do Paciente]! Tudo bem?<br>
+Identificamos que você realizou seu último check-up há menos de um ano e que seus exames anteriores não apresentaram alterações.<br>
+De acordo com os protocolos médicos vigentes, quando os exames estão normais e não há queixas de saúde, não há necessidade de repetir o check-up em um intervalo inferior a 12 meses.<br>
+Para que possamos te ajudar da melhor forma, por favor, responda:<br>
+1. Você está apresentando algum sintoma, dor ou desconforto no momento?"</em></p>
+<ul>
+  <li><strong>"Tenho sintomas e preciso de atendimento"</strong> → teleconsulta de enfermagem (30 min), direto — não passa por triagem antes</li>
+  <li><strong>"Entendi! Vou aguardar o prazo de 1 ano para o próximo check-up"</strong> → encerra o ticket</li>
+</ul>
+<p>Para quem escolhe a primeira opção, segue a mensagem: <em>"Entendido! Como você está apresentando sintomas, você pode agendar uma consulta com o nosso time de saúde acessando o link abaixo:"</em></p>
+
 <h3>Check-up personalizado (fatores de risco/comorbidades)</h3>
 <p>Alguns exames podem ser incluídos quando houver comorbidade e/ou histórico pessoal/familiar que justifique o pedido, para descartar hipóteses ou detectar precocemente doenças com rastreio indicado.</p>
+<ul>
+  <li><strong>Hipertireoidismo:</strong> acréscimo de TRAB e T4 livre ao check-up padrão <em>(código TUSS a confirmar)</em></li>
+  <li><strong>Hipotireoidismo:</strong> acréscimo de T4 livre ao check-up padrão <em>(código TUSS a confirmar)</em></li>
+</ul>
 
 <h3>Check-up para veganos</h3>
 <div class="card blue"><p><strong>Recomendação:</strong> Sociedade Brasileira de Alimentação e Nutrição (SBAN) — adaptação Pipo</p><p><strong>População:</strong> Pessoas com dieta vegana declarada, em qualquer faixa etária.</p><p><strong>Intervenção:</strong> 40316270 — Ferritina; 40321231 — Índice de saturação de transferrina. Estes exames são adicionados ao check-up padrão (que já inclui hemograma, vitamina B12, TSH e demais itens do Check-up Pipo).</p><p><strong>Frequência:</strong> Anual, junto com o check-up padrão.</p></div>
@@ -318,6 +339,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 <p>Para menores de 18 anos, o escopo da Pipo cobre o check-up padrão infantil/adolescente assintomático e a orientação sobre calendário vacinal. Triagens neonatais (pezinho, olhinho, orelhinha, coraçãozinho), consultas de puericultura, rastreio de acuidade visual e rastreio de obesidade infantil não são realizados pela Pipo — quando o membro trouxer essas demandas, orientar acompanhamento com pediatria da rede.</p>
 <h3>Idade mínima pra check-up infantil <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Versão final — Leticia Defilippo, 01/10/2026</span></h3>
 <p>A Pipo passa a oferecer o check-up infantil a partir de <strong>2 anos de idade</strong>. Antes disso é uma faixa muito jovem para rastreio geral; a partir dos 2 anos já começam alguns tipos de rastreio — por exemplo, rastreio de colesterol alto em famílias com histórico de colesterol alto.</p>
+<p>Abaixo de 2 anos, orientar acompanhamento com pediatra da rede (consulta de puericultura) — nessa faixa a criança precisa ser vista presencialmente a cada 3 meses para avaliar crescimento, peso, perímetro cefálico e desenvolvimento, o que não é território de check-up.</p>
 
 <h3>Check-up padrão — crianças e adolescentes assintomáticos</h3>
 <ul>

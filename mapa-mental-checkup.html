@@ -97,14 +97,28 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <div class="meta"><div>Protocolo de origem<strong>Check-up · Adultos e Menores de 18</strong></div><div>Responsável (RT)<strong>Leticia Defilippo</strong></div><div>Elaboração<strong>André Casemiro, Aline Henrique Dias, Leticia Rodrigues</strong></div><div>Status<strong>Rascunho — para validação</strong></div></div>
 <a class="back-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/mapa-mental-checkup-automacao-proposta.html" style="margin-bottom:32px">Ver proposta de automação em avaliação &rarr;</a>
 <span class="status-vigente">PROTOCOLO VIGENTE — operação manual</span>
-<h2 class="section">Fluxo — teletriagem (sem exclusão por idade)</h2>
-<div class="dtop"><h4>Todos os membros, sem exclusão por idade (inclui &lt;18 e &gt;60)</h4></div>
+<h2 class="section">Fluxo — teletriagem (sem exclusão por idade, acima de 2 anos)</h2>
+<div class="dtop"><h4>Todos os membros acima de 2 anos, sem exclusão por idade (inclui &lt;18 e &gt;60)</h4></div>
 <div class="darrow"></div>
 <div class="dbox"><strong>Exame feito há menos de 1 ano?</strong></div>
 <div class="dpill">SIM</div>
 <div class="darrow"></div>
-<div class="doutcome do-gray"><span class="dotitle">Não repete</span>Encerra — sem nova solicitação</div>
+<div class="dbox"><strong>Houve alteração no exame anterior?</strong></div>
+<div class="dpill">SIM</div>
+<div class="darrow"></div>
+<div class="doutcome do-blue"><span class="dotitle">Interconsulta médica</span>Reavalia só o item alterado</div>
+<div class="darrow"></div>
+<div class="doutcome do-green"><span class="dotitle">Check-up automático (via Memed)</span>Emissão automática da guia após a decisão médica sobre o item alterado</div>
 <div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="dbox"><strong>Mensagem automática</strong><span style="font-size:11px;color:var(--grey-600);">Explica que não repete antes de 12 meses e pergunta: está com sintoma/dor/desconforto agora?</span></div>
+<div class="dpill">SIM (tem sintomas)</div>
+<div class="darrow"></div>
+<div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem</span>30 min — direto, sem passar por triagem antes</div>
+<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="darrow"></div>
+<div class="doutcome do-gray"><span class="dotitle">Encerra</span>"Entendi! Vou aguardar o prazo de 1 ano para o próximo check-up"</div>
+<div class="dpill" style="margin-top:14px;">NÃO (exame há mais de 1 ano)</div>
 <div class="darrow"></div>
 <div class="dbox"><strong>Houve alteração em exame anterior?</strong></div>
 <div class="dpill">SIM</div>
@@ -132,7 +146,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 
 <div class="ref-grid" style="margin-top:20px;">
   <div class="dnote"><h4>Regra transversal</h4>Divergência de expectativa nunca gera teleconsulta — resolve-se por escrito, pelo profissional com o ticket no momento.</div>
-  <div class="dnote"><h4>Idade</h4>Menores de 18 e maiores de 60 seguem o mesmo funil acima, sem desvio automático.</div>
+  <div class="dnote"><h4>Idade</h4>Menores de 18 e maiores de 60 seguem o mesmo funil acima, sem desvio automático. Vale para membros acima de 2 anos — abaixo disso, ver cartão "Idade mínima" na referência.</div>
 </div>
 <div class="legend">
   <span><i class="sw" style="background:var(--grey-100);border:1.5px solid var(--slate-600);"></i>Decisão (teletriagem)</span>
@@ -152,7 +166,7 @@ Glicemia em jejum · Hemoglobina glicada A1C · Creatinina sérica · Vitamina B
 <strong>Sorologias (mediante aceite):</strong> HIV1+HIV2, Sífilis (VDRL), Hepatite C (anti-HCV), Hepatite B (HBsAg) —
 indicadas para sexualmente ativos, ao menos 1x/ano.<br><br>
 <strong>Frequência:</strong> não repetir check-up com menos de 1 ano do anterior, salvo alteração específica.
-</div></div><div class="ref-box"><h3>Check-up personalizado</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Exames incluídos por comorbidade/histórico. Veganos: Ferritina + índice de saturação de transferrina passam a ser rotina.</div></div></div>
+</div></div><div class="ref-box"><h3>Check-up personalizado</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Exames incluídos por comorbidade/histórico. Hipertireoidismo: + TRAB e T4 livre. Hipotireoidismo: + T4 livre (códigos TUSS a confirmar). Veganos: Ferritina + índice de saturação de transferrina passam a ser rotina.</div></div></div>
 
 <h2 class="section">Referência — rastreamentos por perfil</h2>
 <div class="ref-grid"><div class="ref-box"><h3>Hipertensão arterial</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">≥18 anos. MAPA/domiciliar se PA prévia >130x90. ECG, ECO, sódio, potássio, RAC — solicitados rotineiramente. Teste ergométrico é opcional (atividade física de alta intensidade). Anual; com alteração, seguir classificação.</div></div><div class="ref-box"><h3>Diabetes / pré-diabetes</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">&gt;18 anos. HbA1c + glicose; TTOG (protocolo de 1h) só se dúvida diagnóstica; com diagnóstico: ECG, RAC, mapeamento de retina anual. Anual ou 3 meses com alteração.</div></div><div class="ref-box"><h3>Câncer colorretal</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">45–75 anos (10 anos antes da idade em que o familiar de 1º grau foi diagnosticado). Colonoscopia a cada 10 anos (padrão) ou FIT bienal (opção) — decisão compartilhada.</div></div><div class="ref-box"><h3>Câncer de pulmão</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">50–80 anos, tabagismo pesado (≥20 maços-ano). TC de tórax baixa dose, anual. Descontinuar se sem fumar há 15 anos.</div></div><div class="ref-box"><h3>Câncer de colo de útero</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Mulheres cis 25–64 anos; mulheres trans mesma faixa (5+ anos de hormonioterapia); homens trans com útero/colo preservado mantêm rastreio. DNA-HPV como método primário, a cada 5 anos se normal (Pipo hoje repete co-teste anualmente — divergência registrada).</div></div><div class="ref-box"><h3>Câncer de mama</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Mulheres cis 40–74 anos (30+ se alto risco BRCA1/2); mulheres trans mesma faixa (5 anos após hormonioterapia); homens trans igual à mulher cis se sem mastectomia. Mamografia digital bilateral + US se mamas densas, anual.</div></div><div class="ref-box"><h3>Câncer de próstata</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">A partir dos 45 anos (40 se histórico familiar de 1º grau). PSA total (padrão) + PSA livre se faixa intermediária (4,0–10,0 ng/mL). Anual. Descontinuar após 75.</div></div><div class="ref-box"><h3>Aneurisma de aorta abdominal</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Homens cis/mulheres trans 65–75 anos que já fumaram/fumam. Doppler de aorta — uma única vez na vida.</div></div><div class="ref-box"><h3>Osteoporose</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Mulheres cis/homens trans a partir dos 65 (ou &lt;65 pós-menopausa com risco); homens cis acima de 70. Densitometria óssea — decidir em conjunto, considerando idade, risco, expectativa de vida e resultado.</div></div><div class="ref-box"><h3>Clamídia</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Mulheres cis/homens trans sexualmente ativos com risco aumentado. Chlamydia PCR. Repetir se novo fator de risco.</div></div></div>
@@ -169,7 +183,7 @@ indicadas para sexualmente ativos, ao menos 1x/ano.<br><br>
 <div class="ref-grid">
 <div class="ref-box"><h3>Check-up padrão (assintomáticos)</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Hemograma · Glicemia de jejum · Colesterol total e frações + triglicerídeos · TSH · Vitamina D. B12 só se anamnese sugerir desnutrição/restrição alimentar.</div></div>
 <div class="ref-box alert"><h3>Fora do escopo da Pipo</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Triagens neonatais (pezinho, olhinho, orelhinha, coraçãozinho), consultas de puericultura, rastreio de acuidade visual e rastreio de obesidade infantil — orientar acompanhamento com pediatria da rede.</div></div>
-<div class="ref-box"><h3>Idade mínima — 2 anos</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">A Pipo oferece o check-up infantil a partir de 2 anos de idade — faixa menor que isso é muito jovem para rastreio geral; aos 2 anos já começam alguns rastreios (ex.: colesterol alto em famílias com histórico). Definido por Leticia Defilippo, 01/10/2026.</div></div>
+<div class="ref-box"><h3>Idade mínima — 2 anos</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">A Pipo oferece o check-up infantil a partir de 2 anos de idade — faixa menor que isso é muito jovem para rastreio geral; aos 2 anos já começam alguns rastreios (ex.: colesterol alto em famílias com histórico). Abaixo de 2 anos, encaminhar pra pediatra da rede (puericultura a cada 3 meses). Definido por Leticia Defilippo, 01/10/2026.</div></div>
 </div>
 <h2 class="section">Referência — vacinação</h2>
 <div class="ref-grid">
