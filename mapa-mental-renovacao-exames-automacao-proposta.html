@@ -86,9 +86,38 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .legend span{display:inline-flex; align-items:center; gap:6px;}
 .legend .sw{width:11px; height:11px; border-radius:3px; display:inline-block; flex:none;}
 
+
+
+.site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
+.site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
+.site-nav-row::-webkit-scrollbar{display:none;}
+.site-nav-row a{font-size:13px; font-weight:600; color:var(--grey-900); text-decoration:none; padding:6px 12px; border-radius:16px; flex:none;}
+.site-nav-row a:hover{background:var(--grey-100);}
+.site-nav-row a.on{background:var(--pipo-black); color:#fff;}
+.site-nav-row a.sn-home{border:1.5px solid var(--pipo-black); margin-right:8px;}
+.site-nav-row.sub{background:var(--grey-100); padding-top:6px; padding-bottom:6px;}
+.site-nav-row.sub a.on{background:var(--pipo-blue); color:#fff;}
+body .print-btn{top:100px;}
+@media print{.site-nav{display:none;}}
 </style>
 </head>
 <body>
+<nav class="site-nav" aria-label="Navegação entre protocolos">
+  <div class="site-nav-row">
+    <a href="index.html" class="sn-home">&larr; Início</a>
+    <a href="fluxo-entrada-membro.html">Fluxo do membro</a>
+    <a href="protocolo-checkup.html">Check-up</a>
+    <a href="protocolo-renovacao-receitas.html">Receitas</a>
+    <a href="protocolo-renovacao-exames.html" class="on">Exames</a>
+    <a href="protocolo-encaminhamento-terapias.html">Terapias</a>
+    <a href="protocolo-guia-direcionamento.html">Guia de direcionamento</a>
+  </div>
+  <div class="site-nav-row sub">
+    <a href="protocolo-renovacao-exames.html">Protocolo escrito</a>
+    <a href="mapa-mental-renovacao-exames.html">Mapa mental</a>
+    <a href="mapa-mental-renovacao-exames-automacao-proposta.html" class="on">Proposta de automação</a>
+  </div>
+</nav>
 <div class="sheet">
 <a class="back-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/mapa-mental-renovacao-exames.html">&larr; Voltar ao mapa mental atual de Renovação de Pedido de Exames</a>
 <a class="back-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-exames.html" style="margin-left:8px;">Ver protocolo escrito &rarr;</a>
@@ -97,25 +126,25 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <span class="status-proposta">PROPOSTA DE AUTOMAÇÃO — em avaliação, ainda não implementada</span>
 <p class="subtitle">Baseada no feedback de Karine Coltro (24/09/2026). <strong>Atualização 29/09/2026:</strong> a ideia central desta proposta — unificar "sintoma novo" e "específico vencido" numa pergunta só, e tirar a enfermagem do caminho quando o sintoma segue presente — já foi adotada no protocolo vigente em reunião de 29/09/2026. O que ainda não existe é a parte automática (bot fazendo a pergunta sozinho, sem humano): no vigente, quem faz isso hoje é a teletriagem manual. Ver o fluxo atual no mapa mental oficial de Renovação de Pedido de Exames.</p>
 
-<div class="dtop"><h4>Entrada</h4>Membro solicita exame — checkup/rotina ou específico (sintoma-dirigido)</div>
+<div class="dtop"><h4>Entrada</h4>Membro solicita renovação de exame</div>
 <div class="darrow"></div>
 <div class="dbox"><strong>Perguntas obrigatórias — já um roteiro pronto pra bot</strong>Qual o motivo que levou a pedir esse exame? Você ainda apresenta esse sintoma? Qual a data do último pedido? Quem solicitou o pedido anterior? Perguntas fechadas (sim/não, data, nome, texto curto) — o bot pergunta tudo antes de qualquer humano entrar.</div>
 <div class="darrow"></div>
 
 <div class="dcols" style="grid-template-columns:1fr 1fr;">
   <div class="dcol">
-    <div class="colhead">CHECKUP/ROTINA</div>
-    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Pedido anteriormente pela Pipo, dentro do prazo</div>
+    <div class="colhead">PEDIDO DA PIPO, ÚLTIMOS 90 DIAS</div>
+    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">É exame pedido anteriormente pela Pipo? Foi solicitado nos últimos 90 dias? As duas respostas sim</div>
     <div class="darrow"></div>
     <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Já automatizável, sem mudança</div>
   </div>
   <div class="dcol">
-    <div class="colhead">ESPECÍFICO (sintoma-dirigido)</div>
-    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Bot pergunta objetivamente: "Você ainda apresenta o sintoma que motivou a solicitação desse exame?"</div>
+    <div class="colhead">OUTRO PEDIDO</div>
+    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">De outro profissional (ex.: nutricionista) ou da Pipo há mais de 90 dias. Bot pergunta o motivo/sintoma que originou o pedido e: "Você ainda apresenta esse sintoma?"</div>
     <div class="darrow"></div>
     <div class="doutcome do-blue"><span class="dotitle">Sim → Interconsulta médica direta</span>Prioridade alta, sintoma anotado — sem passar por enfermagem, resposta objetiva, bot decide sozinho</div>
     <div class="darrow"></div>
-    <div class="doutcome do-peach"><span class="dotitle">Não → transbordo</span>Bot encaminha pro enfermeiro da teletriagem avaliar</div>
+    <div class="doutcome do-peach"><span class="dotitle">Não → transbordo</span>Bot encaminha pro enfermeiro da teletriagem avaliar — só entrega o que foge do padrão</div>
   </div>
 </div>
 
@@ -137,7 +166,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <h2 class="section">Contexto da proposta</h2>
 <div class="ref-grid">
 <div class="ref-box"><h3>Teto de automação pode ser mais alto que na receita</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Exame não tem o mesmo peso jurídico de renovar remédio controlado sem registro prévio — que foi o ponto mais delicado levantado na proposta de Renovação de Receitas. Errar uma renovação de exame tem consequência bem menor, então dá pra empurrar a automação mais forte aqui, com o médico entrando só no fim, como checagem.</div></div>
-<div class="ref-box"><h3>O que já ficou bom no protocolo escrito</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Virou documento próprio. Já tem perguntas obrigatórias registradas em prontuário. Checkup × específico já muda o destino de verdade. Origem médica ou não-médica não muda o roteamento, de forma explícita. Canal e duração já vêm claros — "Teleconsulta de enfermagem (30 min)", sem a ambiguidade que havia na receita.</div></div>
+<div class="ref-box"><h3>O que já ficou bom no protocolo escrito</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Virou documento próprio. Já tem perguntas obrigatórias registradas em prontuário. Pedido da Pipo nos últimos 90 dias × outro pedido já muda o destino de verdade. Origem médica ou não-médica não muda o roteamento, de forma explícita. Canal e duração já vêm claros — "Teleconsulta de enfermagem (30 min)", sem a ambiguidade que havia na receita.</div></div>
 </div>
 <div class="footer">Mapa mental gerado a partir do protocolo escrito. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
 

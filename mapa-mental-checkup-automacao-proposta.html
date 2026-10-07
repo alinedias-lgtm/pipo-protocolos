@@ -86,9 +86,38 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .legend span{display:inline-flex; align-items:center; gap:6px;}
 .legend .sw{width:11px; height:11px; border-radius:3px; display:inline-block; flex:none;}
 
+
+
+.site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
+.site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
+.site-nav-row::-webkit-scrollbar{display:none;}
+.site-nav-row a{font-size:13px; font-weight:600; color:var(--grey-900); text-decoration:none; padding:6px 12px; border-radius:16px; flex:none;}
+.site-nav-row a:hover{background:var(--grey-100);}
+.site-nav-row a.on{background:var(--pipo-black); color:#fff;}
+.site-nav-row a.sn-home{border:1.5px solid var(--pipo-black); margin-right:8px;}
+.site-nav-row.sub{background:var(--grey-100); padding-top:6px; padding-bottom:6px;}
+.site-nav-row.sub a.on{background:var(--pipo-blue); color:#fff;}
+body .print-btn{top:100px;}
+@media print{.site-nav{display:none;}}
 </style>
 </head>
 <body>
+<nav class="site-nav" aria-label="Navegação entre protocolos">
+  <div class="site-nav-row">
+    <a href="index.html" class="sn-home">&larr; Início</a>
+    <a href="fluxo-entrada-membro.html">Fluxo do membro</a>
+    <a href="protocolo-checkup.html" class="on">Check-up</a>
+    <a href="protocolo-renovacao-receitas.html">Receitas</a>
+    <a href="protocolo-renovacao-exames.html">Exames</a>
+    <a href="protocolo-encaminhamento-terapias.html">Terapias</a>
+    <a href="protocolo-guia-direcionamento.html">Guia de direcionamento</a>
+  </div>
+  <div class="site-nav-row sub">
+    <a href="protocolo-checkup.html">Protocolo escrito</a>
+    <a href="mapa-mental-checkup.html">Mapa mental</a>
+    <a href="mapa-mental-checkup-automacao-proposta.html" class="on">Proposta de automação</a>
+  </div>
+</nav>
 <div class="sheet">
 <a class="back-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/mapa-mental-checkup.html">&larr; Voltar ao mapa mental atual do check-up</a>
 <a class="back-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-checkup.html" style="margin-left:8px;">Ver protocolo escrito &rarr;</a>

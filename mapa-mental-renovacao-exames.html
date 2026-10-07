@@ -84,9 +84,38 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .legend{display:flex; flex-wrap:wrap; gap:14px; margin-top:20px; font-size:11.5px; color:var(--grey-600);}
 .legend span{display:inline-flex; align-items:center; gap:6px;}
 .legend .sw{width:11px; height:11px; border-radius:3px; display:inline-block; flex:none;}
+
+
+.site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
+.site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
+.site-nav-row::-webkit-scrollbar{display:none;}
+.site-nav-row a{font-size:13px; font-weight:600; color:var(--grey-900); text-decoration:none; padding:6px 12px; border-radius:16px; flex:none;}
+.site-nav-row a:hover{background:var(--grey-100);}
+.site-nav-row a.on{background:var(--pipo-black); color:#fff;}
+.site-nav-row a.sn-home{border:1.5px solid var(--pipo-black); margin-right:8px;}
+.site-nav-row.sub{background:var(--grey-100); padding-top:6px; padding-bottom:6px;}
+.site-nav-row.sub a.on{background:var(--pipo-blue); color:#fff;}
+body .print-btn{top:100px;}
+@media print{.site-nav{display:none;}}
 </style>
 </head>
 <body>
+<nav class="site-nav" aria-label="Navegação entre protocolos">
+  <div class="site-nav-row">
+    <a href="index.html" class="sn-home">&larr; Início</a>
+    <a href="fluxo-entrada-membro.html">Fluxo do membro</a>
+    <a href="protocolo-checkup.html">Check-up</a>
+    <a href="protocolo-renovacao-receitas.html">Receitas</a>
+    <a href="protocolo-renovacao-exames.html" class="on">Exames</a>
+    <a href="protocolo-encaminhamento-terapias.html">Terapias</a>
+    <a href="protocolo-guia-direcionamento.html">Guia de direcionamento</a>
+  </div>
+  <div class="site-nav-row sub">
+    <a href="protocolo-renovacao-exames.html">Protocolo escrito</a>
+    <a href="mapa-mental-renovacao-exames.html" class="on">Mapa mental</a>
+    <a href="mapa-mental-renovacao-exames-automacao-proposta.html">Proposta de automação</a>
+  </div>
+</nav>
 <div class="sheet">
 <a class="back-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-exames.html">&larr; Voltar ao protocolo</a>
 <div class="brand-row">
@@ -105,38 +134,34 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <a class="back-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/mapa-mental-renovacao-receitas.html" style="margin-bottom:20px; margin-left:10px;">Este é o protocolo de Exames — ver também o protocolo irmão de Renovação de Receitas &rarr;</a>
 <a class="back-link" href="https://alinedias-lgtm.github.io/pipo-protocolos/mapa-mental-renovacao-exames-automacao-proposta.html" style="margin-bottom:32px">Ver proposta de automação em avaliação &rarr;</a>
 
-<div class="ref-grid">
-  <div class="dnote"><h4>Checkup / rotina</h4>Ex.: hemograma, perfil lipídico, glicemia, TSH.</div>
-  <div class="dnote"><h4>Específico</h4>Sintoma-dirigido — ex.: exames de imagem pra queixa pontual, culturas.</div>
-</div>
-
 <h2 class="section">Funil de decisão</h2>
 <div class="dtop"><h4>Alinhamento de expectativa</h4>"Não realizamos a transcrição na íntegra de pedidos feitos por outros profissionais. Cada solicitação passa por avaliação médica — não garantimos que todos os exames do pedido anterior serão emitidos. Deseja continuar?" Sim → "Combinado, vamos seguir!" · Não → "Tudo bem, estamos por aqui."</div>
 <div class="darrow"></div>
 <div class="dbox"><strong>Triagem inicial</strong>Registrado em prontuário por quem receber o ticket: qual foi o motivo do pedido? você ainda apresenta o sintoma? data do último pedido? quem solicitou (profissional e se é acompanhamento ativo)?</div>
 <div class="darrow"></div>
-<div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Pendente — reformular a pergunta 1 (reunião de 07/10/2026)</h4>Tirar "checkup/rotina" e quebrar "dentro do prazo" em duas perguntas: pedido anteriormente pela Pipo? solicitado nos últimos 90 dias? Falta Leticia Defilippo fechar o desenho (pedido de outro profissional, sintoma ainda presente). Até lá, vale a pergunta abaixo.</div>
-<div class="dbox"><strong>1 · É checkup/rotina, pedido anteriormente pela Pipo, dentro do prazo?</strong></div>
-<div class="dpill">SIM</div>
+<div class="dbox"><strong>1 · É exame pedido anteriormente pela Pipo?</strong></div>
+<div class="darrow"></div>
+<div class="dbox"><strong>2 · Foi solicitado nos últimos 90 dias?</strong></div>
+<div class="dpill">SIM às duas</div>
 <div class="darrow"></div>
 <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span></div>
-<div class="dpill" style="margin-top:14px;">NÃO</div>
+<div class="dpill" style="margin-top:14px;">QUALQUER NÃO</div>
 <div class="darrow"></div>
-<div class="dbox"><strong>2 · É específico (sintoma-dirigido) — você ainda apresenta o sintoma que motivou a solicitação desse exame?</strong></div>
+<div class="dbox"><strong>3 · Qual foi o motivo/sintoma que originou o pedido? Você ainda apresenta esse sintoma?</strong><span style="font-size:11px;color:var(--grey-600);">Pedido de outro profissional (ex.: nutricionista) ou da Pipo há mais de 90 dias</span></div>
 <div class="dpill">SIM</div>
 <div class="darrow"></div>
 <div class="doutcome do-blue"><span class="dotitle">Interconsulta médica direta</span>Prioridade alta, sintoma anotado</div>
 <div class="dpill" style="margin-top:14px;">NÃO</div>
 <div class="darrow"></div>
-<div class="doutcome do-peach"><span class="dotitle">Enfermeiro da teletriagem avalia</span>Resolve com apoio informal da equipe médica, ou encaminha para Teleconsulta de enfermagem (30 min)</div>
+<div class="doutcome do-peach"><span class="dotitle">Enfermeiro da teletriagem avalia</span>Resolve com apoio informal da equipe médica, ou encaminha para Teleconsulta de enfermagem (30 min). O bot só entrega ao enfermeiro o que foge do padrão.</div>
 
 <div class="ref-grid" style="margin-top:20px;">
   <div class="dnote"><h4>Origem do pedido não muda o roteamento</h4>Médico ou não-médico (nutricionista, dentista etc.) — nos dois casos, o médico da Pipo sempre avalia antes da emissão, seja pela via direta (Interconsulta) ou após a avaliação da enfermagem. A origem fica registrada em prontuário como contexto, mas não entra no funil como critério de roteamento.</div>
   <div class="dnote"><h4>Checagem final, sempre</h4>O pedido nunca é transcrito na íntegra sem a checagem médica — independente da via (Interconsulta direta ou depois da avaliação da enfermagem), é o médico quem avalia e emite em todos os casos.</div>
 </div>
 <div class="ref-grid">
-  <div class="dnote"><h4>Enfermagem</h4>Só entra quando o funil encaminha pra teletriagem (sintoma não está mais presente, específico). Nesse caso, registra as perguntas obrigatórias em prontuário e avalia — decide entre consultar a equipe médica informalmente ou conduzir a Teleconsulta de enfermagem (30 min).</div>
-  <div class="dnote"><h4>Médico</h4>Quando o caso vai direto pra Interconsulta (rotina dentro do prazo, ou específico com o sintoma ainda presente), é quem recebe o ticket e registra as perguntas obrigatórias em prontuário. Avalia e emite em todos os casos, via Interconsulta direta ou após a avaliação da enfermagem.</div>
+  <div class="dnote"><h4>Enfermagem</h4>Só entra quando o funil encaminha pra teletriagem (sintoma não está mais presente). Nesse caso, registra as perguntas obrigatórias em prontuário e avalia — decide entre consultar a equipe médica informalmente ou conduzir a Teleconsulta de enfermagem (30 min).</div>
+  <div class="dnote"><h4>Médico</h4>Quando o caso vai direto pra Interconsulta (pedido da Pipo nos últimos 90 dias, ou sintoma ainda presente), é quem recebe o ticket e registra as perguntas obrigatórias em prontuário. Avalia e emite em todos os casos, via Interconsulta direta ou após a avaliação da enfermagem.</div>
 </div>
 <div class="legend">
   <span><i class="sw" style="background:var(--grey-100);border:1.5px solid var(--slate-600);"></i>Decisão do funil</span>
@@ -147,11 +172,11 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 <h2 class="section">Referência rápida</h2>
 <div class="ref-grid">
   <div class="ref-box alert"><h3>Enfermeiro da teletriagem avalia</h3><ul>
-    <li>Exame específico, sintoma que motivou o pedido não está mais presente</li>
+    <li>Outro pedido (de outro profissional, ou da Pipo há mais de 90 dias), sintoma que motivou o pedido não está mais presente</li>
   </ul></div>
   <div class="ref-box success"><h3>Vai direto pra interconsulta, sem tele</h3><ul>
-    <li>Checkup/rotina dentro do prazo, pedido pela Pipo</li>
-    <li>Específico, sintoma que motivou o pedido ainda presente (prioridade alta)</li>
+    <li>Pedido da Pipo, feito nos últimos 90 dias</li>
+    <li>Outro pedido, sintoma que motivou o pedido ainda presente (prioridade alta)</li>
   </ul></div>
   <div class="ref-box"><h3>Origem do pedido não muda o caminho</h3><ul>
     <li>Médico ou não médico — fica só registrado em prontuário como contexto</li>
