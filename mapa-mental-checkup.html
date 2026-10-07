@@ -156,6 +156,39 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
   <span><i class="sw" style="background:var(--grey-100);"></i>Fim sem ação</span>
 </div>
 
+<h2 class="section">Resumo — o que vai para cada desfecho</h2>
+<div class="ref-grid" style="grid-template-columns:repeat(auto-fit,minmax(230px,1fr));">
+<div class="ref-box" style="background:var(--pipo-success); border:1.5px solid #7fd9ac;"><h3 style="color:var(--success-900);">Automação (via Memed)</h3><ul>
+<li>Membros acima de 2 anos que não tenham queixas e não tenham comorbidades e solicitem o check-up.</li>
+<li>No contexto de automação, o pedido sai sem passar pela médica.</li>
+</ul></div>
+<div class="ref-box" style="background:var(--slate-100); border:1.5px solid var(--slate-600);"><h3 style="color:var(--slate-900);">Interconsulta médica</h3><ul>
+<li>Pedidos de check-up de membros acima de 2 anos, com ou sem queixa, com ou sem comorbidade, a qualquer idade.</li>
+<li>Houve alteração em exame anterior: a médica reavalia só o item alterado.</li>
+<li>Depois da teleconsulta de enfermagem, ou quando o membro com queixa prefere seguir com o check-up e falar no retorno dos exames.</li>
+<li>Dúvida da enfermagem sobre rastreio raro: vai sempre para interconsulta.</li>
+</ul></div>
+<div class="ref-box" style="background:var(--pipo-peach); border:1.5px solid var(--pipo-sand);"><h3 style="color:var(--sand-900);">Teleconsulta de enfermagem (30 min)</h3><ul>
+<li>Só membros com queixa que desejem conversar naquele momento — é opção do membro, que pode recusar.</li>
+<li>Pedido com menos de 1 ano, sem alteração no exame, e o membro responde que tem sintomas: vai direto, sem triagem antes.</li>
+<li>Sempre 30 min, independente do tempo do sintoma. Idade e comorbidade não mandam para a teleconsulta.</li>
+</ul></div>
+</div>
+<p style="font-size:12.5px; color:var(--grey-600); margin:10px 0 0;">Fora dos três: pedido com menos de 1 ano, sem alteração e sem sintomas encerra com a mensagem automática (aguardar o prazo de 1 ano).</p>
+<div class="dnote" style="margin-top:12px; border-color:var(--pending-border); background:var(--pending-bg);"><h4>Pendente — comorbidade na automação</h4>Na reunião de 07/10/2026 a automação foi descrita como "sem queixa e sem comorbidade", mas o protocolo vigente diz que comorbidade não bloqueia. Falta Leticia Defilippo confirmar qual vale.</div>
+
+<h2 class="section">Retorno de exames — desfechos</h2>
+<div class="ref-grid">
+<div class="ref-box" style="background:var(--pipo-peach); border:1.5px solid var(--pipo-sand);"><h3 style="color:var(--sand-900);">Teleconsulta médica</h3><ul>
+<li>Exames alterados ou exame de imagem.</li>
+<li>Exames normais, quando o membro deseja conversar com a médica (opção dele).</li>
+</ul></div>
+<div class="ref-box" style="background:var(--grey-100);"><h3>Acolhimento pelo enfermeiro da teletriagem</h3><ul>
+<li>Exames laboratoriais normais, sem exame de imagem: o enfermeiro avalia e encaminha, com o documento de devolutiva.</li>
+</ul></div>
+</div>
+<p style="font-size:12.5px; color:var(--grey-600); margin:10px 0 0;">Combinado em reunião (07/10/2026), em validação com Leticia Defilippo.</p>
+
 <h2 class="section">Fluxo — passos seguintes (após a teletriagem)</h2>
 <div class="flow"><div class="step"><span class="num">1</span><span class="lbl">Detalhar perfil do membro</span><div style="font-size:13px;color:#837c79;margin-top:6px">Idade · sexo biológico · comorbidades (lista ao lado) · tabagismo · bariátrica · vida sexual ativa</div></div><div class="arrow"></div><div class="step"><span class="num">2</span><span class="lbl">Solicitar Check-up Padrão (Check-up Pipo)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Ver cartão de referência ao lado — inclui confirmação de aceite de sorologias. Menores de 18 usam o check-up padrão pediátrico.</div></div><div class="arrow"></div><div class="step"><span class="num">3</span><span class="lbl">Aplicar rastreamentos por perfil (idade/sexo/histórico)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Ver tabela de referência — condições por população, exame e frequência próprios</div></div><div class="arrow"></div><div class="step"><span class="num">4</span><span class="lbl">Verificar exames por comorbidade (personalizado)</span><div style="font-size:13px;color:#837c79;margin-top:6px">Veganos (qualquer idade), bariátrica (bypass), atividade física, pessoas trans, testosterona (situações atípicas — só testosterona total no rastreio inicial), perimenopausa (mensagem-padrão). Dúvida da enfermagem sobre rastreio raro? Vai sempre para interconsulta médica.</div></div><div class="arrow"></div><div class="step"><span class="num">5</span><span class="lbl">Solicitar exames e rastreamentos</span><div style="font-size:13px;color:#837c79;margin-top:6px">Conforme perfil, faixa etária e comorbidades definidos acima</div></div><div class="arrow"></div><div class="outcome o-ok"><span class="otitle">6 · Registrar no prontuário (obrigatório) — FIM</span>PA aferida · exames preventivos · carteira vacinal · expectativas do membro · aceite/negativa de sorologias</div></div>
 <h2 class="section">Referência — check-up padrão e sorologias</h2>
