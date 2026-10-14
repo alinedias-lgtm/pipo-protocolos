@@ -59,6 +59,7 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 
 
 
+
 .site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
 .site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
 .site-nav-row::-webkit-scrollbar{display:none;}
@@ -86,6 +87,7 @@ body .print-btn{top:100px;}
   <div class="site-nav-row sub">
     <a href="protocolo-guia-direcionamento.html" class="on">Protocolo escrito</a>
     <a href="mapa-mental-guia-direcionamento.html">Mapa mental</a>
+    <a href="mapa-mental-guia-direcionamento-automacao-proposta.html">Proposta de automação</a>
   </div>
 </nav>
 <button class="print-btn" onclick="window.print()">Salvar como PDF</button>
@@ -96,7 +98,7 @@ body .print-btn{top:100px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Fluxo digital</strong></div>
   <div>Status<strong>Rascunho — aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>09/09/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>14/10/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 
@@ -112,8 +114,16 @@ body .print-btn{top:100px;}
 </div>
 <p>Em qualquer sintoma, um critério de Pronto Socorro isolado já é suficiente para o encaminhamento — os critérios de PS não precisam ocorrer em conjunto.</p>
 <p>Quando o bot não identificar a resposta do membro, o caso vai para o enfermeiro da teletriagem.</p>
+<p><strong>Regras para escrever e revisar cada roteiro</strong> (definidas na reunião de 14/10/2026):</p>
+<ol>
+  <li>Só fica no roteiro a pergunta que <strong>muda o caminho</strong> do membro. Se a resposta não muda o desfecho, a pergunta sai. O profissional pergunta o resto na consulta.</li>
+  <li>Todo critério de Pronto Socorro precisa ter uma pergunta que o identifique. Se não existe a pergunta, o critério sai.</li>
+  <li>Linguagem simples. Termos que o membro não entende saem. Em vez de "pancada", usar "bateu a cabeça".</li>
+  <li>Todo "recente" precisa de prazo escrito na pergunta (ex.: "nos últimos 3 meses").</li>
+  <li>O card mostra o <strong>critério</strong> do desfecho, não a conduta. Orientar, medicar e agendar é com o profissional.</li>
+</ol>
 
-<h2>Atalho de urgência (palavras-chave) <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pending-bg);border:1px solid var(--pending-border);color:var(--pending-text);">Rascunho — aguardando confirmação de Leticia Defilippo</span></h2>
+<h2>Atalho de urgência (palavras-chave) <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pending-bg);border:1px solid var(--pending-border);color:var(--pending-text);">Rascunho — Leticia Defilippo leu na reunião de 14/10 e achou boa; falta a revisão completa dela</span></h2>
 <p>O atalho separa o que é <strong>risco de vida</strong> do que é <strong>urgência sem risco iminente</strong>. Proposta de Rosiane Turim, revisada em reunião de Protocolos de 09/10/2026.</p>
 <h3>Regra geral</h3>
 <p>Antes de iniciar o roteiro de qualquer sintoma, verificar se o relato contém algum dos termos abaixo.</p>
@@ -153,29 +163,30 @@ body .print-btn{top:100px;}
   </ul></div>
 </div>
 
-<h2>Falta de Ar / Chiado no Peito <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span> <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:4px;vertical-align:middle;background:var(--pending-bg);border:1px solid var(--pending-border);color:var(--pending-text);">Rascunho — aguardando confirmação de Leticia Defilippo</span></h2>
-<p><em>Antes chamada "Asma / Bronquite" — passa a abordar por sintoma, não por diagnóstico prévio (reunião de Protocolos de 25/09/2026). Revisada em 09/10/2026 com Rosiane Turim: crise sem falta de ar passa a Teleconsulta de enfermagem 15 min, e os critérios de falta de ar para Pronto Socorro foram unificados. Falta Leticia Defilippo confirmar, em especial o histórico de internação/UTI como critério de PS.</em></p>
+<h2>Falta de Ar / Chiado no Peito <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
+<p><em>Antes chamada "Asma / Bronquite" — passa a abordar por sintoma, não por diagnóstico prévio (reunião de 25/09/2026). Revisada em 09/10/2026 e em 14/10/2026 com a Dra Leticia Defilippo: só UTI ou intubação leva ao Pronto Socorro; internação sozinha leva à consulta médica.</em></p>
 <p><strong>Como este roteiro se relaciona com o Atalho de urgência:</strong> se o membro relatar falta de ar, aperto no peito ou chiado <em>acontecendo agora</em>, vale o Atalho de urgência (Nível 2 ou Nível 1) e o roteiro abaixo não é aplicado. Este roteiro é usado quando o relato é de crise recente, tosse ou chiado <em>sem falta de ar no momento</em>, ou quando o membro responde "não" à pergunta "Isso está acontecendo agora?".</p>
 <p><strong>Perguntas:</strong></p>
 <ul>
   <li>Você está sentindo falta de ar no momento?</li>
-  <li>Você usou a bombinha de resgate? Quantas vezes? Houve melhora?</li>
+  <li>Você usou a bombinha de resgate? Houve melhora?</li>
   <li>Consegue falar frases completas sem parar para respirar? Está ouvindo chiado no peito?</li>
   <li>Você está em crise agora, mesmo sem falta de ar? (ex.: tosse/chiado/aperto no peito aumentados, ou uso de bombinha mais que o habitual)</li>
-  <li>Você tem diagnóstico de asma ou bronquite?</li>
   <li>Você teve febre?</li>
-  <li>Já precisou ser internado ou ir para UTI por algum problema respiratório alguma vez?</li>
+  <li>Já precisou ficar internado por problema respiratório? Alguma vez foi para a UTI ou precisou ser intubado?</li>
 </ul>
+<p><em>Saíram em 14/10/2026: "quantas vezes usou a bombinha" (só importa se houve melhora) e "tem diagnóstico de asma ou bronquite" (o roteiro é por sintoma, não muda o caminho).</em></p>
 <div class="cards">
   <div class="card blue"><h4>Eletivo — Teleconsulta de enfermagem 30 min</h4><ul><li>Sem falta de ar no momento, sem crise atual (com ou sem diagnóstico prévio de asma)</li></ul></div>
-  <div class="card blue"><h4>Demanda espontânea — Teleconsulta de enfermagem 15 min</h4><ul><li>Em crise (tosse/chiado/aperto no peito aumentados), sem falta de ar</li><li>Respondeu bem à bombinha de resgate, fala frases completas</li><li>Sem febre, sem histórico de internação/UTI</li></ul></div>
-  <div class="card blue"><h4>Demanda espontânea — Consulta médica 15 min</h4><ul><li>Febre associada à crise, sem os demais critérios de Pronto Socorro ao lado — não é mais PS automático, mas precisa de avaliação médica rápida</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea — Teleconsulta de enfermagem 15 min</h4><ul><li>Em crise (tosse/chiado/aperto no peito aumentados), sem falta de ar</li><li>Respondeu bem à bombinha de resgate, fala frases completas</li><li>Sem febre, sem histórico de internação, UTI ou intubação</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea — Consulta médica 15 min</h4><ul><li>Febre associada à crise, sem os critérios de Pronto Socorro ao lado</li><li>Histórico de internação (sem UTI nem intubação) por problema respiratório, com crise atual</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente — orientar ir acompanhado)</h4><ul>
     <li>Falta de ar no momento, sem melhora após uso da bombinha de resgate</li>
     <li>Não consegue falar frases completas sem pausar para respirar</li>
-    <li>Histórico de internação/UTI/intubação por problema respiratório, com crise atual (mesmo que pareça leve)</li>
+    <li>Histórico de UTI ou intubação por problema respiratório, com crise atual (mesmo que pareça leve)</li>
   </ul></div>
 </div>
+<div class="card coral" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Pergunta sobre chiado <span class="pending">pendente</span></h4><ul><li>A pergunta sobre chiado no peito foi discutida: ela já está dentro dos critérios de crise. Não foi retirada. Falta o grupo confirmar se ela fica.</li></ul></div>
 
 <h2>Constipação <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h2>
 <p><strong>Perguntas:</strong></p>
@@ -187,42 +198,44 @@ body .print-btn{top:100px;}
   <li>Você está conseguindo eliminar gases, mesmo sem evacuar?</li>
   <li>Ao apertar sua barriga neste momento, você sente ela mais rígida ou dolorida do que o normal?</li>
   <li>Você toma alguma medicação forte para dor? Por exemplo: morfina, codeína, tramadol, oxicodona.</li>
-  <li>Já fez alguma cirurgia na barriga? Se sim, quando?</li>
+  <li>Você fez alguma cirurgia na barriga nos últimos 3 meses?</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Eletivo — Teleconsulta de enfermagem 30 min</h4><ul><li>Constipação sem sinais de alarme (os critérios de Pronto Socorro abaixo) — por exemplo, sem evacuar há 3+ dias e/ou dor abdominal até nota 7, eliminando gases, sem distensão importante, sem sangue nas fezes, sem vômito</li><li>Se a enfermagem entender que a pessoa precisa de especialista (ex.: constipação de longa data, sem urgência), pode encaminhar para a rede credenciada (gastroenterologista)</li></ul></div>
+  <div class="card blue"><h4>Eletivo — Teleconsulta de enfermagem 30 min</h4><ul><li>Constipação sem sinais de alarme (os critérios de Pronto Socorro abaixo) — por exemplo, sem evacuar há 3+ dias e/ou dor abdominal até nota 7, eliminando gases, sem distensão importante, sem sangue nas fezes, sem vômito</li></ul></div>
   <div class="card blue"><h4>Demanda espontânea — Consulta médica 15 min</h4><ul><li>Paciente oncológico em tratamento ativo, ou em uso de medicação forte para dor (ex.: morfina, tramadol, codeína), com constipação — mesmo sem os sinais de alarme abaixo</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
     <li>Dor abdominal intensidade 8–10, sem evacuar</li>
     <li>Vômito persistente associado</li>
     <li>Ausência completa de eliminação de gases e fezes, com distensão abdominal (suspeita obstrutiva, mesmo com dor moderada)</li>
-    <li>Cirurgia abdominal prévia recente + dor abdominal atual (risco de suboclusão por aderências)</li>
+    <li>Cirurgia abdominal nos últimos 90 dias + dor abdominal atual (risco de suboclusão por aderências)</li>
   </ul></div>
 </div>
-<div class="card coral" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Definir "cirurgia recente" <span class="pending">pendente</span></h4><ul><li>A pergunta agora também pergunta <em>quando</em> foi a cirurgia. Falta fechar o que o guia considera "recente" — Rosiane Turim sugeriu 3 meses, sem decisão ainda.</li></ul></div>
+<p><em>Definido em 14/10/2026: "cirurgia recente" = últimos 3 meses (90 dias), tempo em que ainda pode haver complicação pós-cirúrgica. Os dois cards de enfermagem (30 e 15 min) viraram um só, de 30 min. Se o enfermeiro entender, durante a consulta, que o membro precisa de gastroenterologista, ele encaminha — isso é orientação para o enfermeiro, não critério deste guia.</em></p>
 
 <h2>Corrimento Vaginal <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
-<p><strong>Perguntas:</strong></p>
+<p><strong>Perguntas (nesta ordem):</strong></p>
 <ul>
-  <li>Você está gestante?</li>
-  <li>Você teve febre ou percebeu sangue?</li>
-  <li>Você está com dor no pé da barriga ou dor na relação sexual?</li>
   <li>Há quanto tempo está presente?</li>
+  <li>Você está gestante?</li>
+  <li>Você teve febre?</li>
+  <li>Você percebeu sangue ou coloração amarronzada?</li>
+  <li>Você está com dor no pé da barriga ou dor na relação sexual?</li>
   <li>Você teve parto, aborto, curetagem ou colocou DIU nos últimos 60 dias?</li>
-  <li>Como é o corrimento — cor, odor, e vem com coceira ou ardência?</li>
   <li>Você já teve esses sintomas antes?</li>
   <li>Usou algum tratamento ou medicação por conta própria? (não decide o caminho, mas adianta a consulta)</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Teleconsulta de enfermagem 30 min</h4><ul><li>Não gestante, corrimento há menos de 30 dias, sem sangue, sem febre, sem contexto puerperal/pós-procedimento ginecológico nos últimos 60 dias, sem suspeita de violência sexual</li></ul></div>
-  <div class="card blue"><h4>Teletriagem — enfermeiro avalia</h4><ul><li>Corrimento há 30 dias ou mais, sem os red flags abaixo</li><li>O enfermeiro decide entre teleconsulta de enfermagem ou encaminhamento à rede credenciada (ginecologista). Sintomas que já se repetiram antes costumam indicar ginecologista presencial.</li></ul></div>
+  <div class="card blue"><h4>Teleconsulta de enfermagem 30 min</h4><ul><li>Não gestante, corrimento há menos de 30 dias, sem sangue ou coloração amarronzada, sem febre, sem contexto puerperal/pós-procedimento ginecológico nos últimos 60 dias, sem suspeita de violência sexual</li></ul></div>
+  <div class="card blue"><h4>Teletriagem — enfermeiro avalia</h4><ul><li>Corrimento há 30 dias ou mais, sem os sinais de alarme abaixo</li><li>O enfermeiro avalia e decide o encaminhamento (teleconsulta de enfermagem, consulta médica ou rede credenciada — ginecologista). Sintomas que já se repetiram antes costumam indicar ginecologista presencial.</li></ul></div>
+  <div class="card blue"><h4>Teleconsulta médica</h4><ul><li>Gestante sem sinais de alarme (sem febre, sem sangue ou coloração amarronzada, sem dor no pé da barriga)</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro / PS obstétrico</h4><ul>
-    <li>Gestante (PS obstétrico, independente de outros sintomas)</li>
-    <li>Febre e/ou sangue e/ou dor no pé da barriga ou dor na relação sexual</li>
-    <li>Contexto puerperal ou pós-procedimento ginecológico nos últimos 60 dias (parto, aborto, curetagem, DIU) com corrimento anormal, febre ou dor</li>
+    <li>Gestante com febre, sangue ou coloração amarronzada, ou dor no pé da barriga (PS obstétrico)</li>
+    <li>Febre e/ou sangue ou coloração amarronzada e/ou dor no pé da barriga ou dor na relação sexual</li>
+    <li>Parto, aborto, curetagem ou DIU nos últimos 60 dias, com corrimento anormal, febre ou dor</li>
   </ul></div>
 </div>
-<p><em>Relato de coceira vaginal também entra por este roteiro — na coceira muitas vezes se descobre o corrimento. Na teleconsulta, o enfermeiro pergunta se o parceiro tem os mesmos sintomas (contexto de IST); não é pergunta do bot nem critério decisor. A coloração marrom foi retirada das perguntas e dos critérios (09/10/2026): o membro descreve a cor na pergunta aberta e o enfermeiro avalia; o critério vinha do protocolo antigo, sem justificativa registrada.</em></p>
+<p><em>Definido em 14/10/2026: "há quanto tempo" vira a primeira pergunta (se for 30 dias ou mais, não precisa responder o resto). Febre e sangue viraram duas perguntas separadas. A pergunta "como é o corrimento (cor, odor, coceira)" saiu: não muda o caminho, e o profissional avalia na consulta. A coloração amarronzada <strong>foi mantida</strong>, junto com sangue na mesma pergunta, porque a pessoa pode não reconhecer que é sangue quando está misturado no corrimento (mesma conduta nos dois casos). Gestante deixou de ir ao PS automaticamente porque candidíase é comum na gestação. Coceira vaginal também entra por este roteiro. Na teleconsulta, o enfermeiro pergunta se o parceiro tem os mesmos sintomas (contexto de IST); não é pergunta do bot nem critério decisor.</em></p>
+<div class="card coral" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Duração da teleconsulta médica da gestante <span class="pending">pendente</span></h4><ul><li>A Dra Leticia sugeriu 15 min. A duração não foi confirmada pelo grupo.</li></ul></div>
 
 <h2>Diarreia <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
 <p><strong>Perguntas:</strong></p>
@@ -232,26 +245,24 @@ body .print-btn{top:100px;}
   <li>Você percebeu sangue ou muco nas fezes?</li>
   <li>Está sentindo tontura ou fraqueza?</li>
   <li>Está com a boca seca ou notou diminuição da quantidade de urina?</li>
-  <li>Quantas evacuações apresentou nas últimas 24h?</li>
-  <li>Está com vômitos associados?</li>
-  <li>Usou algum antibiótico recentemente?</li>
   <li>Você é gestante, diabético, ou tem alguma condição que baixa a imunidade?</li>
-  <li>Viajou recentemente ou comeu algo fora do habitual, junto com outras pessoas que também ficaram doentes?</li>
 </ul>
+<p><em>Saíram em 14/10/2026 (não mudam o caminho): quantas evacuações nas últimas 24h, vômitos associados, uso de antibiótico recente, viagem ou comida em comum com outras pessoas.</em></p>
 <div class="cards">
-  <div class="card blue"><h4>Demanda espontânea — Teleconsulta de enfermagem 15 min</h4><ul><li>Até 7 dias, sem critérios de PS, sem comorbidades</li></ul></div>
-  <div class="card blue"><h4>Demanda espontânea — Consulta médica 30 min</h4><ul><li>8 a 30 dias, sem critérios de PS</li></ul></div>
-  <div class="card blue"><h4>Rede credenciada — Gastroenterologista</h4><ul><li>Acima de 30 dias</li></ul></div>
-  <div class="card coral"><h4>Pronto Socorro (mantendo os critérios existentes, com a operacionalização da desidratação)</h4><ul>
-    <li>Febre alta &gt; 38°C</li>
+  <div class="card blue"><h4>Demanda espontânea — Teleconsulta de enfermagem 15 min</h4><ul><li>Até 7 dias, sem critérios de Pronto Socorro</li><li>Sem comorbidades: sem sangue ou muco, sem febre alta, não gestante, não diabético, sem baixa imunidade, não maior de 65 anos</li></ul></div>
+  <div class="card blue"><h4>Demanda eletiva — Consulta médica 30 min</h4><ul><li>8 a 30 dias, sem critérios de Pronto Socorro</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea — Consulta médica 15 min</h4><ul><li>Até 7 dias, com sangue ou muco nas fezes, ou com febre alta</li><li>Maior de 65 anos</li><li>Gestante ou diabético (não pode demorar para marcar)</li></ul></div>
+  <div class="card blue"><h4>Rede credenciada — Gastroenterologista</h4><ul><li>Acima de 30 dias, sem critérios de Pronto Socorro</li></ul></div>
+  <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
     <li>Dor abdominal 8–10</li>
     <li>Sinais de desidratação: tontura/fraqueza, boca seca, diminuição importante da urina</li>
     <li>Menores de 1 ano: sempre</li>
-    <li>Maiores de 65 anos: se mais de 5 evacuações no dia com vômitos associados</li>
   </ul></div>
 </div>
+<p><em>Definido em 14/10/2026: febre alta saiu do Pronto Socorro (gastroenterite viral dá febre e é manejada na teleconsulta médica). Maior de 65 anos também saiu do Pronto Socorro (e com ele o critério "mais de 5 evacuações com vômito"): passa para consulta médica 15 min. Antes não havia desfecho para diarreia com sangue; agora há.</em></p>
 
-<h2>Cefaleia <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h2>
+<h2>Dor de cabeça (cefaleia) <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h2>
+<p><em>O título junta "cefaleia", "dor de cabeça" e "enxaqueca" numa seção só (14/10/2026).</em></p>
 <p><strong>Perguntas:</strong></p>
 <ul>
   <li>De 0 a 10, qual a intensidade da dor de cabeça?</li>
@@ -259,67 +270,69 @@ body .print-btn{top:100px;}
   <li>Você tem tontura ou alteração visual?</li>
   <li>É a pior dor de cabeça que você já sentiu?</li>
   <li>Sente fraqueza, dormência, dificuldade para falar, confusão, ou já teve uma convulsão?</li>
-  <li>Houve alguma pancada na cabeça recentemente?</li>
-  <li>Você está gestante ou nas primeiras semanas pós-parto? Notou pressão alta, inchaço ou dor no pé da barriga?</li>
-  <li>Essa dor é igual às que você costuma ter, ou é diferente de alguma forma?</li>
-  <li>Você tem mais de 50 anos? Essa é a primeira vez que você sente esse tipo de dor de cabeça?</li>
+  <li>Você bateu a cabeça nos últimos 3 dias?</li>
+  <li>Você está gestante ou nas primeiras semanas pós-parto?</li>
+  <li>Essa dor é diferente das que você costuma ter, ou é a primeira vez que você sente esse tipo de dor?</li>
+  <li>Você tem mais de 50 anos?</li>
 </ul>
+<p><em>Saíram em 14/10/2026: as perguntas de pressão alta, inchaço e dor no pé da barriga (pré-eclâmpsia) — gestante e pós-parto vão direto para a teleconsulta médica, que investiga melhor. "Essa dor é igual às que você costuma ter" e "é a primeira vez" viraram uma pergunta só.</em></p>
 <div class="cards">
-  <div class="card blue"><h4>Eletivo — Teleconsulta de enfermagem 30 min</h4><ul><li>Cefaleia recorrente já conhecida, com padrão igual ao habitual, intensidade menor ou igual a 8</li></ul></div>
+  <div class="card blue"><h4>Eletivo — Teleconsulta de enfermagem 30 min</h4><ul><li>Cefaleia recorrente já conhecida, com padrão igual ao habitual, intensidade menor que 8 (0 a 7)</li></ul></div>
   <div class="card blue"><h4>Rede credenciada — Neurologista</h4><ul><li>Dor intermitente e/ou com mais de 30 dias, sem critérios de encaixe ou PS</li></ul></div>
+  <div class="card blue"><h4>Teleconsulta médica (novo)</h4><ul><li>Gestante ou pós-parto</li><li>Tontura ou alteração visual (pode ser enxaqueca)</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
     <li>Intensidade 8–10</li>
-    <li>Tontura ou alteração visual</li>
     <li>Início súbito / "pior dor da vida"</li>
-    <li>Déficit neurológico</li>
-    <li>Rigidez de nuca com febre</li>
-    <li>Trauma craniano</li>
-    <li>Gestante/puerpério com sinais de pré-eclâmpsia</li>
-    <li>Uso de anticoagulante</li>
+    <li>Déficit neurológico: fraqueza, dormência, dificuldade para falar, confusão ou convulsão</li>
+    <li>Bateu a cabeça nos últimos 3 dias</li>
     <li>Dor de cabeça nova (primeira vez, nunca teve antes) em pessoa com mais de 50 anos</li>
   </ul></div>
 </div>
+<p><em>Saíram do Pronto Socorro em 14/10/2026: tontura ou alteração visual (vão para a teleconsulta médica), rigidez de nuca com febre e uso de anticoagulante (não existe pergunta para esses dois, e o membro não consegue fazer o teste de rigidez de nuca; o médico explica na consulta), e gestante com pré-eclâmpsia (vai direto para a teleconsulta médica).</em></p>
+<div class="card coral" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Duração da teleconsulta médica de cefaleia <span class="pending">pendente</span></h4><ul><li>O card de teleconsulta médica é novo. Falta definir a duração.</li></ul></div>
 
 <h2>Dor de Dente <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
 <p><strong>Perguntas:</strong></p>
 <ul>
-  <li>Intensidade 0–10</li>
-  <li>Febre?</li>
-  <li>Inchaço no rosto/gengiva/pescoço?</li>
-  <li>Dificuldade para abrir a boca, engolir ou respirar?</li>
-  <li>Trauma recente ou procedimento recente?</li>
+  <li>De 0 a 10, qual a intensidade da dor?</li>
+  <li>Você teve febre?</li>
+  <li>Você está com dificuldade para abrir a boca, engolir ou respirar?</li>
+  <li>Você está com sangramento?</li>
+  <li>Você sofreu algum trauma ou fez algum procedimento no dente nos últimos 15 dias?</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Teleconsulta de enfermagem 30 min</h4><ul><li>Dor 0–6, sem febre, sem inchaço, sem trismo/disfagia, sem trauma, sem sangramento incontrolável</li><li>Orientação + interconsulta médica para analgesia + agendamento odontológico eletivo</li></ul></div>
+  <div class="card blue"><h4>Teleconsulta de enfermagem 30 min</h4><ul><li>Dor 0–6, sem febre, sem dificuldade para abrir a boca, engolir ou respirar, sem sangramento, sem trauma ou procedimento nos últimos 15 dias</li></ul></div>
   <div class="card coral"><h4>PS Odontológico (qualquer um isoladamente)</h4><ul>
     <li>Intensidade ≥ 7</li>
     <li>Febre</li>
-    <li>Inchaço de rosto/gengiva/pescoço</li>
     <li>Dificuldade para abrir a boca, engolir, ou dificuldade para respirar</li>
-    <li>Sangramento pós-procedimento que não cede</li>
-    <li>Trauma</li>
+    <li>Sangramento ativo (com ou sem procedimento)</li>
+    <li>Trauma ou procedimento nos últimos 15 dias</li>
   </ul></div>
 </div>
+<p><em>Definido em 14/10/2026: "recente" = 15 dias. Se o membro volta com dor logo depois de um procedimento, precisa de reavaliação. O inchaço no rosto, gengiva ou pescoço saiu (pergunta e critério), porque quem tem dor de dente costuma ter inchaço. Sangramento passou a ser pergunta: não dá para manejar sangramento na teleconsulta. O texto de conduta (analgesia, agendamento) saiu do card. A maioria dos membros tem plano odontológico: procurar sempre a rede odontológica antes do Pronto Socorro; sem plano odontológico, o membro vai para Pronto Socorro comum.</em></p>
 
 <h2>Dor de Ouvido <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
 <p><strong>Perguntas:</strong></p>
 <ul>
   <li>De 0 a 10, qual a intensidade da dor de ouvido?</li>
   <li>Há saída de secreção ou sangue pelo ouvido?</li>
-  <li>Você teve febre?</li>
-  <li>Entrou algum objeto ou inseto no ouvido, ou houve alguma pancada recente?</li>
-  <li>Você notou inchaço, vermelhidão ou dor ao tocar atrás da orelha? (rastreio de mastoidite)</li>
+  <li>Já houve perfuração do tímpano anteriormente?</li>
+  <li>Entrou algum objeto ou inseto no ouvido, ou você bateu ou machucou o ouvido recentemente?</li>
+  <li>Você notou inchaço, vermelhidão ou dor ao tocar atrás da orelha?</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Teleconsulta de enfermagem 30 min</h4><ul><li>Dor 0–7, sem febre, sem secreção/sangue, sem sinais de mastoidite, sem corpo estranho/trauma</li><li>Orientação + analgesia + agendamento otorrinolaringologista eletivo se piora</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea — Teleconsulta médica 15 min</h4><ul><li>Dor 0–7, com ou sem febre</li><li>Sem secreção ou sangue, sem inchaço/vermelhidão/dor atrás da orelha, sem corpo estranho ou trauma, sem perfuração do tímpano anterior</li></ul></div>
   <div class="card coral"><h4>PS Otorrino (qualquer um isoladamente)</h4><ul>
-    <li>Febre</li>
     <li>Intensidade 8–10</li>
     <li>Secreção ou sangue</li>
-    <li>Inchaço/vermelhidão atrás da orelha (suspeita de mastoidite)</li>
-    <li>Corpo estranho ou trauma no ouvido</li>
+    <li>Inchaço/vermelhidão/dor atrás da orelha</li>
+    <li>Corpo estranho (inclusive inseto) ou trauma no ouvido</li>
+    <li>Perfuração do tímpano anterior (não dá para prescrever medicação tópica sem examinar)</li>
   </ul></div>
 </div>
+<p><em>Definido em 14/10/2026: a dor de ouvido passa de teleconsulta de enfermagem para teleconsulta médica 15 min, porque quase todo caso precisa de medicação e a consulta é pontual. Febre saiu das perguntas e do Pronto Socorro (não é determinante). O termo técnico "mastoidite" saiu da pergunta, para o membro entender.</em></p>
+<div class="card coral" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Dor de ouvido — para fechar <span class="pending">pendente</span></h4><ul><li>Perguntar se a dor é em um ouvido ou nos dois? Foi sugerido: quando é nos dois, é mais provável um quadro manejável por teleconsulta (ex.: sinusite). Sem decisão.</li><li>Trocar a palavra "pancada" (já trocada por "bateu ou machucou"). Falta definir o prazo de "recentemente" (ex.: 3 dias).</li></ul></div>
 
 <h2>Sintomas Ortopédicos <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
 <p><strong>Perguntas:</strong></p>
