@@ -142,32 +142,39 @@ body .print-btn{top:100px;}
 
 <h2 class="section">Sintomas — fluxo por sintoma</h2>
 
-<div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Atalho de urgência (palavras-chave) — pendente</h4>O bot já pula o roteiro completo e manda direto pra enfermagem em alguns relatos, observado em tickets reais: "falta de ar", "dor no peito", "dor retroocular" (suspeita de dengue), febre &gt;38°C, tristeza persistente 2+ semanas com prejuízo nas atividades. Sem lista fechada ainda — aguardando a equipe formalizar os termos com Leticia Defilippo.</div>
+<div class="dtop"><h4>Atalho de urgência — antes de qualquer roteiro</h4>O relato tem algum termo da lista? Pergunta: "Isso está acontecendo agora, com você ou com quem você acompanha?" Sim → aplica o nível (se tiver termos dos dois, vale o Nível 1). Não → segue o roteiro normal do sintoma.</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">NÍVEL 1 · EMERGÊNCIA</div><div class="doutcome do-coral"><span class="dotitle">SAMU 192 / PS imediato</span>Sem mais perguntas: orienta ligar para o SAMU ou ir ao PS e aciona a enfermagem em paralelo, para reforçar e checar se o membro seguiu. Dor no peito + falta de ar/suor frio/desmaio · convulsão · fraqueza/dormência de um lado, boca torta, fala enrolada · lábios roxos ou sem conseguir falar por falta de ar · vômito com sangue ou sangramento que não para · ato ou plano de se matar agora (aciona também o POP de Ideação)</div></div>
+  <div class="dcol"><div class="colhead">NÍVEL 2 · PRIORIDADE</div><div class="doutcome do-peach"><span class="dotitle">Fila da enfermagem, com prioridade</span>Não aplica o roteiro do sintoma. Falta de ar, aperto ou chiado · dor no peito sem sinais do Nível 1 · pior dor de cabeça da vida, confusão, desmaio recuperado · gestante com sangramento, dor forte, perda de líquido, bebê mexendo menos ou pressão alta · pensamentos de morte sem ato (aciona o POP de Ideação) · febre em bebê &lt;1 ano · ingestão acidental · produto químico no olho (lavar 15 a 20 min) · violência sexual · acidente, queda de altura ou pancada na cabeça com vômito/sonolência · fezes pretas ou com sangue · suspeita de dengue com sinal de alarme</div></div>
+  <div class="dcol"><div class="colhead">NÃO DISPARAM</div><div class="doutcome do-gray"><span class="dotitle">Seguem o roteiro do sintoma</span>Febre isolada (roteiro Febre) · dor atrás dos olhos isolada (Suspeita de Dengue) · tristeza ou desânimo sem pensamento de morte (Sintomas Ansiosos e Depressivos)</div></div>
+</div>
 
 <div class="dtop"><h4>Falta de Ar / Chiado no Peito <span class="dbadge dbadge-decide">Guia decide</span></h4>Antes "Asma/Bronquite" — rascunho, aguardando confirmação da Dra Leticia. Falta de ar agora? Bombinha, quantas vezes, melhorou? Fala frases completas? Diagnóstico de asma? Febre? Histórico de internação/UTI por problema respiratório?</div>
 <div class="darrow"></div>
 <div class="dcols" style="grid-template-columns:1fr 1fr 1fr 1fr;">
   <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CE 30min</span>Sem falta de ar, sem crise atual (com ou sem diagnóstico prévio de asma)</div></div>
-  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Em crise, sem falta de ar, respondeu bem à bombinha, sem febre, sem histórico de internação/UTI</div></div>
-  <div class="dcol"><div class="colhead">PRIORITÁRIA</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Febre associada à crise, sem os demais critérios de PS — não é mais PS automático</div></div>
-  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Falta de ar · não fala frases completas · sem melhora com bombinha · histórico de internação/UTI/intubação (problema respiratório) + crise atual</div></div>
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Em crise, sem falta de ar, respondeu bem à bombinha, sem febre, sem histórico de internação/UTI</div></div>
+  <div class="dcol"><div class="colhead">ESPONTÂNEA · COM FEBRE</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Febre associada à crise, sem os demais critérios de PS — não é mais PS automático</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Falta de ar no momento sem melhora com a bombinha · não fala frases completas · histórico de internação/UTI/intubação (problema respiratório) + crise atual</div></div>
 </div>
 
-<div class="dtop"><h4>Constipação <span class="dbadge dbadge-enf">Enfermagem</span></h4>Última evacuação? Dor 0–10? Vômito? Em tratamento p/ câncer? Elimina gases? Barriga estufada? Usa opioide? Cirurgia abdominal prévia?</div>
+<div class="dtop"><h4>Constipação <span class="dbadge dbadge-enf">Enfermagem</span></h4>Última evacuação? Dor 0–10? Vômito? Em tratamento p/ câncer? Elimina gases? Ao apertar a barriga, sente mais rígida ou dolorida? Toma medicação forte para dor (morfina, tramadol, codeína)? Cirurgia na barriga — quando?</div>
 <div class="darrow"></div>
-<div class="dcols" style="grid-template-columns:1fr 1fr 1fr 1fr;">
-  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CE 30min</span>Sem critério de encaixe, sem sinal de alarme</div></div>
-  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Sem evacuar há 3+ dias e/ou dor até 7, eliminando gases, sem distensão/sangue/vômito</div></div>
-  <div class="dcol"><div class="colhead">RISCO</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Oncológico em tratamento ativo, ou em uso de opioide, com constipação — mesmo sem alarme</div></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CE 30min</span>Sem sinal de alarme (critérios de PS) — ex.: 3+ dias sem evacuar e/ou dor até 7, eliminando gases, sem distensão/sangue/vômito. Se precisar de especialista, enfermagem encaminha ao gastro</div></div>
+  <div class="dcol"><div class="colhead">RISCO</div><div class="doutcome do-peach"><span class="dotitle">CM 15min</span>Oncológico em tratamento ativo, ou em uso de medicação forte para dor, com constipação — mesmo sem alarme</div></div>
   <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">Pronto Socorro</span>Dor 8–10 sem evacuar · vômito persistente · sem gases/fezes + distensão (suspeita obstrutiva) · cirurgia abdominal recente + dor</div></div>
 </div>
 
-<div class="dtop"><h4>Corrimento Vaginal <span class="dbadge dbadge-decide">Guia decide</span></h4>Gestante? Febre e/ou dor no pé da barriga? Sangue ou coloração marrom? Há quanto tempo? Parto/aborto/curetagem/DIU recente? Cor, odor, coceira?</div>
+<div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Constipação — pendente</h4>Definir o que conta como "cirurgia recente" (Rosiane sugeriu 3 meses, sem decisão).</div>
+
+<div class="dtop"><h4>Corrimento Vaginal <span class="dbadge dbadge-decide">Guia decide</span></h4>Gestante? Febre ou sangue? Dor no pé da barriga ou na relação? Há quanto tempo? Parto/aborto/curetagem/DIU nos últimos 60 dias? Cor, odor, coceira? Já teve antes? Usou medicação por conta?</div>
 <div class="darrow"></div>
 <div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
-  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 15min</span>Não gestante, &lt;30 dias, sem sangue/marrom/febre, sem contexto puerperal, sem suspeita de violência sexual</div></div>
-  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Ginecologista</span>≥30 dias, sem os red flags ao lado</div></div>
-  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">PS / PS obstétrico</span>Gestante (PS obstétrico) · febre/dor no pé da barriga/sangue ou marrom · puerpério ou pós-procedimento com anormalidade</div></div>
+  <div class="dcol"><div class="colhead">ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">CE 30min</span>Não gestante, &lt;30 dias, sem sangue/febre, sem contexto puerperal (60 dias), sem suspeita de violência sexual</div></div>
+  <div class="dcol"><div class="colhead">TELETRIAGEM</div><div class="doutcome do-gray"><span class="dotitle">Enfermeiro avalia</span>≥30 dias, sem os red flags ao lado — decide entre teleconsulta de enfermagem ou ginecologista (repetição de sintomas → ginecologista)</div></div>
+  <div class="dcol"><div class="colhead">PS</div><div class="doutcome do-coral"><span class="dotitle">PS / PS obstétrico</span>Gestante (PS obstétrico) · febre, sangue, dor no pé da barriga ou na relação · puerpério ou pós-procedimento (60 dias) com anormalidade</div></div>
 </div>
 
 <div class="dtop"><h4>Diarreia <span class="dbadge dbadge-decide">Guia decide</span></h4>Febre? Dor 0–10? Sangue/muco nas fezes? Tontura/fraqueza? Boca seca/urina reduzida? Evacuações em 24h? Vômitos? Antibiótico recente? Gestante/diabético/imunossuprimido? Viagem ou comida em comum com outros doentes?</div>
@@ -306,9 +313,15 @@ body .print-btn{top:100px;}
   <span><i class="sw" style="background:var(--coral-100);"></i>Pronto Socorro</span>
 </div>
 
-<div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Laudos e atestados — pendente</h4>Laudo de sanidade física e mental para adoção: situação levantada por Rosiane Turim, que costuma emitir quando avalia estar tudo bem na teleconsulta. Sem consenso formal ainda — aguardando decisão de Leticia Defilippo.</div>
+<div class="dtop"><h4>Laudos e atestados — Laudo de sanidade física e mental para adoção <span class="dbadge dbadge-decide">Guia decide</span></h4>Rascunho proposto por Rosiane Turim, para revisão do grupo. Problema de saúde crônico ou medicação contínua? Acompanha com psiquiatra? Crise ou piora recente em saúde mental? Álcool/outras substâncias? Último check-up? PcD?</div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:1fr 1fr;">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">CM 30min</span>Sem nenhum critério de encaminhamento à rede credenciada</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Qualquer um isoladamente</span>Transtorno mental descompensado · uso problemático de álcool/substâncias · PcD ou situação que exija exame físico presencial · acompanha com psiquiatra: atestado de saúde mental emitido pelo psiquiatra assistente; a parte física pode seguir para a consulta médica Pipo</div></div>
+</div>
+<div class="dnote"><h4>Observação</h4>Sempre orientar o membro a confirmar com a Vara da Infância se ela aceita documento digital — alguns tribunais pedem original ou cópia autenticada.</div>
 
-<div class="footer">Mapa mental gerado a partir do protocolo escrito de Guia de Direcionamento (Pipo Saúde, atualizado em 25/09/2026). CE = Teleconsulta de Enfermagem · CM = Consulta/Teleconsulta Médica. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
+<div class="footer">Mapa mental gerado a partir do protocolo escrito de Guia de Direcionamento (Pipo Saúde, atualizado em 09/10/2026). CE = Teleconsulta de Enfermagem · CM = Consulta/Teleconsulta Médica. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
 
 </div>
 </body>
