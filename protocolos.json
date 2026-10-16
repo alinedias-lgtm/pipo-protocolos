@@ -1,0 +1,127 @@
+{
+  "fonteRotulo": "Protocolos Pipo (GitHub Pages)",
+  "fonteDetalhe": "Gerado a partir do repositório pipo-protocolos. Regenerar sempre que um protocolo mudar.",
+  "geradoEm": "2026-10-16",
+  "protocolos": [
+    {
+      "id": "checkup",
+      "titulo": "Check-up · Adultos e Menores de 18",
+      "cat": "operacional",
+      "tags": [
+        "checkup",
+        "check-up",
+        "exame de rotina",
+        "rotina",
+        "periódico",
+        "preventivo"
+      ],
+      "resumo": "Padronizar a abordagem de check-up e a solicitação de exames/procedimentos de acordo com normativas e protocolos de saúd",
+      "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-checkup.html",
+      "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-checkup.html",
+      "status": "ativo",
+      "atualizadoEm": "07/10/2026",
+      "aprovadoPor": "Leticia Defilippo",
+      "passos": []
+    },
+    {
+      "id": "renovacao_receitas",
+      "titulo": "Renovação de Receitas",
+      "cat": "operacional",
+      "tags": [
+        "receita",
+        "renovar",
+        "remédio",
+        "prescrição",
+        "receituário"
+      ],
+      "resumo": "Padronizar a renovação de receitas e a transcrição de pedidos de exames na Pipo, garantindo segurança clínica, aderência",
+      "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-receitas.html",
+      "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-receitas.html",
+      "status": "ativo",
+      "atualizadoEm": "18/09/2026",
+      "aprovadoPor": "Leticia Defilippo",
+      "passos": [
+        {
+          "pergunta": "Qual é o medicamento e qual o tipo de receita dele?",
+          "entao": "Amarela, azul, branca C2 ou LME → recusa direta, sem tele: orientar Posto de Saúde ou consulta presencial. Manipulado → recusa, orientar retorno a quem prescreveu a fórmula. GLP-1 → recusa, EXCETO se prescrito por médico da Pipo. Qualquer outro → seguir."
+        },
+        {
+          "pergunta": "É antibiótico?",
+          "entao": "Sim → Teleconsulta médica de 15 min para reavaliar o esquema. Nunca é recusa automática, e o roteiro termina aqui. Não → seguir."
+        },
+        {
+          "pergunta": "O medicamento é psiquiátrico?",
+          "entao": "Sim → antes de qualquer outra pergunta, fazer a triagem de segurança: \"Nos últimos dias, você teve pensamentos de se machucar ou de que não vale a pena viver?\". SIM ou \"prefiro não responder\" → encerrar este roteiro AGORA e acionar o protocolo de crise/saúde mental. NÃO → seguir. Categoria \"outro\" → pular e seguir."
+        },
+        {
+          "pergunta": "A última receita tem até 4 meses, com a mesma dose e posologia?",
+          "entao": "Sim → Interconsulta médica. Registrar: já tem próxima consulta agendada com quem acompanha? e tem acompanhamento ativo, mesmo sem consulta marcada? Se as duas forem não, sinalizar \"sem retorno agendado e sem acompanhamento\" e sugerir rede credenciada. Não → seguir."
+        },
+        {
+          "pergunta": "A receita está vencida (mais de 4 meses) ou a dose é diferente da registrada?",
+          "entao": "Sim → enfermeiro da teletriagem conversa e segue para Interconsulta médica para reavaliação. NÃO é negativa automática. Sem receita registrada na Pipo, só cartela: relatou receita prévia, mesmo antiga, com foto? → segue pela exceção, via Interconsulta. Sem nenhuma receita prévia → triagem de enfermagem, escalando para Interconsulta só se o membro insistir em avaliação médica."
+        },
+        {
+          "pergunta": "É a 4ª renovação consecutiva do mesmo medicamento, sem consulta com especialista no meio?",
+          "entao": "Sim → a Pipo não renova mais. Orientar retomar acompanhamento com quem trata a condição e oferecer ajuda para encontrar na rede credenciada. O contador zera quando o paciente traz receita de consulta com especialista."
+        }
+      ]
+    },
+    {
+      "id": "renovacao_exames",
+      "titulo": "Renovação de Pedido de Exames",
+      "cat": "operacional",
+      "tags": [
+        "exame",
+        "pedido de exame",
+        "renovar exame",
+        "transcrição"
+      ],
+      "resumo": "Padronizar a renovação de pedidos de exame na Pipo, garantindo segurança clínica e evitando teleconsulta quando o própri",
+      "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-exames.html",
+      "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-exames.html",
+      "status": "ativo",
+      "atualizadoEm": "07/10/2026",
+      "aprovadoPor": "Leticia Defilippo",
+      "passos": []
+    },
+    {
+      "id": "terapias",
+      "titulo": "Encaminhamento para Terapias",
+      "cat": "operacional",
+      "tags": [
+        "terapia",
+        "psicologia",
+        "nutrição",
+        "fisioterapia",
+        "fonoaudiologia",
+        "neuropsicologia"
+      ],
+      "resumo": "Definir o fluxo de encaminhamento de terapias na plataforma Pipo Cuida, com critérios objetivos por especialidade, quest",
+      "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-encaminhamento-terapias.html",
+      "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-encaminhamento-terapias.html",
+      "status": "ativo",
+      "atualizadoEm": "29/09/2026",
+      "aprovadoPor": "Leticia Defilippo",
+      "passos": []
+    },
+    {
+      "id": "direcionamento",
+      "titulo": "Guia de Direcionamento",
+      "cat": "operacional",
+      "tags": [
+        "direcionamento",
+        "encaminhar",
+        "para onde mandar",
+        "fluxo"
+      ],
+      "resumo": "Dar à guia de saúde (perfil administrativo, não-clínico) e à teletriagem critérios objetivos, por sintoma, para decidir",
+      "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-guia-direcionamento.html",
+      "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-guia-direcionamento.html",
+      "status": "rascunho",
+      "atualizadoEm": "14/10/2026",
+      "aprovadoPor": "Leticia Defilippo",
+      "passos": []
+    }
+  ]
+}
