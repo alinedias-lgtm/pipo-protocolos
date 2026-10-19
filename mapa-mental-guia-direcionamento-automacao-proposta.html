@@ -100,6 +100,15 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .site-nav-row.sub a.on{background:var(--pipo-blue); color:#fff;}
 body .print-btn{top:100px;}
 @media print{.site-nav{display:none;}}
+.dbadge{display:inline-block;font-size:10px;font-weight:700;padding:2px 9px;border-radius:9px;margin-left:6px;vertical-align:middle;text-transform:none;letter-spacing:0;}
+.dbadge-decide{background:var(--pipo-success);color:var(--success-900);}
+.dbadge-apoio{background:var(--pending-bg);color:var(--pending-text);}
+.dbadge-enf{background:var(--slate-100);color:var(--slate-600);}
+.dbadge-alert{background:var(--coral-100);color:var(--alert-900);}
+.qbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.55; text-align:left; margin-bottom:0;}
+.qbox ol{margin:6px 0 0 18px; padding:0;}
+.qbox li{margin:2px 0;}
+.sintoma{margin:34px 0 0;}
 </style>
 </head>
 <body>
@@ -121,14 +130,16 @@ body .print-btn{top:100px;}
 </nav>
 <div class="sheet">
 <div class="brand-row"><svg class="sym" viewBox="0 0 24 24"><rect x="2" y="4" width="4" height="16" fill="black"/><rect x="10" y="4" width="4" height="16" fill="black"/><rect x="18" y="4" width="4" height="16" fill="black"/></svg><span>Pipo Saúde · Mapa mental</span></div>
-<h1>Guia de Direcionamento · proposta de automação (em avaliação)</h1>
+<h1>Guia de Direcionamento: proposta de automação (em avaliação)</h1>
 <span class="status-proposta">PROPOSTA DE AUTOMAÇÃO, em avaliação, ainda não implementada</span>
-<p class="subtitle">A ideia: o bot faz a triagem sozinho, com as perguntas do Guia de Direcionamento, e envia o membro direto para o desfecho (link da teleconsulta, orientação de Pronto Socorro ou rede credenciada). Hoje essa triagem é feita por uma pessoa. Esta proposta usa o Guia como está no protocolo escrito e no mapa mental oficial.</p>
+<p class="subtitle">A ideia: o bot faz a triagem sozinho, com as perguntas do Guia de Direcionamento, e envia o membro direto para o desfecho (link da teleconsulta, orientação de Pronto Socorro ou rede credenciada). Hoje essa triagem é feita por uma pessoa. Esta página tem o passo a passo de <strong>todos os sintomas do Guia</strong>, no mesmo formato do mapa mental, e é gerada a partir do protocolo escrito, então acompanha o que for mudando nele.</p>
+
+<div class="dnote"><h4 style="margin:0 0 4px;">Como ler esta página</h4>1) Todo relato passa primeiro pelo <strong>atalho de urgência</strong>. 2) Se não for urgência, o bot identifica o sintoma e vai ao bloco dele, mais abaixo. 3) Em cada bloco, o bot faz as perguntas na ordem e aplica os critérios. 4) Cada coluna mostra o que o bot faz: envia o link da teleconsulta, orienta o Pronto Socorro, orienta a rede credenciada ou passa o caso ao enfermeiro da teletriagem. 5) Se mais de um critério de Pronto Socorro bater, vale o Pronto Socorro.</div>
 
 <div class="dtop"><h4>Entrada</h4>Membro relata um sintoma ao bot</div>
 <div class="darrow"></div>
 
-<div class="dbox"><strong>Passo 1: Atalho de urgência (antes de qualquer pergunta do roteiro)</strong>O bot confere se o relato tem algum termo da lista do Atalho de urgência. Se tiver, pergunta: "Isso está acontecendo agora, com você ou com quem você está acompanhando?" Se a resposta for não, segue para o Passo 2.</div>
+<div class="dbox"><strong>Passo 1: atalho de urgência (antes de qualquer pergunta do roteiro)</strong>O bot confere se o relato tem algum termo da lista do atalho de urgência. Se tiver, pergunta: "Isso está acontecendo agora, com você ou com quem você está acompanhando?" Se a resposta for não, segue para o Passo 2.</div>
 <div class="darrow"></div>
 <div class="dcols" style="grid-template-columns:1fr 1fr;">
   <div class="dcol"><div class="colhead">SIM · NÍVEL 1 · EMERGÊNCIA</div><div class="doutcome do-coral"><span class="dotitle">Bot envia a mensagem de emergência</span>"Ligue agora para o SAMU (192) ou vá ao Pronto Socorro mais próximo." Não faz mais perguntas. Aciona a enfermagem em paralelo, para reforçar a orientação e checar se o membro seguiu.</div></div>
@@ -136,37 +147,219 @@ body .print-btn{top:100px;}
 </div>
 <div class="darrow"></div>
 
-<div class="dbox"><strong>Passo 2: Bot faz as perguntas do roteiro do sintoma</strong>O bot identifica o sintoma e faz só as perguntas que estão no roteiro do Guia (as que direcionam o desfecho). Ele lê a resposta do membro e interpreta o que ela diz, para aplicar o critério.</div>
+<div class="dbox"><strong>Passo 2: bot faz as perguntas do roteiro do sintoma</strong>O bot identifica o sintoma e faz só as perguntas que estão no roteiro do Guia (as que direcionam o desfecho). Ele lê a resposta do membro e interpreta o que ela diz, para aplicar o critério.</div>
 <div class="darrow"></div>
 
-<div class="dbox"><strong>Passo 3: Bot aplica os critérios e encaminha</strong>Primeiro confere os critérios de Pronto Socorro (qualquer um isolado já encaminha). Se nenhum se aplica, confere consulta médica, depois enfermagem e rede credenciada, como está no cartão do sintoma.</div>
+<div class="dbox"><strong>Passo 3: bot aplica os critérios e encaminha</strong>Primeiro confere os critérios de Pronto Socorro (qualquer um isolado já encaminha). Se nenhum se aplica, confere os demais cards do sintoma.</div>
 <div class="darrow"></div>
 
 <div class="dcols" style="grid-template-columns:1fr 1fr 1fr 1fr;">
-  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao PS</span>Com a orientação do cartão (ex.: ir acompanhado, PS obstétrico, PS odontológico). Abre também um ticket para o enfermeiro da teletriagem acompanhar se o membro foi.</div></div>
-  <div class="dcol"><div class="colhead">CONSULTA MÉDICA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link</span>Da teleconsulta médica, com a duração do cartão (15 ou 30 min).</div></div>
-  <div class="dcol"><div class="colhead">ENFERMAGEM</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link</span>Da teleconsulta de enfermagem, com a duração do cartão (15 ou 30 min).</div></div>
-  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Bot orienta</span>Ginecologista, gastroenterologista, neurologista ou rede odontológica, conforme o cartão.</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao PS</span>Com a orientação do card (ex.: ir acompanhado, PS obstétrico, PS odontológico). Abre também um ticket para o enfermeiro da teletriagem acompanhar se o membro foi.</div></div>
+  <div class="dcol"><div class="colhead">CONSULTA MÉDICA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link</span>Da teleconsulta médica, com a duração do card (15 ou 30 min).</div></div>
+  <div class="dcol"><div class="colhead">ENFERMAGEM</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link</span>Da teleconsulta de enfermagem, com a duração do card (15 ou 30 min).</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Bot orienta</span>O especialista indicado no card (ginecologista, gastroenterologista, neurologista, ortopedista, dermatologista, oftalmologista, odontologia).</div></div>
 </div>
 
-<div class="dnote" style="margin-top:14px;"><h4>Acompanhamento de todo caso de Pronto Socorro</h4>Quando o bot orienta o membro a ir ao Pronto Socorro, ele abre um ticket de alerta para o enfermeiro da teletriagem. O enfermeiro confere se o membro seguiu a orientação. O mesmo vale para os casos de CEATOX (o enfermeiro confere se o membro ligou).</div>
+<div class="dnote" style="margin-top:14px;"><h4 style="margin:0 0 4px;">Acompanhamento de todo caso de Pronto Socorro</h4>Quando o bot orienta o membro a ir ao Pronto Socorro, ele abre um ticket de alerta para o enfermeiro da teletriagem. O enfermeiro confere se o membro seguiu a orientação. O mesmo vale para os casos de CEATOX (o enfermeiro confere se o membro ligou).</div>
 
-<div class="dnote" style="margin-top:14px;"><h4>Quando o bot não entende a resposta</h4>O caso vai para o enfermeiro da teletriagem. A teletriagem só recebe o que o bot não consegue identificar. Nos protocolos "Guia decide", o encaminhamento teoricamente não passaria mais pelo guia nem pela teletriagem.</div>
+<div class="dnote" style="margin-top:14px;"><h4 style="margin:0 0 4px;">Quando o bot não entende a resposta</h4>O caso vai para o enfermeiro da teletriagem. A teletriagem só recebe o que o bot não consegue identificar, e o que o card do sintoma manda para ela.</div>
 
-<h2 class="section">Exemplo: Corrimento Vaginal</h2>
-<div class="dcols" style="grid-template-columns:1fr 1fr 1fr;">
-  <div class="dcol"><div class="colhead">NÃO GESTANTE</div><div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Corrimento há 10 dias, sem febre, sem sangue ou coloração amarronzada, sem parto/aborto/curetagem/DIU nos últimos 60 dias.</div><div class="darrow"></div><div class="doutcome do-blue"><span class="dotitle">Link da teleconsulta de enfermagem</span>30 min</div></div>
-  <div class="dcol"><div class="colhead">GESTANTE SEM SINAL DE ALARME</div><div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Gestante, sem febre, sem sangue ou coloração amarronzada, sem dor no pé da barriga.</div><div class="darrow"></div><div class="doutcome do-peach"><span class="dotitle">Link da teleconsulta médica</span>15 min</div></div>
-  <div class="dcol"><div class="colhead">GESTANTE COM FEBRE</div><div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Gestante com febre, sangue ou dor no pé da barriga.</div><div class="darrow"></div><div class="doutcome do-coral"><span class="dotitle">Orienta PS obstétrico</span>Bot não agenda consulta</div></div>
+<h2 class="section">Passo a passo por sintoma (21 blocos)</h2>
+<p style="font-size:13.5px; line-height:1.6; color:#3c3837;">Cada bloco abaixo vem do protocolo escrito do Guia. As perguntas são as do protocolo, na ordem em que o bot faz. As colunas mostram o critério e o que o bot faz quando ele se aplica. Os sintomas que o grupo ainda não revisou aparecem como estão hoje no protocolo.</p>
+
+<div class="sintoma"></div>
+<div class="dtop"><h4>Falta de Ar / Chiado no Peito <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você está sentindo falta de ar no momento?</li><li>Você usou a bombinha de resgate? Houve melhora?</li><li>Consegue falar frases completas sem parar para respirar?</li><li>Você está em crise agora, mesmo sem falta de ar? (ex.: tosse/chiado/aperto no peito aumentados, ou uso de bombinha mais que o habitual)</li><li>Você teve febre?</li><li>Já precisou ficar internado por problema respiratório? Alguma vez foi para a UTI ou precisou ser intubado?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (30 min)</span>Sem falta de ar no momento, sem crise atual (com ou sem diagnóstico prévio de asma)</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (15 min)</span>Em crise (tosse/chiado/aperto no peito aumentados), sem falta de ar · Respondeu bem à bombinha de resgate, fala frases completas · Sem febre, sem histórico de internação, UTI ou intubação</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Febre associada à crise, sem os critérios de Pronto Socorro ao lado · Histórico de internação (sem UTI nem intubação) por problema respiratório, com crise atual</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO (QUALQUER UM ISOLADAMENTE</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Falta de ar no momento, sem melhora após uso da bombinha de resgate · Não consegue falar frases completas sem pausar para respirar · Histórico de UTI ou intubação por problema respiratório, com crise atual (mesmo que pareça leve)<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
 </div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Constipação <span class="dbadge dbadge-enf">Enfermagem</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Quando foi a sua última evacuação?</li><li>De 0 a 10, qual a intensidade da dor na barriga?</li><li>Tem vômito associado?</li><li>Está em tratamento para câncer?</li><li>Você está conseguindo eliminar gases, mesmo sem evacuar?</li><li>Ao apertar sua barriga neste momento, você sente ela mais rígida ou dolorida do que o normal?</li><li>Você toma alguma medicação forte para dor? Por exemplo: morfina, codeína, tramadol, oxicodona.</li><li>Você fez alguma cirurgia na barriga nos últimos 3 meses?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (30 min)</span>Constipação sem sinais de alarme (os critérios de Pronto Socorro abaixo), por exemplo, sem evacuar há 3+ dias e/ou dor abdominal até nota 7, eliminando gases, sem distensão importante, sem sangue nas fezes, sem vômito</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Paciente oncológico em tratamento ativo, ou em uso de medicação forte para dor (ex.: morfina, tramadol, codeína), com constipação, mesmo sem os sinais de alarme abaixo</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Dor abdominal intensidade 8–10, sem evacuar · Vômito persistente associado · Ausência completa de eliminação de gases e fezes, com distensão abdominal (suspeita obstrutiva, mesmo com dor moderada) · Cirurgia abdominal nos últimos 90 dias + dor abdominal atual (risco de suboclusão por aderências)<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Corrimento Vaginal <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Há quanto tempo está presente?</li><li>Você está gestante?</li><li>Você teve febre?</li><li>Você percebeu sangue ou coloração amarronzada?</li><li>Você está com dor no pé da barriga ou dor na relação sexual?</li><li>Você teve parto, aborto, curetagem ou colocou DIU nos últimos 60 dias?</li><li>Você já teve esses sintomas antes?</li><li>Usou algum tratamento ou medicação por conta própria? (não decide o caminho, mas adianta a consulta)</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">ENFERMAGEM</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (30 min)</span>Não gestante, corrimento há menos de 30 dias, sem sangue ou coloração amarronzada, sem febre, sem contexto puerperal/pós-procedimento ginecológico nos últimos 60 dias, sem suspeita de violência sexual</div></div>
+  <div class="dcol"><div class="colhead">TELETRIAGEM</div><div class="doutcome do-gray"><span class="dotitle">Bot passa o caso ao enfermeiro da teletriagem</span>Corrimento há 30 dias ou mais, sem os sinais de alarme abaixo · O enfermeiro avalia e decide o encaminhamento (teleconsulta de enfermagem, consulta médica ou rede credenciada, ginecologista). Sintomas que já se repetiram antes costumam indicar ginecologista presencial.<br><em>Entrega as respostas já registradas.</em></div></div>
+  <div class="dcol"><div class="colhead">MÉDICA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Gestante sem sinais de alarme (sem febre, sem sangue ou coloração amarronzada, sem dor no pé da barriga)</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Gestante com febre, sangue ou coloração amarronzada, ou dor no pé da barriga (PS obstétrico) · Febre e/ou sangue ou coloração amarronzada e/ou dor no pé da barriga ou dor na relação sexual · Parto, aborto, curetagem ou DIU nos últimos 60 dias, com corrimento anormal, febre ou dor<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Diarreia <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você teve febre?</li><li>De 0 a 10, qual a intensidade da dor na barriga?</li><li>Você percebeu sangue ou muco nas fezes?</li><li>Está sentindo tontura ou fraqueza?</li><li>Está com a boca seca ou notou diminuição da quantidade de urina?</li><li>Você é gestante, diabético, ou tem alguma condição que baixa a imunidade?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (15 min)</span>Até 7 dias, sem critérios de Pronto Socorro · Sem comorbidades: sem sangue ou muco, sem febre alta (acima de 38 °C), não gestante, não diabético, sem baixa imunidade, não maior de 65 anos</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ELETIVA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (30 min)</span>8 a 30 dias, sem critérios de Pronto Socorro</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Até 7 dias, com sangue ou muco nas fezes, ou com febre alta (acima de 38 °C) · Maior de 65 anos · Gestante, diabético ou com baixa imunidade (não pode demorar para marcar)</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Bot orienta procurar: Gastroenterologista</span>Acima de 30 dias, sem critérios de Pronto Socorro</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Dor abdominal 8–10 · Sinais de desidratação: tontura/fraqueza, boca seca, diminuição importante da urina · Menores de 1 ano: sempre<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Dor de cabeça (cefaleia) <span class="dbadge dbadge-enf">Enfermagem</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>De 0 a 10, qual a intensidade da dor de cabeça?</li><li>Você tem tontura ou alteração visual?</li><li>É a pior dor de cabeça que você já sentiu?</li><li>Sente fraqueza, dormência, dificuldade para falar, confusão, ou já teve uma convulsão?</li><li>Você bateu a cabeça nos últimos 3 dias?</li><li>Você está gestante ou nas primeiras semanas pós-parto?</li><li>Essa dor é diferente das que você costuma ter, ou é a primeira vez que você sente esse tipo de dor?</li><li>Você tem mais de 50 anos?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (30 min)</span>Cefaleia recorrente já conhecida, com padrão igual ao habitual, intensidade menor que 8 (0 a 7)</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Bot orienta procurar: Neurologista</span>Dor intermitente e/ou com mais de 30 dias, sem critérios de encaixe ou PS</div></div>
+  <div class="dcol"><div class="colhead">MÉDICA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Gestante ou pós-parto · Tontura ou alteração visual (pode ser enxaqueca)</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Intensidade 8–10 · Início súbito / "pior dor da vida" · Déficit neurológico: fraqueza, dormência, dificuldade para falar, confusão ou convulsão · Bateu a cabeça nos últimos 3 dias · Dor de cabeça nova (primeira vez, nunca teve antes) em pessoa com mais de 50 anos<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Dor de Dente <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>De 0 a 10, qual a intensidade da dor?</li><li>Você teve febre?</li><li>Você está com dificuldade para abrir a boca, engolir ou respirar?</li><li>Você está com sangramento?</li><li>Você sofreu algum trauma ou fez algum procedimento no dente nos últimos 15 dias?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">ENFERMAGEM</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (30 min)</span>Dor 0–6, sem febre, sem dificuldade para abrir a boca, engolir ou respirar, sem sangramento, sem trauma ou procedimento nos últimos 15 dias</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Intensidade ≥ 7 · Febre · Dificuldade para abrir a boca, engolir, ou dificuldade para respirar · Sangramento ativo (com ou sem procedimento) · Trauma ou procedimento nos últimos 15 dias<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Dor de Ouvido <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>De 0 a 10, qual a intensidade da dor de ouvido?</li><li>Há saída de secreção ou sangue pelo ouvido?</li><li>A dor é em um ouvido ou nos dois? (não muda o caminho, mas ajuda o médico: quando é nos dois, é mais provável um quadro que a teleconsulta resolve, ex.: sinusite)</li><li>Já houve perfuração do tímpano anteriormente?</li><li>Entrou algum objeto ou inseto no ouvido, ou você bateu ou machucou o ouvido nos últimos 3 dias?</li><li>Você notou inchaço, vermelhidão ou dor ao tocar atrás da orelha?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Dor 0–7, com ou sem febre · Sem secreção ou sangue, sem inchaço/vermelhidão/dor atrás da orelha, sem corpo estranho ou trauma, sem perfuração do tímpano anterior</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Intensidade 8–10 · Secreção ou sangue · Inchaço/vermelhidão/dor atrás da orelha · Corpo estranho (inclusive inseto) ou trauma no ouvido · Perfuração do tímpano anterior (não dá para prescrever medicação tópica sem examinar)<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Dores musculoesqueléticas <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você teve febre?</li><li>De 0 a 10, qual a intensidade da dor?</li><li>Essa dor impede a sua movimentação?</li><li>A dor começou após algum trauma, como uma queda ou batida?</li><li>Você tem alguma doença que diminui a imunidade, como câncer ou HIV?</li><li>Você está gestante?</li><li>Você sente fraqueza progressiva nas pernas?</li><li>Você notou perda do controle para urinar ou evacuar?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (30 min)</span>Dor há 8 a 30 dias, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (15 min)</span>Dor há 7 dias ou menos, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Imunossupressão (ex.: câncer, HIV) ou gestante, com dor até 7, sem trauma e sem critérios de Pronto Socorro · Dor lombar em gestante é comum e não é critério de Pronto Socorro</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Bot orienta procurar: Ortopedista</span>Dor há mais de 30 dias, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Intensidade 8 ou mais · Impede a movimentação · Iniciada após trauma · Acompanhada de febre · Fraqueza progressiva nas pernas · Perda de controle para urinar ou evacuar (suspeita de Síndrome da Cauda Equina)<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Febre <span class="dbadge dbadge-apoio">Com apoio</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Qual foi o dia e horário da primeira febre que você mediu?</li><li>Quais os valores das temperaturas?</li><li>Há algum outro sintoma associado? (se sim, direcionar pelo protocolo do sintoma específico, esta linha cobre só febre isolada)</li><li>Fez uso de medicação? Houve melhora da temperatura?</li><li>Você está em tratamento oncológico ativo (quimioterapia) ou tem alguma condição que baixa a imunidade?</li><li>Você está gestante?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (15 min)</span>Febre &lt;39°C, como único sintoma, há menos de 72h, sem imunossupressão/quimioterapia ativa</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Febre que não cessa com medicação há mais de 72h · Temperatura ≥ 39°C sem melhora com antitérmico · Em tratamento oncológico ativo/imunossuprimido, qualquer febre · Gestante, qualquer febre · Crianças &lt; 1 ano<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Sintomas Urinários <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você teve febre, calafrios, vômitos ou prostração (ficar muito sem forças)?</li><li>Você apresentou dor na lombar junto com o início da queixa urinária?</li><li>Você percebeu sangue na urina?</li><li>Você está gestante?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Ardência ou dor ao urinar, sem sangue na urina e sem dor lombar associada, mesmo com febre, calafrios, vômitos ou prostração · Gestante sem febre, calafrios, vômitos ou prostração, sem sangue na urina</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Febre, calafrios, vômitos ou prostração, com dor lombar iniciada junto com a queixa urinária · Sangue na urina · Gestante com febre, calafrios, vômitos ou prostração<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Dor lombar sem febre, calafrios, vômitos ou prostração: pendente</h4>Falta definir o desfecho de quem tem dor lombar junto com a queixa urinária, mas sem febre, calafrios, vômitos nem prostração. A dor lombar crônica ou antiga saiu do roteiro, porque a pergunta sobre início súbito foi retirada.</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Lesões de Pele <span class="dbadge dbadge-enf">Enfermagem</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Quando os sintomas começaram (data de início das lesões)?</li><li>Você teve febre? Desde quando?</li><li>Você sente dor? Se sim: intensidade 0 a 10</li><li>A lesão sangra? Se sim: o sangramento para com compressão?</li><li>Você começou algum medicamento nos últimos 60 dias? Tem lesões ou bolhas na boca, olhos ou região genital?</li><li>Você tem diabetes, imunossupressão ou usa anticoagulante?</li><li>Solicitar imagem da lesão, obrigatório antes de qualquer direcionamento, mas já explicar as limitações técnicas na avaliação</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">TELETRIAGEM</div><div class="doutcome do-gray"><span class="dotitle">Bot passa o caso ao enfermeiro da teletriagem</span>Todos os casos sem critérios de Pronto Socorro · O enfermeiro da teletriagem avalia a foto e as respostas, discute o caso com o médico se necessário e define a condução: atendimento na Pipo (ex.: micose, quadros simples) ou rede credenciada (dermatologista)<br><em>Entrega as respostas já registradas.</em></div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Febre há mais de 72h · Dor intensidade ≥ 8 · Lesão sangrante que não cede com compressão · Envolvimento de mucosa/bolhas + suspeita de reação medicamentosa<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Reação Adversa a Medicamentos <span class="dbadge dbadge-enf">Enfermagem</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Qual é o nome do medicamento e há quanto tempo você usa essa medicação?</li><li>Houve algum aumento de dose recentemente?</li><li>Essa medicação foi prescrita na Pipo? (se foi prescrita fora da Pipo, pedir uma foto da prescrição)</li><li>Você teve febre?</li><li>Notou inchaço no rosto, lábios, língua ou garganta? Sente tontura, desmaio ou falta de ar?</li><li>Percebeu sangue na urina, urina muito escura, ou diminuição importante da quantidade de urina?</li><li>Foi uma ingestão acidental/dose acima da prescrita, ou foi intencional? (ideação suicida)</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Se prescrita pela Pipo, sintomas leves (enjoo, azia, diarreia, sonolência, irritabilidade, dor de cabeça, boca seca, mal-estar), sem os sinais de alarme abaixo</div></div>
+  <div class="dcol"><div class="colhead">NÃO PRESCRITA PELA PIPO</div><div class="doutcome do-peach"><span class="dotitle">Bot orienta procurar o médico prescritor</span>Sem sinais de alarme: orientar buscar o médico prescritor, se houver possibilidade · Se não houver possibilidade: teleconsulta médica 15 min (mesmas queixas da demanda espontânea)<br><em>Se não for possível, envia o link da teleconsulta médica (15 min).</em></div></div>
+  <div class="dcol"><div class="colhead">CEATOX</div><div class="doutcome do-gray"><span class="dotitle">Bot passa a orientação do CEATOX</span>Ingestão acidental ou dose muito acima da prescrita, sem indício de intencionalidade · Linha nacional 0800 722 6001 como padrão; CEATOX-SP 0800 014 8110 só se o membro estiver em SP · O caso também vai para o enfermeiro da teletriagem, que acompanha se o membro ligou para o CEATOX e seguiu a orientação<br><em>Abre um ticket para o enfermeiro da teletriagem conferir se o membro ligou.</em></div></div>
+  <div class="dcol"><div class="colhead">INTENCIONAL</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta PS imediato e aciona o POP de Ideação</span>PS imediato + acionar em paralelo o POP de Ideação e Comportamento Suicida já existente no guia, não é conduzido apenas por orientação telefônica com CEATOX<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Febre · Inchaço em rosto, lábios, língua ou garganta · Falta de ar · Tontura, desmaio ou sinais de hipotensão · Sangue na urina, urina muito escura, ou queda importante do volume urinário · Suspeita de intoxicação intencional (ver acima)<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Reação Alérgica <span class="dbadge dbadge-enf">Enfermagem</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você teve febre?</li><li>Está com inchaço nos lábios, língua ou garganta? Tem dificuldade para engolir, falar ou respirar?</li><li>Sente tontura, desmaio, ou o coração está acelerado?</li><li>Os sintomas de pele vêm acompanhados de vômito, diarreia ou dor de barriga?</li><li>Você já teve uma reação alérgica grave antes?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA (NOVA VIA)</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Coceira/lesões de pele isoladas, sem inchaço de lábios/língua/garganta, sem falta de ar, sem tontura, sem febre, sem histórico de anafilaxia</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Inchaço de lábios, língua ou garganta / dificuldade para engolir, falar ou respirar · Falta de ar, tosse persistente ou chiado · Tontura, desmaio ou sinais de hipotensão · Febre associada · Histórico de anafilaxia prévia, com sintomas presentes agora (mesmo leves)<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Sangramento Vaginal <span class="dbadge dbadge-apoio">Com apoio</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você está sentindo tontura e/ou sensação de desmaio?</li><li>Você está gestante ou existe alguma suspeita ou possibilidade de você estar gestante? (atraso menstrual, relação sem método contraceptivo)</li><li>Você está sangrando agora? Se sim, há quantos dias?</li><li>Você já passou pela menopausa?</li><li>Você usa DIU ou algum anticoagulante?</li><li>Teve parto, aborto ou algum procedimento ginecológico recentemente?</li><li>Sente dor na barriga ou na pelve junto com o sangramento?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ELETIVA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (30 min)</span>Sangramento no momento, mas não gestante, sem suspeita de gestação, sem tontura/desmaio, não pós-menopausa, sem uso de anticoagulante, sem procedimento obstétrico recente, sem dor associada</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Bot orienta procurar: Ginecologista (rotina)</span>Relato de sangramento aumentado, mas sem sangramento no momento, sangramento pós-menopausa, mesmo sem outros sinais de alarme</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Gestante e/ou suspeita de gestação (PS obstétrico) · Tontura ou sensação de desmaio (PS ginecológico) · Uso de anticoagulante, com sangramento atual · Parto, aborto ou procedimento ginecológico recente, com sangramento agora<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Sintomas Ansiosos e Depressivos <span class="dbadge dbadge-enf">Enfermagem</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>O que você está sentindo?</li><li>Há quanto tempo está sentindo?</li><li>Você já faz algum tipo de acompanhamento?</li><li>Você sente dor no peito ou palpitações?</li><li>Você chegou a pensar em se machucar ou que não vale a pena viver?</li><li>Você usou alguma substância ou estimulante recentemente?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">ELETIVO</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (30 min)</span>Sintomas depressivos, sem sintomas agudos no momento</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-blue"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (30 min)</span>Sintomas depressivos em crise, sem ideação ativa/plano (ideação passiva, tristeza intensa, choro) · Se julgar necessidade de medicação, encaminhar para Teleconsulta Médica 30 min</div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Ideação Suicida <span class="dbadge dbadge-alert">Protocolo à parte</span></h4>Não segue os critérios do Guia.</div>
+<div class="dnote">O bot aciona o POP de Ideação e Comportamento Suicida, que existe separadamente. Nos relatos do Nível 1 do atalho de urgência, orienta SAMU 192 ou Pronto Socorro e abre um ticket de alerta para o enfermeiro da teletriagem.</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Sintomas Gripais <span class="dbadge dbadge-enf">Enfermagem</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você teve febre?</li><li>Você sente falta de ar ou dificuldade para respirar?</li><li>Há quanto tempo iniciaram os sintomas?</li><li>Você está fazendo uso de alguma medicação?</li><li>Você tem asma, DPOC, insuficiência cardíaca ou algum problema pulmonar/cardíaco de base?</li><li>Você está gestante?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (15 min)</span>Sintomas gripais sem febre, ou com febre há menos de 72h, sem falta de ar/dificuldade para respirar · Sem comorbidade respiratória/cardíaca de base, não gestante, conseguindo engolir líquidos normalmente, sem sinais de cianose/esforço respiratório</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Sintomas acima em gestantes, ou comorbidade respiratória/cardíaca de base com sintomas leves</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Febre que não cessa com medicamentos há mais de 72h · Falta de ar ou dificuldade para respirar · Gestante com febre ou falta de ar · Sintomas importantes em pessoas com comorbidade respiratória/cardíaca de base<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Suspeita de Dengue <span class="dbadge dbadge-enf">Enfermagem</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>O que você está sentindo?</li><li>Você teve febre?</li><li>Você está com dor no corpo ou possui manchas vermelhas no corpo?</li><li>Você está com dor atrás dos olhos?</li><li>Notou sangramento de gengiva, nariz, sangue na urina/fezes, ou manchas roxas que apareceram sem motivo?</li><li>Está mais sonolento, confuso, ou irritado do que o normal?</li><li>Notou diminuição importante da quantidade de urina?</li><li>Você está gestante? Tem diabetes, hipertensão, ou algum problema renal, hepático, cardíaco ou do sangue? Já teve dengue antes?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (15 min)</span>Sem sinais de alarme, sem grupo de risco</div></div>
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA (GRUPO DE RISCO)</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (15 min)</span>Gestante, &gt;65 anos, comorbidade relevante, ou dengue prévia, sem sinal de alarme</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Febre há mais de 72h · Tontura ou fraqueza (hipotensão postural) · Desidratação/sede excessiva · Dor abdominal intensa e contínua · Vômitos persistentes · Sangramento de mucosa/gengiva/nariz/urina/fezes ou manchas roxas espontâneas · Falta de ar · Confusão mental, sonolência ou irritabilidade incomum · Diminuição importante da urina<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Sintomas Oculares <span class="dbadge dbadge-apoio">Com apoio</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Algum produto químico ou substância caiu no seu olho? → se sim, orientar lavagem imediata com água corrente por pelo menos 15–20 minutos e direcionar a PS oftalmológico em paralelo, sem esperar completar o restante da triagem</li><li>Houve algum trauma no olho (pancada, corpo estranho, arranhão)?</li><li>Você sente dificuldade para enxergar?</li><li>A queixa acomete um ou ambos os olhos?</li><li>Notou flashes de luz, muitos pontinhos ou pontinho pretos novos, ou uma sombra/cortina cobrindo parte da visão?</li><li>Vê halos ao redor de luzes? Sente náusea ou vômito junto com a dor no olho?</li><li>Você usa lentes de contato?</li><li>De 0 a 10, qual a intensidade da dor no olho?</li><li>Fez alguma cirurgia no olho recentemente?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(3,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (15 min)</span>Olho vermelho, bilateral, sem dificuldade para enxergar</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Bot orienta procurar: Oftalmologista (rotina)</span>Dificuldade para "ver de longe/perto" não aguda, sem outros sintomas</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Exposição química (orientar irrigação imediata em paralelo ao encaminhamento) · Trauma ocular com dor ou alteração visual · Dificuldade para enxergar de início agudo · Dor intensa (≥ 8) · Flashes de luz, moscas volantes novas ou sombra/cortina no campo visual · Halos ao redor de luzes com náusea/vômito · Sintomas agudos (olho vermelho, dor, secreção) em usuário de lente de contato · Cirurgia ocular recente com qualquer sintoma novo<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Vômitos <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você teve febre?</li><li>Você sente dor abdominal? Se sim: intensidade 0–10</li><li>Você está conseguindo beber líquidos?</li><li>Há quanto tempo estão os vômitos? Quantas vezes hoje?</li><li>O vômito tem sangue (vivo ou como borra de café) ou é de cor verde/amarela forte?</li><li>Isso começou depois de alguma pancada na cabeça, ou vem acompanhado de dor de cabeça forte ou rigidez no pescoço?</li><li>Você tem diabetes? Notou respiração acelerada, hálito diferente, ou sonolência incomum?</li><li>Você está gestante?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ESPONTÂNEA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta de enfermagem (15 min)</span>Vômitos sem febre, sem dor abdominal intensa, conseguindo ingerir líquidos, sem sangue/vômito bilioso, sem trauma craniano/sinais neurológicos, sem diabetes descompensado, não gestante (ou gestante com quadro leve e tolerando líquidos)</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-coral"><span class="dotitle">Bot orienta ir ao Pronto Socorro</span>Febre · Dor abdominal intensa (≥ 8) · Incapacidade de ingerir líquidos · Menores de 1 ano ou maiores de 65 anos · Sangue no vômito ou vômito bilioso/fecaloide · Trauma craniano recente, ou vômito com cefaleia intensa/rigidez de nuca · Diabetes com sinais de descompensação (respiração acelerada, hálito cetônico, sonolência) · Gestante com vômitos persistentes/incapacidade de hidratar, ou com dor abdominal associada<br><em>Abre também um ticket de alerta para o enfermeiro da teletriagem.</em></div></div>
+</div>
+<div class="sintoma"></div>
+<div class="dtop"><h4>Laudos e atestados: Laudo de sanidade física e mental para adoção <span class="dbadge dbadge-decide">Guia decide</span></h4>O bot faz as perguntas abaixo, na ordem, e aplica os critérios de cada coluna.</div>
+<div class="qbox"><strong>Perguntas do bot</strong><ol><li>Você tem algum problema de saúde (doença crônica) ou usa algum medicamento de forma contínua?</li><li>Você faz acompanhamento com psiquiatra?</li><li>Está em crise ou teve piora recente de algum problema de saúde mental (por exemplo, internação ou troca recente de medicação)?</li><li>Com que frequência você consome bebida alcoólica? Usa alguma outra substância (maconha, cocaína, medicamentos sem prescrição)?</li><li>Quando foi seu último check-up (consulta e exames de rotina)?</li><li>Você é pessoa com deficiência (PcD)?</li></ol></div>
+<div class="darrow"></div>
+<div class="dcols" style="grid-template-columns:repeat(2,1fr);">
+  <div class="dcol"><div class="colhead">DEMANDA ELETIVA</div><div class="doutcome do-peach"><span class="dotitle">Bot envia o link da teleconsulta médica (30 min)</span>Sem nenhum dos critérios de encaminhamento à rede credenciada</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-gray"><span class="dotitle">Bot orienta procurar a rede credenciada</span>Transtorno mental descompensado · Uso problemático de álcool ou outras substâncias · PcD ou outra situação que exija exame físico presencial para concluir · Acompanhamento com psiquiatra: orientar que o atestado de saúde mental seja emitido pelo psiquiatra assistente. A parte física pode seguir para a consulta médica Pipo</div></div>
+</div>
+<div class="dnote"><strong>Observação:</strong>sempre orientar o membro a confirmar com a Vara da Infância se ela aceita documento digital, porque alguns tribunais pedem original ou cópia autenticada.</div>
 
 <div class="legend">
   <span><i class="sw" style="background:var(--pipo-peach);"></i>Bot conduz a pergunta e encaminha</span>
   <span><i class="sw" style="background:var(--grey-100);border:1.5px solid var(--slate-600);"></i>Decisão automática (bot)</span>
-  <span><i class="sw" style="background:var(--slate-100);"></i>Enfermeiro da teletriagem (só quando o bot não identifica)</span>
+  <span><i class="sw" style="background:var(--slate-100);"></i>Enfermeiro da teletriagem (só quando o bot não identifica, ou quando o card manda)</span>
 </div>
 
-<div class="dnote" style="margin-top:14px;"><h4>Escopo</h4>Esta proposta cobre os protocolos "Guia decide". O Guia continua em revisão, com previsão de fechamento no final de outubro de 2026.</div>
+<div class="dnote" style="margin-top:14px;"><h4 style="margin:0 0 4px;">Escopo</h4>Esta proposta cobre todos os sintomas do Guia. O Guia continua em revisão, com previsão de fechamento no final de outubro de 2026. Quando o protocolo mudar, esta página é gerada de novo.</div>
 
 <h2 class="section">O que o Guia precisa ter para o bot funcionar</h2>
 <div class="ref-grid">
@@ -175,7 +368,7 @@ body .print-btn{top:100px;}
 <div class="ref-box"><h3>Prazos escritos</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Todo "recente" tem prazo: 3 dias (bateu a cabeça), 15 dias (dente), 60 dias (parto, aborto, curetagem, DIU e medicamento novo em lesões de pele), 3 meses (cirurgia na barriga). Sem prazo, o bot não decide.</div></div>
 <div class="ref-box"><h3>Linguagem simples</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">O membro precisa entender cada pergunta sozinho. Termos técnicos saíram (mastoidite, rigidez de nuca). Em vez de "pancada", "bateu a cabeça".</div></div>
 </div>
-<div class="footer">Mapa mental gerado a partir do protocolo escrito do Guia de Direcionamento (Pipo Saúde, atualizado em 16/10/2026). Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
+<div class="footer">Página gerada a partir do protocolo escrito do Guia de Direcionamento (Pipo Saúde). Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>
 
 </div>
 </body>
