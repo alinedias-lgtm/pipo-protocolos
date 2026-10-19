@@ -98,7 +98,7 @@ body .print-btn{top:100px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Fluxo digital</strong></div>
   <div>Status<strong>Rascunho: aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>14/10/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>16/10/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 
@@ -114,6 +114,7 @@ body .print-btn{top:100px;}
 </div>
 <p>Em qualquer sintoma, um critério de Pronto Socorro isolado já é suficiente para o encaminhamento, os critérios de PS não precisam ocorrer em conjunto.</p>
 <p>Quando o bot não identificar a resposta do membro, o caso vai para o enfermeiro da teletriagem.</p>
+<p>Todo caso encaminhado ao Pronto Socorro também é avisado ao enfermeiro da teletriagem, que acompanha depois se o membro seguiu a orientação (monitoramento ativo).</p>
 <p><strong>Regras para escrever e revisar cada roteiro:</strong></p>
 <ol>
   <li>Só fica no roteiro a pergunta que <strong>muda o caminho</strong> do membro. Se a resposta não muda o desfecho, a pergunta sai. O profissional pergunta o resto na consulta.</li>
@@ -322,25 +323,26 @@ body .print-btn{top:100px;}
   </ul></div>
 </div>
 
-<h2>Sintomas Ortopédicos <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
+<h2>Dores musculoesqueléticas <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
 <p><strong>Perguntas:</strong></p>
 <ul>
   <li>Você teve febre?</li>
   <li>De 0 a 10, qual a intensidade da dor?</li>
-  <li>Onde exatamente é a dor?</li>
-  <li>Essa dor impede a sua locomoção?</li>
+  <li>Essa dor impede a sua movimentação?</li>
   <li>A dor começou após algum trauma, como uma queda ou batida?</li>
-  <li>Você tem ou já teve algum problema de saúde que saiba?</li>
+  <li>Você tem alguma doença que diminui a imunidade, como câncer ou HIV?</li>
+  <li>Você está gestante?</li>
   <li>Você sente fraqueza progressiva nas pernas?</li>
   <li>Você notou perda do controle para urinar ou evacuar?</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Eletivo: Teleconsulta de enfermagem 30 min</h4><ul><li>Dor crônica/persistente &lt; 30 dias, intensidade ≤ 7, sem trauma, sem sinal de alarme</li></ul></div>
-  <div class="card blue"><h4>Demanda espontânea: Teleconsulta de enfermagem 15 min</h4><ul><li>Dor há 7 dias ou menos, sem trauma, sem demais sintomas, intensidade ≤ 7</li></ul></div>
-  <div class="card blue"><h4>Rede credenciada: Ortopedista</h4><ul><li>Dor há mais de 30 dias, sem trauma, sem demais sintomas, intensidade ≤ 7</li></ul></div>
+  <div class="card blue"><h4>Eletivo: Teleconsulta de enfermagem 30 min</h4><ul><li>Dor há 8 a 30 dias, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea: Teleconsulta de enfermagem 15 min</h4><ul><li>Dor há 7 dias ou menos, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea: Teleconsulta médica 15 min</h4><ul><li>Imunossupressão (ex.: câncer, HIV) ou gestante, com dor até 7, sem trauma e sem critérios de Pronto Socorro</li><li>Dor lombar em gestante é comum e não é critério de Pronto Socorro</li></ul></div>
+  <div class="card blue"><h4>Rede credenciada: Ortopedista</h4><ul><li>Dor há mais de 30 dias, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
     <li>Intensidade 8 ou mais</li>
-    <li>Impede a locomoção</li>
+    <li>Impede a movimentação</li>
     <li>Iniciada após trauma</li>
     <li>Acompanhada de febre</li>
     <li>Fraqueza progressiva nas pernas</li>
@@ -356,6 +358,7 @@ body .print-btn{top:100px;}
   <li>Há algum outro sintoma associado? (se sim, direcionar pelo protocolo do sintoma específico, esta linha cobre só febre isolada)</li>
   <li>Fez uso de medicação? Houve melhora da temperatura?</li>
   <li>Você está em tratamento oncológico ativo (quimioterapia) ou tem alguma condição que baixa a imunidade?</li>
+  <li>Você está gestante?</li>
 </ul>
 <div class="cards">
   <div class="card blue"><h4>Demanda espontânea: Teleconsulta de enfermagem 15 min</h4><ul><li>Febre &lt;39°C, como único sintoma, há menos de 72h, sem imunossupressão/quimioterapia ativa</li></ul></div>
@@ -363,6 +366,7 @@ body .print-btn{top:100px;}
     <li>Febre que não cessa com medicação há mais de 72h</li>
     <li>Temperatura ≥ 39°C sem melhora com antitérmico</li>
     <li>Em tratamento oncológico ativo/imunossuprimido, qualquer febre</li>
+    <li>Gestante, qualquer febre</li>
     <li>Crianças &lt; 1 ano</li>
   </ul></div>
 </div>
@@ -370,33 +374,34 @@ body .print-btn{top:100px;}
 <h2>Sintomas Urinários <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
 <p><strong>Perguntas:</strong></p>
 <ul>
-  <li>Você teve febre?</li>
-  <li>Você sente dor na lombar? Se sim: começou de forma súbita e é forte, ou é uma dor mais antiga/crônica?</li>
+  <li>Você teve febre, calafrios, vômitos ou prostração (ficar muito sem forças)?</li>
+  <li>Você apresentou dor na lombar junto com o início da queixa urinária?</li>
   <li>Você percebeu sangue na urina?</li>
   <li>Você está gestante?</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Demanda espontânea: Consulta médica 15 min</h4><ul><li>Ardência/dor, febre sem dor lombar, sem sangue na urina, gestante sem febre</li><li>Dor lombar crônica/antiga (não é de início súbito), sem febre associada</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea: Consulta médica 15 min</h4><ul><li>Ardência ou dor ao urinar, sem sangue na urina e sem dor lombar associada, mesmo com febre, calafrios, vômitos ou prostração</li><li>Gestante sem febre, calafrios, vômitos ou prostração, sem sangue na urina</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
-    <li>Febre com dor lombar</li>
-    <li>Dor em flanco/lombar de início agudo e forte intensidade</li>
+    <li>Febre, calafrios, vômitos ou prostração, com dor lombar iniciada junto com a queixa urinária</li>
     <li>Sangue na urina</li>
-    <li>Gestante com febre</li>
+    <li>Gestante com febre, calafrios, vômitos ou prostração</li>
   </ul></div>
 </div>
+<div class="card coral" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Dor lombar sem febre, calafrios, vômitos ou prostração <span class="pending">pendente</span></h4><ul><li>Falta definir o desfecho de quem tem dor lombar junto com a queixa urinária, mas sem febre, calafrios, vômitos nem prostração. A dor lombar crônica ou antiga saiu do roteiro, porque a pergunta sobre início súbito foi retirada.</li></ul></div>
 
 <h2>Lesões de Pele <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h2>
 <p><strong>Perguntas:</strong></p>
 <ul>
-  <li>Você teve febre?</li>
-  <li>Você sente dor? Se sim: intensidade 0–10</li>
+  <li>Quando os sintomas começaram (data de início das lesões)?</li>
+  <li>Você teve febre? Desde quando?</li>
+  <li>Você sente dor? Se sim: intensidade 0 a 10</li>
   <li>A lesão sangra? Se sim: o sangramento para com compressão?</li>
-  <li>Começou algum medicamento novo recentemente? Tem lesões/bolhas na boca, olhos ou região genital?</li>
+  <li>Você começou algum medicamento nos últimos 60 dias? Tem lesões ou bolhas na boca, olhos ou região genital?</li>
   <li>Você tem diabetes, imunossupressão ou usa anticoagulante?</li>
   <li>Solicitar imagem da lesão, obrigatório antes de qualquer direcionamento, mas já explicar as limitações técnicas na avaliação</li>
 </ul>
-<p><em>Discutir caso com equipe médica para direcionamento (sintomáticos ou encaminhamento para rede).</em></p>
 <div class="cards">
+  <div class="card blue"><h4>Teletriagem: enfermeiro avalia</h4><ul><li>Todos os casos sem critérios de Pronto Socorro</li><li>O enfermeiro da teletriagem avalia a foto e as respostas, discute o caso com o médico se necessário e define a condução: atendimento na Pipo (ex.: micose, quadros simples) ou rede credenciada (dermatologista)</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
     <li>Febre há mais de 72h</li>
     <li>Dor intensidade ≥ 8</li>
@@ -408,19 +413,18 @@ body .print-btn{top:100px;}
 <h2>Reação Adversa a Medicamentos <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h2>
 <p><strong>Perguntas:</strong></p>
 <ul>
-  <li>Qual é o nome do medicamento e para que ele é usado?</li>
-  <li>O que você está sentindo?</li>
-  <li>Há quanto tempo você usa essa medicação?</li>
+  <li>Qual é o nome do medicamento e há quanto tempo você usa essa medicação?</li>
   <li>Houve algum aumento de dose recentemente?</li>
-  <li>Essa medicação foi prescrita na Pipo? (solicitar receita se prescrição externa)</li>
+  <li>Essa medicação foi prescrita na Pipo? (se foi prescrita fora da Pipo, pedir uma foto da prescrição)</li>
+  <li>Você teve febre?</li>
   <li>Notou inchaço no rosto, lábios, língua ou garganta? Sente tontura, desmaio ou falta de ar?</li>
   <li>Percebeu sangue na urina, urina muito escura, ou diminuição importante da quantidade de urina?</li>
   <li>Foi uma ingestão acidental/dose acima da prescrita, ou foi intencional? (ideação suicida)</li>
 </ul>
 <div class="cards">
   <div class="card blue"><h4>Demanda espontânea: Consulta médica 15 min</h4><ul><li>Se prescrita pela Pipo, sintomas leves (enjoo, azia, diarreia, sonolência, irritabilidade, dor de cabeça, boca seca, mal-estar), sem os sinais de alarme abaixo</li></ul></div>
-  <div class="card blue"><h4>Rede credenciada</h4><ul><li>Medicação não prescrita pela Pipo, sem sinais de alarme → orientar buscar médico prescritor</li></ul></div>
-  <div class="card blue"><h4>CEATOX</h4><ul><li>Ingestão acidental ou dose muito acima da prescrita, sem indício de intencionalidade</li><li>Linha nacional 0800 722 6001 como padrão; CEATOX-SP 0800 014 8110 só se o membro estiver em SP</li></ul></div>
+  <div class="card blue"><h4>Medicação não prescrita pela Pipo</h4><ul><li>Sem sinais de alarme: orientar buscar o médico prescritor, se houver possibilidade</li><li>Se não houver possibilidade: teleconsulta médica 15 min (mesmas queixas da demanda espontânea)</li></ul></div>
+  <div class="card blue"><h4>CEATOX</h4><ul><li>Ingestão acidental ou dose muito acima da prescrita, sem indício de intencionalidade</li><li>Linha nacional 0800 722 6001 como padrão; CEATOX-SP 0800 014 8110 só se o membro estiver em SP</li><li>O caso também vai para o enfermeiro da teletriagem, que acompanha se o membro ligou para o CEATOX e seguiu a orientação</li></ul></div>
   <div class="card coral"><h4>Suspeita de intoxicação intencional</h4><ul><li>PS imediato + acionar em paralelo o POP de Ideação e Comportamento Suicida já existente no guia, não é conduzido apenas por orientação telefônica com CEATOX</li></ul></div>
 </div>
 <p><strong>Pronto Socorro (qualquer um isoladamente):</strong></p>
@@ -430,27 +434,25 @@ body .print-btn{top:100px;}
   <li>Falta de ar</li>
   <li>Tontura, desmaio ou sinais de hipotensão</li>
   <li>Sangue na urina, urina muito escura, ou queda importante do volume urinário</li>
-  <li>Confusão mental</li>
-  <li>Convulsões</li>
   <li>Suspeita de intoxicação intencional (ver acima)</li>
 </ul>
 
 <h2>Reação Alérgica <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h2>
 <p><strong>Perguntas:</strong></p>
 <ul>
-  <li>O que você está sentindo?</li>
-  <li>Você sabe o que pode ter causado a reação (alimento, remédio, picada de inseto, contraste, outro)?</li>
+  <li>Você teve febre?</li>
   <li>Está com inchaço nos lábios, língua ou garganta? Tem dificuldade para engolir, falar ou respirar?</li>
   <li>Sente tontura, desmaio, ou o coração está acelerado?</li>
   <li>Os sintomas de pele vêm acompanhados de vômito, diarreia ou dor de barriga?</li>
   <li>Você já teve uma reação alérgica grave antes?</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Demanda espontânea (nova via): Consulta médica 15 min</h4><ul><li>Coceira/lesões de pele isoladas, sem inchaço de lábios/língua/garganta, sem falta de ar, sem tontura, sem histórico de anafilaxia</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea (nova via): Consulta médica 15 min</h4><ul><li>Coceira/lesões de pele isoladas, sem inchaço de lábios/língua/garganta, sem falta de ar, sem tontura, sem febre, sem histórico de anafilaxia</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
     <li>Inchaço de lábios, língua ou garganta / dificuldade para engolir, falar ou respirar</li>
     <li>Falta de ar, tosse persistente ou chiado</li>
     <li>Tontura, desmaio ou sinais de hipotensão</li>
+    <li>Febre associada</li>
     <li>Histórico de anafilaxia prévia, com sintomas presentes agora (mesmo leves)</li>
   </ul></div>
 </div>

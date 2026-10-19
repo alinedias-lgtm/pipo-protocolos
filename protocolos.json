@@ -34,7 +34,7 @@
         "prescrição",
         "receituário"
       ],
-      "resumo": "Padronizar a renovação de receitas e a transcrição de pedidos de exames na Pipo, garantindo segurança clínica, aderência",
+      "resumo": "Padronizar a renovação de receitas na Pipo, garantindo segurança clínica, aderência",
       "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-receitas.html",
       "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-receitas.html",
       "status": "ativo",
@@ -119,7 +119,7 @@
       "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-guia-direcionamento.html",
       "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-guia-direcionamento.html",
       "status": "rascunho",
-      "atualizadoEm": "14/10/2026",
+      "atualizadoEm": "16/10/2026",
       "aprovadoPor": "Leticia Defilippo",
       "passos": []
     }
