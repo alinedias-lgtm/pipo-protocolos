@@ -98,7 +98,7 @@ body .print-btn{top:100px;}
 <div class="meta">
   <div>Tema<strong>Clínico / Fluxo digital</strong></div>
   <div>Status<strong>Rascunho: aguardando aprovação</strong></div>
-  <div>Última atualização de conteúdo<strong>16/10/2026</strong></div>
+  <div>Última atualização de conteúdo<strong>22/10/2026</strong></div>
   <div>Responsável (RT)<strong>Leticia Defilippo</strong></div>
 </div>
 
@@ -115,11 +115,12 @@ body .print-btn{top:100px;}
 <p>Em qualquer sintoma, um critério de Pronto Socorro isolado já é suficiente para o encaminhamento, os critérios de PS não precisam ocorrer em conjunto.</p>
 <p>Quando o bot não identificar a resposta do membro, o caso vai para o enfermeiro da teletriagem.</p>
 <p>Todo caso encaminhado ao Pronto Socorro também é avisado ao enfermeiro da teletriagem, que acompanha depois se o membro seguiu a orientação (monitoramento ativo).</p>
+<div class="card coral" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Prazo e tentativas do monitoramento ativo <span class="pending">pendente</span></h4><ul><li>Falta definir <strong>em quanto tempo</strong> o enfermeiro contata o membro depois do encaminhamento, e <strong>quantas tentativas</strong> de contato são feitas antes de encerrar.</li><li>Levantado pela médica responsável em 20/10/2026, junto com as respostas aos 5 pontos da ata de 16/10. Sem isso, "monitoramento ativo" não é verificável.</li></ul></div>
 <p><strong>Regras para escrever e revisar cada roteiro:</strong></p>
 <ol>
   <li>Só fica no roteiro a pergunta que <strong>muda o caminho</strong> do membro. Se a resposta não muda o desfecho, a pergunta sai. O profissional pergunta o resto na consulta.</li>
   <li>Todo critério de Pronto Socorro precisa ter uma pergunta que o identifique. Se não existe a pergunta, o critério sai.</li>
-  <li>Linguagem simples. Termos que o membro não entende saem. Em vez de "pancada", usar "bateu a cabeça".</li>
+  <li>Linguagem simples. Termos que o membro não entende saem. Em vez de "pancada", usar "bateu a cabeça". Em vez de "imunossupressão", dar exemplos (uso prolongado de corticoide, quimioterapia, transplante, HIV ou outra doença que baixa a imunidade). Em vez de "prostração", descrever (muito fraco, sem conseguir levantar da cama ou fazer as atividades).</li>
   <li>Todo "recente" precisa de prazo escrito na pergunta (ex.: "nos últimos 3 meses").</li>
   <li>O card mostra o <strong>critério</strong> do desfecho, não a conduta. Orientar, medicar e agendar é com o profissional.</li>
 </ol>
@@ -242,7 +243,7 @@ body .print-btn{top:100px;}
   <li>Você percebeu sangue ou muco nas fezes?</li>
   <li>Está sentindo tontura ou fraqueza?</li>
   <li>Está com a boca seca ou notou diminuição da quantidade de urina?</li>
-  <li>Você é gestante, diabético, ou tem alguma condição que baixa a imunidade?</li>
+  <li>Você é gestante, diabético, ou faz uso prolongado de corticoide, quimioterapia, transplante, tem HIV ou outra doença que baixa a imunidade?</li>
 </ul>
 <div class="cards">
   <div class="card blue"><h4>Demanda espontânea: Teleconsulta de enfermagem 15 min</h4><ul><li>Até 7 dias, sem critérios de Pronto Socorro</li><li>Sem comorbidades: sem sangue ou muco, sem febre alta (acima de 38 °C), não gestante, não diabético, sem baixa imunidade, não maior de 65 anos</li></ul></div>
@@ -330,7 +331,7 @@ body .print-btn{top:100px;}
   <li>De 0 a 10, qual a intensidade da dor?</li>
   <li>Essa dor impede a sua movimentação?</li>
   <li>A dor começou após algum trauma, como uma queda ou batida?</li>
-  <li>Você tem alguma doença que diminui a imunidade, como câncer ou HIV?</li>
+  <li>Você faz uso prolongado de corticoide, faz quimioterapia, fez transplante, tem HIV ou outra doença que baixa a imunidade?</li>
   <li>Você está gestante?</li>
   <li>Você sente fraqueza progressiva nas pernas?</li>
   <li>Você notou perda do controle para urinar ou evacuar?</li>
@@ -338,7 +339,7 @@ body .print-btn{top:100px;}
 <div class="cards">
   <div class="card blue"><h4>Eletivo: Teleconsulta de enfermagem 30 min</h4><ul><li>Dor há 8 a 30 dias, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</li></ul></div>
   <div class="card blue"><h4>Demanda espontânea: Teleconsulta de enfermagem 15 min</h4><ul><li>Dor há 7 dias ou menos, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</li></ul></div>
-  <div class="card blue"><h4>Demanda espontânea: Teleconsulta médica 15 min</h4><ul><li>Imunossupressão (ex.: câncer, HIV) ou gestante, com dor até 7, sem trauma e sem critérios de Pronto Socorro</li><li>Dor lombar em gestante é comum e não é critério de Pronto Socorro</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea: Teleconsulta médica 15 min</h4><ul><li>Imunossupressão (uso prolongado de corticoide, quimioterapia, transplante, HIV ou outra doença que baixa a imunidade) ou gestante, com dor até 7, sem trauma e sem critérios de Pronto Socorro, <strong>em qualquer duração da dor</strong></li><li>Dor lombar em gestante é comum e não é critério de Pronto Socorro</li></ul></div>
   <div class="card blue"><h4>Rede credenciada: Ortopedista</h4><ul><li>Dor há mais de 30 dias, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
     <li>Intensidade 8 ou mais</li>
@@ -357,7 +358,7 @@ body .print-btn{top:100px;}
   <li>Quais os valores das temperaturas?</li>
   <li>Há algum outro sintoma associado? (se sim, direcionar pelo protocolo do sintoma específico, esta linha cobre só febre isolada)</li>
   <li>Fez uso de medicação? Houve melhora da temperatura?</li>
-  <li>Você está em tratamento oncológico ativo (quimioterapia) ou tem alguma condição que baixa a imunidade?</li>
+  <li>Você faz quimioterapia, uso prolongado de corticoide, fez transplante, tem HIV ou outra doença que baixa a imunidade?</li>
   <li>Você está gestante?</li>
 </ul>
 <div class="cards">
@@ -374,20 +375,21 @@ body .print-btn{top:100px;}
 <h2>Sintomas Urinários <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--pipo-success);color:var(--success-900);">Guia decide</span></h2>
 <p><strong>Perguntas:</strong></p>
 <ul>
-  <li>Você teve febre, calafrios, vômitos ou prostração (ficar muito sem forças)?</li>
+  <li>Você teve febre, calafrios, vômitos, ou está se sentindo muito fraco, sem conseguir levantar da cama ou fazer suas atividades?</li>
   <li>Você apresentou dor na lombar junto com o início da queixa urinária?</li>
+  <li>Se há dor lombar: de 0 a 10, qual a intensidade da dor?</li>
   <li>Você percebeu sangue na urina?</li>
   <li>Você está gestante?</li>
 </ul>
 <div class="cards">
-  <div class="card blue"><h4>Demanda espontânea: Consulta médica 15 min</h4><ul><li>Ardência ou dor ao urinar, sem sangue na urina e sem dor lombar associada, mesmo com febre, calafrios, vômitos ou prostração</li><li>Gestante sem febre, calafrios, vômitos ou prostração, sem sangue na urina</li></ul></div>
+  <div class="card blue"><h4>Demanda espontânea: Consulta médica 15 min</h4><ul><li>Ardência ou dor ao urinar, sem sangue na urina e sem dor lombar associada</li><li>Com febre, calafrios, vômitos ou fraqueza intensa, mas sem dor lombar: febre com sintoma urinário já sugere infecção urinária complicada, principalmente em homens e idosos. Para esse grupo, a consulta médica de 15 min precisa ser <strong>no mesmo dia</strong></li><li>Gestante sem febre, calafrios, vômitos ou fraqueza intensa, sem sangue na urina</li><li>Dor lombar junto com a queixa urinária, sem febre, calafrios, vômitos ou fraqueza intensa, com intensidade <strong>menor que 8</strong> (a dor pode não ter relação com a queixa urinária, e a avaliação fica para a consulta)</li></ul></div>
   <div class="card coral"><h4>Pronto Socorro (qualquer um isoladamente)</h4><ul>
-    <li>Febre, calafrios, vômitos ou prostração, com dor lombar iniciada junto com a queixa urinária</li>
+    <li>Febre, calafrios, vômitos ou fraqueza intensa, com dor lombar iniciada junto com a queixa urinária</li>
+    <li>Dor lombar de <strong>intensidade 8 ou mais</strong>, mesmo sem febre, calafrios, vômitos ou fraqueza intensa, segue o protocolo musculoesquelético e cobre cólica renal</li>
     <li>Sangue na urina</li>
-    <li>Gestante com febre, calafrios, vômitos ou prostração</li>
+    <li>Gestante com febre, calafrios, vômitos ou fraqueza intensa</li>
   </ul></div>
 </div>
-<div class="card coral" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4>Dor lombar sem febre, calafrios, vômitos ou prostração <span class="pending">pendente</span></h4><ul><li>Falta definir o desfecho de quem tem dor lombar junto com a queixa urinária, mas sem febre, calafrios, vômitos nem prostração. A dor lombar crônica ou antiga saiu do roteiro, porque a pergunta sobre início súbito foi retirada.</li></ul></div>
 
 <h2>Lesões de Pele <span style="display:inline-block;font-size:11px;font-weight:700;padding:2px 10px;border-radius:10px;margin-left:8px;vertical-align:middle;background:var(--slate-100);color:var(--slate-600);">Enfermagem</span></h2>
 <p><strong>Perguntas:</strong></p>
@@ -397,7 +399,7 @@ body .print-btn{top:100px;}
   <li>Você sente dor? Se sim: intensidade 0 a 10</li>
   <li>A lesão sangra? Se sim: o sangramento para com compressão?</li>
   <li>Você começou algum medicamento nos últimos 60 dias? Tem lesões ou bolhas na boca, olhos ou região genital?</li>
-  <li>Você tem diabetes, imunossupressão ou usa anticoagulante?</li>
+  <li>Você tem diabetes, usa anticoagulante, ou faz uso prolongado de corticoide, quimioterapia, transplante, tem HIV ou outra doença que baixa a imunidade?</li>
   <li>Solicitar imagem da lesão, obrigatório antes de qualquer direcionamento, mas já explicar as limitações técnicas na avaliação</li>
 </ul>
 <div class="cards">
@@ -414,10 +416,11 @@ body .print-btn{top:100px;}
 <p><strong>Perguntas:</strong></p>
 <ul>
   <li>Qual é o nome do medicamento e há quanto tempo você usa essa medicação?</li>
-  <li>Houve algum aumento de dose recentemente?</li>
+  <li>Houve algum aumento de dose <strong>nos últimos 14 dias</strong>?</li>
   <li>Essa medicação foi prescrita na Pipo? (se foi prescrita fora da Pipo, pedir uma foto da prescrição)</li>
-  <li>Você teve febre?</li>
-  <li>Notou inchaço no rosto, lábios, língua ou garganta? Sente tontura, desmaio ou falta de ar?</li>
+  <li>Você teve febre? Desde quando?</li>
+  <li>Você sentiu coceira ou aperto na garganta, rouquidão, inchaço nos lábios, língua ou rosto, ou falta de ar ou chiado no peito?</li>
+  <li>Você sentiu tontura ou desmaio?</li>
   <li>Percebeu sangue na urina, urina muito escura, ou diminuição importante da quantidade de urina?</li>
   <li>Foi uma ingestão acidental/dose acima da prescrita, ou foi intencional? (ideação suicida)</li>
 </ul>
@@ -429,9 +432,8 @@ body .print-btn{top:100px;}
 </div>
 <p><strong>Pronto Socorro (qualquer um isoladamente):</strong></p>
 <ul>
-  <li>Febre</li>
-  <li>Inchaço em rosto, lábios, língua ou garganta</li>
-  <li>Falta de ar</li>
+  <li>Febre (febre junto com reação a medicamento também pode indicar reação grave)</li>
+  <li><strong>Sinais de angioedema ou anafilaxia:</strong> coceira ou aperto na garganta, rouquidão, inchaço nos lábios, língua ou rosto, falta de ar ou chiado no peito. Vai para o PS e alerta o enfermeiro da teletriagem</li>
   <li>Tontura, desmaio ou sinais de hipotensão</li>
   <li>Sangue na urina, urina muito escura, ou queda importante do volume urinário</li>
   <li>Suspeita de intoxicação intencional (ver acima)</li>

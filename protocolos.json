@@ -1,7 +1,7 @@
 {
   "fonteRotulo": "Protocolos Pipo (GitHub Pages)",
   "fonteDetalhe": "Gerado a partir do repositório pipo-protocolos. Regenerar sempre que um protocolo mudar.",
-  "geradoEm": "2026-10-16",
+  "geradoEm": "2026-10-20",
   "protocolos": [
     {
       "id": "checkup",
@@ -34,7 +34,7 @@
         "prescrição",
         "receituário"
       ],
-      "resumo": "Padronizar a renovação de receitas na Pipo, garantindo segurança clínica, aderência",
+      "resumo": "Padronizar a renovação de receitas na Pipo, garantindo segurança clínica, aderência às normas de dispensação vigentes e",
       "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-receitas.html",
       "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-renovacao-receitas.html",
       "status": "ativo",
@@ -119,7 +119,7 @@
       "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-guia-direcionamento.html",
       "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-guia-direcionamento.html",
       "status": "rascunho",
-      "atualizadoEm": "16/10/2026",
+      "atualizadoEm": "22/10/2026",
       "aprovadoPor": "Leticia Defilippo",
       "passos": []
     }
