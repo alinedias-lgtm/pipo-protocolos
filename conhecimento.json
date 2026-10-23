@@ -1,0 +1,1081 @@
+{
+  "_leia": [
+    "Base operacional da Nina, copilota de saúde da enfermagem da Pipo.",
+    "",
+    "NÃO é documento clínico aprovado. Os protocolos APROVADOS pela",
+    "responsável técnica estão em protocolos.json, gerados dos HTMLs",
+    "deste mesmo repositório. Este arquivo é o índice de trabalho do",
+    "plantão: rede credenciada, telemedicina, COFEN 801 e um índice dos",
+    "protocolos com o passo a passo já mapeado.",
+    "",
+    "Cada bloco de telemedicina diz de onde veio a informação e quando",
+    "foi conferida. Onde o caminho não foi confirmado na fonte da",
+    "operadora, o campo aConfirmar diz o que falta — e nesse caso o",
+    "passo a passo NÃO deve ser repassado ao membro como definitivo.",
+    "",
+    "Os materiais de apoio aparecem só pelo título. As URLs são links",
+    "internos do Drive e não são publicadas aqui de propósito."
+  ],
+  "geradoEm": "2026-10-23",
+  "fonteRotulo": "Base operacional da Nina (Pipo Saúde — Enfermagem)",
+  "contagem": {
+    "operadoras": 10,
+    "operadorasComPassoDeTelemedicina": 8,
+    "protocolos": 25,
+    "protocolosComPassos": 5,
+    "cofen": 13,
+    "materiais": 50,
+    "fluxos": 4
+  },
+  "redeCredenciada": [
+    {
+      "nome": "Alice (plano Pipo)",
+      "redeCredenciada": "https://alice.com.br/",
+      "telefones": [],
+      "telemedicina": {
+        "tem": true,
+        "servico": "Alice Agora",
+        "app": "Alice",
+        "passos": [
+          "Abra o app Alice e faça login",
+          "Na tela inicial, acesse \"Alice Agora\"",
+          "Inicie o atendimento e conte o que está acontecendo pelo chat",
+          "A equipe avalia o caso e segue por chat ou por vídeo, conforme a necessidade",
+          "O profissional orienta a conduta e, se precisar, encaminha para especialista, exame ou presencial"
+        ],
+        "observacao": "24 horas, todos os dias, inclusive à noite. Sem agendamento. Atendem enfermeiros, médicos de família e pediatras. Sem custo extra e sem coparticipação — já está no plano.",
+        "extra": "O Alice Agora NÃO é só para sintoma: também resolve dúvida de plano — autorização, rede credenciada, reembolso, carteirinha e agendamento. E em emergência a equipe indica o pronto-socorro mais adequado. As orientações e o histórico ficam registrados no próprio app.",
+        "origem": "Horário, formato, quem atende, gratuidade e o uso para dúvidas de plano estão na página oficial da Alice. O nome da tela (\"Alice Agora\" na inicial) veio da equipe — a página fala em \"direto no app\", sem nomear botões. Este é o plano da Pipo: quem usa confirma em um minuto.",
+        "aConfirmar": null,
+        "fonte": "https://alice.com.br/alice-agora",
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "SulAmérica",
+      "redeCredenciada": "https://portal.sulamericaseguros.com.br/home.htm",
+      "telefones": [
+        {
+          "rotulo": "Central (cap)",
+          "numero": "4004-5900"
+        },
+        {
+          "rotulo": "Central (0800)",
+          "numero": "0800-970-0500"
+        },
+        {
+          "rotulo": "SAC",
+          "numero": "0800-722-0303"
+        }
+      ],
+      "telemedicina": {
+        "tem": true,
+        "servico": "Pronto Atendimento por Vídeo",
+        "app": "SulAmérica Saúde",
+        "passos": [
+          "Abra o app SulAmérica Saúde",
+          "Toque em \"Telemedicina\"",
+          "Toque em \"Pronto Atendimento por Vídeo\"",
+          "Siga as instruções do app e aguarde o plantonista"
+        ],
+        "observacao": "Plantonistas 24 horas. No fim, se precisar, a receita ou o pedido de exame chega por SMS.",
+        "extra": "Psicoterapia: Telemedicina → \"Psicólogo na Tela\". Para achar médico da rede que atende por vídeo: Rede Referenciada → especialidade → quem atende por vídeo aparece com um símbolo de câmera.",
+        "origem": null,
+        "aConfirmar": null,
+        "fonte": "https://saude.sulamericaseguros.com.br/saude-na-tela/",
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "Bradesco Saúde",
+      "redeCredenciada": "https://www.bradescoseguros.com.br/",
+      "telefones": [
+        {
+          "rotulo": "Central (cap)",
+          "numero": "4004-2700"
+        },
+        {
+          "rotulo": "Central (0800)",
+          "numero": "0800-701-2700"
+        },
+        {
+          "rotulo": "SAC",
+          "numero": "0800-722-0110"
+        }
+      ],
+      "telemedicina": {
+        "tem": true,
+        "servico": "Saúde Digital",
+        "app": "Bradesco Saúde",
+        "passos": [
+          "Baixe o app Bradesco Saúde e faça login",
+          "Entre em \"Saúde Digital — Telemedicina\"",
+          "Escolha o beneficiário",
+          "Escolha consulta imediata ou agendada",
+          "Faça a triagem informando os sintomas",
+          "Libere câmera e microfone e entre na videochamada"
+        ],
+        "observacao": "24 horas por dia, 7 dias por semana. Sem custo pelo app. Casos agudos de baixa complexidade. Receita, pedido de exame, atestado e encaminhamento saem digitais.",
+        "extra": "Há também a modalidade com profissional referenciado (médico, psicólogo, nutricionista): o beneficiário entra na área exclusiva, escolhe o profissional e combina a videoconsulta direto com ele.",
+        "origem": "A página oficial confirma o serviço, o horário e a gratuidade, mas NÃO publica os nomes dos menus. Os passos vieram da equipe, em 16/10/2026.",
+        "aConfirmar": "Os nomes de menu não estão em fonte da Bradesco. Conferir no app antes de virar macro.",
+        "fonte": "https://www.bradescoseguros.com.br/juntospelasaude/site/telemedicina",
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "Amil",
+      "redeCredenciada": "https://www.amil.com.br/",
+      "telefones": [
+        {
+          "rotulo": "Central (cap)",
+          "numero": "3004-1000"
+        },
+        {
+          "rotulo": "Central (0800)",
+          "numero": "0800-706-2363"
+        }
+      ],
+      "telemedicina": {
+        "tem": true,
+        "servico": "Pronto Atendimento",
+        "app": "Amil Clientes",
+        "passos": [
+          "Abra o app Amil Clientes",
+          "Toque em \"Rede\"",
+          "Selecione \"Telemedicina Amil\"",
+          "Toque em \"Pronto Atendimento\"",
+          "Leia e aceite os termos da Telemedicina Amil"
+        ],
+        "observacao": "24 horas, 7 dias por semana. A urgência não precisa de agendamento.",
+        "extra": "Plano Amil One tem caminho próprio: portal amilone.com.br → menu lateral → \"Telemedicina Amil One\". A urgência do Amil One é com médicos do Einstein, pelo 0800 021 3663.",
+        "origem": null,
+        "aConfirmar": null,
+        "fonte": "https://medxperience.amil.com.br/para-o-seu-paciente/telemedicina",
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "Seguros Unimed",
+      "redeCredenciada": "https://www.unimed.coop.br/",
+      "telefones": [
+        {
+          "rotulo": "Central",
+          "numero": "0800-722-4848"
+        }
+      ],
+      "telemedicina": {
+        "tem": true,
+        "servico": "Pronto Atendimento Digital (plano de saúde)",
+        "app": "Super App Seguros Unimed",
+        "passos": [
+          "Abra o Super App Seguros Unimed",
+          "Na tela inicial, toque em \"Saúde\"",
+          "Toque em \"Pronto atendimento 24h\"",
+          "Escolha quem vai ser atendido",
+          "Siga para a triagem"
+        ],
+        "observacao": "No seguro-saúde, o Pronto Atendimento Digital é 24h, todos os dias. Passou a ser operado pela Conexa.",
+        "extra": "⚠️ CUIDADO: a Seguros Unimed tem DOIS caminhos diferentes. O de cima é o do PLANO DE SAÚDE. O do SEGURO DE VIDA é outro: app → \"Produtos\" → \"Vida\" → a apólice que tem o serviço → \"Telemedicina\" → aceitar os termos → triagem de sintomas → confirmar → aguardar o clínico geral (o aviso chega por SMS/e-mail). Antes de passar o caminho, confira qual produto o membro tem. E Seguros Unimed não é a mesma coisa que uma Unimed regional.",
+        "origem": "O caminho do plano de saúde veio de informativo de cliente. O caminho do seguro de vida veio do Manual de Assistência Telemedicina da Seguros Unimed (versão 03/2024), repassado pela equipe — não consegui abrir o PDF para conferir palavra por palavra.",
+        "aConfirmar": "Confirmar no app qual caminho aparece para o produto do membro.",
+        "fonte": null,
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "Hapvida / NDI",
+      "redeCredenciada": "https://www.hapvida.com.br/",
+      "telefones": [
+        {
+          "rotulo": "Central",
+          "numero": "0800-280-9130"
+        },
+        {
+          "rotulo": "Autorização",
+          "numero": "0800-280-9110"
+        }
+      ],
+      "telemedicina": {
+        "tem": true,
+        "servico": "Pronto Atendimento (teleconsulta)",
+        "app": "Portal do Beneficiário",
+        "passos": [
+          "Entre no Portal do Beneficiário (computador, tablet ou celular)",
+          "Informe seus dados e escolha o contrato",
+          "Escolha o beneficiário e clique em \"Pronto Atendimento\"",
+          "Escolha o beneficiário de novo e confirme o celular de contato"
+        ],
+        "observacao": "Pronto Atendimento 24h, todos os dias. Não exige validação facial.",
+        "extra": "Teleconsulta AGENDADA com especialista é outro caminho: Portal → contrato → beneficiário → \"Marcar Teleconsulta\" → especialidade → data → horário → confirmar. No dia: \"Teleconsultas marcadas\" → \"Entrar na sala de atendimento\". Essa exige validação facial e câmera/microfone liberados. Especialistas atendem 15h por dia, de segunda a sábado.",
+        "origem": "Página oficial da Hapvida. O caminho é pelo PORTAL DO BENEFICIÁRIO — a página não descreve esses passos pelo app.",
+        "aConfirmar": null,
+        "fonte": "https://www2.hapvida.com.br/teleconsulta",
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "Care Plus",
+      "redeCredenciada": "https://www8.careplus.com.br/",
+      "telefones": [
+        {
+          "rotulo": "Central",
+          "numero": "0800-013-2992"
+        }
+      ],
+      "telemedicina": {
+        "tem": true,
+        "servico": "Teleconsulta pela plataforma Blua",
+        "app": "Care Plus",
+        "passos": [
+          "Baixe o app Care Plus e faça login como beneficiário",
+          "Entre na área de serviços de saúde digital",
+          "Acesse \"Blua\"",
+          "Selecione \"Teleconsulta\"",
+          "Siga a triagem ou o agendamento, conforme a opção",
+          "Libere câmera e microfone e entre na consulta"
+        ],
+        "observacao": null,
+        "extra": "Antes era Einstein Conecta, consulta por videoconferência 24h em parceria com o Albert Einstein, e telepsicologia pela Telavita. A plataforma mudou para a Blua — se o membro falar em Einstein Conecta, é o serviço antigo.",
+        "origem": "Passos repassados pela equipe em 16/10/2026, citando material da Care Plus e a ficha do app. Não consegui conferir os nomes de menu em página da operadora.",
+        "aConfirmar": "Conferir no app o nome exato da área e se o horário continua 24h.",
+        "fonte": null,
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "Porto Seguro Saúde",
+      "redeCredenciada": "https://www.portoseguro.com.br/",
+      "telefones": [
+        {
+          "rotulo": "Central",
+          "numero": "0800-722-4090"
+        },
+        {
+          "rotulo": "Emergências",
+          "numero": "0800-726-4090"
+        }
+      ],
+      "telemedicina": {
+        "tem": true,
+        "servico": "Telemedicina 24h",
+        "app": "Porto Saúde",
+        "passos": [
+          "Abra o app Porto Saúde",
+          "Procure a opção de Telemedicina",
+          "Escolha o atendimento por vídeo OU por telefone",
+          "Informe os sintomas e siga para o atendimento"
+        ],
+        "observacao": "Plantão 24h. Dá para ser por vídeo ou por telefone — membro sem câmera ou sem internet boa não fica sem atendimento.",
+        "extra": "Rede, hospitais e PS da Porto: a Porto informou que tudo o que existe está na Plataforma Porto. Planilha de indicações eles vão verificar se conseguem. Prestador que aparece no portal mas não atende mais deve ser reportado — anote NOME DO PRESTADOR e CIDADE e use o botão \"Prestador fora da rede\" aqui no cartão.",
+        "origem": "Confirmado direto com a Porto pela Letícia, em 16/10/2026. Também existem \"Seu Clínico\" e \"Seu Pediatra na Hora\" além da telemedicina 24h — esses dois ainda não conferidos.",
+        "aConfirmar": null,
+        "fonte": null,
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "Omint",
+      "redeCredenciada": "https://www.omint.com.br/",
+      "telefones": [
+        {
+          "rotulo": "Central",
+          "numero": "0800-772-2282"
+        }
+      ],
+      "telemedicina": {
+        "tem": false,
+        "servico": null,
+        "app": null,
+        "passos": [],
+        "observacao": null,
+        "extra": null,
+        "origem": null,
+        "aConfirmar": "Não encontrei material público sobre telemedicina do plano de saúde. Perguntar na central: 0800-772-2282.",
+        "fonte": null,
+        "conferidoEm": "16/10/2026"
+      }
+    },
+    {
+      "nome": "Allianz Saúde",
+      "redeCredenciada": "https://portalcredenciado.allianz.com.br/",
+      "telefones": [
+        {
+          "rotulo": "Central",
+          "numero": "0800-723-1300"
+        }
+      ],
+      "telemedicina": {
+        "tem": false,
+        "servico": null,
+        "app": null,
+        "passos": [],
+        "observacao": null,
+        "extra": null,
+        "origem": null,
+        "aConfirmar": "Só encontrei telemedicina do seguro viagem da Allianz, que é outro produto. Perguntar na central: 0800-723-1300.",
+        "fonte": null,
+        "conferidoEm": "16/10/2026"
+      }
+    }
+  ],
+  "cofen801": [
+    {
+      "medicamento": "Paracetamol 500mg",
+      "indicacao": "Febre e dor leve",
+      "dose": "500mg a cada 6h",
+      "nivel": "pode orientar",
+      "observacao": null
+    },
+    {
+      "medicamento": "Dipirona 500mg",
+      "indicacao": "Febre e dor",
+      "dose": "500mg a cada 6h",
+      "nivel": "pode orientar",
+      "observacao": "Evitar em dengue"
+    },
+    {
+      "medicamento": "Ibuprofeno 400mg",
+      "indicacao": "Dor e inflamação",
+      "dose": "400mg a cada 8h",
+      "nivel": "com cautela",
+      "observacao": "NUNCA em dengue ou gestação"
+    },
+    {
+      "medicamento": "Escopolamina 10mg",
+      "indicacao": "Cólica abdominal / dismenorreia",
+      "dose": "10mg a cada 8h",
+      "nivel": "pode orientar",
+      "observacao": null
+    },
+    {
+      "medicamento": "Metoclopramida 10mg",
+      "indicacao": "Vômito e náusea",
+      "dose": "10mg a cada 8h",
+      "nivel": "pode orientar",
+      "observacao": null
+    },
+    {
+      "medicamento": "Soro de reidratação oral",
+      "indicacao": "Desidratação leve",
+      "dose": "200ml após cada evacuação",
+      "nivel": "pode orientar",
+      "observacao": null
+    },
+    {
+      "medicamento": "Loratadina 10mg",
+      "indicacao": "Rinite e urticária leve",
+      "dose": "10mg 1x ao dia",
+      "nivel": "pode orientar",
+      "observacao": null
+    },
+    {
+      "medicamento": "Cetirizina 10mg",
+      "indicacao": "Rinite e urticária",
+      "dose": "10mg 1x ao dia",
+      "nivel": "pode orientar",
+      "observacao": null
+    },
+    {
+      "medicamento": "Nitrofurantoína 100mg",
+      "indicacao": "ITU — 1ª linha",
+      "dose": "100mg a cada 6h por 7 dias",
+      "nivel": "encaminhar ao médico",
+      "observacao": "Encaminhar para médico"
+    },
+    {
+      "medicamento": "Sulfametoxazol+Trimetoprim",
+      "indicacao": "ITU — 1ª linha",
+      "dose": "800+160mg a cada 12h por 3 dias",
+      "nivel": "encaminhar ao médico",
+      "observacao": "Encaminhar para médico"
+    },
+    {
+      "medicamento": "Fluconazol 150mg",
+      "indicacao": "Candidíase vaginal",
+      "dose": "Dose única 150mg",
+      "nivel": "encaminhar ao médico",
+      "observacao": "Confirmar diagnóstico com médico"
+    },
+    {
+      "medicamento": "Diclofenaco 50mg",
+      "indicacao": "Dor e dismenorreia",
+      "dose": "50mg a cada 8h com alimento",
+      "nivel": "com cautela",
+      "observacao": "NUNCA em dengue"
+    },
+    {
+      "medicamento": "Ondansetrona 4mg",
+      "indicacao": "Vômito persistente",
+      "dose": "4mg a cada 8h",
+      "nivel": "com cautela",
+      "observacao": null
+    }
+  ],
+  "protocolos": [
+    {
+      "id": "febre",
+      "titulo": "Febre",
+      "categoria": "clinico",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Avaliar tempo de evolução, temperatura e sintomas associados.",
+      "fluxoReferencia": "Síndrome Gripal",
+      "tags": [
+        "febre",
+        "temperatura",
+        "febril"
+      ],
+      "passos": []
+    },
+    {
+      "id": "dengue",
+      "titulo": "Dengue (suspeita)",
+      "categoria": "clinico",
+      "urgente": true,
+      "status": "ativo",
+      "resumo": "Tríade: febre + dor no corpo + dor atrás dos olhos. NUNCA ibuprofeno ou aspirina.",
+      "fluxoReferencia": "POP Dengue",
+      "tags": [
+        "dengue",
+        "manchas",
+        "dor no corpo",
+        "dor atrás dos olhos"
+      ],
+      "passos": [
+        {
+          "pergunta": "O membro tem algum destes agora: hipotensão ou fraqueza, desidratação, dor abdominal intensa e contínua, vômitos persistentes, acúmulo de líquidos, ou sangramento de mucosa?",
+          "entao": "QUALQUER UM presente → PS IMEDIATO. Não seguir o resto do roteiro. Nenhum → seguir."
+        },
+        {
+          "pergunta": "Quais sintomas ele relata? (febre alta, dor no corpo e nas articulações, dor atrás dos olhos, mal-estar, dor de cabeça, manchas vermelhas, vômito, inapetência, diarreia)",
+          "entao": "A tríade que mais sugere dengue é febre + dor no corpo + dor atrás dos olhos. Registrar quais estão presentes e há quantos dias começaram."
+        },
+        {
+          "pergunta": "Ele já tomou algum medicamento para os sintomas?",
+          "entao": "NUNCA ibuprofeno, diclofenaco ou aspirina em suspeita de dengue — aumentam risco de sangramento. Se já tomou, registrar e sinalizar na avaliação médica. Para febre e dor, o protocolo permite paracetamol ou dipirona (dipirona: evitar em dengue — conferir com a médica)."
+        },
+        {
+          "pergunta": "Há exames já solicitados ou realizados?",
+          "entao": "Exames passíveis via interconsulta: hemograma completo e sorologia para dengue. No ROL também existem antígeno NS1, IgG/IgM e os testes rápidos. Encaminhar para interconsulta médica para a solicitação."
+        }
+      ]
+    },
+    {
+      "id": "vomito",
+      "titulo": "Vômitos / Náusea",
+      "categoria": "clinico",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Avaliar febre, dor abdominal e capacidade de hidratação.",
+      "fluxoReferencia": "Sintomas Gastrointestinais",
+      "tags": [
+        "vomito",
+        "vômito",
+        "nausea",
+        "enjoo"
+      ],
+      "passos": []
+    },
+    {
+      "id": "diarreia",
+      "titulo": "Diarreia",
+      "categoria": "clinico",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Avaliar hidratação, sangue nas fezes e febre.",
+      "fluxoReferencia": "Sintomas Gastrointestinais",
+      "tags": [
+        "diarreia",
+        "fezes",
+        "evacuação"
+      ],
+      "passos": []
+    },
+    {
+      "id": "dorcabeca",
+      "titulo": "Dor de cabeça",
+      "categoria": "clinico",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Avaliar intensidade, febre e sinais neurológicos.",
+      "fluxoReferencia": "Síndrome Gripal",
+      "tags": [
+        "dor de cabeça",
+        "cefaleia",
+        "enxaqueca"
+      ],
+      "passos": []
+    },
+    {
+      "id": "dorcostas",
+      "titulo": "Dor nas costas / lombar",
+      "categoria": "clinico",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Avaliar trauma, irradiação para pernas, febre e fatores de risco.",
+      "fluxoReferencia": null,
+      "tags": [
+        "costas",
+        "lombar",
+        "coluna"
+      ],
+      "passos": []
+    },
+    {
+      "id": "itu",
+      "titulo": "Infecção urinária (ITU)",
+      "categoria": "clinico",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "ITU não complicada vai direto para médico — precisa de antibiótico.",
+      "fluxoReferencia": null,
+      "tags": [
+        "itu",
+        "infecção urinaria",
+        "ardencia"
+      ],
+      "passos": []
+    },
+    {
+      "id": "ansiedade",
+      "titulo": "Ansiedade / Crise de pânico",
+      "categoria": "clinico",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Acolher primeiro. Verificar falta de ar. Nunca deixar sozinho.",
+      "fluxoReferencia": "Saúde Mental 2025",
+      "tags": [
+        "ansiedade",
+        "pânico",
+        "crise ansiedade"
+      ],
+      "passos": []
+    },
+    {
+      "id": "sm",
+      "titulo": "Saúde mental / Depressão",
+      "categoria": "clinico",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Acolher com cuidado. Sempre perguntar sobre pensamentos de se machucar.",
+      "fluxoReferencia": "Saúde Mental 2025",
+      "tags": [
+        "depressão",
+        "triste",
+        "saúde mental"
+      ],
+      "passos": []
+    },
+    {
+      "id": "ideacao",
+      "titulo": "Ideação suicida",
+      "categoria": "clinico",
+      "urgente": true,
+      "status": "ativo",
+      "resumo": "URGENTE. Não deixar sozinho. Acionar chefia imediatamente.",
+      "fluxoReferencia": "Fluxo Ideação Suicida",
+      "tags": [
+        "suicídio",
+        "me machucar",
+        "quero morrer"
+      ],
+      "passos": []
+    },
+    {
+      "id": "intox",
+      "titulo": "Intoxicação",
+      "categoria": "clinico",
+      "urgente": true,
+      "status": "ativo",
+      "resumo": "URGENTE. CIATox 0800 722 6001 + PS imediato.",
+      "fluxoReferencia": null,
+      "tags": [
+        "intoxicação",
+        "remédio errado",
+        "veneno"
+      ],
+      "passos": []
+    },
+    {
+      "id": "animal",
+      "titulo": "Animal peçonhento",
+      "categoria": "clinico",
+      "urgente": true,
+      "status": "ativo",
+      "resumo": "URGENTE. PS imediato para soro antiveneno. NÃO fazer torniquete.",
+      "fluxoReferencia": null,
+      "tags": [
+        "cobra",
+        "aranha",
+        "escorpião",
+        "picada"
+      ],
+      "passos": []
+    },
+    {
+      "id": "receita",
+      "titulo": "Renovação de receita",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Verificar qual medicamento e se tem receita anterior.",
+      "fluxoReferencia": "Renovação de Receitas",
+      "tags": [
+        "receita",
+        "renovar",
+        "remédio acabou"
+      ],
+      "passos": [
+        {
+          "pergunta": "Qual é o medicamento e qual o tipo de receita dele?",
+          "entao": "Amarela, azul, branca C2 ou LME → recusa direta, sem tele: orientar Posto de Saúde ou consulta presencial. Manipulado → recusa, orientar retorno a quem prescreveu a fórmula. GLP-1 (Ozempic, Mounjaro, Wegovy, Saxenda, Rybelsus) → recusa, EXCETO se foi prescrito por médico da Pipo. Qualquer outro → seguir para a próxima pergunta."
+        },
+        {
+          "pergunta": "É antibiótico?",
+          "entao": "Sim → Teleconsulta médica de 15 min para reavaliar o esquema. Nunca é recusa automática, e aqui o roteiro termina. Não → seguir."
+        },
+        {
+          "pergunta": "O medicamento é psiquiátrico?",
+          "entao": "Sim → antes de qualquer outra pergunta, fazer a triagem de segurança: \"Nos últimos dias, você teve pensamentos de se machucar ou de que não vale a pena viver?\". Se SIM ou \"prefiro não responder\" → encerrar este roteiro AGORA e acionar o protocolo de crise/saúde mental. Não é tratado como renovação. Se NÃO → seguir. Categoria \"outro\" → pular esta pergunta e seguir."
+        },
+        {
+          "pergunta": "A última receita tem até 4 meses, com a mesma dose e posologia?",
+          "entao": "Sim → Interconsulta médica. Registrar em prontuário: já tem próxima consulta agendada com quem acompanha esse tratamento? e tem acompanhamento ativo, mesmo sem consulta marcada? As respostas não mudam o desfecho, mas se as duas forem \"não\", sinalizar \"sem retorno agendado e sem acompanhamento\" e sugerir rede credenciada. Não → seguir."
+        },
+        {
+          "pergunta": "A receita está vencida (mais de 4 meses) ou a dose é diferente da registrada?",
+          "entao": "Sim → enfermeiro da teletriagem conversa com o paciente e segue para Interconsulta médica para reavaliação. NÃO é negativa automática: o médico pode renovar ou negar. Se não houver receita registrada na Pipo, só cartela ou embalagem: relatou receita prévia, mesmo antiga, com foto? → segue pela exceção, via Interconsulta. Sem nenhuma receita prévia → triagem de enfermagem, escalando para Interconsulta só se o membro insistir em avaliação médica."
+        },
+        {
+          "pergunta": "É a 4ª renovação consecutiva do mesmo medicamento, sem consulta com especialista no meio?",
+          "entao": "Sim → a Pipo não renova mais. Orientar retomar acompanhamento com o profissional que trata a condição e oferecer ajuda para encontrar na rede credenciada. O contador zera quando o paciente traz receita de consulta com especialista."
+        }
+      ]
+    },
+    {
+      "id": "atestado",
+      "titulo": "Atestado médico",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Encaminhar direto para médico.",
+      "fluxoReferencia": "Protocolo de Atestados",
+      "tags": [
+        "atestado",
+        "afastamento",
+        "declaração"
+      ],
+      "passos": []
+    },
+    {
+      "id": "bloqueio",
+      "titulo": "Bloqueio / cobertura de plano",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Verificar no Backoffice. Urgência clínica muda completamente a conduta.",
+      "fluxoReferencia": null,
+      "tags": [
+        "bloqueio",
+        "plano bloqueado",
+        "carteirinha"
+      ],
+      "passos": []
+    },
+    {
+      "id": "operadora_pede_apoio",
+      "titulo": "Operadora pede apoio da Pipo à decisão dela",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "rascunho",
+      "resumo": "A Pipo não endossa decisão de operadora contra o beneficiário. O compromisso é com o cuidado do membro.",
+      "fluxoReferencia": null,
+      "tags": [
+        "operadora",
+        "auditoria",
+        "negativa",
+        "transferência",
+        "rede própria",
+        "posicionamento",
+        "remover paciente",
+        "recusa de procedimento"
+      ],
+      "passos": [
+        {
+          "pergunta": "A operadora, ou alguém por ela, está pedindo que a Pipo apoie uma decisão dela — negativa, transferência, remoção para rede própria?",
+          "entao": "A Pipo NÃO faz esse papel. O compromisso é com o cuidado do beneficiário. Não endossar a operadora nem o hospital. Quem fala de posicionamento institucional é a liderança, não o plantão."
+        },
+        {
+          "pergunta": "O que exatamente está negado: a cobertura do hospital ou a autorização do procedimento?",
+          "entao": "São coisas diferentes e se confundem no relato. Pode haver cobertura do hospital E o procedimento estar negado pela auditoria. Confirmar qual dos dois antes de orientar qualquer coisa."
+        },
+        {
+          "pergunta": "O membro está internado ou com situação clínica ativa?",
+          "entao": "Sinal de alarme vem ANTES de qualquer discussão administrativa. Paciente com negativa em disputa continua sendo paciente. Em caso de coluna: fraqueza ou dormência nas pernas, dormência na virilha, mudança para urinar ou evacuar, dor muito pior, febre. Qualquer um presente → conduta clínica primeiro."
+        },
+        {
+          "pergunta": "A operadora está justificando com argumento sobre o hospital (\"interna demais\", comparação com outro hospital)?",
+          "entao": "Isso é argumento da operadora, NÃO é achado clínico. Registrar como posição da operadora e não repassar ao membro como se fosse avaliação de saúde."
+        },
+        {
+          "pergunta": "A empresa ou o membro procuraram o plantão sobre o caso?",
+          "entao": "Escutar, registrar, checar sinais de alarme e levar ao grupo de urgência, marcando quem organiza. Não antecipar posicionamento. EM ABERTO, a confirmar com a chefia: qual o caminho formal para contestar negativa de auditoria — NIP na ANS, segunda opinião, junta médica."
+        }
+      ]
+    },
+    {
+      "id": "rede_consulta",
+      "titulo": "Busca de rede — consultas e terapias",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Confirmar operadora, especialidade e região antes de buscar.",
+      "fluxoReferencia": "Busca de Rede Credenciada",
+      "tags": [
+        "rede",
+        "médico",
+        "terapeuta",
+        "especialista",
+        "credenciado"
+      ],
+      "passos": []
+    },
+    {
+      "id": "rede_exame",
+      "titulo": "Busca de rede — exames e laboratórios",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "piloto",
+      "resumo": "Para membro, o fluxo de sempre: confirmar operadora, tipo de exame e região. ⚠️ EXISTE UM FLUXO NOVO, MAS SÓ COM PIPOCAS (piloto, set/2026) — nele a médica emite a guia e encerra o ticket sem buscar rede; a busca automática aparece para o membro na plataforma do Pipo Cuida e, se não encontrar, o próprio membro abre um ticket SEPARADO de busca manual para Guias. Enquanto o piloto não abrir para membro, não aplicar esse caminho a ticket de membro. Consequência já valendo: ticket de rede pode chegar desacoplado do ticket da consulta.",
+      "fluxoReferencia": null,
+      "tags": [
+        "exame",
+        "laboratório",
+        "lab",
+        "exame de sangue",
+        "busca de rede"
+      ],
+      "passos": []
+    },
+    {
+      "id": "autorizacao",
+      "titulo": "Autorização de procedimento",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Alta complexidade. Coletar dados antes de contatar operadora.",
+      "fluxoReferencia": "Análise de Alto Custo",
+      "tags": [
+        "autorização",
+        "guia",
+        "cirurgia",
+        "procedimento"
+      ],
+      "passos": []
+    },
+    {
+      "id": "pipozen",
+      "titulo": "Pipozen — acompanhamento de saúde mental",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "piloto",
+      "resumo": "Teste iniciado em set/2026, com membros de Caju e VExpenses mais pipocas simulando a jornada. O membro conversa com um agente por WhatsApp e é nivelado em: BAIXO RISCO (orientações de saúde mental + convite para check-up ou apoio com rede, pelo próprio agente); RISCO MODERADO (jornada de 30 dias por WhatsApp, focada em um hábito, assíncrona e SEM teleconsulta); ALTO RISCO (vai para o time de Saúde, fila do Rangel, seguindo o protocolo habitual de saúde mental). Roda em PARALELO ao Pipo Cuida — quem está na jornada continua acionando o Pipo Cuida normalmente para qualquer outra demanda. Só o alto risco toca a operação. Se o membro citar o Pipozen ou relatar dificuldade com o fluxo, direcionar para Giulia Capitanini ou Jéssica Nomura.",
+      "fluxoReferencia": null,
+      "tags": [
+        "pipozen",
+        "acompanhamento assíncrono",
+        "jornada saúde mental"
+      ],
+      "passos": []
+    },
+    {
+      "id": "reembolso",
+      "titulo": "Reembolso",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Verificar se o plano tem cobertura por reembolso.",
+      "fluxoReferencia": null,
+      "tags": [
+        "reembolso",
+        "fora da rede",
+        "particular"
+      ],
+      "passos": []
+    },
+    {
+      "id": "cobertura",
+      "titulo": "Dúvida de cobertura",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Verificar se o plano cobre determinado procedimento.",
+      "fluxoReferencia": null,
+      "tags": [
+        "cobertura",
+        "cobre",
+        "plano cobre"
+      ],
+      "passos": []
+    },
+    {
+      "id": "internacao",
+      "titulo": "Internação / autorização",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "ativo",
+      "resumo": "Ligar para o paciente primeiro. Verificar se é eletiva ou urgente.",
+      "fluxoReferencia": null,
+      "tags": [
+        "internação",
+        "cirurgia",
+        "autorização"
+      ],
+      "passos": []
+    },
+    {
+      "id": "checkup_adulto",
+      "titulo": "Check-up / exames de rotina — adultos",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "rascunho",
+      "resumo": "Confirmar idade (há documento separado para menores de 18). Avaliação de check-up exige TODOS os resultados prontos — se faltar exame, orientar concluir/enviar o pendente antes do retorno médico.",
+      "fluxoReferencia": "Check-up adultos",
+      "tags": [
+        "checkup",
+        "check-up",
+        "check up",
+        "exame de rotina",
+        "exames de rotina",
+        "rotina",
+        "periódico"
+      ],
+      "passos": [
+        {
+          "pergunta": "Qual a idade do paciente?",
+          "entao": "18 anos ou mais → segue este protocolo. Menor de 18 → usar o protocolo de check-up de menores de 18."
+        },
+        {
+          "pergunta": "Tem algum sintoma agudo iniciado nos últimos 10 dias, sem diagnóstico prévio? (febre, dor, sintomas gripais, dor de cabeça, infecção que sugira antibiótico, dor abdominal)",
+          "entao": "Sim → teleconsulta de enfermagem de 30 min para avaliação antes de liberar exames. Não → seguir para a próxima pergunta."
+        },
+        {
+          "pergunta": "Tem alguma queixa, mesmo que não seja aguda?",
+          "entao": "Sim → teleconsulta de enfermagem de 30 min. Não → segue para check-up padrão, com os exames automáticos do Check-up Pipo."
+        },
+        {
+          "pergunta": "Paciente é sexualmente ativo? (para confirmar as sorologias — HIV, hepatite B e C, sífilis)",
+          "entao": "Registrar explicitamente o aceite OU a recusa das sorologias."
+        },
+        {
+          "pergunta": "Fez check-up há menos de 1 ano?",
+          "entao": "Sem alterações no anterior, o intervalo mínimo de repetição é de 1 ano. Com alterações, seguir o que o documento define."
+        }
+      ]
+    },
+    {
+      "id": "checkup_menor18",
+      "titulo": "Check-up / exames de rotina — menores de 18 anos",
+      "categoria": "operacional",
+      "urgente": false,
+      "status": "rascunho",
+      "resumo": "Check-up de menor de 18 segue documento próprio, diferente do de adulto. Confirmar idade antes de seguir.",
+      "fluxoReferencia": "Check-up < 18 anos",
+      "tags": [
+        "checkup",
+        "check-up",
+        "check up",
+        "exame de rotina",
+        "exames de rotina",
+        "rotina",
+        "menor de 18",
+        "pediátrico"
+      ],
+      "passos": [
+        {
+          "pergunta": "Confirmar a idade — é menor de 18 anos?",
+          "entao": "Sim → segue este protocolo. Não → usar o de adultos."
+        },
+        {
+          "pergunta": "A demanda é triagem neonatal, puericultura, acuidade visual ou rastreio de obesidade infantil?",
+          "entao": "Sim → está fora do escopo do check-up: encaminhar para pediatria da rede credenciada. Não → segue o check-up de menor de 18 conforme o documento."
+        },
+        {
+          "pergunta": "A vacinação está em dia?",
+          "entao": "Conferir pelo calendário do Ministério da Saúde de 2026, lembrando que varia por região."
+        }
+      ]
+    }
+  ],
+  "materiaisDeApoio": [
+    {
+      "titulo": "Síndrome Gripal"
+    },
+    {
+      "titulo": "Sintomas Gastrointestinais"
+    },
+    {
+      "titulo": "Protocolo de atendimento Saúde Mental 2025"
+    },
+    {
+      "titulo": "POP Dengue"
+    },
+    {
+      "titulo": "Fluxo de atendimento para Ideação Suicida"
+    },
+    {
+      "titulo": "Olho Vermelho"
+    },
+    {
+      "titulo": "Orientações para Conjuntivite Viral"
+    },
+    {
+      "titulo": "Check-up adultos"
+    },
+    {
+      "titulo": "Check-up < 18 anos"
+    },
+    {
+      "titulo": "Renovação de receitas / exames"
+    },
+    {
+      "titulo": "Protocolo para emissão de atestados"
+    },
+    {
+      "titulo": "Busca Ativa"
+    },
+    {
+      "titulo": "Interconsulta"
+    },
+    {
+      "titulo": "Fluxo de atendimento médico"
+    },
+    {
+      "titulo": "Gestão de Atestados"
+    },
+    {
+      "titulo": "Análise de Procedimentos de Alto Custo"
+    },
+    {
+      "titulo": "Mpox — orientações (1)"
+    },
+    {
+      "titulo": "Mpox — orientações (2)"
+    },
+    {
+      "titulo": "Covid — orientações (resumo)"
+    },
+    {
+      "titulo": "Covid — orientações pós-infecção"
+    },
+    {
+      "titulo": "Distúrbios do sono"
+    },
+    {
+      "titulo": "Enchentes — orientações"
+    },
+    {
+      "titulo": "Aleitamento materno (vídeo)"
+    },
+    {
+      "titulo": "Calendário vacinal — BEEP"
+    },
+    {
+      "titulo": "Avaliação neuropsicológica"
+    },
+    {
+      "titulo": "Acolhimento em Saúde Mental"
+    },
+    {
+      "titulo": "Entrevista de Saúde Mental — completa"
+    },
+    {
+      "titulo": "Entrevista de Saúde Mental — mini"
+    },
+    {
+      "titulo": "Fluxo pós-questionário de Saúde Mental"
+    },
+    {
+      "titulo": "Atendimento a pessoas trans"
+    },
+    {
+      "titulo": "Atendimento inclusivo"
+    },
+    {
+      "titulo": "Programa Pinguim — escopo"
+    },
+    {
+      "titulo": "Programa Pinguim — declaração de atendimento"
+    },
+    {
+      "titulo": "Atestado de aptidão para adoção"
+    },
+    {
+      "titulo": "Busca de rede credenciada — site"
+    },
+    {
+      "titulo": "Busca de rede credenciada — área do membro"
+    },
+    {
+      "titulo": "Guias pelo Memed"
+    },
+    {
+      "titulo": "Desconto e isenção de coparticipação"
+    },
+    {
+      "titulo": "Escopo da teletriagem"
+    },
+    {
+      "titulo": "Gestão de agendas"
+    },
+    {
+      "titulo": "DPS — Declaração Pessoal de Saúde"
+    },
+    {
+      "titulo": "Avaliação de DPS"
+    },
+    {
+      "titulo": "Solicitações do RH"
+    },
+    {
+      "titulo": "Canais do RH"
+    },
+    {
+      "titulo": "Sinistro — seguro de vida"
+    },
+    {
+      "titulo": "Atualização da base de contato (busca ativa)"
+    },
+    {
+      "titulo": "Incidente de vazamento de dado de membro"
+    },
+    {
+      "titulo": "POP de autenticação"
+    },
+    {
+      "titulo": "Registro de operações (planilha)"
+    },
+    {
+      "titulo": "Elaboração e revisão de protocolos"
+    }
+  ],
+  "fluxos": [
+    {
+      "nome": "Como o membro aciona",
+      "descricao": "Membro envia \"pipourgencia\" no WhatsApp do Pipo Cuida → bot coleta contexto → Squadcast aciona o enfermeiro."
+    },
+    {
+      "nome": "Squadcast",
+      "descricao": "Na ligação: digitar 1. No app: clicar Acknowledged."
+    },
+    {
+      "nome": "Registro no Nilo",
+      "descricao": "Todo atendimento clínico → registrar no Nilo. Tópico: Atendimento 24x7."
+    },
+    {
+      "nome": "Biblioteca de skills de saúde",
+      "descricao": "/resumo-clinico (histórico clínico do membro pelo CPF, antes da teleconsulta) · mascara-prontuario-enfermagem (transcrição da teleconsulta → relatório pronto para o Nilo) · elaborar-relatorio-medico-utilizacao · estudo-assistencial-migracao · pre-analise-laudo-pcd · gerar-roteiro-pinguim · excluir-transcricao-teleconsulta (apaga transcrição do Gemini já usada no prontuário; não remove da lixeira). O uso de cada skill é medido e aparece em painel. mascara-prontuario-enfermagem e gerar-prontuario entram no processo de auditoria — o uso passa a ser checado, não é só facilidade. Melhoria a propor: falar com a Aline Dias."
+    }
+  ]
+}
