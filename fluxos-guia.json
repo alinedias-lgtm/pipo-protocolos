@@ -1,0 +1,663 @@
+{
+  "_leia": [
+    "Fluxos de triagem do Guia de Direcionamento, extraídos da página",
+    "\"Guia de Direcionamento: proposta de automação\" do repositório de",
+    "protocolos. São as perguntas na ordem em que devem ser feitas e os",
+    "critérios de desfecho de cada sintoma.",
+    "",
+    "A Nina usa isto para GUIAR a enfermeira passo a passo, sem IA.",
+    "",
+    "ATENÇÃO: a proposta de automação está EM AVALIAÇÃO, não",
+    "implementada. Aqui ela serve como roteiro para a pessoa seguir —",
+    "não como bot que decide sozinho. Quem decide é a enfermeira.",
+    "",
+    "Regra que vem da própria página: se mais de um critério de Pronto",
+    "Socorro bater, vale o Pronto Socorro."
+  ],
+  "geradoEm": "2026-10-26",
+  "origem": "Guia de Direcionamento — proposta de automação",
+  "fluxos": [
+    {
+      "id": "entrada",
+      "titulo": "Entrada",
+      "quemDecide": "",
+      "perguntas": [],
+      "desfechos": [
+        {
+          "tipo": "SIM · NÍVEL 1 · EMERGÊNCIA",
+          "acao": "Bot envia a mensagem de emergência",
+          "criterio": "\"Ligue agora para o SAMU (192) ou vá ao Pronto Socorro mais próximo.\" Não faz mais perguntas. Aciona a enfermagem em paralelo, para reforçar a orientação e checar se o membro seguiu."
+        },
+        {
+          "tipo": "SIM · NÍVEL 2 · PRIORIDADE",
+          "acao": "Fila da enfermagem, com prioridade",
+          "criterio": "Não aplica o roteiro do sintoma. Entrega direto para o enfermeiro."
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao PS",
+          "criterio": "Com a orientação do card (ex.: ir acompanhado, PS obstétrico, PS odontológico). Abre também um ticket para o enfermeiro da teletriagem acompanhar se o membro foi."
+        },
+        {
+          "tipo": "CONSULTA MÉDICA",
+          "acao": "Bot envia o link",
+          "criterio": "Da teleconsulta médica, com a duração do card (15 ou 30 min)."
+        },
+        {
+          "tipo": "ENFERMAGEM",
+          "acao": "Bot envia o link",
+          "criterio": "Da teleconsulta de enfermagem, com a duração do card (15 ou 30 min)."
+        },
+        {
+          "tipo": "REDE CREDENCIADA",
+          "acao": "Bot orienta",
+          "criterio": "O especialista indicado no card (ginecologista, gastroenterologista, neurologista, ortopedista, dermatologista, oftalmologista, odontologia)."
+        }
+      ]
+    },
+    {
+      "id": "falta_de_ar_chiado_no_peito",
+      "titulo": "Falta de Ar / Chiado no Peito",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "Você está sentindo falta de ar no momento?",
+        "Você usou a bombinha de resgate? Houve melhora?",
+        "Consegue falar frases completas sem parar para respirar?",
+        "Você está em crise agora, mesmo sem falta de ar? (ex.: tosse/chiado/aperto no peito aumentados, ou uso de bombinha mais que o habitual)",
+        "Você teve febre?",
+        "Já precisou ficar internado por problema respiratório? Alguma vez foi para a UTI ou precisou ser intubado?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "ELETIVO",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (30 min)",
+          "criterio": "Sem falta de ar no momento, sem crise atual (com ou sem diagnóstico prévio de asma)"
+        },
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (15 min)",
+          "criterio": "Em crise (tosse/chiado/aperto no peito aumentados), sem falta de ar · Respondeu bem à bombinha de resgate, fala frases completas · Sem febre, sem histórico de internação, UTI ou intubação"
+        },
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Febre associada à crise, sem os critérios de Pronto Socorro ao lado · Histórico de internação (sem UTI nem intubação) por problema respiratório, com crise atual"
+        },
+        {
+          "tipo": "PRONTO SOCORRO (QUALQUER UM ISOLADAMENTE",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Falta de ar no momento, sem melhora após uso da bombinha de resgate · Não consegue falar frases completas sem pausar para respirar · Histórico de UTI ou intubação por problema respiratório, com crise atual (mesmo que pareça leve) · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "constipacao",
+      "titulo": "Constipação",
+      "quemDecide": "Enfermagem",
+      "perguntas": [
+        "Quando foi a sua última evacuação?",
+        "De 0 a 10, qual a intensidade da dor na barriga?",
+        "Tem vômito associado?",
+        "Está em tratamento para câncer?",
+        "Você está conseguindo eliminar gases, mesmo sem evacuar?",
+        "Ao apertar sua barriga neste momento, você sente ela mais rígida ou dolorida do que o normal?",
+        "Você toma alguma medicação forte para dor? Por exemplo: morfina, codeína, tramadol, oxicodona.",
+        "Você fez alguma cirurgia na barriga nos últimos 3 meses?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "ELETIVO",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (30 min)",
+          "criterio": "Constipação sem sinais de alarme (os critérios de Pronto Socorro abaixo), por exemplo, sem evacuar há 3+ dias e/ou dor abdominal até nota 7, eliminando gases, sem distensão importante, sem sangue nas fezes, sem vômito"
+        },
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Paciente oncológico em tratamento ativo, ou em uso de medicação forte para dor (ex.: morfina, tramadol, codeína), com constipação, mesmo sem os sinais de alarme abaixo"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Dor abdominal intensidade 8–10, sem evacuar · Vômito persistente associado · Ausência completa de eliminação de gases e fezes, com distensão abdominal (suspeita obstrutiva, mesmo com dor moderada) · Cirurgia abdominal nos últimos 90 dias + dor abdominal atual (risco de suboclusão por aderências) · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "corrimento_vaginal",
+      "titulo": "Corrimento Vaginal",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "Há quanto tempo está presente?",
+        "Você está gestante?",
+        "Você teve febre?",
+        "Você percebeu sangue ou coloração amarronzada?",
+        "Você está com dor no pé da barriga ou dor na relação sexual?",
+        "Você teve parto, aborto, curetagem ou colocou DIU nos últimos 60 dias?",
+        "Você já teve esses sintomas antes?",
+        "Usou algum tratamento ou medicação por conta própria? (não decide o caminho, mas adianta a consulta)"
+      ],
+      "desfechos": [
+        {
+          "tipo": "ENFERMAGEM",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (30 min)",
+          "criterio": "Não gestante, corrimento há menos de 30 dias, sem sangue ou coloração amarronzada, sem febre, sem contexto puerperal/pós-procedimento ginecológico nos últimos 60 dias, sem suspeita de violência sexual"
+        },
+        {
+          "tipo": "TELETRIAGEM",
+          "acao": "Bot passa o caso ao enfermeiro da teletriagem",
+          "criterio": "Corrimento há 30 dias ou mais, sem os sinais de alarme abaixo · O enfermeiro avalia e decide o encaminhamento (teleconsulta de enfermagem, consulta médica ou rede credenciada, ginecologista). Sintomas que já se repetiram antes costumam indicar ginecologista presencial. · Entrega as respostas já registradas."
+        },
+        {
+          "tipo": "MÉDICA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Gestante sem sinais de alarme (sem febre, sem sangue ou coloração amarronzada, sem dor no pé da barriga)"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Gestante com febre, sangue ou coloração amarronzada, ou dor no pé da barriga (PS obstétrico) · Febre e/ou sangue ou coloração amarronzada e/ou dor no pé da barriga ou dor na relação sexual · Parto, aborto, curetagem ou DIU nos últimos 60 dias, com corrimento anormal, febre ou dor · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "diarreia",
+      "titulo": "Diarreia",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "Você teve febre?",
+        "De 0 a 10, qual a intensidade da dor na barriga?",
+        "Você percebeu sangue ou muco nas fezes?",
+        "Está sentindo tontura ou fraqueza?",
+        "Está com a boca seca ou notou diminuição da quantidade de urina?",
+        "Você é gestante, diabético, ou faz uso prolongado de corticoide, quimioterapia, transplante, tem HIV ou outra doença que baixa a imunidade?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (15 min)",
+          "criterio": "Até 7 dias, sem critérios de Pronto Socorro · Sem comorbidades: sem sangue ou muco, sem febre alta (acima de 38 °C), não gestante, não diabético, sem baixa imunidade, não maior de 65 anos"
+        },
+        {
+          "tipo": "DEMANDA ELETIVA",
+          "acao": "Bot envia o link da teleconsulta médica (30 min)",
+          "criterio": "8 a 30 dias, sem critérios de Pronto Socorro"
+        },
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Até 7 dias, com sangue ou muco nas fezes, ou com febre alta (acima de 38 °C) · Maior de 65 anos · Gestante, diabético ou com baixa imunidade (não pode demorar para marcar)"
+        },
+        {
+          "tipo": "REDE CREDENCIADA",
+          "acao": "Bot orienta procurar: Gastroenterologista",
+          "criterio": "Acima de 30 dias, sem critérios de Pronto Socorro"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Dor abdominal 8–10 · Sinais de desidratação: tontura/fraqueza, boca seca, diminuição importante da urina · Menores de 1 ano: sempre · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "dor_de_cabeca_cefaleia",
+      "titulo": "Dor de cabeça (cefaleia)",
+      "quemDecide": "Enfermagem",
+      "perguntas": [
+        "De 0 a 10, qual a intensidade da dor de cabeça?",
+        "Você tem tontura ou alteração visual?",
+        "É a pior dor de cabeça que você já sentiu?",
+        "Sente fraqueza, dormência, dificuldade para falar, confusão, ou já teve uma convulsão?",
+        "Você bateu a cabeça nos últimos 3 dias?",
+        "Você está gestante ou nas primeiras semanas pós-parto?",
+        "Essa dor é diferente das que você costuma ter, ou é a primeira vez que você sente esse tipo de dor?",
+        "Você tem mais de 50 anos?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "ELETIVO",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (30 min)",
+          "criterio": "Cefaleia recorrente já conhecida, com padrão igual ao habitual, intensidade menor que 8 (0 a 7)"
+        },
+        {
+          "tipo": "REDE CREDENCIADA",
+          "acao": "Bot orienta procurar: Neurologista",
+          "criterio": "Dor intermitente e/ou com mais de 30 dias, sem critérios de encaixe ou PS"
+        },
+        {
+          "tipo": "MÉDICA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Gestante ou pós-parto · Tontura ou alteração visual (pode ser enxaqueca)"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Intensidade 8–10 · Início súbito / \"pior dor da vida\" · Déficit neurológico: fraqueza, dormência, dificuldade para falar, confusão ou convulsão · Bateu a cabeça nos últimos 3 dias · Dor de cabeça nova (primeira vez, nunca teve antes) em pessoa com mais de 50 anos · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "dor_de_dente",
+      "titulo": "Dor de Dente",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "De 0 a 10, qual a intensidade da dor?",
+        "Você teve febre?",
+        "Você está com dificuldade para abrir a boca, engolir ou respirar?",
+        "Você está com sangramento?",
+        "Você sofreu algum trauma ou fez algum procedimento no dente nos últimos 15 dias?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "ENFERMAGEM",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (30 min)",
+          "criterio": "Dor 0–6, sem febre, sem dificuldade para abrir a boca, engolir ou respirar, sem sangramento, sem trauma ou procedimento nos últimos 15 dias"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Intensidade ≥ 7 · Febre · Dificuldade para abrir a boca, engolir, ou dificuldade para respirar · Sangramento ativo (com ou sem procedimento) · Trauma ou procedimento nos últimos 15 dias · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "dor_de_ouvido",
+      "titulo": "Dor de Ouvido",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "De 0 a 10, qual a intensidade da dor de ouvido?",
+        "Há saída de secreção ou sangue pelo ouvido?",
+        "A dor é em um ouvido ou nos dois? (não muda o caminho, mas ajuda o médico: quando é nos dois, é mais provável um quadro que a teleconsulta resolve, ex.: sinusite)",
+        "Já houve perfuração do tímpano anteriormente?",
+        "Entrou algum objeto ou inseto no ouvido, ou você bateu ou machucou o ouvido nos últimos 3 dias?",
+        "Você notou inchaço, vermelhidão ou dor ao tocar atrás da orelha?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Dor 0–7, com ou sem febre · Sem secreção ou sangue, sem inchaço/vermelhidão/dor atrás da orelha, sem corpo estranho ou trauma, sem perfuração do tímpano anterior"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Intensidade 8–10 · Secreção ou sangue · Inchaço/vermelhidão/dor atrás da orelha · Corpo estranho (inclusive inseto) ou trauma no ouvido · Perfuração do tímpano anterior (não dá para prescrever medicação tópica sem examinar) · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "dores_musculoesqueleticas",
+      "titulo": "Dores musculoesqueléticas",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "Você teve febre?",
+        "De 0 a 10, qual a intensidade da dor?",
+        "Essa dor impede a sua movimentação?",
+        "A dor começou após algum trauma, como uma queda ou batida?",
+        "Você faz uso prolongado de corticoide, faz quimioterapia, fez transplante, tem HIV ou outra doença que baixa a imunidade?",
+        "Você está gestante?",
+        "Você sente fraqueza progressiva nas pernas?",
+        "Você notou perda do controle para urinar ou evacuar?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "ELETIVO",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (30 min)",
+          "criterio": "Dor há 8 a 30 dias, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante"
+        },
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (15 min)",
+          "criterio": "Dor há 7 dias ou menos, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante"
+        },
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Imunossupressão (uso prolongado de corticoide, quimioterapia, transplante, HIV ou outra doença que baixa a imunidade) ou gestante, com dor até 7, sem trauma e sem critérios de Pronto Socorro, em qualquer duração da dor · Dor lombar em gestante é comum e não é critério de Pronto Socorro"
+        },
+        {
+          "tipo": "REDE CREDENCIADA",
+          "acao": "Bot orienta procurar: Ortopedista",
+          "criterio": "Dor há mais de 30 dias, intensidade até 7, sem trauma, sem critérios de Pronto Socorro, sem imunossupressão, não gestante"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Intensidade 8 ou mais · Impede a movimentação · Iniciada após trauma · Acompanhada de febre · Fraqueza progressiva nas pernas · Perda de controle para urinar ou evacuar (suspeita de Síndrome da Cauda Equina) · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "febre",
+      "titulo": "Febre",
+      "quemDecide": "Com apoio",
+      "perguntas": [
+        "Qual foi o dia e horário da primeira febre que você mediu?",
+        "Quais os valores das temperaturas?",
+        "Há algum outro sintoma associado? (se sim, direcionar pelo protocolo do sintoma específico, esta linha cobre só febre isolada)",
+        "Fez uso de medicação? Houve melhora da temperatura?",
+        "Você faz quimioterapia, uso prolongado de corticoide, fez transplante, tem HIV ou outra doença que baixa a imunidade?",
+        "Você está gestante?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (15 min)",
+          "criterio": "Febre <39°C, como único sintoma, há menos de 72h, sem imunossupressão/quimioterapia ativa"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Febre que não cessa com medicação há mais de 72h · Temperatura ≥ 39°C sem melhora com antitérmico · Em tratamento oncológico ativo/imunossuprimido, qualquer febre · Gestante, qualquer febre · Crianças < 1 ano · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "sintomas_urinarios",
+      "titulo": "Sintomas Urinários",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "Você teve febre, calafrios, vômitos, ou está se sentindo muito fraco, sem conseguir levantar da cama ou fazer suas atividades?",
+        "Você apresentou dor na lombar junto com o início da queixa urinária?",
+        "Se há dor lombar: de 0 a 10, qual a intensidade da dor?",
+        "Você percebeu sangue na urina?",
+        "Você está gestante?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Ardência ou dor ao urinar, sem sangue na urina e sem dor lombar associada · Com febre, calafrios, vômitos ou fraqueza intensa, mas sem dor lombar: febre com sintoma urinário já sugere infecção urinária complicada, principalmente em homens e idosos. Para esse grupo, a consulta médica de 15 min precisa ser no mesmo dia · Gestante sem febre, calafrios, vômitos ou fraqueza intensa, sem sangue na urina · Dor lombar junto com a queixa urinária, sem febre, calafrios, vômitos ou fraqueza intensa, com intensidade menor que 8 (a dor pode não ter relação com a queixa urinária, e a avaliação fica para a consulta)"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Febre, calafrios, vômitos ou fraqueza intensa, com dor lombar iniciada junto com a queixa urinária · Dor lombar de intensidade 8 ou mais, mesmo sem febre, calafrios, vômitos ou fraqueza intensa, segue o protocolo musculoesquelético e cobre cólica renal · Sangue na urina · Gestante com febre, calafrios, vômitos ou fraqueza intensa · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "lesoes_de_pele",
+      "titulo": "Lesões de Pele",
+      "quemDecide": "Enfermagem",
+      "perguntas": [
+        "Quando os sintomas começaram (data de início das lesões)?",
+        "Você teve febre? Desde quando?",
+        "Você sente dor? Se sim: intensidade 0 a 10",
+        "A lesão sangra? Se sim: o sangramento para com compressão?",
+        "Você começou algum medicamento nos últimos 60 dias? Tem lesões ou bolhas na boca, olhos ou região genital?",
+        "Você tem diabetes, usa anticoagulante, ou faz uso prolongado de corticoide, quimioterapia, transplante, tem HIV ou outra doença que baixa a imunidade?",
+        "Solicitar imagem da lesão, obrigatório antes de qualquer direcionamento, mas já explicar as limitações técnicas na avaliação"
+      ],
+      "desfechos": [
+        {
+          "tipo": "TELETRIAGEM",
+          "acao": "Bot passa o caso ao enfermeiro da teletriagem",
+          "criterio": "Todos os casos sem critérios de Pronto Socorro · O enfermeiro da teletriagem avalia a foto e as respostas, discute o caso com o médico se necessário e define a condução: atendimento na Pipo (ex.: micose, quadros simples) ou rede credenciada (dermatologista) · Entrega as respostas já registradas."
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Febre há mais de 72h · Dor intensidade ≥ 8 · Lesão sangrante que não cede com compressão · Envolvimento de mucosa/bolhas + suspeita de reação medicamentosa · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "reacao_adversa_a_medicamentos",
+      "titulo": "Reação Adversa a Medicamentos",
+      "quemDecide": "Enfermagem",
+      "perguntas": [
+        "Qual é o nome do medicamento e há quanto tempo você usa essa medicação?",
+        "Houve algum aumento de dose nos últimos 14 dias?",
+        "Essa medicação foi prescrita na Pipo? (se foi prescrita fora da Pipo, pedir uma foto da prescrição)",
+        "Você teve febre? Desde quando?",
+        "Você sentiu coceira ou aperto na garganta, rouquidão, inchaço nos lábios, língua ou rosto, ou falta de ar ou chiado no peito?",
+        "Você sentiu tontura ou desmaio?",
+        "Percebeu sangue na urina, urina muito escura, ou diminuição importante da quantidade de urina?",
+        "Foi uma ingestão acidental/dose acima da prescrita, ou foi intencional? (ideação suicida)"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Se prescrita pela Pipo, sintomas leves (enjoo, azia, diarreia, sonolência, irritabilidade, dor de cabeça, boca seca, mal-estar), sem os sinais de alarme abaixo"
+        },
+        {
+          "tipo": "NÃO PRESCRITA PELA PIPO",
+          "acao": "Bot orienta procurar o médico prescritor",
+          "criterio": "Sem sinais de alarme: orientar buscar o médico prescritor, se houver possibilidade · Se não houver possibilidade: teleconsulta médica 15 min (mesmas queixas da demanda espontânea) · Se não for possível, envia o link da teleconsulta médica (15 min)."
+        },
+        {
+          "tipo": "CEATOX",
+          "acao": "Bot passa a orientação do CEATOX",
+          "criterio": "Ingestão acidental ou dose muito acima da prescrita, sem indício de intencionalidade · Linha nacional 0800 722 6001 como padrão; CEATOX-SP 0800 014 8110 só se o membro estiver em SP · O caso também vai para o enfermeiro da teletriagem, que acompanha se o membro ligou para o CEATOX e seguiu a orientação · Abre um ticket para o enfermeiro da teletriagem conferir se o membro ligou."
+        },
+        {
+          "tipo": "INTENCIONAL",
+          "acao": "Bot orienta PS imediato e aciona o POP de Ideação",
+          "criterio": "PS imediato + acionar em paralelo o POP de Ideação e Comportamento Suicida já existente no guia, não é conduzido apenas por orientação telefônica com CEATOX · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Febre (febre junto com reação a medicamento também pode indicar reação grave) · Sinais de angioedema ou anafilaxia: coceira ou aperto na garganta, rouquidão, inchaço nos lábios, língua ou rosto, falta de ar ou chiado no peito. Vai para o PS e alerta o enfermeiro da teletriagem · Tontura, desmaio ou sinais de hipotensão · Sangue na urina, urina muito escura, ou queda importante do volume urinário · Suspeita de intoxicação intencional (ver acima) · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "reacao_alergica",
+      "titulo": "Reação Alérgica",
+      "quemDecide": "Enfermagem",
+      "perguntas": [
+        "Você teve febre?",
+        "Está com inchaço nos lábios, língua ou garganta? Tem dificuldade para engolir, falar ou respirar?",
+        "Sente tontura, desmaio, ou o coração está acelerado?",
+        "Os sintomas de pele vêm acompanhados de vômito, diarreia ou dor de barriga?",
+        "Você já teve uma reação alérgica grave antes?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA (NOVA VIA)",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Coceira/lesões de pele isoladas, sem inchaço de lábios/língua/garganta, sem falta de ar, sem tontura, sem febre, sem histórico de anafilaxia"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Inchaço de lábios, língua ou garganta / dificuldade para engolir, falar ou respirar · Falta de ar, tosse persistente ou chiado · Tontura, desmaio ou sinais de hipotensão · Febre associada · Histórico de anafilaxia prévia, com sintomas presentes agora (mesmo leves) · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "sangramento_vaginal",
+      "titulo": "Sangramento Vaginal",
+      "quemDecide": "Com apoio",
+      "perguntas": [
+        "Você está sentindo tontura e/ou sensação de desmaio?",
+        "Você está gestante ou existe alguma suspeita ou possibilidade de você estar gestante? (atraso menstrual, relação sem método contraceptivo)",
+        "Você está sangrando agora? Se sim, há quantos dias?",
+        "Você já passou pela menopausa?",
+        "Você usa DIU ou algum anticoagulante?",
+        "Teve parto, aborto ou algum procedimento ginecológico recentemente?",
+        "Sente dor na barriga ou na pelve junto com o sangramento?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ELETIVA",
+          "acao": "Bot envia o link da teleconsulta médica (30 min)",
+          "criterio": "Sangramento no momento, mas não gestante, sem suspeita de gestação, sem tontura/desmaio, não pós-menopausa, sem uso de anticoagulante, sem procedimento obstétrico recente, sem dor associada"
+        },
+        {
+          "tipo": "REDE CREDENCIADA",
+          "acao": "Bot orienta procurar: Ginecologista (rotina)",
+          "criterio": "Relato de sangramento aumentado, mas sem sangramento no momento, sangramento pós-menopausa, mesmo sem outros sinais de alarme"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Gestante e/ou suspeita de gestação (PS obstétrico) · Tontura ou sensação de desmaio (PS ginecológico) · Uso de anticoagulante, com sangramento atual · Parto, aborto ou procedimento ginecológico recente, com sangramento agora · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "sintomas_ansiosos_e_depressivos",
+      "titulo": "Sintomas Ansiosos e Depressivos",
+      "quemDecide": "Enfermagem",
+      "perguntas": [
+        "Você está sentindo algum destes sintomas agora: palpitação, dor no peito, falta de ar, choro fácil ou angústia?",
+        "Você chegou a pensar em se machucar ou que não vale a pena viver?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "ENFERMAGEM",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (30 min)",
+          "criterio": "Sintomas ansiosos ou depressivos, com ou sem crise, sem ideação suicida · Sempre 30 min, porque saúde mental precisa de tempo para acolher e conversar · Se não houver agenda, o enfermeiro da teletriagem faz o encaixe · Se o enfermeiro julgar necessário medicação, encaminha para teleconsulta médica 30 min"
+        },
+        {
+          "tipo": "PRONTO SOCORRO COM ACOMPANHAMENTO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Pensou em se machucar ou que não vale a pena viver · O membro é orientado a ir ao Pronto Socorro, e o caso vai para o enfermeiro da teletriagem, que faz o acolhimento, o monitoramento e o acompanhamento · Segue também o POP de Ideação e Comportamento Suicida · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "ideacao_suicida",
+      "titulo": "Ideação Suicida",
+      "quemDecide": "Protocolo à parte",
+      "perguntas": [],
+      "desfechos": [
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Se há ideação suicida: orientar o Pronto Socorro · O enfermeiro da teletriagem recebe o caso para acolhimento, monitoramento e acompanhamento · Segue o POP de Ideação e Comportamento Suicida · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "sintomas_gripais",
+      "titulo": "Sintomas Gripais",
+      "quemDecide": "Enfermagem",
+      "perguntas": [
+        "Você teve febre? Se sim, há quantos dias?",
+        "Você está com falta de ar ou dor no peito? Se não, está com alguma dificuldade para respirar (por exemplo, nariz entupido)?",
+        "Há quanto tempo iniciaram os sintomas?",
+        "Você está usando alguma medicação para esses sintomas? Se sim, continua com os sintomas?",
+        "Você tem asma, DPOC, insuficiência cardíaca ou algum problema pulmonar ou cardíaco de base?",
+        "Você está gestante?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (15 min)",
+          "criterio": "Sintomas gripais sem febre, ou com febre há até 3 dias (72 h) · Que não se encaixam nos cards de consulta médica e de Pronto Socorro"
+        },
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta médica (15 min)",
+          "criterio": "Gestante · Asma, DPOC, insuficiência cardíaca ou outro problema pulmonar ou cardíaco de base · Febre há mais de 3 dias (72 h) · Já usa medicação para os sintomas e continua com eles · Dificuldade para respirar sem falta de ar (por exemplo, nariz entupido)"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Falta de ar · Dor no peito · Gestante com febre · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "suspeita_de_dengue",
+      "titulo": "Suspeita de Dengue",
+      "quemDecide": "Enfermagem",
+      "perguntas": [
+        "Você teve febre?",
+        "Você tem manchas vermelhas no corpo?",
+        "Você notou sangramento (gengiva, nariz, urina ou fezes)?",
+        "Você está com dor abdominal? Se sim, de 0 a 10, qual a intensidade?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "TELETRIAGEM",
+          "acao": "Bot passa o caso ao enfermeiro da teletriagem",
+          "criterio": "Todos os casos de suspeita de dengue · O caso chega ao enfermeiro da teletriagem como urgência, com as respostas já registradas. O enfermeiro avalia e decide entre teleconsulta e Pronto Socorro · Relatos com sinal de alarme (dor forte na barriga, vômitos repetidos, sangramento, tontura ou sonolência) já entram no Nível 2 do atalho de urgência · Entrega as respostas já registradas, como urgência com prioridade alta."
+        }
+      ]
+    },
+    {
+      "id": "sintomas_oculares",
+      "titulo": "Sintomas Oculares",
+      "quemDecide": "Com apoio",
+      "perguntas": [
+        "Algum produto químico ou substância caiu no seu olho? Se sim, orientar lavagem imediata com água corrente por pelo menos 15 a 20 minutos e direcionar ao Pronto Socorro oftalmológico em paralelo, sem esperar completar o restante da triagem",
+        "Houve algum trauma no olho (batida, corpo estranho, arranhão)?",
+        "Você sente dificuldade para enxergar?",
+        "Notou flashes de luz, muitos pontinhos ou pontinhos pretos novos, ou uma sombra ou cortina cobrindo parte da visão?",
+        "De 0 a 10, qual a intensidade da dor no olho?",
+        "Você fez alguma cirurgia no olho nos últimos 90 dias?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (15 min)",
+          "criterio": "Nenhum critério de Pronto Socorro (por exemplo, só olho vermelho, em um ou nos dois olhos)"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Produto químico no olho (orientar irrigação imediata em paralelo ao encaminhamento) · Trauma no olho · Dificuldade para enxergar · Dor de intensidade 7 ou mais · Flashes de luz, pontinhos novos ou sombra/cortina no campo visual · Cirurgia no olho nos últimos 90 dias, com qualquer sintoma novo · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "vomitos",
+      "titulo": "Vômitos",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "Você teve febre?",
+        "Você sente dor abdominal? Se sim: intensidade 0 a 10",
+        "Você está conseguindo tomar líquidos sem vomitar?",
+        "Há quanto tempo estão os vômitos? Quantas vezes hoje?",
+        "O vômito tem sangue?",
+        "Os vômitos começaram depois de você bater a cabeça, nos últimos 3 dias?",
+        "Você tem diabetes? Se sim: notou respiração acelerada, hálito diferente ou sonolência incomum?",
+        "Você notou tontura ou diminuição importante da quantidade de urina?",
+        "Você está gestante?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ESPONTÂNEA",
+          "acao": "Bot envia o link da teleconsulta de enfermagem (15 min)",
+          "criterio": "Vômitos sem febre, com dor abdominal até 7, conseguindo tomar líquidos, sem sangue no vômito, sem trauma na cabeça, sem sinais de desidratação · Diabetes sem sinais de descompensação · Gestante sem os critérios de Pronto Socorro ao lado (quadro leve, tolerando líquidos)"
+        },
+        {
+          "tipo": "PRONTO SOCORRO",
+          "acao": "Bot orienta ir ao Pronto Socorro",
+          "criterio": "Febre · Dor abdominal intensa (8 ou mais) · Incapacidade de tomar líquidos · Menores de 1 ano ou maiores de 65 anos · Sangue no vômito · Trauma na cabeça nos últimos 3 dias · Diabetes com sinais de descompensação (respiração acelerada, hálito diferente, sonolência) · Sinais de desidratação (tontura ou diminuição importante da urina) · Gestante com vômitos persistentes ou incapacidade de se hidratar, ou com dor abdominal associada · Abre também um ticket de alerta para o enfermeiro da teletriagem."
+        }
+      ]
+    },
+    {
+      "id": "laudos_e_atestados_laudo_de_sanidade_fis",
+      "titulo": "Laudos e atestados: Laudo de sanidade física e mental para adoção",
+      "quemDecide": "Guia decide",
+      "perguntas": [
+        "Você tem algum problema de saúde (doença crônica) ou usa algum medicamento de forma contínua?",
+        "Você faz acompanhamento com psiquiatra?",
+        "Está em crise ou teve piora recente de algum problema de saúde mental (por exemplo, internação ou troca recente de medicação)?",
+        "Com que frequência você consome bebida alcoólica? Usa alguma outra substância (maconha, cocaína, medicamentos sem prescrição)?",
+        "Quando foi seu último check-up (consulta e exames de rotina)?",
+        "Você é pessoa com deficiência (PcD)?"
+      ],
+      "desfechos": [
+        {
+          "tipo": "DEMANDA ELETIVA",
+          "acao": "Bot envia o link da teleconsulta médica (30 min)",
+          "criterio": "Sem nenhum dos critérios de encaminhamento à rede credenciada"
+        },
+        {
+          "tipo": "REDE CREDENCIADA",
+          "acao": "Bot orienta procurar a rede credenciada",
+          "criterio": "Transtorno mental descompensado · Uso problemático de álcool ou outras substâncias · PcD ou outra situação que exija exame físico presencial para concluir · Acompanhamento com psiquiatra: orientar que o atestado de saúde mental seja emitido pelo psiquiatra assistente. A parte física pode seguir para a consulta médica Pipo"
+        }
+      ]
+    }
+  ]
+}
