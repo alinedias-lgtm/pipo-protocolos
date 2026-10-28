@@ -1,7 +1,7 @@
 {
   "fonteRotulo": "Protocolos Pipo (GitHub Pages)",
   "fonteDetalhe": "Gerado a partir do repositório pipo-protocolos. Regenerar sempre que um protocolo mudar.",
-  "geradoEm": "2026-10-20",
+  "geradoEm": "2026-10-28",
   "protocolos": [
     {
       "id": "checkup",
@@ -119,7 +119,7 @@
       "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-guia-direcionamento.html",
       "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-guia-direcionamento.html",
       "status": "rascunho",
-      "atualizadoEm": "22/10/2026",
+      "atualizadoEm": "28/10/2026",
       "aprovadoPor": "Leticia Defilippo",
       "passos": []
     }

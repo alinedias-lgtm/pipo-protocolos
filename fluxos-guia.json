@@ -14,7 +14,7 @@
     "Regra que vem da própria página: se mais de um critério de Pronto",
     "Socorro bater, vale o Pronto Socorro."
   ],
-  "geradoEm": "2026-10-26",
+  "geradoEm": "2026-10-28",
   "origem": "Guia de Direcionamento — proposta de automação",
   "fluxos": [
     {
@@ -639,23 +639,26 @@
       "titulo": "Laudos e atestados: Laudo de sanidade física e mental para adoção",
       "quemDecide": "Guia decide",
       "perguntas": [
-        "Você tem algum problema de saúde (doença crônica) ou usa algum medicamento de forma contínua?",
         "Você faz acompanhamento com psiquiatra?",
-        "Está em crise ou teve piora recente de algum problema de saúde mental (por exemplo, internação ou troca recente de medicação)?",
-        "Com que frequência você consome bebida alcoólica? Usa alguma outra substância (maconha, cocaína, medicamentos sem prescrição)?",
-        "Quando foi seu último check-up (consulta e exames de rotina)?",
+        "Você está em crise ou teve piora recente de algum problema de saúde mental? Por exemplo: internação psiquiátrica nos últimos 12 meses ou troca de medicação nos últimos 3 meses.",
+        "Com que frequência você bebe álcool? Você usa alguma droga ilícita (como maconha ou cocaína)?",
         "Você é pessoa com deficiência (PcD)?"
       ],
       "desfechos": [
         {
           "tipo": "DEMANDA ELETIVA",
           "acao": "Bot envia o link da teleconsulta médica (30 min)",
-          "criterio": "Sem nenhum dos critérios de encaminhamento à rede credenciada"
+          "criterio": "Nenhum dos critérios de encaminhamento à rede credenciada"
+        },
+        {
+          "tipo": "ACOMPANHA COM PSIQUIATRA",
+          "acao": "Bot envia o link da teleconsulta médica (30 min)",
+          "criterio": "Orientar que o atestado de saúde mental seja emitido pelo psiquiatra assistente · A consulta médica da Pipo cuida só da parte física"
         },
         {
           "tipo": "REDE CREDENCIADA",
           "acao": "Bot orienta procurar a rede credenciada",
-          "criterio": "Transtorno mental descompensado · Uso problemático de álcool ou outras substâncias · PcD ou outra situação que exija exame físico presencial para concluir · Acompanhamento com psiquiatra: orientar que o atestado de saúde mental seja emitido pelo psiquiatra assistente. A parte física pode seguir para a consulta médica Pipo"
+          "criterio": "Transtorno mental descompensado: crise ou piora recente de saúde mental, internação psiquiátrica nos últimos 12 meses ou troca de medicação nos últimos 3 meses · Uso problemático de álcool ou drogas: bebida alcoólica mais de 3 vezes por semana, ou qualquer droga ilícita (cigarro não conta) · PcD: o exame físico precisa ser presencial. A parte mental pode seguir na consulta médica da Pipo"
         }
       ]
     }
