@@ -1,7 +1,7 @@
 {
   "fonteRotulo": "Protocolos Pipo (GitHub Pages)",
   "fonteDetalhe": "Gerado a partir do repositório pipo-protocolos. Regenerar sempre que um protocolo mudar.",
-  "geradoEm": "2026-10-28",
+  "geradoEm": "2026-10-29",
   "protocolos": [
     {
       "id": "checkup",
@@ -121,6 +121,29 @@
       "status": "rascunho",
       "atualizadoEm": "28/10/2026",
       "aprovadoPor": "Leticia Defilippo",
+      "passos": []
+    },
+    {
+      "id": "pinguim",
+      "titulo": "Programa Pinguim",
+      "cat": "operacional",
+      "tags": [
+        "pinguim",
+        "gestante",
+        "gestação",
+        "tentante",
+        "puérpera",
+        "pré-natal",
+        "puerpério",
+        "gravidez",
+        "programa"
+      ],
+      "resumo": "Documentar como funciona o Programa Pinguim: quem pode participar, como a pessoa é inscrita e ativada, como o time de saúde acompanha cada fase e quando o acompanhamento termina.",
+      "link": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-programa-pinguim.html",
+      "urlFonte": "https://alinedias-lgtm.github.io/pipo-protocolos/protocolo-programa-pinguim.html",
+      "status": "rascunho",
+      "atualizadoEm": "29/10/2026",
+      "aprovadoPor": "",
       "passos": []
     }
   ]
