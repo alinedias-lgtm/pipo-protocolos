@@ -1,0 +1,19 @@
+{
+  "versao": "2026-11-05.1",
+  "geradoEm": "2026-11-05T22:05:47.587Z",
+  "arquivos": {
+    "conhecimento.json": {
+      "bytes": 42224,
+      "sha256": "b53008f1807ce0b8"
+    },
+    "fluxos-guia.json": {
+      "bytes": 38538,
+      "sha256": "cd955e2c07e3bdb1"
+    }
+  },
+  "_leia": [
+    "Esta é a fonte única de conhecimento da Nina: extensão e Slack leem daqui.",
+    "Para reverter uma atualização ruim: git revert do commit desta pasta.",
+    "avisos.json e atalhos-internos.json NÃO entram aqui — são internos."
+  ]
+}
