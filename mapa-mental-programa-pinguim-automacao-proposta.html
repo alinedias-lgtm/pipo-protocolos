@@ -95,6 +95,8 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 
 
 
+
+
 .qbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.55; text-align:left; margin-bottom:0;}
 .qbox ol,.qbox ul{margin:6px 0 0 18px; padding:0;}
 .qbox li{margin:2px 0;}
@@ -247,7 +249,7 @@ body .print-btn{top:100px;}
 <h2 class="section">Sugestões da Letícia <span class="pending">pendente de validação</span></h2>
 <div class="dnote">
 <h4>Como ler esta parte</h4>
-Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pela médica. Todas são melhorias para a automação. Nenhuma muda o protocolo escrito. Cada uma diz em que se baseia e qual é a fonte. As fontes externas são de 2025 e 2026, com uma exceção marcada (a Rede Alyne, de 2024). As outras fontes são a skill do Programa Pinguim, da enfermeira Ana Caroline, e pedidos da Letícia. Onde as fontes não concordam entre si, isso está escrito.
+Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pela médica. Todas são melhorias para a automação. Nenhuma muda o protocolo escrito. Cada uma diz em que se baseia e qual é a fonte. As fontes externas são de 2025 e 2026. As outras fontes são a Caderneta Brasileira da Gestante do Ministério da Saúde, a skill do Programa Pinguim, da enfermeira Ana Caroline, e pedidos da Letícia. Onde as fontes não concordam entre si, isso está escrito.
 </div>
 
 <div class="sugg">
@@ -258,6 +260,7 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 <p><span class="lbl">Fontes:</span></p>
 <ul>
 <li><a href="https://saude.es.gov.br/media/Imuniza%C3%A7%C3%A3o/calendario-vacinacao/calendario-nacional-de-vacinacao-da-gestante-janeiro-2026.pdf">Calendário nacional de vacinação da gestante, janeiro de 2026 (publicado pela Secretaria de Saúde do ES)</a></li>
+<li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-mulher/publicacoes/caderneta-brasileira-da-gestante.pdf">Caderneta Brasileira da Gestante, Ministério da Saúde (seção 4.3, vacinas no pré-natal). Traz também raiva e febre amarela em situações específicas, e o nirsevimabe para bebê prematuro</a></li>
 <li><a href="https://agenciabrasil.ebc.com.br/saude/noticia/2025-02/sus-oferece-gestantes-nova-vacina-contra-virus-sincicial">Agência Brasil, 14/02/2025: vacina contra o VSR para gestantes</a></li>
 <li><a href="https://prefeitura.sp.gov.br/documents/d/saude/documento-tecnico-vsr_05122025-pdf">Documento técnico sobre a vacina VSR, 05/12/2025</a></li>
 <li><a href="https://www.sbp.com.br/boletimabp-julho25/comissao-cientifica">Sociedade Brasileira de Pediatria, boletim de julho de 2025</a></li>
@@ -356,11 +359,12 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 <p><span class="lbl">O que sugerir:</span> a cada contato trimestral, o bot pergunta à gestante, em mensagem simples, se já fez os exames e as vacinas daquele trimestre, e registra a resposta na planilha do programa. Ele inclui a pergunta do <strong>tipo sanguíneo e fator Rh</strong> e a dos exames do 1º trimestre. O que ela ainda não fez vira um aviso para o enfermeiro, que orienta. O bot não pede exame e não decide vacina.</p>
 <p><span class="lbl">Como seria:</span></p>
 <ul>
-<li><strong>1º trimestre:</strong> exames do 1º trimestre, tipo sanguíneo e Rh, ultrassom para datar a gestação; vacinas hepatite B, dT, COVID-19 e influenza.</li>
-<li><strong>2º trimestre:</strong> teste de tolerância à glicose, ultrassom morfológico, Coombs se Rh negativo; vacina dTpa a partir de 20 semanas.</li>
-<li><strong>3º trimestre:</strong> sífilis, HIV e hepatite B; estreptococo do grupo B; vacina do VSR a partir de 28 semanas.</li>
+<li><strong>1º trimestre:</strong> exames do 1º trimestre, tipo sanguíneo e Rh, ultrassom entre 7 e 12 semanas; vacinas hepatite B, dT, COVID-19 e influenza.</li>
+<li><strong>2º trimestre:</strong> teste de tolerância à glicose entre 24 e 28 semanas, Coombs se Rh negativo; vacina dTpa a partir de 20 semanas.</li>
+<li><strong>3º trimestre:</strong> hemograma, glicemia, sífilis, HIV e urina; vacina do VSR a partir de 28 semanas.</li>
+<li><strong>Depois do parto, até 45 dias:</strong> vacinas que faltaram (dTpa, influenza, hepatite B).</li>
 </ul>
-<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline (exames e vacinas por trimestre), o pedido da Letícia de 06/11/2026 e o calendário nacional de vacinação da gestante de janeiro de 2026 (fonte na sugestão 1). A lista completa está no protocolo escrito, na seção "Abordagem de atendimento por fase".</p>
+<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline (exames e vacinas por trimestre), o pedido da Letícia de 06/11/2026 a Caderneta Brasileira da Gestante e o calendário nacional de vacinação da gestante de janeiro de 2026 (fontes na sugestão 1). A lista completa está no protocolo escrito, na seção "Abordagem de atendimento por fase".</p>
 <p><span class="lbl">O que falta validar:</span> a médica confere as listas e as semanas. O time decide onde a resposta é registrada.</p>
 </div>
 
@@ -373,8 +377,8 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 
 <div class="sugg">
 <h4>13. Sintoma da gestante: perguntas e destino <span class="pending">pendente</span></h4>
-<p><span class="lbl">O que sugerir:</span> quando a gestante relata um sintoma, o bot pergunta e escolhe o destino pela mesma tabela do protocolo escrito (seção "Atuação do time de saúde"). Onde o tema já existe no Guia de direcionamento (sangramento vaginal, febre, corrimento), o bot usa o roteiro do Guia. O bot pergunta primeiro como é o corrimento (cor, cheiro, coceira, quantidade) antes de decidir. Os destinos são: Pronto Socorro, teleconsulta de enfermagem de 30 minutos, teleconsulta médica de 15 ou 30 minutos, ou telemedicina do plano da pessoa, quando o plano tem.</p>
-<p><span class="lbl">Quando o bot para e chama o enfermeiro na hora:</span> pressão alta com dor de cabeça que não passa, alteração na visão ou dor na boca do estômago; perda de líquido; diminuição ou ausência de movimentos do bebê; qualquer relato de violência, uso de substância ou ideação suicida; gestante com menos de 14 anos.</p>
+<p><span class="lbl">O que sugerir:</span> quando a gestante relata um sintoma, o bot pergunta e escolhe o destino pela mesma tabela do protocolo escrito (seção "Atuação do time de saúde"). Onde o tema já existe no Guia de direcionamento (sangramento vaginal, febre, corrimento), o bot usa o roteiro do Guia. O bot pergunta primeiro como é o corrimento (cor, cheiro, coceira, quantidade) antes de decidir. Os sinais de alerta e os destinos seguem a Caderneta Brasileira da Gestante, e a médica valida. Os destinos são: Pronto Socorro, teleconsulta de enfermagem de 30 minutos, teleconsulta médica de 15 ou 30 minutos, ou telemedicina do plano da pessoa, quando o plano tem.</p>
+<p><span class="lbl">Quando o bot para e chama o enfermeiro na hora:</span> pressão 140x90 ou mais, dor de cabeça intensa, alteração na visão, dor forte no estômago ou inchaço repentino; convulsão, desmaio, dor no peito ou falta de ar (orientar Samu 192); perda de líquido; diminuição ou ausência de movimentos do bebê (mais de 4 horas depois de 20 semanas); qualquer relato de violência, uso de substância ou ideação suicida; gestante com menos de 14 anos.</p>
 <p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline (sinais de alerta), as perguntas da Letícia de 06/11/2026 sobre até onde o atendimento chega, e os roteiros já revisados do Guia.</p>
 <p><span class="lbl">O que falta validar:</span> a médica define cada destino, em que momento entra a teleconsulta médica de 15 ou de 30 minutos, e o que é alto risco. As perguntas do corrimento ainda precisam ser escritas.</p>
 </div>
@@ -388,9 +392,9 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 
 <div class="sugg">
 <h4>15. SUS e rede credenciada: o que o bot orienta <span class="pending">pendente</span></h4>
-<p><span class="lbl">O que sugerir:</span> se a gestante disser que não achou obstetra pelo plano, o bot manda o enfermeiro buscar na rede credenciada do plano dela (com a ferramenta interna de consulta de rede). Se não houver obstetra, o bot manda uma mensagem curta com o caminho do SUS: procurar a Unidade Básica de Saúde, fazer o cadastro e a primeira consulta, pegar a caderneta da gestante e fazer as vacinas, que são de graça.</p>
-<p><span class="lbl">Baseado em:</span> o pedido da Letícia de 06/11/2026 e o resumo da Rede Alyne do CONASS (portaria de 2024, fora da regra de 2025 e 2026, por isso a médica confere a regra vigente).</p>
-<p><span class="lbl">Fonte:</span> <a href="https://www.conass.org.br/?p=44552">CONASS: Rede Alyne, mudanças no pré-natal e no puerpério</a></p>
+<p><span class="lbl">O que sugerir:</span> se a gestante disser que não achou obstetra pelo plano, o bot manda o enfermeiro buscar na rede credenciada do plano dela (com a ferramenta interna de consulta de rede). Se não houver obstetra, o bot manda uma mensagem curta com o caminho do SUS: procurar a Unidade Básica de Saúde, fazer o cadastro e a primeira consulta, pegar a caderneta da gestante, fazer no mínimo 7 consultas de pré-natal e 1 consulta odontológica, e fazer as vacinas, que são de graça. Para a puérpera, o bot lembra as duas consultas de puerpério (1ª semana e cerca de 30 dias depois do parto).</p>
+<p><span class="lbl">Baseado em:</span> o pedido da Letícia de 06/11/2026 e a Caderneta Brasileira da Gestante do Ministério da Saúde (seção 4.1).</p>
+<p><span class="lbl">Fonte:</span> <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-mulher/publicacoes/caderneta-brasileira-da-gestante.pdf">Caderneta Brasileira da Gestante, Ministério da Saúde</a></p>
 </div>
 
 <div class="sugg">
@@ -402,7 +406,7 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 
 <h2 class="section">O que pesquisei e não entrou</h2>
 <div class="ref-grid">
-<div class="ref-box"><h3>Fora do critério de data</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">A Rede Alyne (portaria de 2024, com no mínimo 7 consultas de pré-natal e visita ao puerpério até o 7º dia) é de 2024. Por isso não virou sugestão. Fica só como contexto, e a regra vigente precisa ser conferida no texto da portaria.</div></div>
+<div class="ref-box"><h3>Fora do critério de data</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">A Rede Alyne (portaria de 2024) é de 2024. O que ela traz de prático (no mínimo 7 consultas de pré-natal e 2 consultas de puerpério) está na Caderneta Brasileira da Gestante, que é a fonte usada. A visita da equipe em casa até o 7º dia depois do parto vem do resumo do CONASS e não está na caderneta, por isso ficou de fora.</div></div>
 <div class="ref-box"><h3>Anvisa</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Não encontrei norma ou alerta da Anvisa de 2025 ou 2026 sobre gestantes. O alerta sobre ondansetrona na gravidez que aparece nas buscas é de 2019.</div></div>
 <div class="ref-box"><h3>Depressão pós-parto</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Não encontrei fonte datada de 2025 ou 2026 que sustente uma sugestão sobre rastreio no contato do 1º mês. Por isso não entrou. Se a médica quiser, eu procuro de novo.</div></div>
 <div class="ref-box"><h3>Aviso sobre as fontes</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Várias fontes são secundárias (secretarias estaduais, sociedades médicas, imprensa). O texto oficial do Ministério da Saúde não abriu na pesquisa. A médica do time confere cada ponto no documento oficial antes de qualquer uso.</div></div>

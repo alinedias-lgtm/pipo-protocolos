@@ -96,6 +96,8 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .pending{display:inline-block; background:var(--pending-bg); border:1px solid var(--pending-border); color:var(--pending-text); font-size:11px; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle;}
 
 
+
+
 .site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
 .site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
 .site-nav-row::-webkit-scrollbar{display:none;}
@@ -149,6 +151,7 @@ body .print-btn{top:100px;}
 <div class="darrow"></div>
 <div class="doutcome do-peach"><span class="dotitle">Teleconsulta de enfermagem de ativação</span>Pede o exame que confirma a gravidez (beta-hCG ou ultrassonografia). Quem aceita e faz a consulta fica com o status <strong>Ativa</strong> (contato pelo menos nos últimos 3 meses)</div>
 
+
 <!--SUG-->
 <div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Sugestão da Letícia: como ler as sugestões em amarelo <span class="pending">pendente</span></h4>Tudo em amarelo é sugestão da Letícia, ainda não validada pelo time nem pela médica. Cada quadro está na parte do mapa a que se refere, na mesma ordem do protocolo. O detalhe e a fonte de cada um estão no protocolo escrito. A base principal é a skill do Programa Pinguim, da enfermeira Ana Caroline.</div><div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Sugestão da Letícia: benefícios do programa <span class="pending">pendente</span></h4>A confirmar na fonte oficial: acolhimento personalizado · plano de acompanhamento individual · suporte para urgência · fila preferencial digital · ajuda com plano e burocracias · canal aberto para dúvidas · acompanhamento sem cobrança (isso não é isenção de coparticipação). Empresas com benefício ligado ao programa: lista no documento interno, a conferir.</div>
 <!--/SUG-->
@@ -160,6 +163,7 @@ body .print-btn{top:100px;}
   <div class="dcol"><div class="colhead">PESSOA PUÉRPERA</div><div class="doutcome do-blue"><span class="dotitle">Pós-parto</span>1 contato no primeiro mês e 1 mensagem de finalização com pesquisa de satisfação</div></div>
 </div>
 <div class="dnote"><h4 style="margin:0 0 4px;">Perda gestacional</h4>O contato acontece quando o time toma ciência da situação (aviso da empresa ou do membro).</div>
+
 
 <!--SUG-->
 <div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Sugestão da Letícia: cálculos e registro <span class="pending">pendente</span></h4>Data provável do parto = data da última menstruação mais 280 dias · idade gestacional · trimestre · janelas de exames e vacinas, tudo calculado por script, ninguém calcula de cabeça · se o ultrassom do 1º trimestre diferir da menstruação além da margem, vale o ultrassom · o monitoramento é registrado na planilha do programa (o link fica no documento interno).</div>
@@ -176,19 +180,20 @@ body .print-btn{top:100px;}
   <div class="dcol"><div class="colhead">ADOÇÃO</div><div class="doutcome do-peach">Atestado de sanidade mental para a tutela · acolhimento psicológico · crianças de até 2 meses podem entrar desde o início</div></div>
 </div>
 
+
 <!--SUG-->
 <h3 style="font-size:15px; margin:18px 0 8px;">Sugestões por fase <span class="pending">pendente</span></h3>
 <div class="dcols" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
   <div class="dcol"><div class="colhead">TENTANTE</div><div class="doutcome do-pend"><span class="dotitle">Acrescentar</span>Oferecer o exame beta-hCG se houver atraso menstrual e orientar a voltar com o resultado · ácido fólico · atualizar vacinas 30 dias antes · exames da pessoa e do parceiro · fertilidade: 12 meses (menos de 35 anos) ou 6 meses (35 anos ou mais)</div></div>
-  <div class="dcol"><div class="colhead">1º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>Perguntar se fez os exames do 1º trimestre · tipo sanguíneo e fator Rh · ultrassom para datar · vacinas: hepatite B (3 doses), dT, COVID-19, influenza · orientar náuseas e vômitos</div></div>
-  <div class="dcol"><div class="colhead">2º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>TOTG entre 24 e 28 semanas · ultrassom morfológico entre 18 e 24 semanas · Coombs se Rh negativo · dTpa a partir de 20 semanas</div></div>
-  <div class="dcol"><div class="colhead">3º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>Sífilis e HIV · hepatite B · estreptococo do grupo B entre 36 e 38 semanas · VSR a partir de 28 semanas · plano de parto</div></div>
-  <div class="dcol"><div class="colhead">PÓS-PARTO</div><div class="doutcome do-pend"><span class="dotitle">Acompanhamento</span>Contar os dias de pós-parto · limite de 42 dias · dTpa até 45 dias depois do parto, se não tomou na gestação</div></div>
+  <div class="dcol"><div class="colhead">1º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>Perguntar se fez os exames do 1º trimestre · tipo sanguíneo e fator Rh · ultrassom para datar · vacinas: hepatite B (completar as 3 doses), dT, COVID-19, influenza (1 dose por temporada) · orientar náuseas e vômitos · ultrassom entre 7 e 12 semanas</div></div>
+  <div class="dcol"><div class="colhead">2º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>TOTG entre 24 e 28 semanas · ultrassom morfológico entre 18 e 24 semanas · Coombs se Rh negativo · dTpa a partir de 20 semanas (a cada gestação)</div></div>
+  <div class="dcol"><div class="colhead">3º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>Hemograma, glicemia, sífilis, HIV e urina · VSR a partir de 28 semanas · estreptococo do grupo B entre 36 e 38 semanas (skill) · plano de parto</div></div>
+  <div class="dcol"><div class="colhead">PÓS-PARTO</div><div class="doutcome do-pend"><span class="dotitle">Acompanhamento</span>Contar os dias de pós-parto · limite de 42 dias · 2 consultas de puerpério pela caderneta (1ª semana e cerca de 30 dias) · até 45 dias depois do parto: dTpa, influenza e hepatite B que faltaram</div></div>
 </div>
 <div class="dcols" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
   <div class="dcol"><div class="colhead">HISTÓRICO E RISCO</div><div class="doutcome do-pend"><span class="dotitle">Na máscara</span>Histórico familiar, principalmente da mãe: pré-eclâmpsia, eclâmpsia, diabetes, hipertensão · fatores de risco da gestante</div></div>
   <div class="dcol"><div class="colhead">SUPLEMENTOS</div><div class="doutcome do-pend"><span class="dotitle">A decidir</span>Ácido fólico e ferro pelo protocolo padrão · quem passa: enfermeiro ou médico por interconsulta · cálcio e AAS: a médica decide</div></div>
-  <div class="dcol"><div class="colhead">SUS</div><div class="doutcome do-pend"><span class="dotitle">Orientar</span>Procurar a UBS, fazer o cadastro e a primeira consulta · pegar a caderneta da gestante · vacinas do calendário da gestante, de graça no SUS · começar o pré-natal até 12 semanas</div></div>
+  <div class="dcol"><div class="colhead">SUS</div><div class="doutcome do-pend"><span class="dotitle">Orientar</span>Procurar a UBS, fazer o cadastro e a primeira consulta · pegar a caderneta da gestante · vacinas de graça no SUS · começar o pré-natal até 12 semanas · no mínimo 7 consultas e 1 consulta odontológica</div></div>
   <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-pend"><span class="dotitle">Buscar obstetra</span>Usar a consulta de rede por plano · se não achar obstetra, orientar o caminho pelo SUS</div></div>
 </div>
 <!--/SUG-->
@@ -199,12 +204,13 @@ body .print-btn{top:100px;}
   <div class="dcol"><div class="colhead">MÉDICO</div><div class="doutcome do-peach">Atende gestantes de alto risco · atende pedidos de exames, procedimentos ou encaminhamentos</div></div>
 </div>
 
+
 <!--SUG-->
 <div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Sugestão da Letícia: enfermeiro, médico e ativação <span class="pending">pendente</span></h4>Enfermeiro: acrescentar o monitoramento da gestante, com exames e vacinas do trimestre · Médico: definir o que é alto risco, em que momento entra, e se o pedido vai por interconsulta ou teleconsulta de 15 ou 30 minutos · O responsável pela ativação mudou desde o POP (nome no documento interno).</div><h3 style="font-size:15px; margin:18px 0 8px;">Quando encaminhar a gestante <span class="pending">pendente</span></h3>
 <div class="dcols" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
-  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-pend"><span class="dotitle">Sinais de alerta</span>Dor abdominal intensa · perda de líquido · diminuição ou ausência de movimentos do bebê · pressão 160x110 ou mais · pressão 140x90 ou mais com dor de cabeça que não passa, alteração na visão ou dor na boca do estômago · sangramento vaginal (conferir o Guia)</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-pend"><span class="dotitle">Sinais de alerta da caderneta</span>Dor abdominal forte ou persistente · diminuição ou ausência de movimentos do bebê (mais de 4 horas depois de 20 semanas) · pressão 140x90 ou mais · dor de cabeça intensa, alteração na visão, dor forte no estômago, inchaço repentino · convulsão, desmaio, dor no peito, falta de ar (urgência ou Samu 192) · sangramento vaginal (conferir o Guia) · perda de líquido (skill)</div></div>
   <div class="dcol"><div class="colhead">TELECONSULTA DE ENFERMAGEM (30 MIN)</div><div class="doutcome do-pend"><span class="dotitle">Caminho padrão</span>Acompanhamento do programa, dúvidas e orientações · corrimento, depois de perguntar como é (a definir)</div></div>
-  <div class="dcol"><div class="colhead">TELECONSULTA MÉDICA (15 OU 30 MIN)</div><div class="doutcome do-pend"><span class="dotitle">A definir com a médica</span>Alto risco · risco de pré-eclâmpsia ou diabetes gestacional · febre com dor lombar · pedido de exame, procedimento e encaminhamento · náuseas e vômitos que precisam de medicação</div></div>
+  <div class="dcol"><div class="colhead">TELECONSULTA MÉDICA (15 OU 30 MIN)</div><div class="doutcome do-pend"><span class="dotitle">A definir com a médica</span>Alto risco · risco de pré-eclâmpsia ou diabetes gestacional · febre · dor ao urinar · pedido de exame, procedimento e encaminhamento · náuseas e vômitos que precisam de medicação</div></div>
   <div class="dcol"><div class="colhead">TELEMEDICINA DO PLANO</div><div class="doutcome do-pend"><span class="dotitle">Depende do plano</span>Quando o plano da pessoa tem telemedicina, pode ser o caminho para uma queixa que não é do programa</div></div>
 </div>
 <div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Sugestão da Letícia: interromper o roteiro <span class="pending">pendente</span></h4>Violência, migração irregular, uso de substância ou ideação suicida: acolher e passar para saúde mental ou assistência social. Gestante menor de 14 anos: notificação obrigatória e encaminhamento a serviço de referência.</div>
@@ -218,6 +224,7 @@ body .print-btn{top:100px;}
 </div>
 <div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Pendente</h4>O POP original traz dois prazos para o aborto (30 e 45 dias) e duas regras de falta de contato (2 tentativas em 90 dias, ou 2 teleconsultas faltadas e 4 contatos sem resposta). Falta definir qual vale. Também faltam o nome do template e da macro de finalização e onde o monitoramento é registrado.</div>
 
+
 <!--SUG-->
 <div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Sugestão da Letícia: duração do programa <span class="pending">pendente</span></h4>O POP traz três prazos que não combinam: até 12 meses, até 42 dias depois do parto e contato de finalização 3 meses depois. Sugestão: uma regra só. O programa vai da fase de tentante até 42 dias depois do parto, e o grupo decide o dia do contato de finalização (42 dias ou 3 meses).</div>
 <!--/SUG-->
@@ -228,12 +235,14 @@ body .print-btn{top:100px;}
   <div class="dcol"><div class="colhead">MATERIAIS DE APOIO</div><div class="doutcome do-peach"><span class="dotitle">Enviar conforme a fase</span>Plano de parto (3º trimestre) · e-book "Uma etapa de cada vez" (1º trimestre e ao longo da gestação) · cartilha "Gestação de primeira viagem" (primeiro contato)</div></div>
 </div>
 
+
 <!--SUG-->
 <div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Sugestão da Letícia: materiais com link <span class="pending">pendente</span></h4>Colocar o link do e-book, da cartilha e do plano de parto quando existir uma versão pública de cada um. Hoje os arquivos ficam com o time.</div>
 <!--/SUG-->
 
 <h2 class="section">Exceção: licença paternidade estendida</h2>
 <div class="dnote">Quando a cônjuge não é dependente do plano: o <strong>pai (titular)</strong> se inscreve · a primeira consulta tem o titular e a gestante · o gatilho de atendimento é o <strong>CPF do titular</strong> · sem atendimento presencial na rede (acolhe particular ou SUS) · o enfermeiro coloca a tag <strong>pp_licencapaternida</strong> no Zendesk · o vínculo não é validado.</div>
+
 
 
 <!--SUG-->
