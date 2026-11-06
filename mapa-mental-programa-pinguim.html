@@ -91,6 +91,10 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 
 
 
+.do-pend{background:var(--pending-bg); border-color:var(--pending-border); color:var(--pending-text);}
+.do-pend .dotitle{color:var(--pending-text);}
+.pending{display:inline-block; background:var(--pending-bg); border:1px solid var(--pending-border); color:var(--pending-text); font-size:11px; font-weight:700; padding:2px 8px; border-radius:10px; margin-left:6px; vertical-align:middle;}
+
 .site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
 .site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
 .site-nav-row::-webkit-scrollbar{display:none;}
@@ -186,11 +190,45 @@ body .print-btn{top:100px;}
 <h2 class="section">Exceção: licença paternidade estendida</h2>
 <div class="dnote">Quando a cônjuge não é dependente do plano: o <strong>pai (titular)</strong> se inscreve · a primeira consulta tem o titular e a gestante · o gatilho de atendimento é o <strong>CPF do titular</strong> · sem atendimento presencial na rede (acolhe particular ou SUS) · o enfermeiro coloca a tag <strong>pp_licencapaternida</strong> no Zendesk · o vínculo não é validado.</div>
 
+<!--SUG-INICIO-->
+<h2 class="section">Sugestões da Letícia <span class="pending">pendente de validação</span></h2>
+<div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Como ler esta parte</h4>Tudo em amarelo é sugestão da Letícia, ainda não validada pelo time nem pela médica. Não muda o fluxo acima. O detalhe e a fonte de cada sugestão estão no protocolo escrito, na seção "Sugestões de atualização do protocolo". A base principal é a skill do Programa Pinguim, da enfermeira Ana Caroline.</div>
+
+<div class="dcols" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+  <div class="dcol"><div class="colhead">TENTANTE</div><div class="doutcome do-pend"><span class="dotitle">Acrescentar</span>Oferecer o exame beta-hCG se houver atraso menstrual e orientar a voltar com o resultado · ácido fólico · atualizar vacinas 30 dias antes · exames da pessoa e do parceiro · fertilidade: 12 meses (menos de 35 anos) ou 6 meses (35 anos ou mais)</div></div>
+  <div class="dcol"><div class="colhead">1º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>Perguntar se fez os exames do 1º trimestre · tipo sanguíneo e fator Rh · ultrassom para datar · vacinas: hepatite B, dT, COVID-19, influenza · orientar náuseas e vômitos</div></div>
+  <div class="dcol"><div class="colhead">2º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>TOTG entre 24 e 28 semanas · ultrassom morfológico entre 18 e 24 semanas · Coombs se Rh negativo · dTpa a partir de 20 semanas</div></div>
+  <div class="dcol"><div class="colhead">3º TRIMESTRE</div><div class="doutcome do-pend"><span class="dotitle">Exames e vacinas</span>Sífilis e HIV · hepatite B · estreptococo do grupo B entre 36 e 38 semanas · VSR a partir de 28 semanas · plano de parto</div></div>
+  <div class="dcol"><div class="colhead">PÓS-PARTO</div><div class="doutcome do-pend"><span class="dotitle">Acompanhamento</span>Contar os dias de pós-parto · limite de 42 dias · definir o dia do contato de finalização (42 dias ou 3 meses)</div></div>
+</div>
+
+<div class="dbox" style="border-color:var(--pending-border); background:var(--pending-bg);"><strong>Cálculos feitos por script, ninguém calcula de cabeça</strong>Data provável do parto = data da última menstruação mais 280 dias · idade gestacional · trimestre · janelas de exames e vacinas · se o ultrassom do 1º trimestre diferir da data da menstruação além da margem, vale o ultrassom</div>
+
+<h3 style="font-size:15px; margin:24px 0 8px;">Quando encaminhar a gestante</h3>
+<div class="dcols" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO</div><div class="doutcome do-pend"><span class="dotitle">Sinais de alerta</span>Dor abdominal intensa · perda de líquido · diminuição ou ausência de movimentos do bebê · pressão 160x110 ou mais · pressão 140x90 ou mais com dor de cabeça que não passa, alteração na visão ou dor na boca do estômago · sangramento vaginal (conferir o Guia)</div></div>
+  <div class="dcol"><div class="colhead">TELECONSULTA DE ENFERMAGEM (30 MIN)</div><div class="doutcome do-pend"><span class="dotitle">Caminho padrão</span>Acompanhamento do programa, dúvidas e orientações · corrimento, depois de perguntar como é (a definir)</div></div>
+  <div class="dcol"><div class="colhead">TELECONSULTA MÉDICA (15 OU 30 MIN)</div><div class="doutcome do-pend"><span class="dotitle">A definir com a médica</span>Alto risco · risco de pré-eclâmpsia ou diabetes gestacional · febre com dor lombar · pedido de exame, procedimento e encaminhamento · náuseas e vômitos que precisam de medicação</div></div>
+  <div class="dcol"><div class="colhead">TELEMEDICINA DO PLANO</div><div class="doutcome do-pend"><span class="dotitle">Depende do plano</span>Quando o plano da pessoa tem telemedicina, pode ser o caminho para uma queixa que não é do programa</div></div>
+</div>
+<div class="dnote" style="border-color:var(--pending-border); background:var(--pending-bg);"><h4 style="margin:0 0 4px;">Interromper o roteiro</h4>Violência, migração irregular, uso de substância ou ideação suicida: acolher e passar para saúde mental ou assistência social. Gestante menor de 14 anos: notificação obrigatória e encaminhamento a serviço de referência.</div>
+
+<h3 style="font-size:15px; margin:24px 0 8px;">Outras sugestões</h3>
+<div class="dcols" style="grid-template-columns:repeat(auto-fit,minmax(200px,1fr));">
+  <div class="dcol"><div class="colhead">SUS</div><div class="doutcome do-pend"><span class="dotitle">Orientar</span>Procurar a UBS, fazer o cadastro e a primeira consulta · pegar a caderneta da gestante · vacinas do calendário da gestante, de graça no SUS · começar o pré-natal até 12 semanas</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA</div><div class="doutcome do-pend"><span class="dotitle">Buscar obstetra</span>Usar a consulta de rede por plano · se não achar obstetra, orientar o caminho pelo SUS</div></div>
+  <div class="dcol"><div class="colhead">BENEFÍCIOS DO PROGRAMA</div><div class="doutcome do-pend"><span class="dotitle">A confirmar</span>Acolhimento personalizado · plano de acompanhamento individual · suporte para urgência · fila preferencial digital · ajuda com plano e burocracias · canal aberto para dúvidas</div></div>
+  <div class="dcol"><div class="colhead">SUPLEMENTOS</div><div class="doutcome do-pend"><span class="dotitle">A decidir</span>Ácido fólico e ferro pelo protocolo padrão · quem pode passar: enfermeiro ou médico por interconsulta · cálcio e AAS: a médica decide</div></div>
+  <div class="dcol"><div class="colhead">REGISTRO E MATERIAIS</div><div class="doutcome do-pend"><span class="dotitle">Acrescentar</span>Monitoramento na planilha do programa (o link fica no documento interno) · links do e-book, da cartilha e do plano de parto quando houver versão pública</div></div>
+</div>
+<!--SUG-FIM-->
+
 <div class="legend">
   <span><i class="sw" style="background:var(--slate-100);border:1.5px solid var(--slate-600);"></i>Entrada e acompanhamento</span>
   <span><i class="sw" style="background:var(--pipo-peach);"></i>Conteúdo do atendimento</span>
   <span><i class="sw" style="background:var(--grey-100);border:1.5px solid var(--grey-200);"></i>Saída do programa</span>
   <span><i class="sw" style="background:var(--pipo-success);"></i>Finalizada</span>
+  <span class="pend-leg"><i class="sw" style="background:var(--pending-bg);border:1px solid var(--pending-border);"></i>Sugestão pendente de validação</span>
 </div>
 
 <div class="footer">Mapa mental gerado a partir do protocolo escrito do Programa Pinguim (Pipo Saúde, atualizado em 29/10/2026). Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core).</div>

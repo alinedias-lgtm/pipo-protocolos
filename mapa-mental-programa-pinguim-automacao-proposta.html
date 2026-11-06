@@ -93,6 +93,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 
 
 
+
 .qbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.55; text-align:left; margin-bottom:0;}
 .qbox ol,.qbox ul{margin:6px 0 0 18px; padding:0;}
 .qbox li{margin:2px 0;}
@@ -178,7 +179,7 @@ body .print-btn{top:100px;}
     <div class="colhead">TENTANTE</div>
     <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Nos 3 primeiros meses: contato proativo. Depois: contato trimestral</div>
     <div class="darrow"></div>
-    <div class="doutcome do-green"><span class="dotitle">Bot cria o lembrete do contato</span>Avisa o enfermeiro na data certa, e envia a cartilha no primeiro contato</div>
+    <div class="doutcome do-green"><span class="dotitle">Bot cria o lembrete do contato</span>Avisa o enfermeiro na data certa, envia a cartilha no primeiro contato e pergunta do atraso menstrual (sugestão 12)</div>
     <div class="darrow"></div>
     <div class="doutcome do-blue"><span class="dotitle">Enfermeiro conversa</span>Orienta e, se precisar de exame ou prescrição, segue o fluxo do médico</div>
   </div>
@@ -186,9 +187,9 @@ body .print-btn{top:100px;}
     <div class="colhead">GESTANTE</div>
     <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Contato trimestral</div>
     <div class="darrow"></div>
-    <div class="doutcome do-green"><span class="dotitle">Bot cria o lembrete e envia o material</span>E-book no 1º trimestre. Plano de parto no 3º trimestre</div>
+    <div class="doutcome do-green"><span class="dotitle">Bot cria o lembrete e envia o material</span>E-book no 1º trimestre. Plano de parto no 3º trimestre. Checklist de exames e vacinas do trimestre (sugestão 11)</div>
     <div class="darrow"></div>
-    <div class="doutcome do-blue"><span class="dotitle">Enfermeiro conversa</span>Se a gestante relatar sintoma, usa o Guia de direcionamento (ver passo 3)</div>
+    <div class="doutcome do-blue"><span class="dotitle">Enfermeiro conversa</span>Se a gestante relatar sintoma, usa o Guia de direcionamento e a tabela de destinos (ver passo 3 e sugestão 13)</div>
   </div>
   <div class="dcol">
     <div class="colhead">PUÉRPERA</div>
@@ -245,7 +246,7 @@ body .print-btn{top:100px;}
 <h2 class="section">Sugestões da Letícia <span class="pending">pendente de validação</span></h2>
 <div class="dnote">
 <h4>Como ler esta parte</h4>
-Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pela médica. Todas são melhorias para a automação. Nenhuma muda o protocolo escrito. Cada uma diz em que se baseia e qual é a fonte. Só entram fontes de 2025 e 2026. Onde as fontes não concordam entre si, isso está escrito.
+Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pela médica. Todas são melhorias para a automação. Nenhuma muda o protocolo escrito. Cada uma diz em que se baseia e qual é a fonte. As fontes externas são de 2025 e 2026, com uma exceção marcada (a Rede Alyne, de 2024). As outras fontes são a skill do Programa Pinguim, da enfermeira Ana Caroline, e pedidos da Letícia. Onde as fontes não concordam entre si, isso está escrito.
 </div>
 
 <div class="sugg">
@@ -337,7 +338,7 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 
 <div class="sugg">
 <h4>9. Cálculo automático de idade gestacional e data provável do parto <span class="pending">pendente</span></h4>
-<p><span class="lbl">O que sugerir:</span> a partir da data da última menstruação, o sistema calcula a idade gestacional e a data provável do parto, e o bot usa esse resultado para definir o trimestre, o lembrete de contato e o material da fase. Para a puérpera, usa os dias ou semanas de pós-parto. Ninguém calcula de cabeça.</p>
+<p><span class="lbl">O que sugerir:</span> a partir da data da última menstruação, o sistema calcula a idade gestacional e a data provável do parto, e o bot usa esse resultado para definir o trimestre, o lembrete de contato e o material da fase. Para a puérpera, usa os dias ou semanas de pós-parto. Ninguém calcula de cabeça. A regra: data provável do parto é a data da última menstruação mais 280 dias (regra de Naegele). Se o ultrassom do 1º trimestre diferir da data da menstruação além da margem esperada, vale o ultrassom. Sem data confiável e sem ultrassom, a idade gestacional fica "indeterminada" e o enfermeiro orienta ultrassom precoce.</p>
 <p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline, que já faz esse cálculo por script.</p>
 <p><span class="lbl">O que falta validar:</span> onde a data da última menstruação fica registrada, e quem confere o resultado.</p>
 </div>
@@ -347,6 +348,55 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 <p><span class="lbl">O que sugerir:</span> o time decide se o programa passa a ter também o grupo de famílias em processo de adoção, que não aparece no POP original. Se sim, entra como mais uma coluna no passo 2, com ritmo de contato próprio.</p>
 <p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline, que tem um módulo de adoção, com orientações do CNJ. O POP original só tem tentante, gestante e puérpera.</p>
 <p><span class="lbl">O que falta validar:</span> se o programa atende adoção hoje na prática e qual é o ritmo de contato desse grupo.</p>
+</div>
+
+<div class="sugg">
+<h4>11. Checklist de exames e vacinas por trimestre <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> a cada contato trimestral, o bot pergunta à gestante, em mensagem simples, se já fez os exames e as vacinas daquele trimestre, e registra a resposta na planilha do programa. Ele inclui a pergunta do <strong>tipo sanguíneo e fator Rh</strong> e a dos exames do 1º trimestre. O que ela ainda não fez vira um aviso para o enfermeiro, que orienta. O bot não pede exame e não decide vacina.</p>
+<p><span class="lbl">Como seria:</span></p>
+<ul>
+<li><strong>1º trimestre:</strong> exames do 1º trimestre, tipo sanguíneo e Rh, ultrassom para datar a gestação; vacinas hepatite B, dT, COVID-19 e influenza.</li>
+<li><strong>2º trimestre:</strong> teste de tolerância à glicose, ultrassom morfológico, Coombs se Rh negativo; vacina dTpa a partir de 20 semanas.</li>
+<li><strong>3º trimestre:</strong> sífilis, HIV e hepatite B; estreptococo do grupo B; vacina do VSR a partir de 28 semanas.</li>
+</ul>
+<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline (exames e vacinas por trimestre), o pedido da Letícia de 06/11/2026 e o calendário nacional de vacinação da gestante de janeiro de 2026 (fonte na sugestão 1). A lista completa está no protocolo escrito, nas sugestões 4 e 5.</p>
+<p><span class="lbl">O que falta validar:</span> a médica confere as listas e as semanas. O time decide onde a resposta é registrada.</p>
+</div>
+
+<div class="sugg">
+<h4>12. Pessoa tentante: oferecer o beta-hCG e orientar a voltar <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> no contato com a pessoa tentante, o bot pergunta se a menstruação atrasou. Se atrasou, avisa o enfermeiro para oferecer o pedido do exame beta-hCG e orientar a pessoa a voltar com o resultado. Quando o resultado voltar, o bot muda o grupo para gestante e pede a data da última menstruação para calcular a idade gestacional.</p>
+<p><span class="lbl">Baseado em:</span> o pedido da Letícia de 06/11/2026 e a skill do Programa Pinguim, da enfermeira Ana Caroline, que cita a atualização de vacinas e a avaliação de fertilidade na fase de tentante.</p>
+<p><span class="lbl">O que falta validar:</span> quem pede o beta-hCG (enfermeiro ou médico, por interconsulta) e em que dia o bot pergunta do atraso.</p>
+</div>
+
+<div class="sugg">
+<h4>13. Sintoma da gestante: perguntas e destino <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> quando a gestante relata um sintoma, o bot pergunta e escolhe o destino pela mesma tabela do protocolo escrito (sugestão 8). Onde o tema já existe no Guia de direcionamento (sangramento vaginal, febre, corrimento), o bot usa o roteiro do Guia. O bot pergunta primeiro como é o corrimento (cor, cheiro, coceira, quantidade) antes de decidir. Os destinos são: Pronto Socorro, teleconsulta de enfermagem de 30 minutos, teleconsulta médica de 15 ou 30 minutos, ou telemedicina do plano da pessoa, quando o plano tem.</p>
+<p><span class="lbl">Quando o bot para e chama o enfermeiro na hora:</span> pressão alta com dor de cabeça que não passa, alteração na visão ou dor na boca do estômago; perda de líquido; diminuição ou ausência de movimentos do bebê; qualquer relato de violência, uso de substância ou ideação suicida; gestante com menos de 14 anos.</p>
+<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline (sinais de alerta), as perguntas da Letícia de 06/11/2026 sobre até onde o atendimento chega, e os roteiros já revisados do Guia.</p>
+<p><span class="lbl">O que falta validar:</span> a médica define cada destino, em que momento entra a teleconsulta médica de 15 ou de 30 minutos, e o que é alto risco. As perguntas do corrimento ainda precisam ser escritas.</p>
+</div>
+
+<div class="sugg">
+<h4>14. Histórico familiar e fatores de risco na máscara <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> na primeira conversa, o bot coleta ou o enfermeiro registra o histórico familiar (principalmente da mãe: pré-eclâmpsia, eclâmpsia, diabetes, hipertensão) e os fatores de risco da gestante. Se houver pelo menos um fator de risco, o sistema marca a gestante para o enfermeiro avaliar e, se for o caso, passar para o médico.</p>
+<p><span class="lbl">Baseado em:</span> o pedido da Letícia de 06/11/2026 e a anamnese da gestante na skill do Programa Pinguim, da enfermeira Ana Caroline.</p>
+<p><span class="lbl">O que falta validar:</span> a lista de fatores que marca a gestante, e a regra de quando o médico entra.</p>
+</div>
+
+<div class="sugg">
+<h4>15. SUS e rede credenciada: o que o bot orienta <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> se a gestante disser que não achou obstetra pelo plano, o bot manda o enfermeiro buscar na rede credenciada do plano dela (com a ferramenta interna de consulta de rede). Se não houver obstetra, o bot manda uma mensagem curta com o caminho do SUS: procurar a Unidade Básica de Saúde, fazer o cadastro e a primeira consulta, pegar a caderneta da gestante e fazer as vacinas, que são de graça.</p>
+<p><span class="lbl">Baseado em:</span> o pedido da Letícia de 06/11/2026 e o resumo da Rede Alyne do CONASS (portaria de 2024, fora da regra de 2025 e 2026, por isso a médica confere a regra vigente).</p>
+<p><span class="lbl">Fonte:</span> <a href="https://www.conass.org.br/?p=44552">CONASS: Rede Alyne, mudanças no pré-natal e no puerpério</a></p>
+</div>
+
+<div class="sugg">
+<h4>16. Materiais com link e mensagem de boas-vindas com os benefícios <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> (a) o bot envia o material da fase já com o link do e-book, da cartilha ou do plano de parto, assim o time não precisa anexar. (b) A mensagem de boas-vindas lista os benefícios do programa, mas só depois que a lista for confirmada (protocolo escrito, sugestão 2) e só os benefícios que aquela pessoa tem.</p>
+<p><span class="lbl">Baseado em:</span> o pedido da Letícia de 06/11/2026.</p>
+<p><span class="lbl">O que falta validar:</span> onde os materiais ficam guardados, para gerar o link. Os links não entram nesta página, que é pública.</p>
 </div>
 
 <h2 class="section">O que pesquisei e não entrou</h2>
