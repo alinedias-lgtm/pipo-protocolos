@@ -73,6 +73,18 @@ summary{cursor:pointer; font-weight:700; font-size:13.5px;}
 .site-nav-row.sub a.on{background:var(--pipo-blue); color:#fff;}
 body .print-btn{top:100px;}
 @media print{.site-nav{display:none;}}
+
+.site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
+.site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
+.site-nav-row::-webkit-scrollbar{display:none;}
+.site-nav-row a{font-size:13px; font-weight:600; color:var(--grey-900); text-decoration:none; padding:6px 12px; border-radius:16px; flex:none;}
+.site-nav-row a:hover{background:var(--grey-100);}
+.site-nav-row a.on{background:var(--pipo-black); color:#fff;}
+.site-nav-row a.sn-home{border:1.5px solid var(--pipo-black); margin-right:8px;}
+.site-nav-row.sub{background:var(--grey-100); padding-top:6px; padding-bottom:6px;}
+.site-nav-row.sub a.on{background:var(--pipo-blue); color:#fff;}
+body .print-btn{top:100px;}
+@media print{.site-nav{display:none;}}
 </style>
 </head>
 <body>
@@ -93,6 +105,8 @@ body .print-btn{top:100px;}
     <a href="mapa-mental-checkup-automacao-proposta.html">Proposta de automação</a>
   </div>
 </nav>
+
+
 <button class="print-btn" onclick="window.print()">Salvar como PDF</button>
 <div class="sheet">
 <span class="draft-badge" style="background:var(--pipo-success); border-color:var(--pipo-success); color:var(--success-900);">ATIVO, revisado</span>

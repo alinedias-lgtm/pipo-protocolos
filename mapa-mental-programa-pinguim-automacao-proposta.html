@@ -90,6 +90,18 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 
 
 
+.site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
+.site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
+.site-nav-row::-webkit-scrollbar{display:none;}
+.site-nav-row a{font-size:13px; font-weight:600; color:var(--grey-900); text-decoration:none; padding:6px 12px; border-radius:16px; flex:none;}
+.site-nav-row a:hover{background:var(--grey-100);}
+.site-nav-row a.on{background:var(--pipo-black); color:#fff;}
+.site-nav-row a.sn-home{border:1.5px solid var(--pipo-black); margin-right:8px;}
+.site-nav-row.sub{background:var(--grey-100); padding-top:6px; padding-bottom:6px;}
+.site-nav-row.sub a.on{background:var(--pipo-blue); color:#fff;}
+body .print-btn{top:100px;}
+@media print{.site-nav{display:none;}}
+
 .qbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.55; text-align:left; margin-bottom:0;}
 .qbox ol,.qbox ul{margin:6px 0 0 18px; padding:0;}
 .qbox li{margin:2px 0;}
@@ -132,6 +144,8 @@ body .print-btn{top:100px;}
     <a href="mapa-mental-programa-pinguim-automacao-proposta.html" class="on">Proposta de automação</a>
   </div>
 </nav>
+
+
 
 
 <div class="sheet">
@@ -234,7 +248,7 @@ body .print-btn{top:100px;}
 <li><strong>Inativação automática.</strong> O POP original traz regras que se contradizem. Prazo em caso de aborto: 30 dias em um trecho e 45 dias em outro. Falta de contato: 2 tentativas em até 90 dias em um trecho, e 2 teleconsultas faltadas com 4 contatos sem resposta em outro. O time precisa escolher uma regra de cada.</li>
 <li><strong>Mensagem de finalização.</strong> O nome do template e da macro está em branco no POP original.</li>
 <li><strong>Quando o acompanhamento termina.</strong> O POP fala em contato 3 meses depois do parto. O e-book fala em pré-natal que termina cerca de 40 dias depois do parto. Falta definir o que acontece entre o 1º e o 3º mês.</li>
-<li><strong>Onde o monitoramento é registrado.</strong> Em branco no POP original. Ver a sugestão sobre o Alice, abaixo.</li>
+<li><strong>Onde o monitoramento é registrado.</strong> Em branco no POP original. A skill do Pinguim cita a planilha de registro de programas e monitoramentos do time de saúde. O time confirma se é esse o lugar para todos os grupos.</li>
 </ul></div>
 
 <h2 class="section">Sugestões da Letícia <span class="pending">pendente de validação</span></h2>
@@ -298,17 +312,48 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 </div>
 
 <div class="sugg">
-<h4>6. Dados do Alice e do Pipo Cuida: o bot só fala do que a pessoa tem <span class="pending">pendente</span></h4>
-<p><span class="lbl">O que sugerir:</span> o programa agora é acompanhado pelo Alice, e o Pipo Cuida mostra os benefícios que a pessoa tem pelo programa. A sugestão é o bot consultar essas informações antes de enviar mensagem ou material, e só falar do que aquela pessoa tem direito. Assim o time não promete benefício que a pessoa não tem. Também resolve a pendência de onde o monitoramento é registrado.</p>
-<p><span class="lbl">Baseado em:</span> relato da Letícia em 06/11/2026 de que o acompanhamento do programa passou a ser feito pelo Alice. Também se liga a um ponto da ata do Pinguim: a cartilha diz que os planos isentam a gestante de coparticipação no pré-natal, e o POP trata isso como benefício de algumas empresas.</p>
-<p><span class="lbl">O que falta validar:</span> (a) com o time de tecnologia, se o bot consegue ler o Alice e o Pipo Cuida. (b) Quais campos entram: nome do programa, grupo, status e benefícios. (c) Dados de saúde e de pessoas ficam dentro dos sistemas internos e nunca vão para esta página.</p>
+<h4>6. Benefício de coparticipação: uma tabela só, e regras de fala para o bot <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> o bot (e a skill) consultam uma tabela única, mantida pelo time de benefícios, com o regime de coparticipação de cada empresa parceira. Antes de falar de benefício, o bot confere a empresa da pessoa, o regime e se ela está dentro do puerpério. As regras de fala abaixo valem para o bot e para o enfermeiro:</p>
+<ul>
+<li>O benefício é de coparticipação, não de gratuidade. Nunca dizer "sem custo", "qualquer procedimento" ou "protegida financeiramente".</li>
+<li>Há três situações na tabela: isenção total, limitador com valor conhecido e limitador com valor não confirmado.</li>
+<li>Se o campo está "não confirmado", nunca vira isenção total nem valor zero. O bot diz que vai confirmar e retorna.</li>
+<li>"Até o puerpério" é o texto da base. Não converter em semanas e não estender para a fase de tentante.</li>
+<li>Tentante que ainda não está gestante: a base não registra cobertura nessa fase. Dizer que vai confirmar. Vale principalmente ao encaminhar para investigação de fertilidade.</li>
+<li>Puérpera fora do puerpério: não afirmar o benefício no presente. Orientar confirmar com o plano vigente.</li>
+<li>Quando a base não diz se o limite vale por atendimento ou somado no período, não afirmar nenhum dos dois.</li>
+</ul>
+<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, feita pela enfermeira Ana Caroline, e um compilado de 06/11/2026 da Letícia sobre a skill e o plano de saúde. A skill está desatualizada em algumas partes por causa da nova vigência do plano (julho de 2026), e faltam outras. Por isso a sugestão é que os valores fiquem em uma fonte oficial única, e a skill e o bot só apontem para ela.</p>
+<p><span class="lbl">Por que não há nomes de empresas nem valores aqui:</span> esta página é pública. A tabela com empresas, regimes e valores fica no documento interno do time.</p>
+<p><span class="lbl">O que falta validar:</span> com o time de benefícios: (a) se o limitador de uma empresa é o mesmo benefício que o subsídio de coparticipação da Pipo, porque nenhuma fonte diz isso; (b) o valor ainda não confirmado de uma empresa; (c) se o limite é por atendimento ou somado; (d) se existe algum benefício na fase de tentante; (e) cobertura de parto e carência do plano, e prazo para incluir o bebê. Enquanto isso não estiver confirmado, o bot responde "vou confirmar".</p>
 </div>
 
 <div class="sugg">
-<h4>7. Revisar a skill do Programa Pinguim <span class="pending">pendente</span></h4>
-<p><span class="lbl">O que sugerir:</span> o time já tem uma skill do Programa Pinguim, criada pela enfermeira Ana Caroline. Ela tem partes desatualizadas, ligadas ao plano Alice, e faltam outras. A sugestão é comparar a skill com este protocolo e com as sugestões acima, e atualizar o que mudou.</p>
-<p><span class="lbl">Baseado em:</span> relato da Letícia em 06/11/2026. A skill será lida e usada como fonte quando a Letícia enviar o conteúdo.</p>
-<p><span class="lbl">O que falta validar:</span> a lista do que está desatualizado e do que falta. Aguardando o conteúdo da skill.</p>
+<h4>7. Checagem depois da inscrição: inscrever não garante que a elegibilidade foi concluída <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> o bot confere dois pontos para cada pessoa inscrita e avisa o enfermeiro quando algum falta: (a) se a teleconsulta de ativação foi feita em até um prazo definido pelo time; (b) se o pedido de isenção de coparticipação foi enviado para a empresa, nas empresas que têm esse passo.</p>
+<p><span class="lbl">Baseado em:</span> um caso de setembro de 2026, em que o RH de uma empresa parceira pediu ao time para rastrear se uma gestante inscrita tinha usado o programa e estava incluída. Já tinha havido um caso de teleconsulta de elegibilidade que não foi realizada. A lição do caso é que o cadastro, sozinho, não garante a elegibilidade.</p>
+<p><span class="lbl">O que falta validar:</span> o prazo da checagem e quem recebe o aviso.</p>
+</div>
+
+<div class="sugg">
+<h4>8. Gatilhos de parada e alerta legal no roteiro <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> o bot para o roteiro e chama o enfermeiro sempre que a pessoa relatar violência, migração irregular, uso de substância ou ideação suicida. O enfermeiro acolhe e escala para saúde mental ou assistência social. Outro alerta: se a gestante tiver menos de 14 anos, o bot avisa o enfermeiro, porque é caso de notificação obrigatória e encaminhamento a serviço de referência (estupro de vulnerável, artigo 217-A do Código Penal).</p>
+<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline, que já traz esses pontos como regra do roteiro. O Guia de direcionamento e o protocolo escrito do Pinguim ainda não falam disso.</p>
+<p><span class="lbl">O que falta validar:</span> a médica e o time confirmam o texto da regra e o fluxo de notificação.</p>
+</div>
+
+<div class="sugg">
+<h4>9. Cálculo automático de idade gestacional e data provável do parto <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> a partir da data da última menstruação, o sistema calcula a idade gestacional e a data provável do parto, e o bot usa esse resultado para definir o trimestre, o lembrete de contato e o material da fase. Para a puérpera, usa os dias ou semanas de pós-parto. Ninguém calcula de cabeça.</p>
+<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline, que já faz esse cálculo por script.</p>
+<p><span class="lbl">O que falta validar:</span> onde a data da última menstruação fica registrada, e quem confere o resultado.</p>
+</div>
+
+<div class="sugg">
+<h4>10. Um quarto grupo: família em processo de adoção <span class="pending">pendente</span></h4>
+<p><span class="lbl">O que sugerir:</span> o time decide se o programa passa a ter também o grupo de famílias em processo de adoção, que não aparece no POP original. Se sim, entra como mais uma coluna no passo 2, com ritmo de contato próprio.</p>
+<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline, que tem um módulo de adoção, com orientações do CNJ. O POP original só tem tentante, gestante e puérpera.</p>
+<p><span class="lbl">O que falta validar:</span> se o programa atende adoção hoje na prática e qual é o ritmo de contato desse grupo.</p>
 </div>
 
 <h2 class="section">O que pesquisei e não entrou</h2>
@@ -324,7 +369,7 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 <div class="ref-box"><h3>Por que essa mudança está sendo avaliada</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">O programa já funciona por rotina: cada grupo tem um ritmo de contato fixo, e as mensagens e os materiais são sempre os mesmos. Isso é o que dá para automatizar. O enfermeiro deixa de controlar datas e envios, e fica com a conversa e a decisão clínica.</div></div>
 <div class="ref-box"><h3>O que não é para automatizar</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Teleconsulta de ativação, qualquer decisão clínica, gestação de alto risco e assinatura de declaração. O bot só lembra, envia e prepara rascunho.</div></div>
 <div class="ref-box"><h3>Ligação com o Guia de direcionamento</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Quando a gestante relata sintoma, o bot usa os roteiros do Guia, que já estão revisados. Não existe um segundo conjunto de perguntas para o Pinguim.</div></div>
-<div class="ref-box"><h3>Status</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Proposta em avaliação, ainda não implementada. Elaboração das sugestões: Letícia Rodrigues, em 06/11/2026. Revisão da médica e do time: pendente.</div></div>
+<div class="ref-box"><h3>Status</h3><div style="font-size:13.5px; line-height:1.7; color:#3c3837">Proposta em avaliação, ainda não implementada. Elaboração das sugestões: Letícia Rodrigues, em 06/11/2026. Fontes internas usadas: a skill do Programa Pinguim, da enfermeira Ana Caroline, e o POP. Revisão da médica e do time: pendente.</div></div>
 </div>
 <div class="footer">Mapa mental de proposta, feito a partir do protocolo escrito do Programa Pinguim e de pesquisa de fontes de 2025 e 2026. Paleta e tipografia seguem os tokens de marca vigentes (pipo-brand-core). Esta página não traz e-mails, links internos, dados de pessoas, nem nomes e benefícios de empresas clientes.</div>
 
