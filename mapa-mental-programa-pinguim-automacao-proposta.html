@@ -98,6 +98,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 
 
 
+
 .qbox{width:100%; background:var(--pipo-white); border:1.5px solid var(--slate-600); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.55; text-align:left; margin-bottom:0;}
 .qbox ol,.qbox ul{margin:6px 0 0 18px; padding:0;}
 .qbox li{margin:2px 0;}
@@ -108,6 +109,7 @@ h2.section{font-family:var(--font-display); font-weight:500; font-size:22px; mar
 .sugg .lbl{font-weight:700; color:var(--pending-text);}
 .sugg ul{margin:4px 0 8px; padding-left:20px;}
 .sugg a{color:var(--slate-900); word-break:break-word;}
+
 
 .site-nav{position:sticky; top:0; z-index:50; margin:-40px -20px 28px; background:#fff; border-bottom:1px solid var(--grey-200); box-shadow:0 1px 3px rgba(0,0,0,.06); font-family:var(--font-body);}
 .site-nav-row{display:flex; gap:4px; padding:8px 20px; overflow-x:auto; white-space:nowrap; align-items:center; scrollbar-width:none;}
@@ -378,10 +380,21 @@ Cada sugestão abaixo é da Letícia e ainda não foi validada pelo time nem pel
 
 <div class="sugg">
 <h4>13. Sintoma da gestante: perguntas e destino <span class="pending">pendente</span></h4>
-<p><span class="lbl">O que sugerir:</span> quando a gestante relata um sintoma, o bot pergunta e escolhe o destino pela mesma tabela do protocolo escrito (seção "Atuação do time de saúde"). Onde o tema já existe no Guia de direcionamento (sangramento vaginal, febre, corrimento), o bot usa o roteiro do Guia. O bot pergunta primeiro como é o corrimento (cor, cheiro, coceira, quantidade) antes de decidir. Os sinais de alerta e os destinos seguem a Caderneta Brasileira da Gestante, e a médica valida. Os destinos são: Pronto Socorro, teleconsulta de enfermagem de 30 minutos, teleconsulta médica de 15 ou 30 minutos, ou telemedicina do plano da pessoa, quando o plano tem.</p>
+<p><span class="lbl">O que sugerir:</span> quando a gestante relata um sintoma, o bot pergunta e escolhe o destino pela mesma tabela do protocolo escrito (seção "Atuação do time de saúde"). Onde o tema já existe no Guia de direcionamento (sangramento vaginal, febre, corrimento), o bot usa o roteiro do Guia. O bot pergunta primeiro como é o corrimento (cor, cheiro, coceira, quantidade) antes de decidir. Os sinais de alerta e os destinos seguem a Caderneta Brasileira da Gestante, e a médica valida. Onde o Guia já tem a regra, o bot segue o Guia: a gestante com sangramento, dor forte na barriga, perda de líquido, bebê mexendo menos ou pressão alta entra pela fila da enfermagem com prioridade. Os seis destinos possíveis estão nos quadros abaixo.</p>
 <p><span class="lbl">Quando o bot para e chama o enfermeiro na hora:</span> pressão 140x90 ou mais, dor de cabeça intensa, alteração na visão, dor forte no estômago ou inchaço repentino; convulsão, desmaio, dor no peito ou falta de ar (orientar Samu 192); perda de líquido; diminuição ou ausência de movimentos do bebê (mais de 4 horas depois de 20 semanas); qualquer relato de violência, uso de substância ou ideação suicida; gestante com menos de 14 anos.</p>
 <p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline (sinais de alerta), as perguntas da Letícia de 06/11/2026 sobre até onde o atendimento chega, e os roteiros já revisados do Guia.</p>
 <p><span class="lbl">O que falta validar:</span> a médica define cada destino, em que momento entra a teleconsulta médica de 15 ou de 30 minutos, e o que é alto risco. As perguntas do corrimento ainda precisam ser escritas.</p>
+</div>
+
+
+<div class="dnote" style="margin-top:10px; border-color:var(--pending-border); background:var(--pending-bg);"><h4>Destinos da gestante: o que a Letícia entende que cabe em cada um <span class="pending">pendente</span></h4>A médica ajusta junto com a Letícia. O bot usa estes quadros para escolher o destino. Quando tem dúvida, o caso vai para o enfermeiro da teletriagem.</div>
+<div class="dcols" style="grid-template-columns:repeat(auto-fit,minmax(210px,1fr));">
+  <div class="dcol"><div class="colhead">TELECONSULTA DE ENFERMAGEM (30 MIN)</div><div class="doutcome do-blue"><span class="dotitle">Caminho padrão do programa</span>Ativação e acompanhamento de cada fase (tentante, gestante e puérpera). Orientações do trimestre. Dúvidas sobre exames, vacinas, alimentação e atividade física. Gestante que relata sangramento, dor forte na barriga, perda de líquido, bebê mexendo menos ou pressão alta: o Guia manda para a fila da enfermagem com prioridade. A enfermagem avalia e decide se vai para o Pronto Socorro. Corrimento, depois de perguntar como é (cor, cheiro, coceira, quantidade). Puérpera: contato do 1º mês e dúvidas sobre o pós-parto.</div></div>
+  <div class="dcol"><div class="colhead">TELECONSULTA DE ENFERMAGEM (15 MIN)</div><div class="doutcome do-blue"><span class="dotitle">A definir se existe no Pinguim</span>Retorno curto: conferir se fez os exames e as vacinas do trimestre. Dúvida pontual, ou entrega e explicação de um material. Resultado de exame de rotina, sem alteração.</div></div>
+  <div class="dcol"><div class="colhead">TELECONSULTA MÉDICA (15 MIN)</div><div class="doutcome do-blue"><span class="dotitle">A definir com a médica</span>Pedido de exames, de procedimento e encaminhamento. Vitaminas e suplementos, se o enfermeiro não puder passar. Náuseas e vômitos que precisam de medicação. Febre ou dor ao urinar sem sinal de gravidade (possível infecção urinária).</div></div>
+  <div class="dcol"><div class="colhead">TELECONSULTA MÉDICA (30 MIN)</div><div class="doutcome do-blue"><span class="dotitle">A definir com a médica</span>Gestação de alto risco (a médica define o que é alto risco). Histórico de pré-eclâmpsia ou eclâmpsia em gestação anterior, ou na família. Hipertensão, diabetes (gestacional ou anterior), doença de tireoide ou doença falciforme. Exame com resultado alterado. Risco que a gestante conta (pré-eclâmpsia, diabetes gestacional) e que o enfermeiro não resolve.</div></div>
+  <div class="dcol"><div class="colhead">PRONTO SOCORRO (OU SAMU 192)</div><div class="doutcome do-coral"><span class="dotitle">A enfermagem confirma, e o bot avisa a teletriagem</span>Emergência do Guia: convulsão, dor no peito com falta de ar, desmaio, sangramento que não para. Pressão 160x110 ou mais. Sinais de pré-eclâmpsia: pressão 140x90 ou mais, ou mais alta que o habitual, com dor de cabeça intensa, alteração na visão, dor forte no estômago ou inchaço repentino. Dor abdominal forte ou persistente. Perda de líquido. Bebê sem se mexer por mais de 4 horas, depois de 20 semanas. Puérpera: sangramento que encharca o absorvente ou tem mau cheiro, febre, dor no peito, falta de ar, dor ou inchaço na panturrilha, convulsão. Pensamento de se machucar ou machucar o bebê: acolher e acionar também o POP de Ideação e Comportamento Suicida.</div></div>
+  <div class="dcol"><div class="colhead">REDE CREDENCIADA (AUXÍLIO)</div><div class="doutcome do-blue"><span class="dotitle">Quando a pessoa precisa de atendimento presencial</span>Buscar obstetra para o pré-natal pelo plano da pessoa, com a ferramenta interna de consulta de rede. Maternidade de referência, exames e ultrassom presenciais e consulta odontológica. Se não houver obstetra na rede: orientar o caminho do SUS (UBS, cadastro, primeira consulta, caderneta da gestante e vacinas). Exceção: na licença paternidade estendida não há direcionamento para a rede. O time acolhe e orienta particular ou SUS.</div></div>
 </div>
 
 <div class="sugg">
