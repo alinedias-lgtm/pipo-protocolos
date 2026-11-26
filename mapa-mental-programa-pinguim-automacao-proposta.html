@@ -226,7 +226,7 @@ body .print-btn{top:100px;}
   </div>
   <div class="dcol">
     <div class="colhead">ADOÇÃO</div>
-    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Contato a cada 6 meses, até 3 meses depois da conclusão da adoção</div>
+    <div class="dbox" style="border:none;background:transparent;font-size:11.5px;">Contato a cada 6 meses, até 4 meses depois da conclusão da adoção</div>
     <div class="darrow"></div>
     <div class="doutcome do-green"><span class="dotitle">Bot cria o lembrete</span>Avisa o enfermeiro a cada 6 meses</div>
     <div class="darrow"></div>
@@ -291,17 +291,16 @@ body .print-btn{top:100px;}
 <ul>
 <li><strong>Aborto:</strong> a pessoa é inativada 4 semanas depois do evento.</li>
 <li><strong>Falta de contato:</strong> 3 tentativas, 1 por semana, com mensagem avisando que a pessoa será retirada do programa e um botão para quem não quiser sair. Substitui as duas regras antigas. Com isso, a inativação automática pode ser automatizada.</li>
-<li><strong>Fim do programa:</strong> 4 meses depois do parto, para todas as pessoas. Adoção: 3 meses depois da conclusão da adoção.</li>
+<li><strong>Fim do programa:</strong> 4 meses depois do parto, para todas as pessoas. Adoção: 4 meses depois da conclusão da adoção.</li>
 <li><strong>Tentante que desistiu:</strong> no máximo 12 meses, renovável. Na reavaliação, a pessoa decide se quer continuar.</li>
 </ul></div>
 <div class="dnote" style="margin-top:10px; border-color:var(--pending-border); background:var(--pending-bg);"><h4>Bloqueios: o que ainda não dá para automatizar <span class="pending">pendente</span></h4>
 <ul>
 <li><strong>Mensagem de finalização.</strong> O nome do template e da macro está em branco no POP original.</li>
 <li><strong>Onde o monitoramento é registrado.</strong> Em branco no POP original. A skill do Pinguim cita a planilha de registro de programas e monitoramentos do time de saúde. O time confirma se é esse o lugar para todos os grupos.</li>
-<li><strong>Responsável pela ativação.</strong> Mudou desde o POP original (o nome fica no documento interno).</li>
-<li><strong>Adoção (Dra).</strong> O roteiro e o quadro da Rosi estão validados pela Aline (sugestão 22). Falta a Dra conferir o check-up por faixa etária como exames da criança e decidir se o término é 3 ou 4 meses.</li>
+<li><strong>Responsável pela ativação e pelo monitoramento.</strong> Pendente (Karine): mudou desde o POP original.</li>
 <li><strong>Lista de empresas com benefício.</strong> Os documentos de origem foram enviados à Letícia, que confere. Falta confirmar com o time de benefícios se empresas novas têm benefício. Os nomes e as regras não entram no site, e o bot continua respondendo "vou confirmar".</li>
-<li><strong>Planilha de inscrições.</strong> Falta definir o responsável e a rotina semanal de conferência (sugestão 7).</li>
+<li><strong>Planilha de inscrições.</strong> Pendente (Karine): definir o responsável e a rotina semanal de conferência (sugestão 7).</li>
 <li><strong>Destino da gestante com sintoma.</strong> A Rosi lembrou que o Guia de direcionamento trata muita coisa de gestante. Falta conferir se o destino do Guia (fila da enfermagem com prioridade) bate com o destino do Pinguim (sugestão 13).</li>
 </ul></div>
 
@@ -393,14 +392,7 @@ Cada sugestão abaixo é uma melhoria para a automação. As que têm o selo ver
 <h4>7. Checagem depois da inscrição: inscrever não garante que a elegibilidade foi concluída <span class="pending">pendente</span></h4>
 <p><span class="lbl">O que sugerir:</span> o bot confere três pontos para cada pessoa inscrita e avisa o enfermeiro quando algum falta: (a) se a pessoa que preencheu o formulário de inscrição foi acionada em até um prazo definido pelo time; (b) se a teleconsulta de ativação foi feita; (c) se o pedido de isenção de coparticipação foi enviado para a empresa, nas empresas que têm esse passo.</p>
 <p><span class="lbl">Baseado em:</span> a reunião de 18/11/2026: as inscrições caem numa planilha de inscrições, que precisa ser conferida e acionada toda semana, e ainda não há uma rotina definida para isso. Também já houve teleconsulta de elegibilidade não realizada e pedido de RH para rastrear se a pessoa foi incluída. O cadastro, sozinho, não garante a elegibilidade.</p>
-<p><span class="lbl">O que falta validar:</span> o prazo da checagem, quem recebe o aviso e quem confere a planilha de inscrições toda semana enquanto a automação não existe (pendência do protocolo escrito).</p>
-</div>
-
-<div class="sugg">
-<h4>8. Gatilhos de parada e alerta legal no roteiro <span class="pending">pendente</span></h4>
-<p><span class="lbl">O que sugerir:</span> o bot para o roteiro e chama o enfermeiro sempre que a pessoa relatar violência, migração irregular, uso de substância ou ideação suicida. O enfermeiro acolhe e escala para saúde mental ou assistência social. Outro alerta: se a gestante tiver menos de 14 anos, o bot avisa o enfermeiro, porque é caso de notificação obrigatória e encaminhamento a serviço de referência (estupro de vulnerável, artigo 217-A do Código Penal).</p>
-<p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim, da enfermeira Ana Caroline, que já traz esses pontos como regra do roteiro. O Guia de direcionamento e o protocolo escrito do Pinguim ainda não falam disso.</p>
-<p><span class="lbl">O que falta validar:</span> a médica e o time confirmam o texto da regra e o fluxo de notificação.</p>
+<p><span class="lbl">O que falta validar:</span> o prazo da checagem, quem recebe o aviso e quem confere a planilha de inscrições toda semana enquanto a automação não existe (pendente: Karine).</p>
 </div>
 
 <div class="sugg">
@@ -413,7 +405,7 @@ Cada sugestão abaixo é uma melhoria para a automação. As que têm o selo ver
 <div class="sugg">
 <h4>10. Um quarto grupo: família em processo de adoção <span class="pending">pendente</span></h4>
 <p><span class="lbl">O que sugerir:</span> o programa passa a ter o grupo de famílias em processo de adoção, como mais uma coluna no passo 2. O bot cria o lembrete de contato a cada 6 meses e avisa o enfermeiro.</p>
-<p><span class="lbl">Validado pela Dra em 10/11/2026:</span> a pessoa entra durante o processo de adoção, sem limite de idade da criança. O contato é a cada 6 meses, porque o processo é demorado. O programa termina 3 meses depois da conclusão da adoção, para dar suporte a dúvidas burocráticas e outras demandas, porque a ativação do plano de saúde da criança pode demorar.</p>
+<p><span class="lbl">Validado pela Dra em 10/11/2026:</span> a pessoa entra durante o processo de adoção, sem limite de idade da criança. O contato é a cada 6 meses, porque o processo é demorado. O programa termina 4 meses depois da conclusão da adoção, para dar suporte a dúvidas burocráticas e outras demandas, porque a ativação do plano de saúde da criança pode demorar.</p>
 <p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim (enfermeira Ana Caroline), que tem um módulo de adoção com orientações do CNJ, e a reunião de 06/11/2026. O sistema de prontuário já tem a diretriz de adoção do programa.</p>
 <p><span class="lbl">Pendente (Rosi e Ana Caroline):</span> a Rosi vai compartilhar o rascunho sobre puerpério e adoção, e a Ana Caroline vai enviar as anotações de adoção, inclusive os exames que o programa pede. Sem esse material, o bot só cria o lembrete.</p>
 </div>
@@ -443,9 +435,9 @@ Cada sugestão abaixo é uma melhoria para a automação. As que têm o selo ver
 <h4>13. Sintoma da gestante: perguntas e destino <span class="validado">validado pela Dra em 10/11/2026</span></h4>
 <p><span class="lbl">O que sugerir:</span> quando a gestante relata um sintoma, o bot pergunta e escolhe o destino pela tabela do protocolo escrito (seção "Abordagem de atendimento por fase"). Onde o tema já existe no Guia de direcionamento (sangramento vaginal, febre, corrimento), o bot usa o roteiro do Guia. O bot pergunta primeiro como é o corrimento (cor, cheiro, coceira, quantidade) antes de decidir. Onde o Guia já tem a regra, o bot segue o Guia: a gestante com sangramento, dor forte na barriga, perda de líquido, bebê mexendo menos ou pressão alta entra pela fila da enfermagem com prioridade. Os seis destinos possíveis estão nos quadros acima.</p>
 <p><span class="lbl">Validado pela Dra em 10/11/2026:</span> para a gestante a regra é 30 minutos; a teleconsulta médica de 15 minutos foi retirada e entra a interconsulta; febre junto com dor ao urinar vai para o Pronto Socorro; dor ou ardência ao urinar sem febre vai para a teleconsulta médica de 30 minutos (com vaga garantida ou encaixe); não conseguir manter líquidos por 24 horas, ou sinais de desidratação, é avaliação presencial; qualquer exame alterado vai para a teleconsulta médica de 30 minutos; se a pessoa volta poucos dias depois da inscrição, o bot pergunta o motivo antes de escolher 15 ou 30 minutos. A telemedicina 24x7 do plano é só para casos leves, sem médica em atendimento e se o plano tiver plantão.</p>
-<p><span class="lbl">Quando o bot para e chama o enfermeiro na hora:</span> os critérios do quadro "Critérios de Pronto Socorro, Samu e maternidade" do protocolo escrito, por exemplo: pressão de 160x110 ou mais, mesmo sem sintoma; pressão de 140x90 ou mais com dor de cabeça intensa, alteração na visão, dor no estômago ou inchaço repentino; sangramento (2º e 3º trimestres, qualquer um); perda de líquido; contrações regulares antes de 37 semanas; bebê mexendo menos (mais de 4 horas sem se mexer, depois de 20 semanas); convulsão, desmaio, dor no peito ou falta de ar importante (Samu 192). Também para, em qualquer caso, qualquer relato de violência, uso de substância ou ideação suicida, e gestante com menos de 14 anos.</p>
+<p><span class="lbl">Quando o bot para e chama o enfermeiro na hora:</span> os critérios do quadro "Critérios de Pronto Socorro, Samu e maternidade" do protocolo escrito, por exemplo: pressão de 160x110 ou mais, mesmo sem sintoma; pressão de 140x90 ou mais com dor de cabeça intensa, alteração na visão, dor no estômago ou inchaço repentino; sangramento (2º e 3º trimestres, qualquer um); perda de líquido; contrações regulares antes de 37 semanas; bebê mexendo menos (mais de 4 horas sem se mexer, depois de 20 semanas); convulsão, desmaio, dor no peito ou falta de ar importante (Samu 192).</p>
 <p><span class="lbl">Baseado em:</span> a skill do Programa Pinguim (enfermeira Ana Caroline), a Caderneta Brasileira da Gestante, as perguntas da Letícia de 06/11/2026, os roteiros já revisados do Guia e a validação da Dra.</p>
-<p><span class="lbl">O que falta:</span> as perguntas do corrimento ainda precisam ser escritas. O gatilho de gestante com menos de 14 anos e de violência segue na sugestão 8, que a Dra ainda não avaliou.</p>
+<p><span class="lbl">O que falta:</span> as perguntas do corrimento ainda precisam ser escritas.</p>
 </div>
 
 
@@ -520,9 +512,9 @@ Cada sugestão abaixo é uma melhoria para a automação. As que têm o selo ver
 <div class="sugg">
 <h4>22. Adoção: perguntas e material do roteiro <span class="validado-a">validado pela Aline em 18/11/2026</span></h4>
 <p><span class="lbl">O que sugerir:</span> no contato com a família em processo de adoção (a cada 6 meses), o bot pergunta em que etapa estão (ainda não iniciaram, já habilitados, aguardando na fila ou criança já chegou). Se a criança já chegou, pergunta a idade, o tempo de convivência e como está a adaptação. O bot envia o material da etapa: passos do processo (CNJ e ECA), requisitos e documentos, e orientações de vínculo e adaptação. O bot avisa o enfermeiro quando a criança chega (para orientar a avaliação pediátrica inicial, a caderneta de vacinação e a inclusão no plano em até 30 dias) e quando a família diz que está no limite (apoio psicológico ou grupo de apoio). O bot não faz prognóstico de tempo de fila e não dá orientação jurídica: dúvida jurídica vai para a Vara ou a Defensoria Pública.</p>
-<p><span class="lbl">Validado pela Aline em 18/11/2026:</span> o roteiro de adoção da Ana Caroline e o quadro da Rosi "o que o programa faz em cada fase". A Dra já tinha validado o contato a cada 6 meses e o término 3 meses depois da conclusão da adoção.</p>
+<p><span class="lbl">Validado pela Aline em 18/11/2026:</span> o roteiro de adoção da Ana Caroline e o quadro da Rosi "o que o programa faz em cada fase". O contato é a cada 6 meses, e o término é 4 meses depois da conclusão da adoção.</p>
 <p><span class="lbl">Baseado em:</span> o roteiro de adoção da Ana Caroline (orientações do CNJ e do ECA), o quadro da Rosi e as validações da Dra (10/11/2026) e da Aline (18/11/2026).</p>
-<p><span class="lbl">O que falta:</span> a Dra confere que os exames da criança são o check-up por faixa etária (a Aline concordou) e decide se o término é 3 ou 4 meses. A grade do programa foi enviada ao grupo pela Ana Caroline, e a Letícia vai acrescentar. A regra de inclusão da criança no plano e da carência depende do plano da pessoa, e o enfermeiro confirma caso a caso.</p>
+<p><span class="lbl">O que falta:</span> os exames da criança são o check-up por faixa etária, como para qualquer criança. A grade do programa foi enviada ao grupo pela Ana Caroline, e a Letícia vai acrescentar. A regra de inclusão da criança no plano e da carência depende do plano da pessoa, e o enfermeiro confirma caso a caso.</p>
 </div>
 
 <div class="sugg">
@@ -530,7 +522,7 @@ Cada sugestão abaixo é uma melhoria para a automação. As que têm o selo ver
 <p><span class="lbl">O que sugerir:</span> o bot cria o lembrete do contato do 1º mês depois do parto e entrega ao enfermeiro o roteiro: parto e intercorrências, consultas de puerpério (a da 1ª semana foi feita? a de 30 dias está marcada?), corpo, amamentação, emoções, contracepção, e pendências (TOTG de 4 a 12 semanas para quem teve diabetes gestacional; vacinas que faltaram, até 45 dias; bebê incluído como dependente no plano em até 30 dias do nascimento). O contato não substitui as 2 consultas de puerpério. Do 2º ao 4º mês, o bot só responde sob demanda (volta ao trabalho e licença, intervalos de amamentação até os 6 meses do bebê, ordenha e estoque de leite). Aos 4 meses, o bot envia a mensagem de finalização com a pesquisa de satisfação. Em perda gestacional ou natimorto, o bot não envia nada de amamentação e avisa o enfermeiro para acolher e oferecer apoio de saúde mental; o programa inativa em 4 semanas.</p>
 <p><span class="lbl">Baseado em:</span> o documento de sugestões da Rosi de 13/11/2026 e a validação da Dra de 10/11/2026 (programa até 4 meses depois do parto; aborto inativa em 4 semanas).</p>
 <p><span class="lbl">Validado pela Dra:</span> o roteiro do contato do 1º mês e as orientações do 2º ao 4º mês (informado pela Letícia em 26/11/2026).</p>
-<p><span class="lbl">Observação (18/11/2026):</span> falta definir quem faz o acompanhamento ativo das puérperas. O lembrete do bot só ajuda se alguém receber o aviso.</p>
+<p><span class="lbl">Pendente (Karine):</span> definir quem faz o acompanhamento ativo das puérperas. O lembrete do bot só ajuda se alguém receber o aviso.</p>
 </div>
 
 <div class="sugg">
@@ -545,7 +537,7 @@ Cada sugestão abaixo é uma melhoria para a automação. As que têm o selo ver
 <p><span class="lbl">O que sugerir:</span> quando a pessoa entra no programa (pelo RH, pelo questionário, por indicação ou por busca ativa), o bot envia a mensagem "Programa Pinguim: como funciona" e, se a pessoa quiser participar, a mensagem "Direcionamento para inscrição", com o link do formulário. Depois da inscrição, a pessoa agenda a teleconsulta de ativação direto com o enfermeiro, sem passar pela teletriagem. Se a pessoa descrever um sintoma de alerta (por exemplo, sangramento), o bot segue o Guia de direcionamento, o mesmo roteiro, esteja ela no Pinguim ou não.</p>
 <p><span class="lbl">Validado pela Aline em 26/11/2026:</span> o texto das duas macros do Zendesk, que ela atualizou. O texto completo está no protocolo escrito. As macros já são usadas pelos guias de saúde, então o bot usa o mesmo texto.</p>
 <p><span class="lbl">Baseado em:</span> as reuniões de 13/11 e 18/11/2026 e as macros atualizadas pela Aline.</p>
-<p><span class="lbl">O que falta:</span> a Aline decide se haverá duas versões da mensagem, uma para empresas com benefício e outra para empresas sem benefício (hoje o texto é um só); e confirma se a ativação pode ser agendada direto, sem a teletriagem.</p>
+<p><span class="lbl">O que falta:</span> a Aline confirma se a ativação pode ser agendada direto, sem a teletriagem.</p>
 </div>
 
 <h2 class="section">O que pesquisei e não entrou</h2>
